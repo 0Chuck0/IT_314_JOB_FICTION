@@ -8,6 +8,7 @@
     <title>Login Page</title>
 </head>
 <body>
+    <script src = "main.js"></script>
     <section class="container">
         <div class="form-login">
             <div class="form-content">
@@ -19,8 +20,8 @@
                         <input type="email" class="input" placeholder="Email">
                     </div>
                     <div class="input-field">
-                        <input type="password" class="input" placeholder="Password">
-                        <i class='bx bx-hide eye-icon'></i>
+                        <input type="password" class="input" id="password-input" placeholder="Password">
+                        <i class='bx bx-hide eye-icon' id="eye-icon"></i>
                     </div>
                 </form>
                 <div class="form-link">
@@ -29,7 +30,7 @@
                     </a>
                 </div>
                 <div class="form-button">
-                    <button class="login-button">
+                    <button class="login-button" id="login-button">
                         Login
                     </button>
                 </div>
@@ -39,6 +40,7 @@
             </div>
             <div class="line"></div>
         </div>
+       
     </section>
 </body>
 </html>

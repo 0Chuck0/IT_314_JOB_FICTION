@@ -70,16 +70,19 @@ form{
     border-radius: 6px;
     cursor: pointer;
 }
-
+#login-button:hover{
+    box-shadow: 1px 1px 5px #888888;
+}
 .form-link{
-    margin-top: 15px;
+     margin-top: 15px;
+    text-align: center;
 }
 
 .forgot-password{
     justify-content: center;
     text-decoration: none;
     color: #4070f4;
-    padding:0 112px;
+    padding:0 8px;
 }
 
 .no-account{
@@ -87,7 +90,8 @@ form{
 }
 
 .no-account p{
-    padding: 0  50px;
+    padding: 0  8px;
+    text-align: center;
 }
 
 .register{
@@ -112,5 +116,4 @@ form{
     background-color: #fff;
     color: #232836;
     padding: 0 15px;
-
 }

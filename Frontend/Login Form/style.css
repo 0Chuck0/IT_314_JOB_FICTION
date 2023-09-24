@@ -155,6 +155,6 @@ form{
 
 @media (width<520px) {
     .form-login{
-        width: 80%;
-    }
+        width:80%;
+    }
 }

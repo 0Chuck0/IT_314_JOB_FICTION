@@ -1,7 +1,6 @@
-const mongoose=require("mongoose");
-const validator = require("validator");
+const mongoose=require("mongoose");+
 
-mongoose.connect("mongodb://127.0.0.1:27017/Registrationdata",{UseNewUrlParser:true,UseUnifiedTopology:true})
+mongoose.connect("mongodb://127.0.0.1:27017/Data",{UseNewUrlParser:true,UseUnifiedTopology:true})
 .then(()=>{
     console.log("mongodb contected");
 })
@@ -39,10 +38,31 @@ const Loginschema = new mongoose.Schema({
     },
     Workstatus:{
         type:String,
-        required:true
+        required:true,
+    },
+    Resume:{
+        type:String,
+        required:true,
+    },
+    Emailupdation:{
+        type:String,
     }
 })
 
-const collection = new mongoose.model("Collection",Loginschema);
 
-module.exports = collection
+const Verificationschema = new mongoose.Schema({
+    Email:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+    otp:{
+        type:String,
+        required:true,
+    }
+});
+
+const collection = new mongoose.model("Collection",Loginschema);4
+const collection2 = new mongoose.model("Collection2",Verificationschema);
+
+module.exports = {collection , collection2}

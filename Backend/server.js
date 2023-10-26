@@ -2,6 +2,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const path = require("path")
 const hbs = require("hbs")
+const cors = require("cors");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const multer = require("multer");
@@ -9,10 +10,15 @@ const GridFsStorage = require("multer-gridfs-storage");
 const Grid = require("gridfs-stream");
 const methodoverride = require("method-override");
 const crypto = require("crypto");
-const collection = require("./mongodb")
+const {collection,collection2} = require("./mongodb")
 const nodemailer  =require("nodemailer")
 
+const mypass='acwgdbjohgfmvlca';
 
+const errorredirect = "<a href =\"/Register\"> <br> click here to go to Registration Page <br></a>\
+<a href =\"/Login\"> <br> click here to go back to Login Page <br></a>\
+<a href =\"/forgotpass\"> <br> click here to go back to FOrgotpassword Page <br></a>\
+";
 
 const app = express();
 app.use(express.json());
@@ -24,10 +30,29 @@ app.use(bodyparser.json());
 app.use(methodoverride('_method'));
 
 
+async function main(toemail,sub,messsage){
 
-app.get("/error", (req, res) => {
-    res.render("Errors")
-})
+    const transporter = await nodemailer.createTransport({
+        host: 'smtp.gmail.email',
+        port: 587,
+        secure:false,
+        service: 'Gmail',
+        auth: {
+            user: 'dabhidipak6412@gmail.com',
+            pass: mypass,
+        }
+    });
+
+    const info = await transporter.sendMail({
+
+        from:'<dabhidipak6412@gmail.com>',
+        to:toemail,
+        subject:sub,
+        html:messsage,
+
+    });
+}
+
 app.get("/Login", (req, res) => {
     res.render("Login")
 })
@@ -68,7 +93,6 @@ app.get("/forgotpass", (req, res) => {
 // }
 
 
-
 app.post("/Login", async (req,res)=>{
 
     try{
@@ -81,11 +105,11 @@ app.post("/Login", async (req,res)=>{
 
         }
          
-        const check = await collection.findOne({email:req.body.Email});
-        const match = await bcrypt.compare(req.body.Password,check.password);
+        const check = await collection.findOne({Email:req.body.Email});
+        const match = await bcrypt.compare(req.body.Password,check.Password);
 
         if(match){
-            res.render("Home Page");
+            res.render("Home");
         }else{
             throw new Error("incorrect Password <br> <a href =\"/Login\"> <br> click here to go back to Login Page <br></a>");
         }
@@ -95,17 +119,17 @@ app.post("/Login", async (req,res)=>{
     }
     })
 
-    app.post("/Register", async (req,res)=>{
+app.post("/Register", async (req,res)=>{
 
     try{
 
             if(await collection.find({Email:req.body.Email}).count()){
 
-            throw new Error("Enter adreess is alredy Registerd");
+            throw new Error("Enter Email Adreess is alredy Registerd");
 
             // document.getElementById('emailerror').innerHTML="*** Invalied email address ***";
 
-        }
+             }
         
         // if(validator.isEmpty(req.body.Mobileno(req.body.Mobileno)));
 
@@ -114,8 +138,6 @@ app.post("/Login", async (req,res)=>{
 
 
         const data = req.body;
-
-        delete data.whatsupdate;
 
          const HashPassword  = await bcrypt.hash(req.body.Password , 10);
 
@@ -135,65 +157,99 @@ app.post("/Login", async (req,res)=>{
 
 })
 
+
+
 app.post("/forgotpass", async (req,res)=>{
 
-    async function main(){
-        // const transporter = await nodemailer.createTransport({
 
-        // // host: 'mail.gmail.com',
-        // port: 465,
-        // secure: true,
-        // auth: {
-        //             user:'dabhidipak35938@gmail.com',
-        //             pass:'Dip@8140'
-        //      }
+        try{
 
-        // });
+            if(await collection.find({Email:req.body.Email}).count()==0){
 
-        const transporter = await nodemailer.createTransport({
-            host: 'smtp.gmail.email',
-            port: 587,
-            secure:false,
-            auth: {
-                user: 'dabhidipak35938@gmail.com',
-                pass: mypass,
+            throw new Error("Entered Email Adreess is Not Registerd");
+
             }
-        });
 
-        const info = await transporter.sendMail({
+            if(await collection2.find({Email:req.body.Email}).count()){
 
-            from:'dabhidipak35938@gmail.com',
-            to:'dipakdabhi8140@gmail.com',
-            subject:'OTP',
-            text:'Hellow world',
-            html:"<h3> OTP = \"1234\" </h3>",
+                await collection2.findOneAndDelete({Email:req.body.Email});
 
-        });
+                
+        
+            }
 
-        res.render("forgotpass2");
+            const otp = Math.floor(Math.random()*1000000 + 100000);
 
-    }
-    main().catch((err)=>{
-        res.send(`${err}` + +"<a href =\"/forgotpass\"> <br> click here to go back to FOrgotpassword Page <br></a>");
-    });
+            if(otp > 999999) opt -= 100000;
 
+            const Hashotp  = await bcrypt.hash(otp.toString(), 10);
 
-    console.log(req.body);
-    res.render("forgotpass2");
+            const data  = {
+
+                Email:req.body.Email,
+                otp:Hashotp
+            };
+   
+            await collection2.insertMany([data])
+
+            let htmlmessage = '<h2> Your OTP For verificatoin is ';
+
+            htmlmessage += otp.toString();
+
+            htmlmessage +=' . </h2>';
+
+            main(req.body.Email,'OTP for varificaton',htmlmessage).then(()=>{
+
+                res.render("forgotpass2");
+
+            })
+        }
+
+        catch(err){
+
+            res.send(`${err}` + "<a href =\"/forgotpass\"> <br> click here to go back to Forgotpassword Page <br></a>");
+
+        }
 
 })
 
 app.post("/forgotpass2", async (req,res)=>{
 
-    console.log(req.body);
-    res.render("forgotpass3");
 
-})
+    try{
 
-app.post("/forgotpass3", async (req,res)=>{
+        if(await collection2.find({Email:req.body.Email}).count() == 0){
 
-    console.log(req.body);
-    res.send("Home");
+        throw new Error("Entered Email Adress is Not Same as Before Entered Email Adress");
+
+        }
+        
+        const check = await collection2.findOne({Email:req.body.Email});
+        const match = await bcrypt.compare(req.body.receivedotp,check.otp);
+
+        if(match){
+
+            if(req.body.Newpassword != req.body.conforimpassword) throw new Error("New password and confrim Password Is Not matching");
+            await collection2.findOneAndDelete({Email:req.body.Email});
+            const HashPassword  = await bcrypt.hash(req.body.Newpassword, 10);
+            await collection.findOneAndUpdate({Email:req.body.Email},{Password:HashPassword});
+
+            res.render("Login");
+
+        }else{
+
+            throw new Error("OTP is Not Matched verfication failed");
+
+        }
+    }
+
+    catch(err){
+
+        res.send(`${err}` + "<a href =\"/forgotpass\"> <br> click here to go back to Forgotpassword Page <br></a>");
+
+    }
+
+
 
 })
 

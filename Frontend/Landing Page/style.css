@@ -30,7 +30,6 @@ body{
 .about-us{
     background-color: #4070f4;
     height: 100vh;
-
 }
 
 .card{
@@ -77,8 +76,16 @@ footer{
     margin-top:10px;
 }
 
-@media (width > 992px) {
+@media (width > 1200px) {
     .card-row{
         margin-right: 4rem;
+    }
+}
+
+@media (width < 1200px) {
+    
+    .about-us{
+        height: fit-content;
+        padding-bottom: 2rem;
     }
 }

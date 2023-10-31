@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="css/style.css"> 
+     <script src="handlebars.js"></script>
+</head>
+<body>
+    <form action="/jobs_main1" method="post">
+        <div>
+        <input type="text" name="search" placeholder="search">
+             </div>
+             <div><button type="submit" name="butt" aria-placeholder="click here">click here</button></div>
+    </form>
+
+     <div class="job-list" id="jobs">
+    <!-- Include the job listings here using the jobs.hbs partial -->
+    {{#each jobsData}}
+      <div class="job-card">
+            <div class="job-name">
+                <img src="images/Ebay.svg" alt="" class="job-profile">
+                <div class="job-detail">
+                    <h4>{{this.name}}</h4>
+                    <h3>Business Development</h3>
+                    <p>Bangalore, Hyderabad, Noida</p>
+                </div>
+            </div> 
+            <div class="job-labels">
+                <a href="#" class="label-a">₹50000 a month</a>
+                <a href="#" class="label-c">Full-time</a>
+            </div>
+            <div class="job-posted">
+                Posted 2 mins ago
+            </div>
+        </div>
+
+        {{/each}}
+
+        </div>
+  
+
+   
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <script src="js/bootstrap-select.min.js"></script>
+    
+    <script src="js/custom.js"></script>
+</body>
+</html>

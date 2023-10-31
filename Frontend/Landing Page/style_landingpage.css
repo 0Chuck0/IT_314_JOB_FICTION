@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root{
+    --spacing-medium : 8px;
+    --spacing-regular: 16px;
+
+    --font-small : 0.5rem;
+    --font-regular:1rem;
+    --font-large:2rem;
+    --font-x-large:4rem;
+}
+
+body{
+    margin:1rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(./Background-image.jpg);
+    
+}
+.key-sentence{
+    margin-left:2rem;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    margin-right: 1rem;
+}
+
+.about-us{
+    background-color: #4070f4;
+    height: 100vh;
+}
+
+.card{
+
+    border: 1px solid black;
+    max-width: 15rem;
+    margin:2rem auto;
+}
+
+img{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.btn{
+    display: block;
+    width: fit-content;
+    margin: auto;
+}
+.card:hover{
+    border-color: blue;
+    .card-title{color:blue;font-weight:350};
+    box-shadow: 3px 3px 8px 5px rgb(173, 171, 171);
+}
+
+.about-us > p{
+    margin: 0 2rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color:rgb(218, 218, 218);
+}
+
+.about-us > h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+    font-size: 36px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+footer{
+    text-align: center;
+    margin-top:10px;
+}
+
+@media (width > 1200px) {
+    .card-row{
+        margin-right: 4rem;
+    }
+}
+
+@media (width < 1200px) {
+    
+    .about-us{
+        height: fit-content;
+        padding-bottom: 2rem;
+    }
+}

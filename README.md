@@ -5,4 +5,4 @@ We would be creating a job portal that would help the users and the potential ca
 
 Work done till now
 
-Shekhar- Added search functionality in Backend and created jobs schema in Mongodb.
+Shekhar- Added search and filter functionality in Backend and created jobs schema in Mongodb.

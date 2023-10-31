@@ -31,17 +31,11 @@
         crossorigin="anonymous"></script>
 
     <section class="containerr">
-        <form action="/forgotpass2" method="post" class="form-registration">
+        <form action="/forgotpass2/{{id}}" method="post" class="form-registration">
             <h1>
                 OTP Verification And  Set New Password
             </h1>
-            <div class="mb-3">
-                <label for="exampleInputEmail1 title" class="form-label">Re Enter Email Adress</label>
-                <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name = "Email"
-                    placeholder="Enter a Email Adress" required>
-            </div>
-
-
+            
             <div class="mb-3">
                 <label for="validationDefaultUsername title" class="form-label"> Enter a OTP</label>
                 <div class="input-group">

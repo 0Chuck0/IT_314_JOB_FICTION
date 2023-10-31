@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+     
+        
+</head>
+<body>
+
+        <script id="job-template" type="text/x-handlebars-template">
+      <div class="job-card">
+            <div class="job-name">
+                <div class="job-detail">
+                    <h3>{{company}}</h3>
+                    <p>{{location}}</p>
+                    <p>{{job_title}}</p>
+                    <button id="hewllow" onclick="funcs({{id}})">save</button>
+                </div>
+            </div> 
+            <div class="job-labels">
+                <a href="#" class="label-a">₹{{salary}} a month</a>
+                <a href="#" class="label-c">Full-time</a>
+            </div>
+        </div>
+        </script>
+
+
+    <form id="form" onchange="func()">
+        <div class="forhelp">
+        <div class="work-mode">
+            <div>work-mode:</div>
+            <input type="radio" id="check1" name="work_mode" value="Office">
+            <label for="check1">Office</label >
+            <input type="radio" id="check2" name="work_mode" value="Remote">
+            <label for="check2">Remote</label>
+            <input type="radio" id="check1"  name="work_mode" value="Hybrid">
+            <label for="check1"> Hybrid</label>
+        </div>
+        <br><br>
+        <br><br>
+
+
+        <div>
+            <div>
+
+            <label for="expyear">Exprerince:</label>
+
+            </div>
+
+            <input type="range" id="expyear" name="expyear" min="0" max="10">
+            <div>0 year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 year</div>
+
+        </div>
+
+        <br><br>
+        <br><br>
+
+            <div class="Location">
+            <div>Location:</div>
+            <input type="checkbox" id="check4" name="Location1" value="Pune">
+            <label for="check4"> Pune </label >
+            <input type="checkbox" id="check5" name="Location2" value="Hyderabad">
+            <label for="check5">Hyderabad</label>
+            <input type="checkbox" id="check6" name="Location3" value="Bangalore">
+            <label for="check6"> Bangalore</label>
+            </div>
+
+        <br><br>
+        <br><br>
+
+        </div>
+            
+    </form>
+    <div id="foruse">
+    <div id="joblisting">
+    </div>
+        
+    </div>
+    <!-- Include the job listings here using the jobs.hbs partial -->
+
+    <script>
+
+async function funcs(id) {
+        try {
+            console.log(id);
+            const formdata = new URLSearchParams({data:"abc"});
+            const response = await fetch("http://localhost:5000/exp", {
+                method: "post",
+                body: formdata,
+            }).then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("NETWORK RESPONSE ERROR");
+                }
+            }).then(datas => {
+
+            }).catch((error) => console.error("FETCH ERROR:", error));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    </script>
+
+
+        <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const Joblistcontainer = document.getElementById('joblisting');
+    const jobListingTemplate = Handlebars.compile(document.getElementById('job-template').innerHTML);
+
+    // Define the func function outside of the event listener
+    async function func() {
+        try {
+            const formdata = new URLSearchParams(new FormData(document.getElementById("form")));
+            const response = await fetch("http://localhost:5000/jobs_main", {
+                method: "post",
+                body: formdata,
+            }).then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("NETWORK RESPONSE ERROR");
+                }
+            }).then(datas => {
+                console.log(datas);
+                Joblistcontainer.innerHTML = "";
+// Loop through the job data and populate the HTML container
+                datas.forEach((job) => {
+                    // Create a new job listing using the Handlebars template
+                    var jobListingHtml = jobListingTemplate(job);
+                    // Append the job listing to the container
+                    Joblistcontainer.insertAdjacentHTML('beforeend', jobListingHtml);
+                });
+            }).catch((error) => console.error("FETCH ERROR:", error));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    // Assign the func function to the onchange event
+    document.getElementById("form").onchange = func;
+});
+
+
+    </script>
+
+</body>
+</html>

@@ -46,6 +46,10 @@ const Loginschema = new mongoose.Schema({
     },
     Emailupdation:{
         type:String,
+    },
+    token:{
+        type:String,
+        required:true,
     }
 })
 
@@ -62,7 +66,21 @@ const Verificationschema = new mongoose.Schema({
     }
 });
 
-const collection = new mongoose.model("Collection",Loginschema);4
-const collection2 = new mongoose.model("Collection2",Verificationschema);
+const jobSchema = new mongoose.Schema({
+    "id": Number,
+    "job_title":String,
+    "company": String,
+    "salary": Number,
+    "location": String,
+    "work_mode":String,
+    "education":String,
+    "experience":Number,
+    "skills": [String]
+});
 
-module.exports = {collection , collection2}
+
+const collection = new mongoose.model("Collection",Loginschema);
+const collection2 = new mongoose.model("Collection2",Verificationschema);
+const          Job = new mongoose.model("jobs", jobSchema);
+
+module.exports = {collection , collection2,Job}

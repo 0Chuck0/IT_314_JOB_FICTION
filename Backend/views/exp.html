@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Handlebars Template Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+<body>
+    <h1>Handlebars Template Example</h1>
+
+    <!-- Define your Handlebars template within a <script> tag -->
+    <script id="my-template" type="text/x-handlebars-template">
+        <p>{{greeting}}</p>
+        <p>{{status}}</p>
+    </script>
+
+    <div id="rendered-content"></div>
+
+    <script>
+        // JavaScript code to compile and render the Handlebars template
+
+        // Ensure the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            // Compile the template
+            var templateSource = document.getElementById("my-template").innerHTML;
+            var template = Handlebars.compile(templateSource);
+
+            // Define your data object
+            var data = {
+                greeting: "Hello, how are you?",
+                status: "On"
+            };
+
+            // Render the template with data
+            var html = template(data);
+
+            // Insert the rendered HTML into the "rendered-content" div
+            document.getElementById("rendered-content").innerHTML = html;
+        });
+    </script>
+</body>
+</html>

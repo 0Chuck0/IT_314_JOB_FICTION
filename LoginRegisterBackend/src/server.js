@@ -70,6 +70,6 @@ app.get("/forgotpassword",async(req,res)=>{
     res.render("forgotpassword");
 })
 
-app.listen(3000, () => {
+app.listen(5000, () => {
     console.log('Listening port no 3000....');
 }) 

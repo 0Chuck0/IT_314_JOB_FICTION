@@ -88,7 +88,7 @@ app.post("/saveData", async (req,res)=>{
     try{
       if(req.cookies.jwt)
       {
-        const verify = jwt.verify(req.cookies.jwt,"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore");
+        const verify = jwt.verify(req.cookies.jwt,"hellomynameisjinalgajerathisismyprojectonjobfictioninsofwareengineering");
   //    console.log(verify); 
     //  console.log(await savedPost.find({job_id:req.body.id}).count());
         if(await savedPost.find({job_id:req.body.id}).count() == 0)
@@ -122,7 +122,7 @@ app.post("/unsaveData", async(req,res)=>{
 
        if(req.cookies.jwt)
        {
-         const verify = jwt.verify(req.cookies.jwt,"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore");
+         const verify = jwt.verify(req.cookies.jwt,"hellomynameisjinalgajerathisismyprojectonjobfictioninsofwareengineering");
          //console.log(verify);
         if(await savedPost.find({job_id:req.body.id}).count() == 1)
         {

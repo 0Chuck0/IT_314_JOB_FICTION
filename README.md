@@ -17,4 +17,5 @@ Dhyey - Added Backend for Login, Register and Company_home_page(which has three 
 Bhargav- Backend Registration Page, login Page, Jobseeker Home page, Comapny's all three page (newpost, jobpostlist and profile).
 <br>
 Dipak- Implemented seacrh functionality,login,forgot Password and register authentication and verification in Backend.
-
+<br> 
+Krushang- Apply for job functionality and created applicants Schema for database in mongodb_compass.

@@ -17,6 +17,10 @@ const loginschema = new mongoose.Schema({
     mobileNumber:{
         type:Number,
         required:true
+    },
+    token:{
+        type:String,
+        required:true
     }
  })
  

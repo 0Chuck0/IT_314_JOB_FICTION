@@ -11,6 +11,10 @@ const collection = require("./db/mongodb");
 const Job = require('./schemas/jobschema');
 const savedPost = require('./schemas/savePostSchema');
 const registerData = require('./schemas/login_schema');
+const jwt = require("jsonwebtoken");
+const cookieparser = require("cookie-parser");
+app.use(cookieparser());
+app.use(express.urlencoded({ extended: true }));
 const { log } = require("console")
 
 const tempelatePath = path.join(__dirname, '../templates/views')
@@ -19,15 +23,22 @@ const partialspath=path.join(__dirname,"../templates/partials")
 hbs.registerPartials(partialspath);
 app.use(express.static(publicPath));
 app.use(express.urlencoded({extended:false}))
-app.use(express.static(tempelatePath));
+app.use(express.static(tempelatePath));            
 app.use("/jobsmain" ,(express.static(publicPath)));
-
 
 app.set("views",tempelatePath);
 
 
-app.get("/",(req,res)=>{
-    res.render("home")
+app.get("/", async (req,res)=>{
+
+    if(req.cookies.jwt)
+    {
+        const verfiy = jwt.verify(req.cookies.jwt,"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore");
+        console.log(verfiy);
+        const data = await registerData.findOne({_id:verfiy._id});
+        res.render("home",{ userName : data.name})
+    }
+    res.render("home",{ userName : "Log In"})
 })
 
 
@@ -71,33 +82,63 @@ app.post("/jobs_main",async (req,res)=>{
             
 
 });
-
-app.post("/saveData",async(req,res)=>{
+//original
+app.post("/saveData", async (req,res)=>{
     
     try{
-        console.log(req.body.id);
-        const check = await Job.findOne({job_id:req.body.id})
-
-        const myData = new savedPost({
-            job_id : check.job_id,
-            job_seekerid: 202101227
-        })
-       
-        await savedPost.insertMany([myData])
-        console.log("Added to save list !")
+      if(req.cookies.jwt)
+      {
+        const verify = jwt.verify(req.cookies.jwt,"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore");
+  //    console.log(verify); 
+    //  console.log(await savedPost.find({job_id:req.body.id}).count());
+        if(await savedPost.find({job_id:req.body.id}).count() == 0)
+        {
+            const check = await Job.findOne({job_id:req.body.id})
+            const data = await registerData.findOne({_id:verify._id});
+           // console.log(`Jobseeker name ${data.name} and Job id is ${check.job_id} ${verify._id}`);
+        
+            const myData = new savedPost({
+                job_id : check.job_id,
+                job_seekerid : verify._id,
+            })
+            await savedPost.insertMany([myData])
+        }
+        else
+        {
+           console.log("already Added into the save list !")  
+        }
+       }
     }
     catch(err)
     {
         res.send(err)
     }
+
 })
 
 app.post("/unsaveData", async(req,res)=>{
     
     try{
-        const check2 = await savedPost.findOne({id:req.body.id})
-        await savedPost.deleteOne(check2);
-        console.log("Delete from save list !")
+
+       if(req.cookies.jwt)
+       {
+         const verify = jwt.verify(req.cookies.jwt,"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore");
+         //console.log(verify);
+        if(await savedPost.find({job_id:req.body.id}).count() == 1)
+        {
+            const check2 = await savedPost.findOne({job_id:req.body.id})
+            const data = await registerData.findOne({_id:verify._id});
+            
+            console.log(`Jobseeker name ${data.name} and Job id is ${check2.job_id}`);
+        
+            await savedPost.deleteOne(check2);
+            console.log("Delete from save list !")
+        }
+        else
+        {
+            console.log("Not into the saved list !")   
+        }
+       } 
     }
     catch(err)
     {
@@ -114,9 +155,22 @@ app.post("/register",async(req,res)=>{
            email:req.body.email,
            password:req.body.password,
            mobileNumber:req.body.mobileNumber,
+           token:'token'
         })
         
         const result = await data.save();
+        // console.log(result);
+        const id = result._id.toString();
+        // console.log(id);
+        const token = jwt.sign({_id:id},"iamnotinterstinginthissofwareprojectandidontwantotdothisanymore")
+        
+        await registerData.updateOne({_id:id},{$set:{token:token}})
+
+        res.cookie("jwt",token,{
+            maxAge : 3000000,
+            httpOnly : true
+        })
+       
         res.redirect("/"); //you will be directed to home page
         }
         catch(err){
@@ -142,9 +196,16 @@ app.post("/login",async(req,res)=>{
 
         const check = await registerData.findOne({email:req.body.email_db})
         
-        if(check.password===req.body.password_db)
+        if(check.password === req.body.password_db)
         {
-            res.redirect("/"); //you will be directed to home page
+            res.cookie("jwt",check.token,{
+                maxAge : 3000000,
+                httpOnly : true
+            })
+            res.render("home",{
+                userName : check.name,
+            });
+             //you will be directed to home page
         }
         else
         {

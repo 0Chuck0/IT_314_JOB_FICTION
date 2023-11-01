@@ -11,4 +11,4 @@ Jinal - Added save and unsave job post functionality in Backend and created save
 <br>
 Azahar- Updated registration page, created candidate profile page and candidate list page in frontend. 
 <br>
-Dhyey - Added Backend for Login, Register and Company_home_page(which has three pages - Job_post, Create_new_Jobpost and Profile). 
+Dhyey - Added Backend for Login, Register and Company_home_page(which has three pages - Job_post, New_Jobpost and Profile) and created schema for New_jobpost. 

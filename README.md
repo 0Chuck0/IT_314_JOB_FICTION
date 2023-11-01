@@ -5,6 +5,7 @@ We would be creating a job portal that would help the users and the potential ca
 
 Work done till now
 
+
 Shekhar- Added search and filter functionality in Backend and created jobs schema in Mongodb.
 <br>
 Jinal - Added save and unsave job post functionality in Backend and created saveJob schema in Mongodb. 
@@ -12,3 +13,8 @@ Jinal - Added save and unsave job post functionality in Backend and created save
 Azahar- Updated registration page, created candidate profile page and candidate list page in frontend. 
 <br>
 Dhyey - Added Backend for Login, Register and Company_home_page(which has three pages - Job_post, New_Jobpost and Profile) and created schema for New_jobpost. 
+<br>
+Bhargav- Backend Registration Page, login Page, Jobseeker Home page, Comapny's all three page (newpost, jobpostlist and profile).
+<br>
+Dipak- Implemented seacrh functionality,login,forgot Password and register authentication and verification in Backend.
+

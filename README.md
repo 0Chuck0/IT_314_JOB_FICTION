@@ -8,7 +8,7 @@ Work done till now
 
 Shekhar- Added search and filter functionality in Backend and created jobs schema in Mongodb.
 <br>
-Jinal - Added save and unsave job post functionality in Backend and created saveJob schema in Mongodb. 
+Jinal - Added save and unsave job post functionality in Backend, login register backend and created saveJob schema in Mongodb. 
 <br>
 Azahar- Updated registration page, created candidate profile page and candidate list page in frontend. 
 <br>

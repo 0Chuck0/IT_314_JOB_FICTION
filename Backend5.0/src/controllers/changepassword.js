@@ -2,6 +2,7 @@ const OTPdata  = require("../models/OTPdata");
 const bcrypt  = require("bcryptjs");
 const Register = require("../models/registers");
 
+
 module.exports = {
     
     get:async (req,res)=>{

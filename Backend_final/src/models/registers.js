@@ -14,10 +14,6 @@ const UserScema=new mongoose.Schema({
         type:String,
         required:true
     },
-    cpassword: {
-        type:String,
-        required:true
-    },
     number: {
         type: Number,
         required:true,
@@ -25,6 +21,10 @@ const UserScema=new mongoose.Schema({
     },
     token:{
         type:String,
+        required:true,
+    },
+    verified:{
+        type:Boolean,
         required:true,
     }
 

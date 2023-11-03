@@ -1,10 +1,10 @@
 const Register = require("../models/registers");
-const {verifyotp} = require("../services/OTPsevices");
 const jwt =        require("jsonwebtoken");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");
 app.use(cookieParser());
+require("dotenv").config();
 
 async function alredyregisterauth(req , res , next){
 
@@ -47,14 +47,16 @@ async function loggedinonly(req , res , next){
                 if(err)
                 {
 
-                return res.status(400).send('<script>alert("You have to login first."); window.location = "/login";</script>');
+                return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
 
                 }
                 else
                 {
-                    req.body.email = decoded;
+                    const check = await Register.findOne({_id:decoded._id});
+
+                    req.body.email = check.email;
                 }
-                        });
+                });
     }else{
 
     return res.status(400).send('<script>alert("You have to login first."); window.location = "/login";</script>');
@@ -63,28 +65,6 @@ async function loggedinonly(req , res , next){
 
 
 next ();
-
-}
-
-async function otpauth(req , res , next){
-
-    const {id} = req.params;
-
-    if(!verifyotp(id ,req.body.receivedotp)){
-
-        return res.status(400).send('<script>alert("you have entered wrong otp."); window.location ="/forgotpass" </script>');
-
-        }
-
-        if(req.body.Newpassword != req.body.conforimpassword)
-        {
-
-            return res.status(400).send('<script>alert("New password and confrim Password Is Not matching."); window.location ="/forgotpass" </script>');
-
-        }
-
-
-    next ();
 
 }
 
@@ -105,4 +85,21 @@ async function registerauth(req , res , next){
 
 }
 
-module.exports = {registerauth , otpauth , loggedinonly , Emailauth , alredyregisterauth};
+async function verifyauth(req , res , next){
+
+    // console.log(req.body.Email);
+ 
+     const v = await Register.findOne({email:req.body.email});
+ 
+     if(v.verified===false){
+ 
+         return res.status(400).send('<script>alert("You have not Verified go to email and first verify after that do a login."); window.location ="/login" </script>');
+ 
+         }
+ 
+ 
+     next ();
+ 
+ }
+
+module.exports = {registerauth ,loggedinonly , Emailauth , alredyregisterauth , verifyauth};

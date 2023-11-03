@@ -12,6 +12,11 @@ router.post("/",[alredyregisterauth], function (req, res) {
     controlregister.post(req, res);
 });
 
+router.get("/:token", function (req, res) {
+  controlregister.create(req, res);
+});
+
+
 module.exports = router;
 
 

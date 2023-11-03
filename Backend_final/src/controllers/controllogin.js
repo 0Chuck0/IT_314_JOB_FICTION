@@ -17,13 +17,16 @@ module.exports = {
     
             const check = await Register.findOne({email:req.body.email})
             const match = await bcrypt.compare(req.body.password,check.password);
+            
             if(match)
             {
 
                 res.cookie("jwt",check.token,{
                     maxAge:300000,
                     httpOnly:true,
+                    secure:false,
                 });
+
                 res.render("home"); 
 
             }

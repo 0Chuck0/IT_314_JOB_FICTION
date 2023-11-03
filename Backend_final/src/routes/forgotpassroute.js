@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const controlforgotpass = require("../controllers/controlforgotpass");
-const {Emailauth,otpauth} = require("../middlewares/auth");
+const {Emailauth} = require("../middlewares/auth");
 const changepassword = require("../controllers/changepassword");
 
-router.get("/verify/:id", function (req, res) {
+router.get("/:token", function (req, res) {
   changepassword.get(req, res);
 });
 
-router.post("/verify/:id", otpauth, function (req, res) {
+router.post("/:token", function (req, res) {
   changepassword.post(req, res);
 });
 

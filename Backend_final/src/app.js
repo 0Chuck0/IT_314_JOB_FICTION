@@ -16,12 +16,10 @@ conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`No Connection`)
 }) 
 const Register = require("./models/registers")
-const {Emailauth}  = require("./middlewares/auth");
+const {Emailauth,loggedinonly}  = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
-const OTPdata = require('./models/OTPdata');
-const {sendotp,verifyotp}  = require("./services/OTPsevices")
 
 const hbs = require('hbs')
 const { error } = require('console');
@@ -36,6 +34,7 @@ app.use(express.static(static_path))
                                     
 const template_path = path.join(__dirname,"../templates/views")
 app.set("views",template_path)
+//app.use(express.static(template_path))
 
 
 
@@ -92,8 +91,6 @@ app.post('/newpost', async(req,res)=>{
                 skills : req.body.skills,
             })
             const registered = await data.save();
-            // res.status(201)
-            // console.log(registered) 
             res.render("home")
         
     } catch (error) {
@@ -133,20 +130,60 @@ app.post("/jobs_main",async (req,res)=>{
 });
 
 
-
-app.post("/saveData",async(req,res)=>{
+app.post("/saveData",loggedinonly, async(req,res)=>{
     
     try{
-        console.log(req.body.id);
-        const check = await Jobpost.findOne({job_id:req.body.id})
+    // if(req.cookies.jwt){
+    // console.log("I am here");
+    //console.log(verify); 
+    //console.log(await Savedpost.find({job_id:req.body.id}).count());
+    if(await Savedpost.find({job_id:req.body.id}).count() == 0)
+    {
+       const check = await Jobpost.findOne({job_id:req.body.id})
+       const data = await Register.findOne({email:req.body.email});
+      // console.log(data);
+     //console.log(`Jobseeker name ${data.name} and Job id is ${check.job_id} ${verify._id}`);
+     //console.log(req.user_id);
+         
+       const myData = new Savedpost({
+          job_id : check.job_id,
+          job_seekerid : data._id,
+      })
+        
+      await Savedpost.insertMany([myData])
+      console.log("Added to the save list !")
+     }
+     else
+     {
+       console.log("already Added into the save list !")  
+     }
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+})
 
-        const myData = new savedPost({
-            job_id : check.job_id,
-            job_seekerid: 202101227
-        })
-       
-        await savedPost.insertMany([myData])
-        console.log("Added to save list !")
+app.post("/unsaveData",loggedinonly, async(req,res)=>{
+    
+    try{
+      // if(req.cookies.jwt){
+      // console.log("I am here delete"); 
+    //  const verify = jwt.verify(req.cookies.jwt,process.env.SECRET_KEY);
+      // console.log(verify);
+         if(await Savedpost.find({job_id:req.body.id}).count() == 1)
+         {
+           const check2 = await Savedpost.findOne({job_id:req.body.id})
+         //const data = await registerData.findOne({_id:verify._id});
+               
+         // console.log(`Jobseeker name ${data.name} and Job id is ${check2.job_id}`);
+           await Savedpost.deleteOne(check2);
+           console.log("Delete from save list !")
+         }
+         else
+         {
+           console.log("Not into the saved list !")   
+         }
     }
     catch(err)
     {
@@ -154,18 +191,6 @@ app.post("/saveData",async(req,res)=>{
     }
 })
 
-app.post("/unsaveData", async(req,res)=>{
-    
-    try{
-        const check2 = await savedPost.findOne({id:req.body.id})
-        await savedPost.deleteOne(check2);
-        console.log("Delete from save list !")
-    }
-    catch(err)
-    {
-        res.send(err)
-    }
-})
 
 
 app.listen(port,()=>{

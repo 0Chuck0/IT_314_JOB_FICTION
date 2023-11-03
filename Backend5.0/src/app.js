@@ -20,8 +20,6 @@ const {Emailauth}  = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
-const OTPdata = require('./models/OTPdata');
-const {sendotp,verifyotp}  = require("./services/OTPsevices")
 
 const hbs = require('hbs')
 const { error } = require('console');
@@ -36,6 +34,7 @@ app.use(express.static(static_path))
                                     
 const template_path = path.join(__dirname,"../templates/views")
 app.set("views",template_path)
+//app.use(express.static(template_path))
 
 
 

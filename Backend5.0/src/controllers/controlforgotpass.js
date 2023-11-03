@@ -1,5 +1,6 @@
 
-const {sendotp} = require("../services/OTPsevices");
+const {sendEmail} = require("../services/mailer");
+const Register = require("../models/registers");
 
 module.exports = {
 
@@ -11,10 +12,16 @@ module.exports = {
     post:async (req,res)=>{
 
         try{
+
+            const check = await Register.findOne({email:req.body.email});
+            
+            const token = check.token;
     
-            sendotp(req.body.email);
+            const message =`<h1> http://localhost:3000/forgotpass/${token} <h1>`;
+
+            sendEmail(req.body.email,"Set up new password",message);
     
-            res.render("forgotpass2",{id:req.body.email});
+            res.status(400).send('<script>alert("Set up newpassword link sent ,setup and after that do a login."); window.location = "/login";</script>');
     
         }
     

@@ -26,6 +26,10 @@ const UserScema=new mongoose.Schema({
     token:{
         type:String,
         required:true,
+    },
+    verified:{
+        type:Boolean,
+        required:true,
     }
 
 }) 

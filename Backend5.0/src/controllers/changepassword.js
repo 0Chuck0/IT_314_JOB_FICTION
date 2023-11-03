@@ -1,38 +1,52 @@
-const OTPdata  = require("../models/OTPdata");
 const bcrypt  = require("bcryptjs");
 const Register = require("../models/registers");
+const jwt = require("jsonwebtoken");
 
 module.exports = {
-    
+
     get:async (req,res)=>{
 
-        
-        const {id} = req.params;
-        
-       // console.log(id);
+        const {token} = req.params;
 
-
-        res.render("forgotpass2",{id:id});
-
+        res.render("forgotpass2",{token:token});
 
     },
-
     post:async (req,res)=>{
 
         try{
-                const {id} = req.params;
 
-                await OTPdata.findOneAndDelete({email:id});
-                const HashPassword  = await bcrypt.hash(req.body.Newpassword, 10);
-                await Register.findOneAndUpdate({email:id},{password:HashPassword});
+                                if(req.body.Newpassword !== req.body.conforimpassword) throw new Error("new password and confirm password is not matching");
 
-                res.status(400).send('<script>alert("Password updated successfully."); window.location = "/login";</script>');
+                                const {token} = req.params;
+
+                                let id = "";
+
+                                jwt.verify(token,process.env.SECRET_KEY,async(err,decoded)=>{
+                                    if(err)
+                                    {
+
+                                    res.status(400).send('<script>alert("You have not registred first register."); window.location = "/register";</script>');
+
+                                    }
+                                    else
+                                    {
+                                        id = decoded._id;
+                                    }
+                                });
+
+                                
+                                const HashPassword  = await bcrypt.hash(req.body.Newpassword, 10);
+
+                                await Register.findOneAndUpdate({_id:id},{password:HashPassword});
+
+
+                                res.status(400).send('<script>alert("Password updated successfully."); window.location = "/login";</script>');
     
         }
     
         catch(err){
-    
-            res.send(`${err}` + "<a href =\"/forgotpass\"> <br> click here to go back to Forgotpassword Page <br></a>");
+
+            res.status(400).send(`<script>alert("${err}."); window.location = "/login";</script>`);
     
         }
     

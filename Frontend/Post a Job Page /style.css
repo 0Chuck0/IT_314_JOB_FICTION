@@ -1,1 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Poppins:wght@300;400;500;600&family=Satisfy&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.containerr{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #4070f4;
+    /* background-color: #8500de; */
+    align-items: center;
+    justify-content: center;
+}
+
+.form-registration{
+    max-width: 60rem;
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 30px;
+    margin: 5rem;
+}
+
+h1{
+    font-size: 28px;
+    text-align: center;
+    font-weight: 600;
+    color: #232836;
+}
+
+.checks{
+    margin-top: -0.5rem;
+    margin-left: 0.5rem;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.register-btn{
+    width: 100%;
+    background-color: #4070f4;
+    /* background-color: #8500de; */
+    margin-top: 1.5rem;
+}
+
+.radioWrap{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.work-exp{
+    width: 22rem;
+    padding: 1rem;
+    display: flex;
+    background: #fff; 
+    border-radius: 0.5rem;
+    border: color #495057;;
+}
+
+.data{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: -0.5rem;
+}
+
+.data img{
+    width: 3rem;
+}
+
+.textWrap{
+    text-align: left;
+}
+
+.textWrap p{
+    color: grey;
+    font: 300;
+}
+
+.form-check{
+    padding: 0.5rem;
+}
+
+.form-check img{
+    width: 2.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.Type{
+    margin-top: 1rem;
+}
+
+.Work-Status{
+    margin-top: 0.7rem;
+}
+
+.Resume{
+    margin-top: 1rem;
+}
+
+.form-text{
+    font-size: small;
+    color: grey;
+}
+
+.title{
+    font-weight: 500;
+}
+
+.form-label{
+    font-weight: 500;
+}
+
+@media screen and (max-width: 500px) {
+    .radioWrap{
+        display: block;
+    }
+
+    .work-exp{
+        width: 18rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .checks{
+        display: block;
+    }
+}

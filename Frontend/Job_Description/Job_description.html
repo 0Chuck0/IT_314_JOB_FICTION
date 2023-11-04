@@ -67,9 +67,9 @@
                 <div class="candidates-list-fav-btn">
                     <div class="candidates-listing-btn mt-4 text-right">
                         <a href="profile.html" class="btn btn-outline btn-sm" target="_blank">Apply Now</a>
-                        <span class="btn btn-outline btn-sm">
-                            <!-- <i class="fa-regular fa-bookmark"></i> Save  -->
-                            <i class="fa-solid fa-bookmark"></i> </span>
+                        <span class="btn btn-sm">
+                            <i class="fa-regular fa-bookmark" id="saveIcon" onclick="toggleSaveState()"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -137,6 +137,19 @@
             </ul>
         </section>
     </div>
+    <script>
+        function toggleSaveState() {
+            const saveIcon = document.getElementById("saveIcon");
+            if (saveIcon.classList.contains("fa-solid")) {
+                saveIcon.classList.remove("fa-solid");
+                saveIcon.classList.add("fa-regular");
+            } else {
+                saveIcon.classList.remove("fa-regular");
+                saveIcon.classList.add("fa-solid");
+            }
+        }
+
+    </script>
 </body>
 
 </html>

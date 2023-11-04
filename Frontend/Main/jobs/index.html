@@ -62,7 +62,8 @@
                             </li>
                             <li><a href="../about.html">About Us</a></li>
                             <li class="d-lg-none"><a href="../Registration Form/index.html">Register</a></li>
-                            <li class="d-lg-none"><a href="../Login Form/index.html" style="font-size:18px !important;">Log
+                            <li class="d-lg-none"><a href="../Login Form/index.html"
+                                    style="font-size:18px !important;">Log
                                     In</a></li>
                         </ul>
                     </nav>
@@ -146,6 +147,35 @@
                                         </div>
                                     </div>
                                     <div class="col">
+                                        <h6 id="filter-button7" class="filter-button">Experiance</h6>
+                                        <div class="row col-11 slider">
+                                            <div class="col-3  range-min">
+                                                <h6 class="range-ends">0 years</h6>
+                                            </div>
+                                            <div class="range col">
+                                                <div class="range__content">
+
+                                                    <div class="range__slider">
+                                                        <div class="range__slider-line" id="range-line"></div>
+                                                    </div>
+
+                                                    <div class="range__thumb" id="range-thumb">
+                                                        <div class="range__value">
+                                                            <span class="range__value-number"
+                                                                id="range-number">50</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <input type="range" class="range__input" id="range-input" min="0"
+                                                        max="100" value="50" step="10">
+                                                </div>
+                                            </div>
+                                            <div class="col-3 range-max">
+                                                <h6 class="range-ends">5 years</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
                                         <h6 id="filter-button2" class="filter-button">Locations</h6>
                                         <div id="options2" class="options col-10">
                                             <input id="f2-opt1" type="checkbox" value="Gurgaon">
@@ -224,10 +254,9 @@
                                             <br>
                                             <input id="f6-opt4" type="checkbox" value="WD">
                                             <label for="f6-opt4">Web Development</label>
-
                                         </div>
-
                                     </div>
+
                                 </form>
                             </div>
 
@@ -254,9 +283,9 @@
                                   </div>
                                   </script>
 
-                                  
 
-                            <div class="col container jobListing-container">
+
+                            <div id="jobListing-container" class="col container jobListing-container">
                                 <div class="row jobs-card">
                                     <div class="col-2 company-logo">
                                         <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">

@@ -1,6 +1,6 @@
 const Register  = require("../models/registers");
-const bcrypt    = require("bcryptjs");
-const jwt =        require("jsonwebtoken"); 
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken"); 
 require('dotenv').config()
 
 const {sendEmail} = require("../services/mailer");
@@ -14,7 +14,7 @@ module.exports = {
     },
     post:async(req,res)=>{
         try { 
-
+  
                 const data = req.body;
 
                 if(req.body.password===req.body.cpassword){
@@ -35,7 +35,7 @@ module.exports = {
         
                 const id = checking._id;
         
-                const token = jwt.sign({_id:id},process.env.SECRET_KEY);
+                const token = jwt.sign({_id:id},'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
         
                 await Register.updateOne({_id:id},{$set:{token:token}});
 
@@ -68,7 +68,7 @@ module.exports = {
 
         let id = "";
 
-        jwt.verify(token,process.env.SECRET_KEY,async(err,decoded)=>{
+        jwt.verify(token,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
             if(err)
             {
 

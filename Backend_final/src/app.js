@@ -12,7 +12,7 @@ const bcrypt = require("bcryptjs")
 
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`Connection Successfully....`)
-}).catch((e)=>{
+}).catch((e)=>{x
     console.log(`No Connection`)
 }) 
 const Register = require("./models/registers")
@@ -37,17 +37,21 @@ app.set("views",template_path)
 //app.use(express.static(template_path))
 
 
-
 const forgotpassroute = require("./routes/forgotpassroute");
 const loginroute = require("./routes/loginroute");
 const registerroute = require("./routes/registerroute");
 const homeroute = require("./routes/homeroute");
-
+const savepostroute = require("./routes/savepostroute");
+const unsavepostroute = require("./routes/unsavepostroute");
+const job_descriptionroute = require("./routes/job_descriptionroute");
+const myprofileroute = require("./routes/myprofileroute");
 
 app.use("/forgotpass",forgotpassroute);
 app.use("/login",loginroute);
 app.use("/register",registerroute);
 app.use("/home",homeroute);
+app.use("/job_description",job_descriptionroute);
+app.use("/myprofile",myprofileroute);
 
 app.get("/",(req,res)=>{
     res.render("landingpage")
@@ -129,68 +133,8 @@ app.post("/jobs_main",async (req,res)=>{
 
 });
 
-
-app.post("/saveData",loggedinonly, async(req,res)=>{
-    
-    try{
-    // if(req.cookies.jwt){
-    // console.log("I am here");
-    //console.log(verify); 
-    //console.log(await Savedpost.find({job_id:req.body.id}).count());
-    if(await Savedpost.find({job_id:req.body.id}).count() == 0)
-    {
-       const check = await Jobpost.findOne({job_id:req.body.id})
-       const data = await Register.findOne({email:req.body.email});
-      // console.log(data);
-     //console.log(`Jobseeker name ${data.name} and Job id is ${check.job_id} ${verify._id}`);
-     //console.log(req.user_id);
-         
-       const myData = new Savedpost({
-          job_id : check.job_id,
-          job_seekerid : data._id,
-      })
-        
-      await Savedpost.insertMany([myData])
-      console.log("Added to the save list !")
-     }
-     else
-     {
-       console.log("already Added into the save list !")  
-     }
-    }
-    catch(err)
-    {
-        console.log(err);
-    }
-})
-
-app.post("/unsaveData",loggedinonly, async(req,res)=>{
-    
-    try{
-      // if(req.cookies.jwt){
-      // console.log("I am here delete"); 
-    //  const verify = jwt.verify(req.cookies.jwt,process.env.SECRET_KEY);
-      // console.log(verify);
-         if(await Savedpost.find({job_id:req.body.id}).count() == 1)
-         {
-           const check2 = await Savedpost.findOne({job_id:req.body.id})
-         //const data = await registerData.findOne({_id:verify._id});
-               
-         // console.log(`Jobseeker name ${data.name} and Job id is ${check2.job_id}`);
-           await Savedpost.deleteOne(check2);
-           console.log("Delete from save list !")
-         }
-         else
-         {
-           console.log("Not into the saved list !")   
-         }
-    }
-    catch(err)
-    {
-        res.send(err)
-    }
-})
-
+app.use("/saveData",savepostroute);
+app.use("/unsaveData",unsavepostroute);
 
 
 app.listen(port,()=>{

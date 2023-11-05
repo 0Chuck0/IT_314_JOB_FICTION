@@ -1,8 +1,7 @@
 const express = require("express");
+const {alredyregisterauth} = require("../middlewares/auth");
 const router = express.Router();
 const controlregister= require("../controllers/controlregister");
-const {alredyregisterauth} = require("../middlewares/auth");
-
 
 router.get("/",function (req, res) {
   controlregister.get(req, res);

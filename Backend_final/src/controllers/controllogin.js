@@ -1,5 +1,5 @@
-const Register  = require("../models/registers");
-const bcrypt    = require("bcryptjs");
+const Register = require("../models/registers");
+const bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");

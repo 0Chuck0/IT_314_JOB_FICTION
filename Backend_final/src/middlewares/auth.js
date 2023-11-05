@@ -1,5 +1,5 @@
 const Register = require("../models/registers");
-const jwt =        require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");
@@ -43,28 +43,25 @@ async function Emailauth(req , res , next){
 async function loggedinonly(req , res , next){
 
     if(req.cookies.jwt){
-                jwt.verify(req.cookies.jwt,process.env.SECRET_KEY,async(err,decoded)=>{
+                jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
                 if(err)
                 {
-
                 return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
-
                 }
                 else
                 {
                     const check = await Register.findOne({_id:decoded._id});
-
                     req.body.email = check.email;
+                    
+
+                    if(check.email)
+                       next();
+
                 }
                 });
     }else{
-
-    return res.status(400).send('<script>alert("You have to login first."); window.location = "/login";</script>');
-
+        return res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
     }
-
-
-next ();
 
 }
 

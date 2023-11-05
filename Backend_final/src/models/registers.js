@@ -19,6 +19,14 @@ const UserScema=new mongoose.Schema({
         required:true,
         unique:true
     },
+    gender:{
+        type:String,
+        required:true,
+    },
+    DOB:{
+        type: Date,
+        required:true,
+    },
     token:{
         type:String,
         required:true,

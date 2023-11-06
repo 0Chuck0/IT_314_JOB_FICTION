@@ -172,11 +172,11 @@
                 <div class="card">
                     <h2>ABOUT</h2>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_skills">Skills</label></span>
+                                for="candidate_technical_skills">Technical Skills</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty">
                             <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
-                            <select name="skills" id="candidate_skills" multiple>
+                            <select name="skills" id="candidate_technical_skills" multiple>
                                 <option value="">--Please choose an option--</option>
                                 <option value="C">C</option>
                                 <option value="C++">C++</option>
@@ -189,6 +189,21 @@
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_language_skills">Language Skills</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty">
+                            <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
+                            <select name="skills" id="candidate_language_skills" multiple>
+                                <option value="">--Please choose an option--</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Gujarati">Gujarati</option>
+                                <option value="Urdu">Urdu</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_resume">Resume</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty"><input class="differentinput" type="url"
@@ -200,76 +215,214 @@
                                 for="candidate_experience">Experience</label></span>
                     </div>
                     <div class="widgetCont">
-                        <span class="empty">
-                            <div>
+                        <span class="empty candidategender">
+                            <span>
                                 <input type="radio" id="Fresher" name="experience" value="fresher" checked />
                                 <label for="Fresher">Fresher</label>
+                            </span>
+
+                            <span>
+                                <input type="radio" id="Experienced" name="experience" value="experienced" />
+                                <label for="Experienced">Experienced</label>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>PROJECT</h2>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_project">Name/Title</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
+                                id="candidate_project" name="project">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>EDUCATION</h2>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_highest_education">Highest Education/Degree</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
+                                id="candidate_highest_education" name="highest_education" placeholder="Eg. Graduate">
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_collage">University/Collage</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
+                                id="candidate_collage" name="collage"
+                                placeholder="Enter your Collage or University Name">
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_study">Field of Study</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty">
+                            <select name="study" id="candidate_study" class="differentinput">
+                                <option value="">--Please choose an option--</option>
+                                <option value="B.Tech">B.Tech - Bachelor of Technology</option>
+                                <option value="M.Tech">M.Tech - Master of Technology</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_collage">Class XII Percentage</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
+                                id="candidate_class12" name="class12" min="0" max="100" step="0.01">
+                        </span>
+                    </div>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_class10">Class X Percentage</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
+                                id="candidate_collage" name="class10" min="0" max="100" step="0.01">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card last">
+                    <h2>RECOMMENDATION</h2>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_desired_job">Desired Job Type</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty">
+                            <select name="desired_job" id="candidate_desired_job" class="differentinput" multiple>
+                                <option value="">--Please choose an option--</option>
+                                <option value="Data Scientist">Data Scientist</option>
+                                <option value="Systems Analyst">Systems Analyst</option>
+                                <option value="Data Engineer">Data Engineer</option>
+                                <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                                <option value="Market Research Analyst">Market Research Analyst</option>
+                                <option value="Business Intelligence (BI) Analyst">Business Intelligence (BI) Analyst
+                                </option>
+                                <option value="IT Support Specialist">IT Support Specialist</option>
+                                <option value="Software Developer">Software Developer</option>
+                                <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                                <option value="Marketing Analyst">Marketing Analyst</option>
+                                <option value="Web Developer">Web Developer</option>
+                                <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                                <option value="Product Manager">Product Manager</option>
+                                <option value="Database Administrator">Database Administrator</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_expected_salary">Expected Salary Range</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty">
+                            <select name="desired_salary" id="candidate_expected_salary"
+                                class="differentinput .mult-select-tag">
+                                <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
+                                <option value="₹50,000 - ₹80,000">₹50,000 - ₹80,000</option>
+                                <option value="₹80,000 - ₹1,00,000">₹80,000 - ₹1,00,000</option>
+                                <option value="₹1,00,000 - ₹1,50,000">₹1,00,000 - ₹1,50,000</option>
+                                <option value="₹1,50,000 - ₹2,00,000">₹1,50,000 - ₹2,00,000</option>
+                                <option value="₹2,00,000 +">₹2,00,000 +</option>
+                            </select>
+                        </span>
+                    </div>
+                    <!-- <span class="empty">
+                        <select name="desired_job" id="candidate_desired_job" class="differentinput hidden" multiple="">
+                            <option value="">--Please choose an option--</option>
+                            <option value="Data Scientist">Data Scientist</option>
+                            <option value="Systems Analyst">Systems Analyst</option>
+                            <option value="Data Engineer">Data Engineer</option>
+                            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
+                            <option value="Market Research Analyst">Market Research Analyst</option>
+                            <option value="Business Intelligence (BI) Analyst">Business Intelligence (BI) Analyst
+                            </option>
+                            <option value="IT Support Specialist">IT Support Specialist</option>
+                            <option value="Software Developer">Software Developer</option>
+                            <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                            <option value="Marketing Analyst">Marketing Analyst</option>
+                            <option value="Web Developer">Web Developer</option>
+                            <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
+                            <option value="Product Manager">Product Manager</option>
+                            <option value="Database Administrator">Database Administrator</option>
+                        </select>
+                        <div class="mult-select-tag">
+                            <div class="wrapper">
+                                <div class="body rounded">
+                                    <div class="input-container"></div>
+                                    <div class="btn-container"><button type="button"><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <polyline points="18 15 12 21 6 15"></polyline>
+                                            </svg></button></div>
+                                </div>
+                            </div>
+                            <div class="drawer hidden rounded">
+                                <inputbody class="input-body"><input class="input" placeholder="Search..."></inputbody>
+                                <ul>
+                                    <li data-value="">--Please choose an option--</li>
+                                    <li data-value="Data Scientist">Data Scientist</li>
+                                    <li data-value="Systems Analyst">Systems Analyst</li>
+                                    <li data-value="Data Engineer">Data Engineer</li>
+                                    <li data-value="Machine Learning Engineer">Machine Learning Engineer</li>
+                                    <li data-value="Market Research Analyst">Market Research Analyst</li>
+                                    <li data-value="Business Intelligence (BI) Analyst">Business Intelligence (BI)
+                                        Analyst</li>
+                                    <li data-value="IT Support Specialist">IT Support Specialist</li>
+                                    <li data-value="Software Developer">Software Developer</li>
+                                    <li data-value="Cybersecurity Analyst">Cybersecurity Analyst</li>
+                                    <li data-value="Marketing Analyst">Marketing Analyst</li>
+                                    <li data-value="Web Developer">Web Developer</li>
+                                    <li data-value="Cybersecurity Analyst">Cybersecurity Analyst</li>
+                                    <li data-value="Product Manager">Product Manager</li>
+                                    <li data-value="Database Administrator">Database Administrator</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </span> -->
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_preferred_location">Preferred Work Location</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty">
+                            <select name="study" id="candidate_preferred_location" class="differentinput" multiple>
+                                <option value="Pune">Pune</option>
+                                <option value="Hydrabad">Hydrabad</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Any">PAN India</option>
+                            </select>
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_experience">Desired Employment Type</label></span>
+                    </div>
+                    <div class="widgetCont">
+                        <span class="empty candidategender">
+                            <div>
+                                <input type="radio" id="Intern" name="employment" value="intern" checked />
+                                <label for="Intern">Intern</label>
                             </div>
 
                             <div>
-                                <input type="radio" id="Experienced" name="experience" value="experienced" />
-                                <label for="Experienced">Experienced</label>
+                                <input type="radio" id="Part_time" name="employment" value="part_time" />
+                                <label for="Part_time">Part Time</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="Full_time" name="employment" value="full_time" />
+                                <label for="Full_time">Full Time</label>
                             </div>
                         </span>
                     </div>
                 </div>
-                <!-- <div class="card">
-                <h2>PROJECT</h2><i class="fa fa-pen fa-xs edit"></i>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
+                <div id="submit">
+                    <button type="submit">Save</button>
                 </div>
-                <div class="widgetCont"><span class="empty">JOB FICTION, ONLINE TRADING</span>
-                </div>
-            </div> -->
-                <!-- <div class="card">
-                <h2>EDUCATION</h2><i class="fa fa-pen fa-xs edit"></i>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Graduate</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/Collage</span>
-                </div>
-                <div class="widgetCont"><span class="empty">DA-IICT</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
-                </div>
-                <div class="widgetCont"><span class="empty">B.Tech</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Add Details</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Add Details</span>
-                </div>
-            </div> -->
-
-                <!-- <div class="card">
-                <h2>RECOMMENDATION</h2><i class="fa fa-pen fa-xs edit"></i>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Job Type</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Software Developer</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Expected salary</span>
-                </div>
-                <div class="widgetCont"><span class="empty">1 Lakh</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Preferred Work Location</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Pune</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired employment type</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Full Time/Part Time</span>
-                </div>
-            </div> -->
             </div>
         </div>
     </form>
@@ -289,7 +442,10 @@
     <script src="js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <script>
-        new MultiSelectTag('candidate_skills')  // id
+        new MultiSelectTag('candidate_technical_skills')  // id
+        new MultiSelectTag('candidate_language_skills')  // id
+        new MultiSelectTag('candidate_desired_job')  // id
+        new MultiSelectTag('candidate_preferred_location')  // id
     </script>
     <!-- <script>
         new MultiSelectTag('countries', {

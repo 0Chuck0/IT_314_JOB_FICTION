@@ -41,9 +41,8 @@
                 <a href="#" class="label-c">Full-time</a>
             </div>
             <div>
-                {{!-- <a href="job_description" class="label-c">jobdescription</a> --}}
-                <button id="save_{{@index}}" onclick="saveData({{this.job_id}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
-                <button id="unsave_{{@index}}" onclick="unsaveData({{this.job_id}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button>
+                <button id="jobd_{{@index}}" onclick="jobdes({{this.job_id}})" type="submit" name="butt" aria-placeholder="Job Description">Job Description</button>
+               {{!--- <button id="unsave_{{@index}}" onclick="unsaveData({{this.job_id}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
             </div>
             <div class="job-posted">
                 Posted 2 mins ago
@@ -70,46 +69,31 @@
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+
     <script>
 
-        async function saveData(job_id) {
+        async function jobdes(job_id) {
         try {
             var data = new URLSearchParams({"id":job_id});
-            const response = await fetch("http://localhost:3000/saveData", {
-                                method: "post",
+            const response = await fetch("http://localhost:3000/job_description", {
+                                method:"POST",
                                 body:data,
-                            }).then((response) => {
-                                if (response.ok) {
-                                    
-                                    return response.json();
-                                } else {
-                                    throw new Error("NETWORK RESPONSE ERROR");
-                                }
-                            }).catch((error) => console.error("FETCH ERROR:", error));
-                            } catch (err) {
-                                console.log(err);
+                            });
+                            
+                            if (response.ok) {
+                                const htmlContent = await response.text();
+                                document.open();
+                                document.write(htmlContent);
+                                document.close();
+                            } else {
+                                throw new Error("NETWORK RESPONSE ERROR");
                             }
+                            
+            } catch (err) {
+                console.log(err);
+            }
         }
-
-        async function unsaveData(id) {
-        try {
-            var data = new URLSearchParams({"id":id});
-            const response = await fetch("http://localhost:3000/unsaveData", {
-                                method: "post",
-                                body:data,
-                            }).then((response) => {
-                                if (response.ok) {
-                                    
-                                    return response.json();
-                                } else {
-                                    throw new Error("NETWORK RESPONSE ERROR");
-                                }
-                            }).catch((error) => console.error("FETCH ERROR:", error));
-                            } catch (err) {
-                                console.log(err);
-                            }
-        }
-
-    </script>
+     
+    </script> 
 </body>
 </html>

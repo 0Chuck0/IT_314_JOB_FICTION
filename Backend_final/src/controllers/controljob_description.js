@@ -5,7 +5,7 @@ app.use(cookieParser());
 
 module.exports = {
 
-    get:async (req,res)=>{
-         res.render("job_description")
+    post:async (req,res)=>{
+        res.render("job_description",{jobid : req.body.id})
     }
 }

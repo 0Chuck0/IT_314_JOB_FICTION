@@ -57,7 +57,6 @@ app.get("/",(req,res)=>{
     res.render("landingpage")
 })
 
-
 app.get("/companyhomepage",(req,res)=>{
     res.render("companyhomepage")
 })
@@ -119,7 +118,7 @@ app.get('/jobsmain/:title',async (req, res) => {
     // Fetch job data based on the requested title using await
     const jobsData = await Jobpost.find({ title: requestedTitle }).exec();
         
-    res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template
+    res.render("jobs_main", {jobsData}); // Pass the fetched data to the 'jobs.hbs' template
 });
   
 

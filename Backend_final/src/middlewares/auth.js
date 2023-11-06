@@ -53,14 +53,13 @@ async function loggedinonly(req , res , next){
                     const check = await Register.findOne({_id:decoded._id});
                     req.body.email = check.email;
                     
-
                     if(check.email)
                        next();
 
                 }
                 });
     }else{
-        return res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
+        res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
     }
 
 }

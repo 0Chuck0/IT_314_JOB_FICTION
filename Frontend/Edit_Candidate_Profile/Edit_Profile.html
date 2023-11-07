@@ -189,7 +189,7 @@
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_language_skills">Language Skills</label></span>
+                                for="candidate_language_skills">Language</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty">
                             <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
@@ -276,14 +276,14 @@
                                 for="candidate_collage">Class XII Percentage</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-                                id="candidate_class12" name="class12" min="0" max="100" step="0.01">
+                                id="candidate_class12" name="class12" min="0" max="100" step="0.01" placeholder="Ex. 99.99">
                         </span>
                     </div>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_class10">Class X Percentage</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-                                id="candidate_collage" name="class10" min="0" max="100" step="0.01">
+                                id="candidate_collage" name="class10" min="0" max="100" step="0.01" placeholder="Ex. 99.99">
                         </span>
                     </div>
                 </div>
@@ -321,6 +321,7 @@
                     <div class="widgetCont"><span class="empty">
                             <select name="desired_salary" id="candidate_expected_salary"
                                 class="differentinput .mult-select-tag">
+                                <option value="">--Please choose an option--</option>
                                 <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
                                 <option value="₹50,000 - ₹80,000">₹50,000 - ₹80,000</option>
                                 <option value="₹80,000 - ₹1,00,000">₹80,000 - ₹1,00,000</option>
@@ -420,8 +421,8 @@
                         </span>
                     </div>
                 </div>
-                <div id="submit">
-                    <button type="submit">Save</button>
+                <div class="submitbtn">
+                    <button id="submitbutton" type="submit">Save</button>
                 </div>
             </div>
         </div>

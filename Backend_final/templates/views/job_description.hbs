@@ -67,8 +67,9 @@
                 <div class="candidates-list-fav-btn">
                     <div class="candidates-listing-btn mt-4 text-right">
                         <a href="profile.html" class="btn btn-outline btn-sm" target="_blank">Apply Now</a>
-                        <button id="save_{{@index}}" onclick="saveData({{jobid}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
-                        <button id="unsave_{{@index}}" onclick="unsaveData({{jobid}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button>
+                        <span class="btn btn-sm">
+                            <i class="fa-regular fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})" onchange="handleSaveChange()"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -137,59 +138,52 @@
         </section>
     </div>
      <script>
-
-        async function saveData(job_id) {
-        try {
-            var data = new URLSearchParams({"id":job_id});
-            const response = await fetch("http://localhost:3000/saveData", {
-                                method: "POST",
-                                body:data,
-                            });/*.then((response) => {
-                                if (response.ok) {
-                                    
-                                    return response.json();
-                                } else {
-                                    throw new Error("NETWORK RESPONSE ERROR");
-                                }
-                            }).catch((error) => console.error("FETCH ERROR:", error));*/
-                       if (response.ok) {
-                           const textContent = await response.text();
-            
-            // Execute scripts using eval
-                           const scriptTags = textContent.match(/<script>(.*?)<\/script>/g);
-                          if(scriptTags) {
-                              const htmlContent = await response.text();
-                              document.open();
-                              document.write(htmlContent);
-                              document.close();
-                           }else{
-                              throw new Error("NETWORK RESPONSE ERROR");
-                           }
+        
+        async function toggleSaveState(id) {
+            const saveIcon = document.getElementById("saveIcon");
+            if (saveIcon.classList.contains("fa-solid")) {
+                saveIcon.classList.remove("fa-solid");
+                saveIcon.classList.add("fa-regular");
+                try {
+                    var data = new URLSearchParams({"id":id});
+                    const response = await fetch("http://localhost:3000/unsaveData", {
+                            method:"POST",
+                            body:data,
+                    });
+                    if(response.ok) {
+                        const htmlContent = await response.text();
+                        document.open();
+                        document.write(htmlContent);
+                        document.close();
+                    }else{
+                        throw new Error("NETWORK RESPONSE ERROR");  
+                    }
+                }catch(err){
+                    console.log(err);
+                }
+            } else {
+                saveIcon.classList.remove("fa-regular");
+                saveIcon.classList.add("fa-solid");
+                try {
+                    var data = new URLSearchParams({"id":id});
+                    const response = await fetch("http://localhost:3000/saveData", {
+                            method: "POST",
+                            body:data,
+                    });
+                    if(response.ok){
+                
+                        const htmlContent = await response.text();
+                        document.open();
+                        document.write(htmlContent);
+                        document.close();
+                    }else{
+                        throw new Error("NETWORK RESPONSE ERROR");           
+                    }
                             
-            } catch (err) {
-                console.log(err);
+                } catch (err) {
+                        console.log(err);
+                }
             }
-        }
-
-        async function unsaveData(id) {
-        try {
-            var data = new URLSearchParams({"id":id});
-            const response = await fetch("http://localhost:3000/unsaveData", {
-                                method: "POST",
-                                body:data,
-                            });
-                            if (response.ok) {
-                                const htmlContent = await response.text();
-                                document.open();
-                                document.write(htmlContent);
-                                document.close();
-                            } else {
-                                throw new Error("NETWORK RESPONSE ERROR");
-                            }
-                            
-                            } catch (err) {
-                                console.log(err);
-                            }
         }
 
     </script>

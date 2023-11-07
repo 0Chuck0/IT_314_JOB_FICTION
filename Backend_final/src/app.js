@@ -50,7 +50,11 @@ const job_descriptionroute = require("./routes/job_descriptionroute");
 const myprofileroute = require("./routes/myprofileroute");
 const jobroute=require("./routes/jobsroute")
 const edit_profile_route = require("./routes/edit_profile_route");
+const savelistroute = require("./routes/savelistroute");
 
+
+app.use("/saveData",savepostroute);
+app.use("/unsaveData",unsavepostroute);
 app.use("/forgotpass",forgotpassroute);
 app.use("/login",loginroute);
 app.use("/register",registerroute);
@@ -59,6 +63,8 @@ app.use("/job_description",job_descriptionroute);
 app.use("/myprofile",myprofileroute);
 app.use("/jobs_1",jobroute);
 app.use("/edit_profile",edit_profile_route);
+app.use("/saved_jobs",savelistroute);
+
 
 app.get("/",(req,res)=>{
     res.render("landingpage")
@@ -139,8 +145,7 @@ app.get("/landingpage",async(req,res)=>{
 
 // });
 
-app.use("/saveData",savepostroute);
-app.use("/unsaveData",unsavepostroute);
+
 
 
 app.listen(port,()=>{

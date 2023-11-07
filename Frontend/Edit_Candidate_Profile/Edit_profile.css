@@ -12,7 +12,11 @@ body {
     background-color: #2047b43a;
     min-height: 100vh;
     height: max-content;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
     padding-bottom: 50px;
 }
 
@@ -35,22 +39,37 @@ body {
     border-left: 1px solid var(--border-color);
 } */
 /* personal */
+<<<<<<< HEAD
 .submitbtn {
     text-align: center;
 }
 
 .widgetHead {
+=======
+#submit{
+    text-align: center;
+}
+.widgetHead{
+>>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
     font-size: 20px;
     /* font-size: 16px; */
     color: #000;
     font-weight: 700;
 }
 
+<<<<<<< HEAD
 .widgetCont {
     margin: 10px 0 15px 0px;
     /* --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
     --border-color: rgb(218, 221, 224); */
+=======
+.widgetCont{
+    margin:10px 0 15px 0px;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+    --border-color: rgb(218, 221, 224);
+>>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
 }
 
 

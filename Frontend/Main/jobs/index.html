@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 </head>
 
 <body id="top">
@@ -46,8 +45,8 @@
         <!-- NAVBAR -->
         <header class="site-navbar mt-3">
             <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="site-logo col-6 p-3" style=" background-color: #555;"><a
+                <div class="row align-items-center" style=" background-color: #e29c9c;">
+                    <div class="site-logo col-6 p-3" style=" background-color: #f19191;"><a
                             href="../index.html">JOBfiction</a></div>
 
                     <nav class="mx-auto site-navigation">
@@ -69,7 +68,7 @@
                     </nav>
 
                     <div class="right-cta-menu text-right d-flex aligin-items-center col-6 p-3"
-                        style=" background-color:#555;">
+                        style=" background-color:#f19191;">
                         <div class="ml-auto">
                             <a href="../Registration Form/index.html"
                                 class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
@@ -85,10 +84,10 @@
         </header>
 
         <!-- HOME -->
-        <section class="home-section overlay" id="home-section">
+        <section class="home-section" id="home-section">
 
             <div class="container main-container">
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-md-12  search-bar">
                         <form method="post" class="search-jobs-form">
                             <div class="row col-10 mb-5 search-bar-row">
@@ -122,10 +121,10 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>-->
                 <div class="main-container container row">
 
-                    <div class="container-fluid text-center">
+                    <div id="filter-container" class="container-fluid text-center filter-container">
                         <div class="row">
                             <div class="col-4 form-class">
                                 <form id="filter-form" class="col-10" onchange="display_jobs()">
@@ -257,6 +256,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="col">
+                                        <h6 id="filter-button8" class="filter-button">Salary(per month)</h6>
+                                        <div id="options8" class="options col-10">
+                                            <input id="f8-opt1" type="checkbox" value="'min':'0','max':'25000'">
+                                            <label for="f8-opt1">₹0 - ₹25,000</label>
+                                            <br>
+                                            <input id="f8-opt2" type="checkbox" value="'min':'25000','max':'50000'">
+                                            <label for="f8-opt2">₹25,000 - ₹50,000</label>
+                                            <br>
+                                            <input id="f8-opt3" type="checkbox" value="'min':'50000','max':'100000'">
+                                            <label for="f8-opt3">₹50,000 - ₹1,00,000</label>
+                                            <br>
+                                            <input id="f8-opt3" type="checkbox" value="'min':'100000','max':''">
+                                            <label for="f8-opt3">>₹1,00,000</label>
+                                        </div>
+                                    </div>
+
                                 </form>
                             </div>
 
@@ -285,7 +301,7 @@
 
 
 
-                            <div id="jobListing-container" class="col container jobListing-container">
+                            <div id="jobListing-container" class="col container jobListing-container scroll">
                                 <div class="row jobs-card">
                                     <div class="col-2 company-logo">
                                         <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
@@ -305,7 +321,139 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
 
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>Tesla</h4>
+                                        <h3>Mechanical Engineer</h3>
+                                        <p>Bangalore, Hyderabad, Noida</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
+                                        </div>
+                                        <div class="row labels">
+                                            <a href="#" class="label-c">Internship</a>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="row jobs-card">
                                     <div class="col-2 company-logo">
                                         <img src="../Images/Tesla.svg" alt="Company-logo" class="job-profile">
@@ -480,6 +628,7 @@
 
 
     <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="script.js"></script>
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>

@@ -30,6 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
         rangeNumber.textContent = rangeInput.value/20
     }
     rangeInputSlider();
+
+    //Dynamic height of the job-card container
+    let filter_container = document.querySelector("#filter-form");
+    let job_container = document.querySelector(".scroll");
+
+    job_container.style.height = getComputedStyle(filter_container).height;
+
+
     const Joblistcontainer = document.getElementById('jobListing-container');
     const jobListingTemplate = Handlebars.compile(document.getElementById('job-template').innerHTML);
 
@@ -63,5 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Assign the func function to the onchange event
-    document.getElementById("filter-form").onchange = func;
+    document.getElementById("filter-form").onchange = display_jobs;
 })

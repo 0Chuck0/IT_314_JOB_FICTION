@@ -16,9 +16,13 @@ body {
 }
 
 .main-container {
-    margin: auto !important;
+    margin:auto;
     max-width: 1600px !important;
 
+}
+
+.filter-container{
+    margin-top: 8rem;
 }
 
 header {
@@ -206,12 +210,21 @@ body {
 
 /*------------------------------------------------------------------*/
 
+.scroll{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+}
 .jobs-card {
     text-align: left;
     border-radius: 8px;
     margin-bottom: 1em;
-    padding-top: 0.75rem;
+    padding-top: 1rem;
+    padding-bottom:1rem;
     background-color: #ffffff;
+    
 }
 
 .jobs-card:hover {
@@ -262,6 +275,12 @@ body {
 }
 
 #f7-opt1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uk-pagination{
+    background-color: rgb(57, 55, 53);
     margin-left: auto;
     margin-right: auto;
 }

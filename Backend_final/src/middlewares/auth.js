@@ -59,7 +59,7 @@ async function loggedinonly(req , res , next){
                 }
                 });
     }else{
-        res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
+       return res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
     }
 
 }

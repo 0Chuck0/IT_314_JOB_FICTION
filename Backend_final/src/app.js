@@ -45,6 +45,7 @@ const savepostroute = require("./routes/savepostroute");
 const unsavepostroute = require("./routes/unsavepostroute");
 const job_descriptionroute = require("./routes/job_descriptionroute");
 const myprofileroute = require("./routes/myprofileroute");
+const savelistroute = require("./routes/savelistroute");
 
 app.use("/forgotpass",forgotpassroute);
 app.use("/login",loginroute);
@@ -52,6 +53,7 @@ app.use("/register",registerroute);
 app.use("/home",homeroute);
 app.use("/job_description",job_descriptionroute);
 app.use("/myprofile",myprofileroute);
+app.use("/save_list",savelistroute);
 
 app.get("/",(req,res)=>{
     res.render("landingpage")
@@ -113,11 +115,11 @@ app.get("/jobs_main",(req,res)=>{
 
 app.get('/jobsmain/:title',async (req, res) => {
         
-    const requestedTitle = req.params.title;
-        
+    const requestedTitle = req.params.title;                                   
+                                                                                                        
     // Fetch job data based on the requested title using await
-    const jobsData = await Jobpost.find({ title: requestedTitle }).exec();
-        
+    const jobsData = await Jobpost.find({ title: requestedTitle }).exec();                                      
+                                
     res.render("jobs_main", {jobsData}); // Pass the fetched data to the 'jobs.hbs' template
 });
   
@@ -127,8 +129,7 @@ app.post("/jobs_main",async (req,res)=>{
     // Fetch job data based on the requested title using await
     const jobsData = await Jobpost.find({ job_title : requestedTitle }).exec();
     //console.log(jobsData);
-    res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template
-            
+    res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template         
 
 });
 

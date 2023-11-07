@@ -24,7 +24,6 @@ module.exports = {
                   job_id : req.body.id,
                   job_seekerid : data._id,
               })
-                
               await Savedpost.insertMany([myData])
               console.log("Added to the save list !")
              }
@@ -35,9 +34,8 @@ module.exports = {
             }
             catch(err)
             {
-                console.log(err);
+              console.log(err);
             }
-    
     },
    
 }

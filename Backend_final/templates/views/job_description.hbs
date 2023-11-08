@@ -15,9 +15,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
         integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/6c6d85d0b7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style_jobDescription.css">
+    <link rel="stylesheet" href="/css/style_jobDescription.css">
 
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -42,7 +42,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="candidates-img float-left mr-4">
-                    <img src="job_logo_3.jpg" alt="" class="img-fluid d-block rounded">
+                    <img src="images/job_logo_3.jpg" alt="" class="img-fluid d-block rounded">
                 </div>
                 <div class="candidates-list-desc job-single-meta  pt-2">
                     <h5 class="mb-2 f-19"><a href="#" class="text-dark">Amazon</a></h5>
@@ -67,9 +67,11 @@
                 <div class="candidates-list-fav-btn">
                     <div class="candidates-listing-btn mt-4 text-right">
                         <a href="profile.html" class="btn btn-outline btn-sm" target="_blank">Apply Now</a>
+                        {{!-- <button id="save_{{@index}}" onclick="saveData({{jobid}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
+                        <button id="unsave_{{@index}}" onclick="unsaveData({{jobid}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
                         <span class="btn btn-sm">
-                            <i class="fa-regular fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})" onchange="handleSaveChange()"></i>
-                        </span>
+                            <i class="{{how}} fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})"></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -137,6 +139,7 @@
             </ul>
         </section>
     </div>
+
      <script>
         
         async function toggleSaveState(id) {
@@ -151,12 +154,18 @@
                             body:data,
                     });
                     if(response.ok) {
-                        const htmlContent = await response.text();
-                        document.open();
-                        document.write(htmlContent);
-                        document.close();
-                    }else{
-                        throw new Error("NETWORK RESPONSE ERROR");  
+                       const htmlContent = await response.text();
+                       document.open();
+                       document.write(htmlContent);
+                       document.close();
+                    }else {
+                      if(response.status === 400) {
+                        // Handle the case where the user is not logged in.
+                        alert("You have to log in first.");
+                        window.location = "/login";
+                     }else{
+                       throw new Error("NETWORK RESPONSE ERROR");
+                     }
                     }
                 }catch(err){
                     console.log(err);
@@ -171,21 +180,68 @@
                             body:data,
                     });
                     if(response.ok){
-                
                         const htmlContent = await response.text();
                         document.open();
                         document.write(htmlContent);
                         document.close();
-                    }else{
-                        throw new Error("NETWORK RESPONSE ERROR");           
-                    }
-                            
+                    }else {
+                      if(response.status === 400) {
+                        // Handle the case where the user is not logged in.
+                        alert("You have to log in first.");
+                        window.location = "/login";
+                     }else{
+                       throw new Error("NETWORK RESPONSE ERROR");
+                     }
+                    }       
                 } catch (err) {
                         console.log(err);
                 }
+                
             }
         }
+        /*
+        async function saveData(id){
+        try {
+            var data = new URLSearchParams({"id":id});
+            const response = await fetch("http://localhost:3000/saveData", {
+                                method: "POST",
+                                body:data,
+                            });
+            if(response.ok){
+                
+                const htmlContent = await response.text();
+                document.open();
+                document.write(htmlContent);
+                document.close();
+            }else{
+                throw new Error("NETWORK RESPONSE ERROR");           
+            }
+                            
+        } catch (err) {
+            console.log(err);
+        }
+        }
 
+        async function unsaveData(id) {
+        try {
+            var data = new URLSearchParams({"id":id});
+            const response = await fetch("http://localhost:3000/unsaveData", {
+                                method:"POST",
+                                body:data,
+                            });
+            if (response.ok) {
+                const htmlContent = await response.text();
+                document.open();
+                document.write(htmlContent);
+                document.close();
+            }else{
+                throw new Error("NETWORK RESPONSE ERROR");  
+            }
+        }catch(err){
+            console.log(err);
+        }
+        }*/
+    
     </script>
 </body>
 

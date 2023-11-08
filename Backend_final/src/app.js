@@ -51,6 +51,10 @@ const myprofileroute = require("./routes/myprofileroute");
 const jobroute=require("./routes/jobsroute")
 const edit_profile_route = require("./routes/edit_profile_route");
 const savelistroute = require("./routes/savelistroute");
+const companyregisterroute = require("./routes/companyregisterroute");
+const companyloginroute = require("./routes/companyloginroute");
+const companyprofileroute = require("./routes/companyprofileroute");
+
 
 
 app.use("/saveData",savepostroute);
@@ -64,6 +68,10 @@ app.use("/myprofile",myprofileroute);
 app.use("/jobs_1",jobroute);
 app.use("/edit_profile",edit_profile_route);
 app.use("/saved_jobs",savelistroute);
+app.use("/companyregister", companyregisterroute);
+app.use("/companylogin", companyloginroute);
+app.use("/companyprofile",companyprofileroute)
+
 
 
 app.get("/",(req,res)=>{

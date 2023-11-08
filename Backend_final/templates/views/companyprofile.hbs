@@ -1,1 +1,133 @@
-<h1>"This is the page of Company Profile."</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style_companyprofile.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar top -->
+    <div class="navbar">
+        <span class="otherpagelinkleft">
+            <a href="#" class="otherpagelink logo">JOB FICTION</a>
+            <a href="#" class="otherpagelink">Jobs</a>
+            <a href="#" class="otherpagelink">Companies</a>
+            <a href="#" class="otherpagelink">Contact Us</a>
+        </span>
+        <span class="otherpagelinkright">
+            <a href="#" class="otherpagelink">Logout</a>
+        </span>
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+    <div class="sidenav">
+        <div class="profile">
+            <img src="images/job_logo_3.jpg" alt="" width="100" height="100">
+
+            <div class="name">
+                {{companyname}}
+            </div>
+            <div class="company_type job">
+                {{companytype}}
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="/companyhomepage" class="active">Home</a>
+                <hr>
+            </div>
+            <div class="url">
+                <a href="/jobpostlist" class="active">Posted Job</a>
+                <hr>
+            </div>
+            <div class="url">
+                <a href="/companyeditprofile" class="active">Edit Profile</a>
+                <hr>
+            </div>
+        </div>
+
+        <h2 id="identity">SOCIAL MEDIA</h2>
+        <div class="card socialmediacontainer">
+            <div class="card-body">
+                <!-- <i class="fa fa-pen fa-xs edit"></i> -->
+                <div class="social-media">
+                    <hr>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="main">
+        <div class="card-body">
+            <div class="card mine">
+                <h2>Company Details</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Name</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{companyname}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Type</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{companytype}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{number}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Address</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{companyadd}}</span>
+                </div>
+            </div>
+            <div class="card">
+                <h2>Employer Details</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{name}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Designation</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{des}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{email}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

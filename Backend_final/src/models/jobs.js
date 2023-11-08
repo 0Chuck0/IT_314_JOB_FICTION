@@ -44,12 +44,6 @@ const UserScema=new mongoose.Schema({
         type: String
 
       }]
-
-
-
-
- 
-
 }) 
 
 

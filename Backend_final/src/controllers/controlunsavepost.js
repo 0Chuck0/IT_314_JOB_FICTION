@@ -12,9 +12,9 @@ module.exports = {
           //  const verify = jwt.verify(req.cookies.jwt,process.env.SECRET_KEY);
             // console.log(verify);
                const data = await Register.findOne({email:req.body.email});
-               const check2 = await Savedpost.findOne({job_id:req.body.id, job_seekerid:data._id})
+               const check2 = await Savedpost.findOne({job_id:req.body.id, email:data.email})
               
-               if(await Savedpost.findOne({job_id:req.body.id, job_seekerid:data._id}).count() == 1)
+               if(await Savedpost.findOne({job_id:req.body.id, email:data.email}).count() == 1)
                {
                //const data = await registerData.findOne({_id:verify._id});    
                // console.log(`Jobseeker name ${data.name} and Job id is ${check2.job_id}`);

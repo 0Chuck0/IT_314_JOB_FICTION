@@ -21,3 +21,5 @@ Dipak- Implemented seacrh functionality,login,forgot Password and register authe
 Krushang- Apply for job functionality and created applicants Schema for database in mongodb_compass.
 <br>
 Saumya - Made the responsive landing page of the website, making jobs page with filters.
+<br>
+Karan - Made the front-end of homepage, login page, register page, blogs page, blog description page, about page, job cards, search-bar, nav-bar, and footer.

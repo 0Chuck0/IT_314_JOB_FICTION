@@ -8,7 +8,7 @@ const Register = require('../models/registers');
 
 module.exports = {
     
-    post:async (req,res)=>{
+    get:async (req,res)=>{
         
         if(req.cookies.jwt){
             jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{

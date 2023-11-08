@@ -12,7 +12,7 @@ body {
     margin : 0 auto;
 }
 
-.text-muted{
+.text-muted-cl{
     color: #000 !important;
 }
 
@@ -35,6 +35,11 @@ body {
     margin-top: 2%;
 }
 
+.scroll{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 h2{
     color: #fff;
     margin-top: 125px;

@@ -70,7 +70,7 @@
                         {{!-- <button id="save_{{@index}}" onclick="saveData({{jobid}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
                         <button id="unsave_{{@index}}" onclick="unsaveData({{jobid}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
                         <span class="btn btn-sm">
-                            <i class="fa-regular fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})" onchange="handleSaveChange()"></i>
+                            <i class="{{how}} fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})"></i>
                         </span>
                     </div>
                 </div>
@@ -154,12 +154,18 @@
                             body:data,
                     });
                     if(response.ok) {
-                        const htmlContent = await response.text();
-                        document.open();
-                        document.write(htmlContent);
-                        document.close();
-                    }else{
-                        throw new Error("NETWORK RESPONSE ERROR");  
+                       const htmlContent = await response.text();
+                       document.open();
+                       document.write(htmlContent);
+                       document.close();
+                    }else {
+                      if(response.status === 400) {
+                        // Handle the case where the user is not logged in.
+                        alert("You have to log in first.");
+                        window.location = "/login";
+                     }else{
+                       throw new Error("NETWORK RESPONSE ERROR");
+                     }
                     }
                 }catch(err){
                     console.log(err);
@@ -174,18 +180,23 @@
                             body:data,
                     });
                     if(response.ok){
-                
                         const htmlContent = await response.text();
                         document.open();
                         document.write(htmlContent);
                         document.close();
-                    }else{
-                        throw new Error("NETWORK RESPONSE ERROR");           
-                    }
-                            
+                    }else {
+                      if(response.status === 400) {
+                        // Handle the case where the user is not logged in.
+                        alert("You have to log in first.");
+                        window.location = "/login";
+                     }else{
+                       throw new Error("NETWORK RESPONSE ERROR");
+                     }
+                    }       
                 } catch (err) {
                         console.log(err);
                 }
+                
             }
         }
         /*

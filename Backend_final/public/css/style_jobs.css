@@ -1,0 +1,116 @@
+
+
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
+body{
+    background-color: rgba(189, 188, 188, 0.236);
+}
+
+.search-bar{
+    margin-top: 8rem;
+}
+
+.search-bar-row{
+    margin:auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.main-container{
+    margin: auto !important;
+    max-width:1600px !important;
+    
+}
+header{
+    color:#fff;
+}
+
+.logo{
+    text-decoration: none;
+    color: #fff;
+   
+}
+.filter-button{
+    cursor: pointer;
+}
+.options{
+    text-align: left !important;
+    margin:auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+}
+
+#options6{
+
+        margin-left:5.5rem;
+}
+
+#filter-button1{
+    border-top:none;    
+}
+
+h6{
+    border-bottom: 2px solid black;
+    font-size: large;
+    font-weight: 600;
+    /*background-color: rgb(102, 153, 225);*/
+}
+#filter-form{
+    color: black;
+    border: 1px solid rgb(110, 108, 108);
+    border-radius: 8px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    font-size: large;
+}
+
+.jobs-card{
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    padding-top: 0.75rem;
+    background-color: #ffffff;
+}
+
+.jobs-card:hover{
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 8px;
+    cursor: pointer;
+    .job-profile{
+        filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.874));
+    }
+    .job-detail h4{
+        font-size:1.7rem;
+    }
+}
+
+.job-detail p{
+    color: black;
+}
+.company-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-a, .label-c{
+    text-decoration: none;
+    color: black !important;
+    margin: 0.5em 0;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color:  rgba(189, 188, 188, 0.236); ;
+}
+
+.label-a:hover,.label-c:hover{
+
+    box-shadow:0px 0 5px;
+    background-color: rgb(64, 124, 254)  ;
+    color: white !important;
+}
+
+.labels{
+    max-width: fit-content;
+}

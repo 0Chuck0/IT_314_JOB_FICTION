@@ -26,13 +26,13 @@ body {
     background-color: #EEEEEE;
 }
 
-.uneditable:hover{
+/* .uneditable:hover{
     transform: scale(1.004);
     transition: all 0.5s;
-}
+} */
 
 
-/* personal */
+/* personal */  
 .submitbtn {
     text-align: center;
     margin-top: 8%;
@@ -64,7 +64,7 @@ body {
     /* color: #666; */
     line-height: 1.28;
     /* background-color: #e7e7f1; */
-    width: 93%;
+    width: 83%;
     /* padding-left: 8%;     */
 }
 
@@ -246,10 +246,13 @@ body {
     width: 100%;
     padding-left: 15px;
     font-size: 18px;
-    min-height: 2.15rem;
     width: 100%;
     min-width: 14rem;
     border-style: solid;
+}
+
+.except{
+    min-height: 2.14rem !important;
 }
 
 .profile {
@@ -258,6 +261,10 @@ body {
     text-align: center;
     justify-content: center;
     display: flex;
+}
+
+img{
+    font-size: 13px;
 }
 
 .profile img {

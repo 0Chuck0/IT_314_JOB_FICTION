@@ -10,7 +10,7 @@ const {conectMongodb} = require("./db/conection");
 const bcrypt = require("bcryptjs")
 
 
-conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
+const connection = conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`Connection Successfully....`)
 }).catch((e)=>{
     console.log(`No Connection`)
@@ -18,7 +18,7 @@ conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
 const Register = require("./models/registers")
 const {Emailauth}  = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
-// const Job = require('./models/postschema');
+const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
 
 const hbs = require('hbs')
@@ -34,7 +34,6 @@ app.use(express.static(static_path))
                                     
 const template_path = path.join(__dirname,"../templates/views")
 app.set("views",template_path)
-//app.use(express.static(template_path))
 
 
 
@@ -42,6 +41,7 @@ const forgotpassroute = require("./routes/forgotpassroute");
 const loginroute = require("./routes/loginroute");
 const registerroute = require("./routes/registerroute");
 const homeroute = require("./routes/homeroute");
+const uplodroute = require("./routes/uplodroute");
 
 
 app.use("/forgotpass",forgotpassroute);
@@ -49,10 +49,13 @@ app.use("/login",loginroute);
 app.use("/register",registerroute);
 app.use("/home",homeroute);
 
+app.use("/file",uplodroute);
+
+
+
 app.get("/",(req,res)=>{
     res.render("landingpage")
 })
-
 
 app.get("/companyhomepage",(req,res)=>{
     res.render("companyhomepage")

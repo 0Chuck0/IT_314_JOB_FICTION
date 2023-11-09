@@ -11,16 +11,6 @@ body {
     margin-bottom: 2rem;
 }
 
-.search-bar {
-    margin-top: 8rem;
-}
-
-.search-bar-row {
-    margin: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .main-container {
     margin:auto;
     max-width: 1600px !important;

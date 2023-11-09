@@ -1,7 +1,7 @@
 const express = require("express");
+const {registerauth , verifyauth} = require("../middlewares/auth");
 const router = express.Router();
 const controllogin = require("../controllers/controllogin");
-const {registerauth , verifyauth} = require("../middlewares/auth");
 
 
 router.get("/",function (req, res) {

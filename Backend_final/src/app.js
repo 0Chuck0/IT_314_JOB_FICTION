@@ -3,22 +3,25 @@ const path = require('path')
 const app = express()
 const cookieParser=require("cookie-parser");
 app.use(cookieParser());
-
+require('dotenv').config()
 const { json } = require('express')
 const {conectMongodb} = require("./db/conection");
-
 const bcrypt = require("bcryptjs")
 
 
-const connection = conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
+conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`Connection Successfully....`)
-}).catch((e)=>{
+}).catch((e)=>{x
     console.log(`No Connection`)
 }) 
+
+
+
+
 const Register = require("./models/registers")
-const {Emailauth}  = require("./middlewares/auth");
+const {Emailauth,loggedinonly}  = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
-const Job = require('./models/postschema');
+// const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
 
 const hbs = require('hbs')
@@ -34,23 +37,41 @@ app.use(express.static(static_path))
                                     
 const template_path = path.join(__dirname,"../templates/views")
 app.set("views",template_path)
-
+//app.use(express.static(template_path))
 
 
 const forgotpassroute = require("./routes/forgotpassroute");
 const loginroute = require("./routes/loginroute");
 const registerroute = require("./routes/registerroute");
 const homeroute = require("./routes/homeroute");
+const savepostroute = require("./routes/savepostroute");
+const unsavepostroute = require("./routes/unsavepostroute");
+const job_descriptionroute = require("./routes/job_descriptionroute");
+const myprofileroute = require("./routes/myprofileroute");
+const jobroute=require("./routes/jobsroute")
+const edit_profile_route = require("./routes/edit_profile_route");
+const savelistroute = require("./routes/savelistroute");
+const companyregisterroute = require("./routes/companyregisterroute");
+const companyloginroute = require("./routes/companyloginroute");
+const companyprofileroute = require("./routes/companyprofileroute");
 const uplodroute = require("./routes/uplodroute");
 
 
+app.use("/saveData",savepostroute);
+app.use("/unsaveData",unsavepostroute);
 app.use("/forgotpass",forgotpassroute);
 app.use("/login",loginroute);
 app.use("/register",registerroute);
 app.use("/home",homeroute);
-
+app.use("/job_description",job_descriptionroute);
+app.use("/myprofile",myprofileroute);
+app.use("/jobs_1",jobroute);
+app.use("/edit_profile",edit_profile_route);
+app.use("/saved_jobs",savelistroute);
+app.use("/companyregister", companyregisterroute);
+app.use("/companylogin", companyloginroute);
+app.use("/companyprofile",companyprofileroute)
 app.use("/file",uplodroute);
-
 
 
 app.get("/",(req,res)=>{
@@ -107,65 +128,32 @@ app.get("/landingpage",async(req,res)=>{
 })
 
 
-app.get("/jobs_main",(req,res)=>{
-    res.render("jobs_main")
-})
+// app.get("/jobs_main",(req,res)=>{
+//     res.render("jobs_main")
+// })
 
-app.get('/jobsmain/:title',async (req, res) => {
+// app.get('/jobsmain/:title',async (req, res) => {
         
-    const requestedTitle = req.params.title;
+//     const requestedTitle = req.params.title;
         
-    // Fetch job data based on the requested title using await
-    const jobsData = await Jobpost.find({ title: requestedTitle }).exec();
+//     // Fetch job data based on the requested title using await
+//     const jobsData = await Jobpost.find({ title: requestedTitle }).exec();
         
-    res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template
-});
+//     res.render("jobs_main", {jobsData}); // Pass the fetched data to the 'jobs.hbs' template
+// });
   
 
-app.post("/jobs_main",async (req,res)=>{
-    const requestedTitle = req.body.search;
-    // Fetch job data based on the requested title using await
-    const jobsData = await Jobpost.find({ job_title : requestedTitle }).exec();
-    //console.log(jobsData);
-    res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template
+// app.post("/jobs_main",async (req,res)=>{
+//     const requestedTitle = req.body.search;
+//     // Fetch job data based on the requested title using await
+//     const jobsData = await Jobpost.find({ job_title : requestedTitle }).exec();
+//     //console.log(jobsData);
+//     res.render("jobs_main", { jobsData }); // Pass the fetched data to the 'jobs.hbs' template
             
 
-});
+// });
 
 
-
-app.post("/saveData",async(req,res)=>{
-    
-    try{
-        console.log(req.body.id);
-        const check = await Jobpost.findOne({job_id:req.body.id})
-
-        const myData = new savedPost({
-            job_id : check.job_id,
-            job_seekerid: 202101227
-        })
-       
-        await savedPost.insertMany([myData])
-        console.log("Added to save list !")
-    }
-    catch(err)
-    {
-        res.send(err)
-    }
-})
-
-app.post("/unsaveData", async(req,res)=>{
-    
-    try{
-        const check2 = await savedPost.findOne({id:req.body.id})
-        await savedPost.deleteOne(check2);
-        console.log("Delete from save list !")
-    }
-    catch(err)
-    {
-        res.send(err)
-    }
-})
 
 
 app.listen(port,()=>{

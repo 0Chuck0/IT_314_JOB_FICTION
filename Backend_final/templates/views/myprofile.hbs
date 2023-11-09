@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <title>Profile Page</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="css/style_myprofile.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+   </head>
+
+<body>
+
+    <!-- Navbar top -->
+    <div class="navbar">
+        <span class="otherpagelinkleft">
+            <a href="#" class="otherpagelink logo">JOB FICTION</a>
+            <a href="#" class="otherpagelink">Jobs</a>
+            <a href="#" class="otherpagelink">Companies</a>
+            <a href="#" class="otherpagelink">Contact Us</a>
+        </span>
+        <span class="otherpagelinkright">
+            <a href="#" class="otherpagelink logout">Logout</a>
+        </span>
+    </div>
+    <!-- End -->
+  
+
+    <!-- Sidenav -->
+    <div class="sidenav">
+        <div class="profile">
+            <img src="images/As_mine.png" alt="" width="100" height="100">
+
+            <div class="name">
+                {{profilename}}
+            </div>
+            <div class="job">
+                Web Developer
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a href="saved_jobs" class="active">Wish List</a>
+                <hr>
+            </div>
+            <div class="url">
+                <a href="#settings" class="active">Settings</a>
+                <hr>
+            </div>
+        </div>
+
+        <h2 id="identity">SOCIAL MEDIA</h2>
+        <div class="card socialmediacontainer">
+            <div class="card-body">
+                <!-- <i class="fa fa-pen fa-xs edit"></i> -->
+                <div class="social-media">
+                  <hr>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <span class="fa-stack fa-sm">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- End -->
+
+    <!-- Main -->
+    <div class="main">
+        <div class="card-body">
+            <div class="card mine">
+                <h2>PERSONAL DETAILS</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{name}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{Email}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{number}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Gender</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{gender}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Birth Date</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{DOB}}</span>
+                </div>
+            </div>
+            <div class="card">
+                <h2>ABOUT</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead">
+                    <span class="widgetTitle typ-16Bold">Langauges</span>
+                </div>
+                <div class="widgetCont">
+                    <span class="empty">
+                        {{#each language_skills}}
+                            <p>{{this}}</p>
+                        {{/each}}
+                    </span>
+                </div>
+
+                <div class="widgetHead">
+                    <span class="widgetTitle typ-16Bold">Technical Skills</span>
+                </div>
+                <div class="widgetCont">
+                    <span class="empty">
+                        {{#each technical_skills}}
+                            <p>{{this}}</p>
+                        {{/each}}
+                    </span>
+                </div>
+
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Resume</span>
+                </div>
+                <div class="widgetCont"><span class="empty addhere">{{resume_link}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Experience</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{experience}}</span>
+                </div>
+            </div>
+            <div class="card">
+                <h2>PROJECT</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{project}}</span>
+                </div>
+            </div>
+            <div class="card">
+                <h2>EDUCATION</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{highest_edu}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/College</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{college}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{field}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{class12}}</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
+                </div>
+                <div class="widgetCont"><span class="empty">{{class10}}</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>RECOMMENDATION</h2><i class="fa fa-pen fa-xs edit"></i>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Job Type</span>
+                </div>
+                <div class="widgetCont"><span class="empty">Software Developer</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Expected salary</span>
+                </div>
+                <div class="widgetCont"><span class="empty">1 Lakh</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Preferred Work Location</span>
+                </div>
+                <div class="widgetCont"><span class="empty">Pune</span>
+                </div>
+                <hr>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired employment type</span>
+                </div>
+                <div class="widgetCont"><span class="empty">Full Time/Part Time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <script src="js/bootstrap-select.min.js"></script>
+    
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

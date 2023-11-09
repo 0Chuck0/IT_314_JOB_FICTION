@@ -1,5 +1,5 @@
-const Register  = require("../models/registers");
-const bcrypt    = require("bcryptjs");
+const Register = require("../models/registers");
+const bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");
@@ -22,7 +22,7 @@ module.exports = {
             {
 
                 res.cookie("jwt",check.token,{
-                    maxAge:300000,
+                    maxAge:1800000,
                     httpOnly:true,
                     secure:false,
                 });

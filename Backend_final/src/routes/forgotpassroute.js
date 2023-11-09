@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const controlforgotpass = require("../controllers/controlforgotpass");
 const {Emailauth} = require("../middlewares/auth");
+const controlforgotpass = require("../controllers/controlforgotpass");
 const changepassword = require("../controllers/changepassword");
 
 router.get("/:token", function (req, res) {

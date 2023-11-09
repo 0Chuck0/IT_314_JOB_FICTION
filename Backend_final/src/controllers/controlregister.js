@@ -1,6 +1,6 @@
 const Register  = require("../models/registers");
-const bcrypt    = require("bcryptjs");
-const jwt =        require("jsonwebtoken"); 
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken"); 
 require('dotenv').config()
 
 const {sendEmail} = require("../services/mailer");
@@ -14,6 +14,10 @@ module.exports = {
     },
     post:async(req,res)=>{
         try { 
+
+                if(req.file === undefined) return res.send("you must select a file");
+
+                const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
 
                 const data = req.body;
 
@@ -29,13 +33,15 @@ module.exports = {
 
                 data.verified = false;
 
+                data.profile = imgUrl ;
+
                 await Register.insertMany([data]);
         
                 const checking = await Register.findOne({email:req.body.email});
         
                 const id = checking._id;
         
-                const token = jwt.sign({_id:id},process.env.SECRET_KEY);
+                const token = jwt.sign({_id:id , flag:false },'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
         
                 await Register.updateOne({_id:id},{$set:{token:token}});
 
@@ -60,6 +66,16 @@ module.exports = {
         }
     
     },
+
+
+
+
+
+
+
+
+
+    
     create: async(req,res) =>{
 
         try{
@@ -68,7 +84,7 @@ module.exports = {
 
         let id = "";
 
-        jwt.verify(token,process.env.SECRET_KEY,async(err,decoded)=>{
+        jwt.verify(token,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
             if(err)
             {
 

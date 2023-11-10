@@ -47,9 +47,9 @@ body {
 
 .widgetCont {
     margin: 10px 0 15px 0px;
-    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+    /* --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
-    --border-color: rgb(218, 221, 224);
+    --border-color: rgb(218, 221, 224); */
 }
 
 
@@ -64,14 +64,14 @@ body {
     /* color: #666; */
     line-height: 1.28;
     /* background-color: #e7e7f1; */
-    width: 83%;
+    width: 80%;
     /* padding-left: 8%;     */
+    margin-left: 7%;
 }
 
-/* .card:hover{
-    transform: scale(1.04);
-    transition: all 0.5s;
-} */
+.card:hover{
+    border: 3px solid #212529;
+}
 
 /* .sidenav:hover {
     transform: scale(1.04);
@@ -239,20 +239,18 @@ body {
     font-weight: 400;
 }
 
+.ecxept{
+    min-height: 2.14rem ;
+}
 .differentinput {
     /* border: none; */
-    border-color: rgb(218, 221, 224);
-    border-radius: 0.375rem;
-    width: 100%;
+    border-radius: 8px;
+    /* width: 100%; */
     padding-left: 15px;
     font-size: 18px;
-    width: 100%;
+    /* width: 100%; */
     min-width: 14rem;
-    border-style: solid;
-}
-
-.except{
-    min-height: 2.14rem !important;
+    border: 1px solid #DADDE0;
 }
 
 .profile {
@@ -309,6 +307,11 @@ img{
     text-decoration: none;
 }
 
+.except{
+    width: 97%;
+    min-height: 2.25rem;
+}
+
 .url a:hover,
 .url .active {
     background-color: #cee2f1;
@@ -328,7 +331,7 @@ img{
 /* Main */
 .main {
     margin-top: 100px;
-    margin-left: 33%;
+    margin-left: 29%;
     font-size: 28px;
     /* font-size: 20px; */
     padding: 0 10px;
@@ -356,7 +359,7 @@ h2 {
     box-shadow: 1px 1px 8px 0 grey;
     height: auto;
     margin-bottom: 20px;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 20px 50px ;
 }
 
 .main .card table {

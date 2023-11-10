@@ -43,7 +43,8 @@
             <div class="profile">
                 <div class="image" id="az">
                     <input type="file" name="image" id="candidate_image" onchange="func(event)">
-                    <label for="candidate_image"><img src="photo.webp" id= "companyphoto" alt="Preview Not Available" width="100" height="100"></label>
+                    <label for="candidate_image"><img src="photo.webp" id="companyphoto" alt="Preview Not Available"
+                            width="100" height="100"></label>
                 </div>
             </div>
 
@@ -106,7 +107,9 @@
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="company_description">Company Description</label></span>
                     </div>
-                    <div class="widgetCont differentinput uneditable"><span class="empty">Lorem ipsum dolor sit amet consectetur adipisicing elit. A harum eligendi fugiat alias error voluptatibus cum quo laboriosam ad vel officia, esse, id adipisci aperiam tempore.
+                    <div class="widgetCont differentinput uneditable"><span class="empty">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. A harum eligendi fugiat alias error voluptatibus cum quo
+                            laboriosam ad vel officia, esse, id adipisci aperiam tempore.
                         </span>
                     </div>
                 </div>
@@ -116,7 +119,7 @@
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="employee_name">Name</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput except" type="text"
+                    <div class="widgetCont "><span class="empty"><input class="differentinput except" type="text"
                                 id="employee_name" name="employeename">
                         </span>
                     </div>
@@ -156,13 +159,9 @@
     <script src="js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <script>
-        function func(event){
-
-
-            var image =URL.createObjectURL(event.target.files[0]);
-
+        function func(event) {
+            var image = URL.createObjectURL(event.target.files[0]);
             document.getElementById("companyphoto").src = image;
-
         }
     </script>
 </body>

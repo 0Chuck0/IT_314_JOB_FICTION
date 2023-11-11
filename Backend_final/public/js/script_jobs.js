@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    console.log("hellow");
+
     const Joblistcontainer = document.getElementById('jobListing-container');
     const jobListingTemplate = Handlebars.compile(document.getElementById('job-template').innerHTML);
 

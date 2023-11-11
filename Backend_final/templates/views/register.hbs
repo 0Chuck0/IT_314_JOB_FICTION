@@ -16,7 +16,13 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/animate.min.css">
 
-    <link rel="stylesheet" href="/css/style_register.css">    
+    <link rel="stylesheet" href="/css/style_register.css">   
+     <style>
+    .img{
+        width: 40%;
+        height: width;
+    }
+  </style> 
   </head>
   <body id="top">
 
@@ -69,7 +75,7 @@
                 <a href="about.html">About Us</a>
               </li>
               <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
-              <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+              <li class="d-lg-none"><a href="/login">Log In</a></li>
             </ul>
           </nav>
           
@@ -77,7 +83,7 @@
             <div class="ml-auto">
               <!-- <a href="" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Already registered?</a> -->
               <span class="new">Already registered?</span>
-              <a href="Login Form/index.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Log In</a>
+              <a href="/login" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Log In</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -106,17 +112,17 @@
 
 
     <section class="containerr">
-        <form class="form-registration" action="/register" method="post">
+        <form class="form-registration" action="/register" method="post" enctype="multipart/form-data">
           <h1>
             Register
           </h1>
           <div class="mb-3">
             <label for="exampleFormControlInput1 title" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What is your name?" required>
+            <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="What is your name?" required>
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1 title" class="form-label">Email ID</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <input type="email" class="form-control" name="email"  id="exampleInputEmail1" aria-describedby="emailHelp"
               placeholder="Tell us your Email ID" required>
             <div class="form-text">
               We will send you relevant jobs on this mail
@@ -124,7 +130,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1 title" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"
+            <input type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$" class="form-control" name="password" id="exampleInputPassword1"
               placeholder="Create a password for your account" required>
             <div id="exampleInputPassword1" class="form-text">
               Minimum 6 characters required
@@ -132,38 +138,45 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1 title" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"
+            <input  type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$" name="cpassword" class="form-control" id="exampleInputPassword1"
               placeholder="Rewrite your password" required>
           </div>
           <div class="mb-3">
             <label for="validationDefaultUsername title" class="form-label">Mobile number</label>
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend2">+91</span>
-              <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2"
+              <input type="text" pattern="^(?=.*[0-9]).{10}$" name="number" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2"
                 required placeholder="Mobile Number">
             </div>
             <div class="form-text">
               Recruiters will contact you on this number
             </div>
           </div>
-    
+
+
+            <div class="mb-3">
+        <label for="exampleFormControlInput1 birthdate" class="form-label">Date of Birth<sup
+            class="mandatory_Filds">*</sup></label>
+        <input type="date" name="DOB" id="myDate" class="form-control" required>
+      </div>
+
           <div class="Gender">
             <label for="" class="form-label title">Gender</label>
             <div class="checks">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" checked>
                 <label class="form-check-label" for="flexRadioDefault1">
                   Male
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2">
                 <label class="form-check-label" for="flexRadioDefault2">
                   Female
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault3">
                 <label class="form-check-label" for="flexRadioDefault3">
                   Other
                 </label>
@@ -171,41 +184,36 @@
             </div>
           </div>
     
-          <div class="Work-Status">
-            <label for="" class="title form-label">Work Status</label>
-            <div class="radioWrap">
-              <button class="work-exp">
-                <div class="focusable optionWrap data" tabindex="0" data-val="exp">
-                  <div class="textWrap">
-                    <h6 class="main-3">I'm experienced</h6>
-                    <p class="main-2"> I have work experience <br>(excluding internships)</p>
-                  </div>
-                  <div class="iconWrap"><img src="//static.naukimg.com/s/7/104/assets/images/briefcase.bdc5fadf.svg"></div>
-                </div>
-              </button>
-              <button class="work-exp">
-                <div class="focusable optionWrap selected data" tabindex="0" data-val="fresher">
-                  <div class="textWrap">
-                    <h6 class="main-3">I'm a fresher</h6>
-                    <p class="main-2">I am a student/ Haven't worked <br> after graduation</p>
-                  </div>
-                  <div class="iconWrap"><img src="//static.naukimg.com/s/7/104/assets/images/schoolbag.a54cbf7a.svg"></div>
-                </div>
-              </button>
-            </div>
-          </div>
-    
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-              Send me important updates on<span><img src="Registration Form/Whatsapp-logo.svg" alt=""></span>WhatsApp
-            </label>
-          </div>
+           <div class="mb-3">
+        <img src="" id= "abc" alt="Add yout profile photo below" class ="img">
+        </div>
+        <input type="file" name="file" onchange="func(event)">
     
           <button type="submit" class="btn btn-primary register-btn">Register</button>
         </form>
       </section>
-    
+     
+
+         <script>
+        function func(event){
+
+
+            var image =URL.createObjectURL(event.target.files[0]);
+
+            document.getElementById("abc").src = image;
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
     <footer class="site-footer">
 
       <a href="#top" class="smoothscroll scroll-top">

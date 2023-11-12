@@ -18,6 +18,9 @@ body {
     flex-direction: row;
 }
 
+.row{
+    padding: 20px 10px;
+}
 
 .widgetHead {
     font-size: 20px;
@@ -75,6 +78,7 @@ body {
 
 span{
     color: #474d6a;
+    font-size: 18px;
 }
 
 .navbar {
@@ -98,6 +102,7 @@ span{
 
 label{
     font-weight: 700;
+    font-size: 18px;
 }
 
 .text-dark{
@@ -106,6 +111,7 @@ label{
 
 .jobdescription{
     color: #000;
+    font-size: 18px;
 }
 
 .otherpagelink {
@@ -160,6 +166,7 @@ label{
 /* Job Card */
 .text-muted {
     color: #000 !important;
+    font-size: 18px;
 }
 
 .rightbottomapply {
@@ -206,10 +213,32 @@ label{
 }
 
 .candidates-listing-btn {
-    padding-top: 95%;
-    padding-right: 1%;
+    padding-top: 0;
 }
 
+.above{
+    margin-bottom: 60%;
+    padding-right: 20%;
+}
+
+.col-md-3{
+    padding-left: 0;
+}
+.col-md-9{
+    padding-right: 0;
+}
+.below{
+    padding-right: 15%;
+    margin-bottom: 5%;
+}
+
+.belowa{
+    font-size: 16px;
+}
+
+.styles_other-details__oEN4O{
+    padding-left: 10px;
+}
 /* End */
 
 /* Sidenav */
@@ -312,21 +341,23 @@ hr {
 
 strong{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 45px;
 }
 
 h2 {
     text-align: left;
     color: #000 !important;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     /* font-weight: bold; */
     font-size: 27px;
+    font-weight: 900;
 }
 
 p{
     /* line-height: 10px; */
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .main h2 {
@@ -335,6 +366,11 @@ p{
     font-size: 28px;
     margin-bottom: 10px;
     font-weight: 800;
+}
+
+li{
+    font-size: 22px;
+    margin-top: 20px;
 }
 
 .main .card {
@@ -354,9 +390,9 @@ p{
 }
 
 hr {
-    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%;
-    margin-bottom: 15px;
 }
 
 .edit {
@@ -368,27 +404,6 @@ hr {
 .social-media {
     width: fit-content;
     margin: 0 auto;
-}
-
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
-}
-
-.fa-twitter:hover {
-    color: #1da1f2 !important;
-}
-
-.fa-invision:hover {
-    color: #f83263 !important;
-}
-
-.fa-github:hover {
-    color: #161414 !important;
-}
-
-.fa-whatsapp:hover {
-    color: #25d366 !important;
 }
 
 /* End */

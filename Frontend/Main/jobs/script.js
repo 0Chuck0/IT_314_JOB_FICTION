@@ -84,6 +84,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let work_type = main_str.slice(main_str.indexOf("=") + 1, len);
 
+    job_title = job_title.replaceAll("+"," ");
+
+    function replaceChar(origString, replaceChar, index) {
+        replaceChar = replaceChar.toUpperCase();
+        let firstPart = origString.substr(0, index);
+        let lastPart = origString.substr(index + 1);
+          
+        let newString = firstPart + replaceChar + lastPart;
+        return newString;
+    }
+
+    for( let i=0;i<=job_title.length;i++)
+    {
+        if(i==0)
+        {
+            job_title = replaceChar(job_title,job_title.charAt(i),i);
+        }
+
+        if(job_title.charAt(i)==" " && job_title.charAt(i+1) != " ")
+        {
+            job_title = replaceChar(job_title,job_title.charAt(i+1),i+1);
+        }
+
+    }
     console.log(job_title);
     console.log(region);
     console.log(work_type);

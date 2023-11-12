@@ -29,6 +29,7 @@ body {
 
 .widgetCont{
     margin:10px 0 15px 0px;
+    font-size: 18px;
 }
 
 
@@ -46,11 +47,17 @@ body {
     /* padding-left: 8%;     */
 }
 
+.card:hover{
+    border: 3px solid black;
+}
+
+/* .sidenav:hover{
+    border: 3px solid black;
+} */
+
 .widgetTitle{
     color: #121224;
 }
-
-
 
 #identity{
     text-align: center;
@@ -124,29 +131,33 @@ body {
 
 /* Sidenav */
 .sidenav {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #212529;
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 75%;
-    margin-left: 2%;
+    height: 68%;
+    margin-left: 4%;
     position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
     top: 70px;
-    width: 25%;
+    width: 20%;
     margin-top: 3.5%;
     box-sizing: border-box;
     position: fixed;
     box-shadow: 3px 5px 8px 0 grey;
 }
 
+.sidenav-url{
+    margin-top: 30px;
+}
 
 .profile {
     margin-bottom: 20px;
-    margin-top: 12px;    
+    margin-top: 20px;    
     text-align: center;
 }
 
@@ -157,23 +168,29 @@ body {
 
 .name {
     font-size: 20px;
-    font-weight: bold;
-    padding-top: 10px;
-}   
-
-.company_type{
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 10px;
-    color: rgb(92, 81, 81);
+    /* font-size: 16px; */
+    font-weight: 300;
+    padding-top: 20px;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
-.url, hr {
+.company_type{
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 10px;
+    color: rgb(214, 190, 190);
+}
+
+.url{
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .url hr {
-    margin: 5px auto;
+    align-items: center;
     width: 60%;
 }
 
@@ -182,17 +199,22 @@ body {
     display: block;
     font-size: 20px;
     margin: 10px 0;
-    padding: 6px 12px;
+    padding: 10px 12px;
     text-decoration: none;
 }
 
+.mehr{
+    width: 60%;
+    margin-bottom: auto;
+}
+
 .url a:hover, .url .active {
-    background-color: #e8f5ff;
+    background-color: #cee2f1;
     border-radius: 28px;
     color: #000;
-    margin-left: 14%;
     width: 65%;
 }
+
 .socialmediacontainer{
     /* width: 90px; */
     margin: 0 auto;

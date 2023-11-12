@@ -33,6 +33,30 @@ h1{
     color: #232836;
 }
 
+#bottomh6{
+    margin-top: 60px;
+}
+
+hr{
+    /* margin-bottom: 20px; */
+    margin-top: 10px;
+    width: 95%;
+    background-color: #6C757D;
+}   
+
+.sethr{
+    justify-content: center;
+    display: flex;
+}
+
+h6 {
+    font-size: 22px;
+    padding-left: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #6C757D;
+}
+
 .checks{
     margin-top: -0.5rem;
     margin-left: 0.5rem;

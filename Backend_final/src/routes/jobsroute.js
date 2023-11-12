@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const controljobs = require("../controllers/controljobs");
 const jobs  = require("../models/jobs");
+const app=express();
+app.use(express.json())
 
 router.get("/",function(req,res){
 
@@ -20,8 +22,9 @@ router.post("/",async (req,res)=>{
 
 
 
-        const { job_titles, locations, work_modes, educations, companies, skills } = req.body;
+        const { job_titles,experience, locations, work_modes, educations, companies, skills,salary } = req.body;
        
+        
         const  defaultCompanies = await jobs.distinct('company');
         const defaultJobTitles = await jobs.distinct('job_title');
         const  defaultWorkModes = await jobs.distinct('work_mode');
@@ -43,10 +46,14 @@ router.post("/",async (req,res)=>{
         // const educationsValue = { "$in":  educations };
         // const companiesValue = { "$in": companies };
         // const skillsValue = { "$in": skills };
-
+        //console.log(salary)
+        //console.log(salary);
+        
+        
+        // Extract min and max values as integers
         
         const query=[];
-        console.log(job_titles);
+  
         if(job_titles!=undefined)
         {
                 const obj={job_title:{ "$in": job_titles }};
@@ -60,7 +67,11 @@ router.post("/",async (req,res)=>{
             const obj={location:{ "$in": locations }};
             query.push(obj);
         }
-        
+        if( experience!=undefined)
+        {
+            const obj={experience:{ "$gte": parseFloat(experience)*(0.05) }};
+            query.push(obj);
+        }
         if(work_modes!=undefined)
         {
             const obj={work_mode:{ "$in": work_modes }};
@@ -81,11 +92,19 @@ router.post("/",async (req,res)=>{
             const obj={skills:{ "$in": skills }};
             query.push(obj);
         }
-
-     
         
+        if(salary!=undefined)
+        {
+
+            if(salary!="None")
+            {const jsalary=JSON.parse(salary);
+            const obj={salary:{ "$gte": jsalary.min , "$lte": jsalary.max }};
+            query.push(obj);}
+        }
+     
+        //console.log(query)
         const data = await jobs.find({"$and": query}).exec();
-        console.log(data);
+       // console.log(data);
         res.json(data);
        
                       

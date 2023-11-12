@@ -47,7 +47,7 @@ body {
     border-radius: 3px;
     padding: 8px;
     color: gray;
-    background-color: #ece4e4;
+    background-color: #e9ecef;
     margin-right: 10px;
 }
 
@@ -166,8 +166,6 @@ body {
     position: relative;
 }
 
-
-
 /* End */
 
 /* Sidenav */
@@ -177,7 +175,7 @@ body {
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 68%;
+    height: 55%;
     margin-left: 4.5%;
     position: absolute;
     left: 0;

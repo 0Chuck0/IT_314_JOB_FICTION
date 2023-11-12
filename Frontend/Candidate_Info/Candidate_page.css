@@ -47,7 +47,7 @@ body {
     border-radius: 3px;
     padding: 8px;
     color: gray;
-    background-color: #ece4e4;
+    background-color: rgb(233, 236, 239);
     margin-right: 10px;
 }
 
@@ -81,6 +81,14 @@ body {
     flex-wrap: wrap;
 }
 
+.card{
+    border: 3px solid #212529;
+}
+
+.sidenav{
+    border: 3px solid #212529;
+}
+
 /* .card:hover{
     transform: scale(1.04);
     transition: all 0.5s;
@@ -94,10 +102,10 @@ body {
 
 .identity{
     text-align: center;
-    margin-top: 12%;
+    margin-top: 20%;
     margin-bottom: 2%;
     /* font-size: 20px; */
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .navbar {
@@ -177,7 +185,7 @@ body {
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 68%;
+    height: 65%;
     margin-left: 4.5%;
     position: absolute;
     left: 0;
@@ -191,19 +199,16 @@ body {
     /* box-shadow: 3px 5px 8px 0 grey; */
 }
 
-.sidenav:hover{
-    transform: scale(1.04);
-    transition: all 0.5s;
-}
-
 .navbarhr{
     width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
 .profile {
     margin-bottom: 20px;
-    margin-top: 12px;    
+    margin-top: 30px;    
     text-align: center;
 }
 
@@ -254,6 +259,7 @@ body {
 .socialmediacontainer{
     /* width: 90px; */
     margin: 0 auto;
+    padding: 0 10px;
 }
 /* End */
 

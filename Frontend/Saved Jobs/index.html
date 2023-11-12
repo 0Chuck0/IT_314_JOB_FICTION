@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="../Main/fonts/line-icons/style.css">
     <link rel="stylesheet" href="../Main/css/owl.carousel.min.css">
     <link rel="stylesheet" href="../Main/css/animate.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../Main/style_jobs.css">
     <link rel="stylesheet" href="../Main/style.css">
-    <script src="https://kit.fontawesome.com/7ff784d1a8.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="side-nav.css">
+    </style>
+    <script src="https://kit.fontawesome.com/7ff784d1a8.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="top">
@@ -39,7 +41,7 @@
         </div>
     </div>
 
-    <div class="site-wrap">
+    <div class="site-wrap" id="main">
 
         <!-- .site-mobile-menu -->
         <div class="site-mobile-menu site-navbar-target">
@@ -55,7 +57,7 @@
         <!-- NAVBAR -->
         <header class="site-navbar mt-3">
             <div class="container-fluid">
-                <div class="row align-items-center">
+                <div class="row align-items-center col">
                     <div class="site-logo col-6"><a href="index.html">JOBfiction</a></div>
 
                     <nav class="mx-auto site-navigation">
@@ -72,14 +74,39 @@
                         </ul>
                     </nav>
 
-                    <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+                    <div class="container-fluid text-right d-flex aligin-items-center p-0">
+                        <div class="ml-auto">
+                            <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="./user-profile.png"
+                                alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
+                        </div>
                         <span class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
-                                class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+                                class="icon-menu h3 m-0 p-0 mt-2"></span>
                     </div>
-
                 </div>
             </div>
         </header>
+
+        <!--Side Navigation-->
+        <div id="side-nav-bar" class="side-nav">
+            <div class="container-fluid">
+                <div class="col-md-12 image-title">
+                    <div class="row">
+                        <img class="user-profile-bar" src="loggedin-user.png" alt="User Profile">
+                    </div>
+                    <div class="row mt-1">
+                        <h3 style="margin: auto;">User Name</h3>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
+                    <a href="#"><i class="fa fa-medal" style="font-size: 1.5rem"></i>Recommendations</a>
+                    <a href="#"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Saved Jobs</a>
+                    <a href="#"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Applied Jobs</a>
+                </div>
+            </div>
+        </div>
+
 
         <section class="section-hero overlay inner-page bg-image"
             style="background-image: url('../Main/images/hero_1.jpg');" id="home-section">
@@ -112,16 +139,21 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
-                    <div class="row labels">
-                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                <div class="col-3 job-labels mt-3">
+                    <div class="col-10">
+                        <div class="row labels">
+                            <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                        </div>
+                        <div class="row labels">
+                            <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                        </div>
+                        <div class="row labels">
+                            <span class="label-3"><i class="    far fa-building"></i>Office</a>
+                        </div>
                     </div>
-                    <div class="row labels">
-                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
-                    </div>
-                    <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
-                    </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -141,7 +173,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -149,8 +181,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -170,7 +205,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -178,8 +213,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -199,7 +237,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -207,8 +245,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -228,7 +269,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -236,8 +277,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -258,7 +302,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -266,8 +310,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -287,7 +334,7 @@
                     </div>
                 </div>
 
-                <div class="col-4 job-labels mt-3">
+                <div class="col-3 job-labels mt-3">
                     <div class="row labels">
                         <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
                     </div>
@@ -295,8 +342,11 @@
                         <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
                     </div>
                     <div class="row labels">
-                        <span class="label-3"><i class="	far fa-building"></i>Office</a>
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
                     </div>
+                </div>
+                <div class="col-1">
+                    <i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip" title="Unsave"></i>
                 </div>
             </div>
 
@@ -370,9 +420,10 @@
     <script src="../Main/js/jquery.waypoints.min.js"></script>
     <script src="../Main/js/jquery.animateNumber.min.js"></script>
     <script src="../Main/js/owl.carousel.min.js"></script>
-
     <script src="../Main/js/bootstrap-select.min.js"></script>
 
+    <script src="side-nav.js"></script>
+    ,<script src="script.js "></script>
     <script src="../Main/js/custom.js"></script>
 </body>
 

@@ -62,7 +62,12 @@ h1{
 }
 
 .register-btn{
+<<<<<<< HEAD
   width: 50%;
+=======
+  margin-top: 5rem;
+  width: 100%;
+>>>>>>> 2be60a11cecf17e5a26f8d5ffc760c5716eb7d1d
     background-color: #4070f4;
     /* background-color: #8500de; */
     margin-top: 1.5rem;

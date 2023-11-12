@@ -73,14 +73,18 @@ body {
     /* color: #666; */
     line-height: 1.28;
     /* background-color: #e7e7f1; */
-    width: 80%;
+    width: 90%;
     /* padding-left: 8%;     */
+    margin-left: 7%;
 }
 
-/* .card:hover{
-    transform: scale(1.04);
-    transition: all 0.5s;
-} */
+.card:hover{
+    border: 3px solid #212529;
+}
+
+.spandiff{
+    padding: 7px 0 7px 0;
+}
 
 /* .sidenav:hover {
     transform: scale(1.04);
@@ -93,7 +97,7 @@ body {
 
 .sidenav-url{
     /* align-items: center; */
-    margin: 0 50px;
+    margin: 0 10px;
 }
 
 #identity {
@@ -173,28 +177,33 @@ body {
 /* End */
 
 /* Sidenav */
+
 .sidenav {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #212529;
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 55%;
-    margin-left: 5%;
+    height: 68%;
+    margin-left: 4%;
     position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 115px;
-    width: 20%;
+    top: 70px;
+    width: 25%;
     margin-top: 5%;
     box-sizing: border-box;
     position: fixed;
     box-shadow: 3px 5px 8px 0 grey;
 }
-
 #candidate_image {
     display: none;
+}
+
+#candidatephoto{
+    color: #fff;
 }
 
 /* .profileinput{
@@ -238,23 +247,32 @@ body {
     font-weight: 400;
 }
 
+#az{
+    width: 100px ;
+    height: 100px;
+}
+
+img{
+    font-size: 13px;
+}
+
 .differentinput {
     /* border: none; */
-    border-color: rgb(218, 221, 224);
-    border-radius: 0.375rem;
-    width: 100%;
+    border-radius: 8px;
     padding-left: 15px;
     font-size: 18px;
-    min-height: 2.15rem;
+    min-height: 2.25rem;
     width: 100%;
     min-width: 14rem;
-    border-style: solid;
+    border: 1px solid #DADDE0;
 }
 
 .profile {
     margin-bottom: 30px;
     margin-top: 25px;
     text-align: center;
+    justify-content: center;
+    display: flex;
 }
 
 .profile img {
@@ -292,10 +310,10 @@ body {
 .url a {
     color: #818181;
     display: block;
-    /* font-size: 20px; */
-    font-size: 18px;
+    font-size: 20px;
+    /* font-size: 18px; */
     margin: 10px 0;
-    padding: 6px 12px;
+    padding: 10px 12px;
     text-decoration: none;
 }
 
@@ -320,9 +338,10 @@ body {
     margin-top: 100px;
     margin-left: 29%;
     /* font-size: 28px; */
-    font-size: 20px;
+    font-size: 28px;
     padding: 0 10px;
     width: 58%;
+    margin-bottom: 60px;
 }
 
 
@@ -342,7 +361,7 @@ h2 {
 .main .card {
     background-color: #fff;
     border-radius: 18px;
-    /* box-shadow: 1px 1px 8px 0 grey; */
+    box-shadow: 1px 1px 8px 0 grey;
     height: auto;
     margin-bottom: 20px;
     padding: 20px 50px 20px 50px;

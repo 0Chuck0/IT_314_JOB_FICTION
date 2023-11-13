@@ -7,7 +7,7 @@ require('dotenv').config()
 const { json } = require('express')
 const {conectMongodb} = require("./db/conection");
 const bcrypt = require("bcryptjs")
-
+const jwt = require("jsonwebtoken")
 
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`Connection Successfully....`)
@@ -55,7 +55,7 @@ const companyregisterroute = require("./routes/companyregisterroute");
 const companyloginroute = require("./routes/companyloginroute");
 const companyprofileroute = require("./routes/companyprofileroute");
 const uplodroute = require("./routes/uplodroute");
-
+const applyRouter = require( "./routes/apply" )
 
 app.use("/saveData",savepostroute);
 app.use("/unsaveData",unsavepostroute);
@@ -72,7 +72,7 @@ app.use("/companyregister", companyregisterroute);
 app.use("/companylogin", companyloginroute);
 app.use("/companyprofile",companyprofileroute)
 app.use("/file",uplodroute);
-
+app.use("/apply", applyRouter);
 
 app.get("/",(req,res)=>{
     res.render("landingpage")

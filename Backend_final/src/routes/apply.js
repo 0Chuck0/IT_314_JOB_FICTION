@@ -2,17 +2,21 @@ const express = require("express");
 const router = express.Router();
 const {loggedinonly} = require("../middlewares/auth");
 const jwt = require("jsonwebtoken");
-const apply = require("./models/apply")
+const apply = require("../models/apply");
 
-router.post("/apply",loggedinonly, async(req, res) => {
-    
+router.post("/", async(req, res) => {
+
     const body  = req.body;
-    let payload = jwt.verify(req.cookies.jwt, process.env.SECRET_KEY );
+    let payload = jwt.verify(req.cookies.jwt, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa' );
 
-    let check = apply.findOne({
-        job_id: parseInt( body.id ),
-        job_seekerid: payload._id,
+    let check = await apply.findOne({
+        $and: [
+            { job_id: parseInt( body.id ) },
+            { job_seekerid: payload._id },
+        ]
     });
+
+   
 
     if ( check ) {
         return res.json({

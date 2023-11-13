@@ -45,17 +45,17 @@
                     <img src="images/job_logo_3.jpg" alt="" class="img-fluid d-block rounded">
                 </div>
                 <div class="candidates-list-desc job-single-meta  pt-2">
-                    <h5 class="mb-2 f-19"><a href="#" class="text-dark">Amazon</a></h5>
+                    <h5 class="mb-2 f-19"><a href="#" class="text-dark">{{job.job_title}}</a></h5>
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i> Pune</p>
+                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i>{{job.location}}</p>
                         </li>
                         <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> 0 - 1 Yrs
+                            <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> {{job.experience}} Yrs
                             </p>
                         </li>
                         <li class="list-inline-item">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 50,000</p>
+                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> {{job.salary}}</p>
                         </li>
                     </ul>
                     <hr>

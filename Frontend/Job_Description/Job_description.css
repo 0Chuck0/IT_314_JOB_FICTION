@@ -19,7 +19,7 @@ body {
 }
 
 .row{
-    padding: 20px 10px;
+    padding: 10px 20px;
 }
 
 .widgetHead {
@@ -51,6 +51,11 @@ body {
     font-weight: 700;
 }
 
+#myhr{
+    width: 60% !important;
+    margin-top: 20px;
+}
+
 #jobtitle{
     color: #474d6a;
     font-size: 20px;
@@ -74,7 +79,7 @@ body {
     -webkit-transition: all 0.5s;
     background-color: #fff;
     margin-bottom: 50px;
-
+    padding-bottom: 20px;
 }
 
 /* .card:hover{
@@ -248,8 +253,8 @@ label{
 
 .above{
     margin-bottom: 80%;
-    padding-right: 20%;
-    margin-top: 10%;
+    padding-right: 28%;
+    margin-top: 0;
 }
 
 .col-md-3{

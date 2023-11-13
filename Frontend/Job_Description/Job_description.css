@@ -33,6 +33,29 @@ body {
     margin: 10px 0 15px 0px;
 }
 
+.list-inline-item{
+    margin-top: 0;
+}
+
+#dateofrole{
+    margin-top: 10px;
+    /* color:#FF3F3F ; */
+    color:#000 ;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#dateofroleform{
+    color:#FF3F3F;
+    font-weight: 700;
+}
+
+#jobtitle{
+    color: #474d6a;
+    font-size: 20px;
+    margin-top: 20px;
+}
 
 .card {
     margin: 1rem 0 1rem 0;
@@ -66,6 +89,11 @@ body {
 
 .widgetTitle {
     color: #121224;
+}
+
+.companyname{
+    text-decoration: none;
+    color: #474d6a;
 }
 
 #identity {
@@ -107,6 +135,8 @@ label{
 
 .text-dark{
     font-size: 25px;
+    color: #000;
+    font-weight: 700;
 }
 
 .jobdescription{
@@ -217,8 +247,9 @@ label{
 }
 
 .above{
-    margin-bottom: 60%;
+    margin-bottom: 80%;
     padding-right: 20%;
+    margin-top: 10%;
 }
 
 .col-md-3{

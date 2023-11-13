@@ -5,6 +5,7 @@ const cookieParser=require("cookie-parser");
 app.use(cookieParser());
 const Savedpost = require('../models/savePostSchema');
 const Register = require('../models/registers');
+const jobs = require('../models/jobs');
 
 module.exports = {
     
@@ -36,7 +37,16 @@ module.exports = {
         }
         else
         {
-           res.render("job_description",{jobid : req.params.id,how: "fa-regular"})
+          if ( 0 === req.params.id.lenght ) {
+            res.send('error');
+          }
+          const job = await jobs.findOne( { id: parseInt(req.params.id) } );
+
+          if ( job ) {
+            res.render("job_description", {job,how: "fa-regular"} )
+          } else {
+            res.send('error');
+          }
         }
     }
 }

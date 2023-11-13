@@ -11,7 +11,7 @@ const jwt = require("jsonwebtoken")
 
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(()=>{
     console.log(`Connection Successfully....`)
-}).catch((e)=>{x
+}).catch((e)=>{
     console.log(`No Connection`)
 }) 
 
@@ -23,6 +23,7 @@ const {Emailauth,loggedinonly}  = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
+const apply = require("./models/apply");
 
 const hbs = require('hbs')
 const { error } = require('console');

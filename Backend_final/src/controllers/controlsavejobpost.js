@@ -16,13 +16,13 @@ module.exports = {
             // const check = await Jobpost.findOne({job_id:req.body.id})
             const data = await Register.findOne({email:req.body.email});
 
-            if(await Savedpost.find({job_seekerid:data._id,job_id:req.body.id}).count() == 0)
+            if(await Savedpost.find({email:data.email,job_id:req.body.id}).count() == 0)
             {
              //console.log(`Jobseeker name ${data.name} and Job id is ${check.job_id} ${verify._id}`);
              //console.log(req.user_id);
              const myData = new Savedpost({
                   job_id : req.body.id,
-                  job_seekerid : data._id,
+                  email : data.email,
               })
                 
               await Savedpost.insertMany([myData])

@@ -1,16 +1,17 @@
 const Register = require("../models/registers");
 const jwt = require("jsonwebtoken");
-const Companyregister = require("../models/companyregisterschema");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");
 app.use(cookieParser());
 require("dotenv").config();
+const Companyregister = require("../models/companyregisterschema");
+
 
 async function alredyregisterauth(req , res , next){
 
    // console.log(req.body.Email);
-    
+
     const v = await Register.find({email:req.body.email});
 
     if(v.length){
@@ -19,20 +20,16 @@ async function alredyregisterauth(req , res , next){
 
         }
 
+    else{
+
 
     next ();
 
-}
 
-async function companyalredyregisterauth(req, res, next) {
 
-    const v = await Companyregister.find({ email: req.body.email });
-    if (v.length) {
-        return res.status(400).send('<script>alert("You have already registered."); window.location ="/companylogin" </script>');
     }
-    next();
-}
 
+}
 
 async function Emailauth(req , res , next){
 
@@ -46,12 +43,14 @@ async function Emailauth(req , res , next){
 
         }
 
+    else{
+
 
     next ();
 
+    }
+
 }
-
-
 
 async function loggedinonly(req , res , next){
 
@@ -90,11 +89,14 @@ async function registerauth(req , res , next){
 
         }
 
+    else{
+
 
     next ();
 
-}
+    }
 
+}
 
 async function verifyauth(req , res , next){
 
@@ -107,13 +109,31 @@ async function verifyauth(req , res , next){
          return res.status(400).send('<script>alert("You have not Verified go to email and first verify after that do a login."); window.location ="/login" </script>');
  
          }
+
+    else{
  
  
      next ();
+
+    }
  
  }
 
- async function companyverifyauth(req, res, next) {
+
+ async function companyalredyregisterauth(req, res, next) {
+
+    const v = await Companyregister.find({ email: req.body.email });
+    if (v.length) {
+        return res.status(400).send('<script>alert("You have already registered."); window.location ="/companylogin" </script>');
+    }
+    else{
+
+        next();
+    }
+
+}
+
+async function companyverifyauth(req, res, next) {
 
     // console.log(req.body.Email);
 
@@ -125,8 +145,11 @@ async function verifyauth(req , res , next){
 
     }
 
+    else{
 
-    next();
+        next();
+
+    }
 
 }
 
@@ -141,9 +164,11 @@ async function companyregisterauth(req, res, next) {
         return res.status(400).send('<script>alert("You are not Registed first you have to registered."); window.location ="/companyregister" </script>');
 
     }
+    else{
 
+        next();
 
-    next();
+    }
 
 }
 
@@ -175,11 +200,12 @@ async function companyloggedinonly(req, res, next) {
 }
 
 module.exports = {registerauth ,
-    loggedinonly , 
+    loggedinonly ,
     Emailauth ,
-    companyloggedinonly ,
-    companyalredyregisterauth ,
+    alredyregisterauth ,
+    verifyauth,
+    companyalredyregisterauth,
     companyregisterauth , 
-    companyverifyauth, 
-    alredyregisterauth , 
-    verifyauth};
+    companyverifyauth,
+    companyloggedinonly
+    };

@@ -65,7 +65,7 @@ module.exports = {
                     else
                     {
                          const check = await Register.findOne({_id:decoded._id});
-                         console.log(check);
+                         //console.log(check);
 
                         const userId = decoded._id;
 
@@ -81,7 +81,7 @@ module.exports = {
                             highest_edu: req.body.highest_edu,
                             field: req.body.field
                           };
-                        console.log(updateData);
+                        //console.log(updateData);
                           await Register.findOneAndUpdate({ _id: userId }, updateData);
                         //   , (err, result) => {
                         //     if (err) {

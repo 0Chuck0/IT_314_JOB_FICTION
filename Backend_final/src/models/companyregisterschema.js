@@ -46,7 +46,11 @@ const CompanySchema=new mongoose.Schema({
     verified:{
         type:Boolean,
         required:true,
-    }
+    },
+    profile:{
+        type:String,
+        required:true,
+    },
     
 }) 
 

@@ -6,8 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style_companyregister.css">
+  <link rel="stylesheet" href="/css/style_companyregister.css">
   <title>Registration Form</title>
+  <style>
+    .img{
+        width: 40%;
+        height: width;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +28,7 @@
     crossorigin="anonymous"></script>
 
   <section class="containerr">
-    <form class="form-registration" action="/companyregister" method="post" >
+    <form class="form-registration" action="/companyregister" method="post" enctype="multipart/form-data" >
 
       <h1>
         Company Register
@@ -112,6 +118,11 @@
         </label>
       </div> --}}
 
+        <div class="mb-3">
+        <img src="" id= "abc" alt="choosen image" class ="img">
+        </div>
+        <input type="file" name="file" onchange="func(event)">
+
       <div class="btn-container">
         <button type="submit" class="btn btn-primary register-btn">Create Account</button>
       </div>
@@ -119,6 +130,18 @@
     </form>
 
   </section>
+
+      <script>
+        function func(event){
+
+
+            var image =URL.createObjectURL(event.target.files[0]);
+
+            document.getElementById("abc").src = image;
+
+        }
+    </script>
+
 </body>
 
 </html>

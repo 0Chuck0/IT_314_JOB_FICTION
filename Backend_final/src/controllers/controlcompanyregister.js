@@ -16,6 +16,11 @@ module.exports = {
 
     post: async (req, res) => {
         try {
+
+            if(req.file === undefined) return res.send("you must select a file");
+
+            const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
+
             const data = req.body;
             if (req.body.password === req.body.cpassword) {
                 const HashPassword = await bcrypt.hash(req.body.password, 10);
@@ -23,10 +28,11 @@ module.exports = {
                 data.password = HashPassword;
                 data.token = 'dummy';
                 data.verified = false;
+                data.profile = imgUrl ;
                 await Companyregister.insertMany([data]);
                 const checking = await Companyregister.findOne({ email: req.body.email });
                 const id = checking._id;
-                const token = jwt.sign({ _id: id }, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+                const token = jwt.sign({ _id: id ,flag:true}, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
                 await Companyregister.updateOne({ _id: id }, { $set: { token: token } });
                 const message = `<h1> http://localhost:3000/companyregister/${token} <h1>`;
                 sendEmail(req.body.email, "Registration Verification", message);

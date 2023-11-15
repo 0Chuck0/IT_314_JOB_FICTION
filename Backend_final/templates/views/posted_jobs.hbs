@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Saved Jobs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/custom-bs.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/fonts/line-icons/style.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="/css/style_saved_job.css">
+    <link rel="stylesheet" href="/css/style_jobs.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/style_side_nav.css">
+    <script src="https://kit.fontawesome.com/7ff784d1a8.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="top">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="site-wrap" id="main">
+
+        <!-- .site-mobile-menu -->
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <!-- NAVBAR -->
+        <header class="site-navbar mt-3">
+            <div class="container-fluid">
+                <div class="row align-items-center col">
+                    <div class="site-logo col-6"><a href="index.html">JOBfiction</a></div>
+
+                    <nav class="mx-auto site-navigation">
+                        <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                            <li><a href="/home">Home</a></li>
+                            <li><a href="/jobs_1">Jobs</a></li>
+                            <li>
+                                <a href="/recommendations.html">Recommendations</a>
+                            </li>
+                            <li><a href="/blog.html">Blogs</a></li>
+                            <li>
+                                <a href="/about.html">About Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="container-fluid text-right d-flex aligin-items-center p-0">
+                        <div class="ml-auto">
+                            <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="/images/user-profile.png"
+                                alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
+                        </div>
+                        <span class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
+                                class="icon-menu h3 m-0 p-0 mt-2"></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Side Navigation-->
+        <div id="side-nav-bar" class="side-nav">
+            <div class="container-fluid">
+                <div class="col-md-12 image-title">
+                    <div class="row">
+                        <img class="user-profile-bar" src="../Saved Jobs/loggedin-user.png" alt="User Profile">
+                    </div>
+                    <div class="row mt-1">
+                        <h3 style="margin: auto;">Company Name</h3>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="#"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
+                    <a href="index.html"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Posted Jobs</a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="section-hero overlay inner-page bg-image"
+            style="background-image: url('/mages/hero_1.jpg');" id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="new2">
+                            <h1 class="text-white font-weight-bold">Posted Jobs</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="cards-container" class="container cards-container">
+
+           
+              {{#each Jobs}}
+            <div class="row jobs-card" onclick="func({{id}})">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png"  style="height: 64px; width: 64px;" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>{{company}}</h4>
+                    </div>
+                    <div class="row">
+                        <h3>{{job_title}}</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="col-10">
+                        <div class="row labels">
+                            <span class="label-1"><i class="fas fa-inr"></i>{{salary}}</span>
+                        </div>
+                        <div class="row labels">
+                            <span class="label-2"><i class="fas fa-business-time"></i>{{experience}} years</a>
+                        </div>
+                        <div class="row labels">
+                            <span class="label-3"><i class="far fa-building"></i>{{work_mode}}</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            {{/each}}
+{{!-- 
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div> --}}
+{{!-- 
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="row jobs-card">
+                <div class="col-2 company-logo">
+                    <img src="../Saved Jobs/loggedin-user.png" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
+                </div>
+                <div class="col job-detail ml-2">
+                    <div class="row">
+                        <h4>Tesla</h4>
+                    </div>
+                    <div class="row">
+                        <h3>Mechanical Engineer</h3>
+                    </div>
+                    <div class="row">
+                        <p><i class="fa-solid fa-location-dot"></i>Bangalore, Hyderabad, Noida</p>
+                    </div>
+                </div>
+
+                <div id="job-labels" class="col-4 job-labels mt-3">
+                    <div class="row labels">
+                        <span class="label-1"><i class="fas fa-inr"></i>50,000</span>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-2"><i class="fas fa-business-time"></i>0 - 2 years</a>
+                    </div>
+                    <div class="row labels">
+                        <span class="label-3"><i class="far fa-building"></i>Office</a>
+                    </div>
+                </div>
+                
+            </div> --}}
+        </div>
+
+
+
+
+        <footer class="site-footer">
+
+            <a href="#top" class="smoothscroll scroll-top">
+                <span class="icon-keyboard_arrow_up"></span>
+            </a>
+
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Search Trending</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Developers</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">HTML5</a></li>
+                            <li><a href="#">CSS3</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Company</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Support</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Fraud alert</a></li>
+                            <li><a href="#">Grievances</a></li>
+                            <li><a href="#">Report issue</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Connect with us</h3>
+                        <div class="footer-social">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="/js/stickyfill.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/jquery.animateNumber.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
+
+    <script src="/js/side-nav.js"></script>
+    <script src="/js/script_saved_jobs.js "></script>
+    <script src="/js/custom.js"></script>
+    <script>
+        async function func(job_id){
+
+            window.location.href = `/candidateslist/${job_id}`;
+
+        }
+    </script>
+
+</body>
+
+</html>

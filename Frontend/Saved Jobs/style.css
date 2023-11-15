@@ -42,7 +42,9 @@ p {
     margin-top: auto;
     margin-bottom: auto;
 }
-
+.job-labels-open-nav{
+    display:none;
+}
 .label-a:hover,
 .label-c:hover {
 

@@ -45,17 +45,17 @@
                     <img src="images/job_logo_3.jpg" alt="" class="img-fluid d-block rounded">
                 </div>
                 <div class="candidates-list-desc job-single-meta  pt-2">
-                    <h5 class="mb-2 f-19"><a href="#" class="text-dark">{{job.job_title}}</a></h5>
+                    <h5 class="mb-2 f-19"><a href="#" class="text-dark">Amazon</a></h5>
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i>{{job.location}} {{job.id}}</p>
+                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i> Pune</p>
                         </li>
                         <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> {{job.experience}} Yrs
+                            <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> 0 - 1 Yrs
                             </p>
                         </li>
                         <li class="list-inline-item">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> {{job.salary}}</p>
+                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 50,000</p>
                         </li>
                     </ul>
                     <hr>
@@ -66,7 +66,7 @@
             <div class="col-md-3">
                 <div class="candidates-list-fav-btn">
                     <div class="candidates-listing-btn mt-4 text-right">
-                        <button class="btn btn-outline btn-sm" onclick="apply({{job.id}})" target="_blank">Apply Now</button>
+                        <a href="profile.html" class="btn btn-outline btn-sm" target="_blank">Apply Now</a>
                         {{!-- <button id="save_{{@index}}" onclick="saveData({{jobid}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
                         <button id="unsave_{{@index}}" onclick="unsaveData({{jobid}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
                         <span class="btn btn-sm">
@@ -241,44 +241,7 @@
             console.log(err);
         }
         }*/
-        async function apply(job_id) {
-            try {
-                var token = getBrowserCookie("jwt");
-                var data = { "id": job_id };
-
-                fetch('http://localhost:3000/apply', {
-                    method: "POST",
-                    headers: {
-                        "Cookie": `jwt=${token}`,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data)
-                }).then((response) => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        throw  Error("NETWORK RESPONSE ERROR");
-                    }
-                }).catch((error) => console.error("FETCH ERROR:", error));
-            } catch (err) {
-                console.log(err);
-            }
-        }
-
-        // krushnag
-        function getBrowserCookie(cookieName) {
-            const cookies = document.cookie.split(';');
-
-            for (const cookie of cookies) {
-                const [name, value] = cookie.split('=');
-
-                if (name === cookieName) {
-                    return value;
-                }
-            }
-
-            return false;
-        }
+    
     </script>
 </body>
 

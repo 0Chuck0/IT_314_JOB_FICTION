@@ -22,10 +22,7 @@ const CompanySchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    yourdestination: {
-        type:String,
-        required:true
-    },
+    
     email: {
         type:String,
         unique:true,
@@ -51,6 +48,11 @@ const CompanySchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    description:{
+        type:String,
+        
+    }
+
     
 }) 
 

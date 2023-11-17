@@ -191,3 +191,19 @@ h6 {
         display: block;
     }
 }
+
+@media (max-width: 500px) {
+    .form-registration{
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .form-registration{
+        margin: 0.5rem;
+    }
+    input{
+        overflow-wrap: break-word;
+        text-overflow: clip;
+    }
+}

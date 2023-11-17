@@ -82,7 +82,7 @@ body {
 }
 
 .card{
-    border: 3px solid #212529;
+    border: 3px solid #DEE2E6;
 }
 
 /* .card:hover{
@@ -183,7 +183,7 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4.5%;
-    position: absolute;
+    position: relative;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
@@ -193,7 +193,7 @@ body {
     box-sizing: border-box;
     position: fixed;
     /* box-shadow: 3px 5px 8px 0 grey; */
-    border: 3px solid #212529;
+    border: 3px solid #DEE2E6;
     padding-bottom: 20px;
 }
 

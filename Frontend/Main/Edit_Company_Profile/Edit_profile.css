@@ -3,68 +3,96 @@
 
 * {
     margin: 0;
-    font-family: Satoshi,"Satoshi Fallback";
+    font-family: Satoshi, "Satoshi Fallback";
 }
 
 body {
     /* background-color: #e7e7f1; */
-    /* background-color: #f8f8f8; */
     /* background-color: #4070f4; */
-    background-color: #fff;
+    background-color: #2047b43a;
     min-height: 100vh;
     height: max-content;
+    /* background-image: url("Background-image2.jpeg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover; */
+    padding-bottom: 50px;
 }
 
-.container{
-    flex-direction: row;
+.uneditable{
+    /* display: block;
+    padding-left: 15px; */
+    padding: 5px;
+    background-color: #EEEEEE;
 }
 
+/* .uneditable:hover{
+    transform: scale(1.004);
+    transition: all 0.5s;
+} */
 
-.widgetHead{
+
+/* personal */  
+.submitbtn {
+    text-align: center;
+    margin-top: 8%;
+}
+
+.widgetHead {
     font-size: 20px;
+    /* font-size: 16px; */
     color: #000;
-    font-weight:700;
-    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-.widgetCont{
-    margin:10px 0 15px 0px;
-    font-size: 18px;
+.widgetCont {
+    margin: 10px 0 15px 0px;
+    /* --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+    --border-color: rgb(218, 221, 224); */
 }
 
 
-.card{
+.card {
     margin: 0.5rem 0 1rem;
     background-color: #fff;
-    /* transition: box-shadow .25s; */
+    transition: box-shadow .25s;
     border-radius: 2px;
     font-size: 16px;
+    /* font-size: 20px; */
     position: relative;
     /* color: #666; */
     line-height: 1.28;
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
-    border: 1px solid #DEE2E6;
+    margin-left: 10%;
 }
 
 /* .card:hover{
-    border: 3px solid black;
+    border: 3px solid #212529;
 } */
 
-/* .sidenav:hover{
-    border: 3px solid black;
+/* .sidenav:hover {
+    transform: scale(1.04);
+    transition: all 0.5s;
 } */
 
-.widgetTitle{
+.widgetTitle {
     color: #121224;
 }
 
-#identity{
+.sidenav-url{
+    /* align-items: center; */
+    margin: 0 10px;
+}
+
+#identity {
     text-align: center;
     margin-top: 12%;
-    margin-bottom: 4%;
-    font-size: 20px;
+    margin-bottom: 3%;
+    /* font-size: 20px; */
+    font-size: 16px;
 }
 
 .navbar {
@@ -72,7 +100,7 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi,"Satoshi Fallback";
+    font-family: Satoshi, "Satoshi Fallback";
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -85,18 +113,25 @@ body {
 }
 
 
-.otherpagelink{
+.otherpagelink {
     text-decoration: none;
     color: #000;
     font-size: 20px;
     margin: 0 16px;
     color: #4070f4;
+    border-radius: 25px;
+    padding: 10px 13px;
 }
 
-.logo{
+.logo {
     font-weight: 900;
     margin-right: 50px;
 }
+
+.logout {
+    border: 2px solid #4070f4;
+}
+
 .navbar-top ul {
     float: right;
     list-style-type: none;
@@ -126,42 +161,109 @@ body {
     position: relative;
 }
 
-
-
 /* End */
 
 /* Sidenav */
 .sidenav {
-    background-color: #fff;
-    /* background-color: #212529; */
+    /* background-color: #fff; */
+    background-color: #212529;
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
-    position: static;
+    position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
     top: 70px;
-    width: 20%;
-    margin-top: 3.5%;
+    width: 25%;
+    margin-top: 5%;
     box-sizing: border-box;
     position: fixed;
-    border: 1px solid #DEE2E6;
-    /* box-shadow: 3px 5px 8px 0 grey; */
+    box-shadow: 3px 5px 8px 0 grey;
     padding-bottom: 20px;
 }
 
-.sidenav-url{
-    margin-top: 30px;
+#companyphoto{
+    color: #fff;
+}
+
+#az{
+    width: 100px ;
+    height: 100px;
+}
+
+#candidate_image {
+    display: none;
+}
+
+/* .profileinput{
+    height: 100px;
+    width: 150px;
+    border-radius: 6px;
+    border: 1px dashed #999;
+} */
+
+/* .profileinput:hover{
+    color: #de0611;
+    border: 1px dashed #de0611;
+} */
+.lastname {
+    margin-left: 20%;
+}
+
+.candidategender {
+    display: flex;
+    gap: 60px;
+    font-size: 18px;
+}
+
+.spancontrol {
+    display: flex;
+}
+
+#submitbutton {
+    background-color: #4070fa;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 400;
+}
+
+.ecxept{
+    min-height: 2.14rem ;
+}
+.differentinput {
+    /* border: none; */
+    border-radius: 8px;
+    /* width: 100%; */
+    padding-left: 15px;
+    font-size: 18px;
+    /* width: 100%; */
+    /* min-width: 14rem; */
+    border: 1px solid #DADDE0;
 }
 
 .profile {
-    margin-bottom: 20px;
-    margin-top: 20px;    
+    margin-bottom: 30px;
+    margin-top: 25px;
     text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+img{
+    font-size: 13px;
 }
 
 .profile img {
@@ -172,17 +274,15 @@ body {
 .name {
     font-size: 20px;
     /* font-size: 16px; */
-    font-weight: 300;
+    font-weight: bold;
     padding-top: 20px;
     color: #000;
-    margin-bottom: 5px;
 }
 
-.company_type{
-    font-size: 18px;
-    font-weight: 500;
+.job {
+    font-size: 16px;
+    font-weight: bold;
     padding-top: 10px;
-    color: #3c3838;
 }
 
 .url{
@@ -193,6 +293,7 @@ body {
 }
 
 .url hr {
+    /* margin: 15px; */
     align-items: center;
     width: 60%;
 }
@@ -201,47 +302,53 @@ body {
     color: #818181;
     display: block;
     font-size: 20px;
+    /* font-size: 18px; */
     margin: 10px 0;
     padding: 10px 12px;
     text-decoration: none;
 }
 
-.mehr{
-    width: 60%;
-    margin-bottom: auto;
+.except{
+    width: 97%;
+    min-height: 2.25rem;
 }
 
-.url a:hover, .url .active {
+.url a:hover,
+.url .active {
     background-color: #cee2f1;
     border-radius: 28px;
     color: #000;
     width: 65%;
 }
 
-.socialmediacontainer{
+
+.socialmediacontainer {
     /* width: 90px; */
     margin: 0 auto;
 }
+
 /* End */
 
 /* Main */
 .main {
     margin-top: 100px;
-    margin-left: 33%;
+    margin-left: 29%;
     font-size: 28px;
+    /* font-size: 20px; */
     padding: 0 10px;
-    width: 58%;
+    width: 70%;
     margin-bottom: 60px;
 }
 
-h2{
+
+h2 {
     text-align: center;
     color: #4070f4 !important;
 }
 
 .main h2 {
     color: #333;
-    font-family: Satoshi,"Satoshi Fallback";
+    font-family: Satoshi, "Satoshi Fallback";
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -250,10 +357,10 @@ h2{
 .main .card {
     background-color: #fff;
     border-radius: 18px;
-    /* box-shadow: 1px 1px 8px 0 grey; */
+    box-shadow: 1px 1px 8px 0 grey;
     height: auto;
     margin-bottom: 20px;
-    padding: 20px 50px 20px 50px;
+    padding: 20px 50px 20px 50px ;
 }
 
 .main .card table {
@@ -261,6 +368,10 @@ h2{
     font-size: 16px;
     height: 270px;
     width: 80%;
+}
+
+.empty{
+    overflow:auto;
 }
 
 .toggle-btn{
@@ -284,10 +395,10 @@ h2{
     left: 330px;
 }
 
-hr{
+hr {
     margin: 0 auto;
-    width: 100%;
-    margin-bottom: 15px;
+    width: 60%;
+    /* margin-bottom: 15px; */
 }
 
 .edit {
@@ -305,14 +416,21 @@ hr{
     .toggle-btn{
         display: none;
     }
+    .lower-btn{
+        display: none;
+    }
 }
 
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
+        position: fixed;
+    }
+    .upper-btn{
+        display: none;
     }
     .sidenav{
-        margin-left: -200px;
+        margin-left: -300px;
     }
     .sidenav.active{
         margin-left:80px ;
@@ -331,8 +449,44 @@ hr{
         display: flex;
     }
     .main{
-        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 10%;
+        width: fit-content;
     }
+}
+
+@media (max-width: 495px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    .widgetCont{
+        font-size: 16px;
+    }
+    .widgetHead{
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 226px) and (max-width:494px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    .main{
+        margin-left: 8%;
+    }
+    .toggle-btn{
+        left: 5px;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
+}
+
+*{
+    box-sizing: border-box;
 }
 
 @media (min-width: 500px) and (max-width: 840px){

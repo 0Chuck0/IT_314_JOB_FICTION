@@ -9,7 +9,7 @@
 body {
     /* background-color: #e7e7f1; */
     /* background-color: #4070f4; */
-    background-color: #2047b43a;
+    background-color: #fff;
     min-height: 100vh;
     height: max-content;
 }
@@ -18,6 +18,9 @@ body {
     flex-direction: row;
 }
 
+.row{
+    padding: 10px 20px;
+}
 
 .widgetHead {
     font-size: 20px;
@@ -30,6 +33,34 @@ body {
     margin: 10px 0 15px 0px;
 }
 
+.list-inline-item{
+    margin-top: 0;
+}
+
+#dateofrole{
+    margin-top: 10px;
+    /* color:#FF3F3F ; */
+    color:#000 ;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#dateofroleform{
+    color:#FF3F3F;
+    font-weight: 700;
+}
+
+#myhr{
+    width: 60% !important;
+    margin-top: 20px;
+}
+
+#jobtitle{
+    color: #474d6a;
+    font-size: 20px;
+    margin-top: 20px;
+}
 
 .card {
     margin: 1rem 0 1rem 0;
@@ -48,7 +79,7 @@ body {
     -webkit-transition: all 0.5s;
     background-color: #fff;
     margin-bottom: 50px;
-
+    padding-bottom: 20px;
 }
 
 /* .card:hover{
@@ -56,13 +87,18 @@ body {
     transition: all 0.5s;
 } */
 
-.sidenav:hover {
+/* .sidenav:hover {
     transform: scale(1.04);
     transition: all 0.5s;
-}
+} */
 
 .widgetTitle {
     color: #121224;
+}
+
+.companyname{
+    text-decoration: none;
+    color: #474d6a;
 }
 
 #identity {
@@ -75,6 +111,7 @@ body {
 
 span{
     color: #474d6a;
+    font-size: 18px;
 }
 
 .navbar {
@@ -98,14 +135,18 @@ span{
 
 label{
     font-weight: 700;
+    font-size: 18px;
 }
 
 .text-dark{
     font-size: 25px;
+    color: #000;
+    font-weight: 700;
 }
 
 .jobdescription{
     color: #000;
+    font-size: 18px;
 }
 
 .otherpagelink {
@@ -160,6 +201,7 @@ label{
 /* Job Card */
 .text-muted {
     color: #000 !important;
+    font-size: 18px;
 }
 
 .rightbottomapply {
@@ -183,13 +225,13 @@ label{
     margin-right: 15%;
 }
 
-.list-grid-item:hover {
+/* .list-grid-item:hover {
     -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
     box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     border-color: transparent;
-}
+} */
 
 .candidates-img img {
     max-width: 90px;
@@ -206,10 +248,38 @@ label{
 }
 
 .candidates-listing-btn {
-    padding-top: 95%;
-    padding-right: 1%;
+    padding-top: 0;
 }
 
+.above{
+    /* margin-bottom: 90%; */
+    padding-right: 15%;
+    margin-top: 0;
+    margin-bottom: 5%;
+    margin-left: auto;
+}
+
+.col-md-3{
+    padding-left: 20px;
+}
+.col-md-9{
+    padding-right: 0;
+}
+.below{
+    padding-right: 15%;
+    margin-bottom: 5%;
+    position: absolute;
+    bottom: 0;
+    margin-left: 15%;
+}
+
+.belowa{
+    font-size: 16px;
+}
+
+.styles_other-details__oEN4O{
+    padding-left: 10px;
+}
 /* End */
 
 /* Sidenav */
@@ -312,21 +382,23 @@ hr {
 
 strong{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 45px;
 }
 
 h2 {
     text-align: left;
     color: #000 !important;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     /* font-weight: bold; */
     font-size: 27px;
+    font-weight: 900;
 }
 
 p{
     /* line-height: 10px; */
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .main h2 {
@@ -335,6 +407,11 @@ p{
     font-size: 28px;
     margin-bottom: 10px;
     font-weight: 800;
+}
+
+li{
+    font-size: 22px;
+    margin-top: 20px;
 }
 
 .main .card {
@@ -354,9 +431,9 @@ p{
 }
 
 hr {
-    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%;
-    margin-bottom: 15px;
 }
 
 .edit {
@@ -370,25 +447,70 @@ hr {
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+@media (max-width:644px){
+    .below{
+        margin-left: 5%;
+    }
+    .above{
+        margin-right: 5%;
+        padding-right: 10px;
+    } 
+    .below{
+        float: left;
+    } 
+    .above{
+        float: right;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width:644px){
+    .list-grid-item{
+        margin-left: 15%;
+        width: 70%;
+    }
+    .card{
+        margin-left: 15%;
+        width: 70%;
+        margin-right: 15%;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
+@media (max-width:430px){
+    .list-grid-item{
+        margin-left: 15%;
+        width: 70%;
+    }
+    .card{
+        margin-left: 15%;
+        width: 70%;
+        margin-right: 5%;
+    }
+    #dateofrole{
+        font-size: 18px;
+    }
+    #dateofrolefrom{
+        font-size: 16px;
+    }
 }
 
-.fa-github:hover {
-    color: #161414 !important;
+@media (max-width:378px){
+    .above{
+        margin-right: 0;
+        padding-right: 10px;
+    }
+    .below{
+        margin-left: 0;
+        margin-right: 15%;
+    }
 }
 
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+@media (max-width:320px){
+    .above{
+        padding-left: 0;
+        font-size: 14px;
+    }
+    .below{
+        font-size: 14px;
+    }
 }
-
 /* End */

@@ -1,5 +1,8 @@
-/* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+/* @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700"); */
+
+.foot-new{
+    margin-bottom: -3rem;
+}
 
 * {
     margin: 0;

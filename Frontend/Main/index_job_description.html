@@ -16,9 +16,21 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="Edit_Company_Profile/Edit_profile.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.9.95/css/materialdesignicons.css"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+        integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+        integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/6c6d85d0b7.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Job_Description/Job_description.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
 <body id="top">
@@ -108,123 +120,113 @@
         </section>
 
         <section class="containerr">
-            <form action="form.php">
-                <div class="toggle-btn" onclick="viewmenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="sidenav" id="showmenu">
-                    <div class="profile">
-                        <div class="image" id="az">
-                            <input type="file" name="image" id="candidate_image" onchange="func(event)">
-                            <label for="candidate_image"><img src="Edit_Company_Profile/photo.webp" id="companyphoto"
-                                    alt="Preview Not Available" width="100" height="100"></label>
+            <div class="list-grid-item mt-4 p-2">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="candidates-img float-left mr-4">
+                            <!-- <a href="amazon" target="_blank" id="company_logo">
+                            <img src="job_log4o_3.jpg" alt="" class="img-fluid d-block rounded">
+                        </a> -->
+                        </div>
+                        <div class="candidates-list-desc job-single-meta  pt-2">
+                            <h5 class="mb-2 f-19 text-dark">Software Developer</h5>
+                            <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname">Amazon India</a></h6>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item mr-4">
+                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i> Pune</p>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> 0
+                                        - 1 Yrs
+                                    </p>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 50,000
+                                    </p>
+                                </li>
+                            </ul>
+                            <hr>
+                            <span>About Company <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                                cum numquam error sunt ducimus eum veniam odit optio officiis illo.z</span>
+                            <hr>
+                            <!-- <hr id="myh"> -->
+                            <div id="dateofrole">Last Date:<span id="dateofroleform"> 01-01-2024 23:59 Monday</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="lowerprofile">Photo must be in form of .jpg/.jpeg/.png </div>
-
-                    <div class="sidenav-url">
-                        <div class="url">
-                            <a href="index.html" class="active">Home</a>
-                        </div>
-                        <hr class="mehr">
-                        <div class="url">
-                            <a href="profile.html" class="active">Jobs</a>
-                        </div>
-                        <hr class="mehr">
-                        <div class="url">
-                            <a href="profile.html" class="active">Profile</a>
-                        </div>
-                    </div>
-                    <div class="submitbtn upper-btn">
-                        <button id="submitbutton" type="submit">Save Changes</button>
-                    </div>
-                </div>
-                <!-- Sidenav -->
-                <!-- End -->
-
-                <!-- Main -->
-                <div class="main" id="hideshow">
-                    <div class="card-body">
-                        <div class="card mine">
-                            <h2>Company Details</h2>
-                            <div>
-                                <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                            for="company_name">Company Name</label></span>
+                    <div class="col-md-3">
+                        <div class="candidates-list-fav-btn">
+                            <div class="candidates-listing-btn mt-4 text-right">
+                                <div class="btn btn-sm above">
+                                    <i class="fa-regular fa-bookmark fa-xl" id="saveIcon"
+                                        onclick="toggleSaveState()"><span id="myspan"> Save</span></i>
                                 </div>
-                                <div class="widgetCont differentinput uneditable">
-                                    <span class="empty ">Amazon
-                                    </span>
-                                </div>
+                                <div class="below"><button type="submit" class="btn btn-outline btn-sm belowa">Apply
+                                        Now</button></div>
                             </div>
-
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="company_type">Industy Type</label></span>
-                            </div>
-                            <div class="widgetCont differentinput uneditable"><span class="empty">E-Commerce Company
-                                </span>
-                            </div>
-
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="company_contact_number">Contact number</label></span>
-                            </div>
-                            <div class="widgetCont differentinput uneditable"><span class="empty">123456789
-                                </span>
-                            </div>
-
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="company_address">Company Address</label></span>
-                            </div>
-                            <div class="widgetCont differentinput uneditable"><span class="empty">Ground Floor, Eros
-                                    Plaza, Eros
-                                    Corporate Centre, Nehru Place, New Delhi-110019 Delhi South Delhi DL IN 110019
-                                </span>
-                            </div>
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="company_description">Company Description</label></span>
-                            </div>
-                            <div class="widgetCont differentinput uneditable"><span class="empty">Lorem ipsum dolor sit
-                                    amet
-                                    consectetur adipisicing elit. A harum eligendi fugiat alias error voluptatibus cum
-                                    quo
-                                    laboriosam ad vel officia, esse, id adipisci aperiam tempore.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <h2>Employee Details</h2>
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="employee_name">Name</label></span>
-                            </div>
-                            <div class="widgetCont "><span class="empty"><input class="differentinput except"
-                                        type="text" id="employee_name" name="employeename">
-                                </span>
-                            </div>
-
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="employee_designation">Designation</label></span>
-                            </div>
-                            <div class="widgetCont "><span class="empty "><input class="differentinput except"
-                                        type="text" id="employee_designation" name="designation">
-                                </span>
-                            </div>
-
-                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                        for="employee_email">Email</label></span>
-                            </div>
-                            <div class="widgetCont"><span class="empty"><input class="differentinput except"
-                                        type="email" id="employee_email" name="email">
-                                </span>
-                            </div>
-                        </div>
-                        <div class="submitbtn lower-btn">
-                            <button id="submitbutton" type="submit">Save Changes</button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="card mine">
+                <h2>Job Description</h2>
+                <ul>
+                    <!-- <div class="styles_JDC__dang-inner-html__h0K4t"> -->
+                    <li>
+                        <p><strong>Role &amp; Responsibilities</strong></p>
+                    </li>
+                    <span>Daily allocations, Reports and MIS</span>
+                    <li>
+                        <p><strong>Preferred Candidate Profile</strong> </p>
+                        <div class="styles_details__Y424J"><label>Experience:</label><span> 0-2 Yrs<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Key Skills:</label><span> Typing Speed, English
+                                Typing,
+                                Communication Skills, Excel</span>
+                        </div>
+                        <!-- <hr> -->
+                    </li>
+                    <!-- <p>Should be at least 12th pass or graduate with typing speed 40wpm+</p> -->
+                    <!-- </div> -->
+                    <li>
+                        <p><strong>Standard</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><label>Job Title:</label><span> Software Developer<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Industry Type:</label><span> NBFC<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Employment Type:</label><span> Full Time </span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Work Mode:</label><span> Office </span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Role Category:</label><span> Back
+                                Office</span>
+                        </div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Salary:</label><span> 50,000</span>
+                        </div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Location:</label><span> PAN India</span>
+                        </div>
+                    </div>
+                    <li>
+                        <p><strong>Education</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><label>Degree:</label><span> Bachelors</span></div>
+                    </div>
+                    <li>
+                        <p><strong>Perks &amp; Benifites</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><span> Lorem ipsum dolor sit amet.</span></div>
+                    </div>
+                </ul>
+            </div>
         </section>
 
         <footer class="site-footer">
@@ -299,27 +301,20 @@
     <script src="js/custom.js"></script>
 
     <script>
-        function func(event) {
-
-            const fi = document.getElementById('candidate_image');
-            const img = fi.value.split('.').pop().toLowerCase().toString();
-            var imageExts = ['jpg', 'jpeg', 'png'];
-            // Check if any file is selected. 
-            if (fi.files.length > 0) {
-                console.log(img)
-                if (imageExts.indexOf(img) === -1) {
-                    fi.value = null
-                    document.getElementById("companyphoto").src = 'photo.webp';
-                    alert('Only jpg/jpeg and png files are allowed!');
-                }
-                if (imageExts.indexOf(img) !== -1) {
-                    var image = URL.createObjectURL(event.target.files[0]);
-
-                    document.getElementById("companyphoto").src = image;
-                }
+        function toggleSaveState() {
+            const saveIcon = document.getElementById("saveIcon");
+            const savetext = document.getElementById("myspan");
+            if (saveIcon.classList.contains("fa-solid")) {
+                saveIcon.classList.remove("fa-solid");
+                saveIcon.classList.add("fa-regular");
+                document.getElementById('myspan').innerHTML = " Save";
+            } else {
+                saveIcon.classList.remove("fa-regular");
+                saveIcon.classList.add("fa-solid");
+                document.getElementById('myspan').innerHTML = " Saved";
             }
-
         }
+
     </script>
 
 </body>

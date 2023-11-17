@@ -1,6 +1,10 @@
 /* Import Font Dancing Script */
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 
+.new-form{
+    width: 80%;
+}
+
 * {
     margin: 0;
     font-family: Satoshi, "Satoshi Fallback";
@@ -348,11 +352,11 @@ img{
 /* Main */
 .main {
     margin-top: 100px;
-    margin-left: 16%;
+    /* margin-left: 29%; */
     /* font-size: 28px; */
     font-size: 28px;
     padding: 0 10px;
-    width: 70%;
+    width: 100%;
     margin-bottom: 60px;
     justify-content: center;
     align-items: center;
@@ -399,13 +403,6 @@ hr {
     position: absolute;
     color: #e7e7e8;
     right: 14%;
-}
-
-.remv{
-    display: none;
-}
-*{
-    box-sizing: border-box;
 }
 
 /* End */

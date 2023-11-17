@@ -157,10 +157,11 @@ body {
     width: 20%;
     margin-top: 5%;
     box-sizing: border-box;
-    position: fixed;
+    /* position: fixed; */
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
     border: 1px solid #DEE2E6;
+    margin-top: 25rem;
 }
 
 .sidenav-url{

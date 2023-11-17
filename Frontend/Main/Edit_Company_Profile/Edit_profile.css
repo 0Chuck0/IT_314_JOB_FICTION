@@ -1,6 +1,11 @@
 /* Import Font Dancing Script */
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 
+.new-footer{
+    margin-bottom: -3.5rem;
+  }
+  
+
 * {
     margin: 0;
     font-family: Satoshi, "Satoshi Fallback";
@@ -173,19 +178,18 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
     top: 7px;
     width: 25%;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     box-sizing: border-box;
-    position: fixed;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
     border: 1px solid #DEE2E6;
-    
+    margin-top: 8rem;
 }
 
 #companyphoto{
@@ -341,7 +345,8 @@ img{
 
 /* Main */
 .main {
-    margin-top: 100px;
+    /* margin-top: 100px; */
+    margin-top: -38.5rem;
     margin-left: 29%;
     font-size: 28px;
     /* font-size: 20px; */

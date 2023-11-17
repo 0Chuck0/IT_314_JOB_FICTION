@@ -15,6 +15,7 @@
   <link href="Candidate_List.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
   <script src="https://kit.fontawesome.com/6c6d85d0b7.js" crossorigin="anonymous"></script>
+  <!-- <script src="script.js"></script> -->
 
 </head>
 
@@ -33,11 +34,11 @@
   </header>
   <main class="container">
     <div class="candidates-listing-item">
-      <h2>Showing Results</h2>
+      <h2 onclick="handle()">Showing Results</h2>
       <div class="list-grid-item mt-4 p-2">
         <div class="row">
           <div class="col-md-9">
-            <div class="candidates-img float-left mr-4">
+            <div class="candidates-img float-left mr-4" id="azahar">
               <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="img-fluid d-block rounded">
             </div>
             <div class="candidates-list-desc job-single-meta  pt-2">
@@ -53,13 +54,15 @@
                   <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> 1 Year</p>
                 </li>
               </ul>
-              <p class="text-muted mt-1 mb-0"><span class="boldspan">Skills :</span> HTML, CSS, JavaScript, Wordpress, PHP, jQueary</p>
+              <p class="text-muted mt-1 mb-0"><span class="boldspan">Skills :</span> HTML, CSS, JavaScript, Wordpress,
+                PHP, jQueary</p>
             </div>
           </div>
           <div class="col-md-3">
             <div class="candidates-list-fav-btn text-right">
               <div class="candidates-listing-btn mt-4">
-                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View Profile</a>
+                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View
+                  Profile</a>
               </div>
             </div>
           </div>
@@ -101,7 +104,8 @@
           <div class="col-md-3">
             <div class="candidates-list-fav-btn text-right">
               <div class="candidates-listing-btn mt-4">
-                <a href="..\Candidate_Info\Candidate_page.html" target="_blank"class="btn btn-outline btn-sm">View Profile</a>
+                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View
+                  Profile</a>
               </div>
             </div>
           </div>
@@ -143,7 +147,8 @@
           <div class="col-md-3">
             <div class="candidates-list-fav-btn text-right">
               <div class="candidates-listing-btn mt-4">
-                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View Profile</a>
+                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View
+                  Profile</a>
               </div>
             </div>
           </div>
@@ -185,7 +190,8 @@
           <div class="col-md-3">
             <div class="candidates-list-fav-btn text-right">
               <div class="candidates-listing-btn mt-4">
-                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View Profile</a>
+                <a href="..\Candidate_Info\Candidate_page.html" target="_blank" class="btn btn-outline btn-sm">View
+                  Profile</a>
               </div>
             </div>
           </div>
@@ -206,7 +212,70 @@
   <footer>
 
   </footer>
+  <!-- <script>
+  function handle() {
+    console.log(screen.width);
+    if (window.screen.width<=500) {
+        let remv = document.body.getElementsByClassName('candidates-img');
+        console.log(remv);
+        let length = remv.length;
+        let i = 0;
+        while (length > 0 && i <= length) {
+            remv[i].classList.remove('float-left');
+            i++;
+        }
+        // let xd = document.getElementById('azahar');
+        // if(xd.classList.contains('float-left')){
+        //     xd.classList.remove('float-left');
+        // }
+        // else{
+        //     alert("Hello");
+        // }
+    }
+    else {
+        let remv = document.body.getElementsByClassName('candidates-img');
+        let length = remv.length;
+        let i = 0;
+        while (length > 0 && i <= length) {
+            remv[i].classList.add('float-left');
+            i++;
+        }
+    }
+}
 
+// handle();
+window.addEventListener("orientationchange",handle);
+</script> -->
+  <script>
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth <= 500) {
+        let remv = document.body.getElementsByClassName('candidates-img');
+        let length = remv.length;
+        let i = 0;
+        while (length > 0 && i <= length) {
+          if (remv[i].classList.contains('float-left')) {
+
+            remv[i].classList.remove('float-left');
+          }
+          i++;
+        }
+      }
+      else {
+        let remv = document.body.getElementsByClassName('candidates-img');
+        let length = remv.length;
+        let i = 0;
+        while (length > 0 && i <= length) {
+          if (!(remv[i].classList.contains('float-left'))) {
+            remv[i].classList.add('float-left');
+          }
+          i++;
+        }
+      }
+    },
+      true);
+
+  </script>
 </body>
 
 </html>

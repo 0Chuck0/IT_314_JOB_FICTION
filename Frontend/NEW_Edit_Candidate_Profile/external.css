@@ -28,6 +28,11 @@
     cursor: pointer;
     justify-content: space-between;
     border: solid #DADDE0 1px;
+    min-width: 0;
+}
+
+.mult-select-tag .body {
+    min-width: 0 !important;
 }
 
 .select-btn svg{
@@ -59,7 +64,7 @@
 
 .sBtn-text{
     /* border-right: solid 2px #DADDE0; */
-    flex: 1;
+    flex: 1;    
 }
 
 .select-menu.active .options{

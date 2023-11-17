@@ -1,18 +1,18 @@
-const optionMenu1 = document.querySelector(".dropdown1"),
-       selectBtn1 = optionMenu1.querySelector(".select-btn1"),
-       options1 = optionMenu1.querySelectorAll(".option1"),
-       sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
+// const optionMenu1 = document.querySelector(".dropdown1"),
+//        selectBtn1 = optionMenu1.querySelector(".select-btn1"),
+//        options1 = optionMenu1.querySelectorAll(".option1"),
+//        sBtn_text1 = optionMenu1.querySelector(".sBtn-text1");
 
-selectBtn1.addEventListener("click", () => optionMenu1.classList.toggle("active"));       
+// selectBtn1.addEventListener("click", () => optionMenu1.classList.toggle("active"));       
 
-options1.forEach(option =>{
-    option.addEventListener("click", ()=>{
-        let selectedOption = option.querySelector(".option-text").innerText;
-        sBtn_text1.innerText = selectedOption;
+// options1.forEach(option =>{
+//     option.addEventListener("click", ()=>{
+//         let selectedOption = option.querySelector(".option-text").innerText;
+//         sBtn_text1.innerText = selectedOption;
 
-        optionMenu1.classList.remove("active");
-    });
-});
+//         optionMenu1.classList.remove("active");
+//     });
+// });
 
 const optionMenu2 = document.querySelector(".dropdown2"),
        selectBtn2 = optionMenu2.querySelector(".select-btn2"),

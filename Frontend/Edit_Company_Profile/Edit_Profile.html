@@ -23,6 +23,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,12 @@
     </div>
 
     <form action="form.php">
-        <div class="sidenav">
+        <div class="toggle-btn" onclick="viewmenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="sidenav" id="showmenu">
             <div class="profile">
                 <div class="image" id="az">
                     <input type="file" name="image" id="candidate_image" onchange="func(event)">
@@ -61,7 +67,7 @@
                     <a href="profile.html" class="active">Profile</a>
                 </div>
             </div>
-            <div class="submitbtn">
+            <div class="submitbtn upper-btn">
                 <button id="submitbutton" type="submit">Save Changes</button>
             </div>
         </div>
@@ -69,7 +75,7 @@
         <!-- End -->
 
         <!-- Main -->
-        <div class="main">
+        <div class="main" id="hideshow">
             <div class="card-body">
                 <div class="card mine">
                     <h2>Company Details</h2>
@@ -140,6 +146,9 @@
                         </span>
                     </div>
                 </div>
+                <div class="submitbtn lower-btn">
+                    <button id="submitbutton" type="submit">Save Changes</button>
+                </div>
             </div>
         </div>
     </form>
@@ -158,12 +167,37 @@
 
     <script src="js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
-    <script>
+    <!-- <script>
         function func(event) {
             var image = URL.createObjectURL(event.target.files[0]);
             document.getElementById("companyphoto").src = image;
         }
+    </script> -->
+
+    <script>
+        function func(event) {
+
+            const fi = document.getElementById('candidate_image');
+            const img = fi.value.split('.').pop().toLowerCase().toString();
+            var imageExts = ['jpg', 'jpeg', 'png'];
+            // Check if any file is selected. 
+            if (fi.files.length > 0) {
+                console.log(img)
+                if (imageExts.indexOf(img) === -1) {
+                    fi.value = null
+                    document.getElementById("companyphoto").src = 'photo.webp';
+                    alert('Only jpg/jpeg and png files are allowed!');
+                }
+                if (imageExts.indexOf(img) !== -1) {
+                    var image = URL.createObjectURL(event.target.files[0]);
+
+                    document.getElementById("companyphoto").src = image;
+                }
+            }
+
+        }
     </script>
+
 </body>
 
 </html>

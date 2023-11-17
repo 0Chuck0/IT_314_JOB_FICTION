@@ -401,4 +401,11 @@ hr {
     right: 14%;
 }
 
+.remv{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+}
+
 /* End */

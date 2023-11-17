@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>JobFiction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="style_register.css">    
+  </head>
+  <body id="top">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+    
+
+<div class="site-wrap">
+
+    <!-- .site-mobile-menu -->
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> 
+    
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><a href="index.html">JOBfiction</a></div>
+
+          <nav class="mx-auto site-navigation">
+            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+              <li><a href="index.html" class="nav-link active">Home</a></li>
+              <li><a href="index_jobs.html">Jobs</a></li>
+              <li>
+                <a href="recommendations.html">Recommendations</a>
+              </li>
+              <li><a href="blog.html">Blogs</a></li>
+              <li>
+                <a href="about.html">About Us</a>
+              </li>
+              <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
+              <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+            </ul>
+          </nav>
+          
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              <!-- <a href="" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Already registered?</a> -->
+              <span class="new">Already registered?</span>
+              <a href="Login Form/index.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Log In</a>
+            </div>
+            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="new2">
+              <h1 class="text-white font-weight-bold">Post a Job</h1>
+            </div>
+            <div class="custom-breadcrumbs">
+              <a href="#">Home</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Register</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- <section class="containerr">
+        <form class="form-registration">
+          <h1>
+            Register
+          </h1>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 title" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What is your name?" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1 title" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Tell us your Email ID" required>
+            <div class="form-text">
+              We will send you relevant jobs on this mail
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1 title" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"
+              placeholder="Create a password for your account" required>
+            <div id="exampleInputPassword1" class="form-text">
+              Minimum 6 characters required
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1 title" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"
+              placeholder="Rewrite your password" required>
+          </div>
+          <div class="mb-3">
+            <label for="validationDefaultUsername title" class="form-label">Mobile number</label>
+            <div class="input-group">
+              <span class="input-group-text" id="inputGroupPrepend2">+91</span>
+              <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2"
+                required placeholder="Mobile Number">
+            </div>
+            <div class="form-text">
+              Recruiters will contact you on this number
+            </div>
+          </div>
+    
+          <div class="Gender">
+            <label for="" class="form-label title">Gender</label>
+            <div class="checks">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Other
+                </label>
+              </div>
+            </div>
+          </div>
+    
+          <div class="Work-Status">
+            <label for="" class="title form-label">Work Status</label>
+            <div class="radioWrap">
+              <button class="work-exp">
+                <div class="focusable optionWrap data" tabindex="0" data-val="exp">
+                  <div class="textWrap">
+                    <h6 class="main-3">I'm experienced</h6>
+                    <p class="main-2"> I have work experience <br>(excluding internships)</p>
+                  </div>
+                  <div class="iconWrap"><img src="//static.naukimg.com/s/7/104/assets/images/briefcase.bdc5fadf.svg"></div>
+                </div>
+              </button>
+              <button class="work-exp">
+                <div class="focusable optionWrap selected data" tabindex="0" data-val="fresher">
+                  <div class="textWrap">
+                    <h6 class="main-3">I'm a fresher</h6>
+                    <p class="main-2">I am a student/ Haven't worked <br> after graduation</p>
+                  </div>
+                  <div class="iconWrap"><img src="//static.naukimg.com/s/7/104/assets/images/schoolbag.a54cbf7a.svg"></div>
+                </div>
+              </button>
+            </div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary register-btn">Register</button>
+        </form>
+      </section> -->
+    
+      <section class="containerr">
+        <form class="form-registration" action="" method="">
+          <h1>
+            Post a Job
+          </h1>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Job Ttile<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the Job Title" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Company Name<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter your company or organization name" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">No. of openings<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="eg. 8" required>
+          </div>
+          <div class="Gender">
+            <label for="gender" class="form-label title">Job Type</label>
+            <div class="checks">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Full-Time
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Part-Type
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Internship
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Job Description<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the job information" required>
+            <div class="form-text">
+              Minimum characters 500
+            </div>
+            </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Salary<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the salary" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Role<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Eg. Engineering Manager" required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 title" class="form-label d-block">Industry Type<sup
+                class="mandatory_Filds">*</sup></label>
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Eg. IT Services and Consulting" required> -->
+            <select class="form-control">
+              <option value="0">Select Industry:</option>
+              <option value="1">IT Services & Consulting</option>
+              <option value="2">Aviation</option>
+              <option value="3">Engineering & Construction</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 title" class="form-label d-block">Department <sup
+                class="mandatory_Filds">*</sup></label>
+            <select class="form-control">
+              <option value="0">Select Department:</option>
+              <option value="1">Engineering - Software</option>
+              <option value="2">Data Science and Analytics</option>
+              <option value="3">Production & Manufacturing</option>
+            </select>
+          </div>
+          
+          <div class="mb-3">
+            <label for="exampleFormControlInput1 name" class="form-label">Key Skills<sup
+                class="mandatory_Filds">*</sup></label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter multiple skills eg.SQL, Python, C, C++ etc." required>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1 title" class="form-label">Contact Email ID<sup class="mandatory_Filds">*</sup></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Tell us your Email ID" required>
+            <div class="form-text">
+              Candiates will be able to contact you through this email.
+            </div>
+          </div>
+         
+    
+          <div class="mb-3">
+            <label for="validationDefaultUsername number" class="form-label">Mobile number<sup
+                class="mandatory_Filds">*</sup></label>
+            <div class="input-group">
+              <span class="input-group-text" id="inputGroupPrepend2">+91</span>
+              <input type="text" pattern="^(?=.*[0-9]).{10}$" class="form-control" id="validationDefaultUsername"
+                aria-describedby="inputGroupPrepend2" required placeholder="Mobile Number">
+            </div>
+            <div class="form-text">
+              Candidates will be able to contact you on this number.
+            </div>
+          </div>
+    
+          
+    
+          <!-- <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Send me important updates on<span><img src="Whatsapp-logo.svg" alt="No_photo"></span>WhatsApp
+            </label>
+          </div> -->
+    
+          <div class="btn-container">
+            <button type="submit" class="btn btn-primary register-btn">Post </button>
+          </div>
+    
+        </form>
+    
+      </section>
+
+    <footer class="site-footer">
+
+      <a href="#top" class="smoothscroll scroll-top">
+        <span class="icon-keyboard_arrow_up"></span>
+      </a>
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Search Trending</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Web Developers</a></li>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">CSS3</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Company</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Support</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+              <li><a href="#">Fraud alert</a></li>
+              <li><a href="#">Grievances</a></li>
+              <li><a href="#">Report issue</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Connect with us</h3>
+            <div class="footer-social">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  
+  </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <script src="js/bootstrap-select.min.js"></script>
+    
+    <script src="js/custom.js"></script>
+
+     
+  </body>
+</html>

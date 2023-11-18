@@ -1,9 +1,10 @@
 /* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+/* @import url(https://fonts.googleapis.com/css?family=Dancing+Script); */
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 * {
     margin: 0;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
 }
 
 body {
@@ -115,7 +116,7 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family: 'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -189,7 +190,7 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
-    position: fixed;
+    position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
@@ -197,7 +198,6 @@ body {
     width: 25%;
     margin-top: 5%;
     box-sizing: border-box;
-    position: fixed;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
     border: 1px solid #DEE2E6;
@@ -365,7 +365,7 @@ h2 {
 
 .main h2 {
     color: #333;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family: 'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;

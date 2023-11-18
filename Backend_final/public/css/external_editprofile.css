@@ -28,6 +28,11 @@
     cursor: pointer;
     justify-content: space-between;
     border: solid #DADDE0 1px;
+    min-width: 0;
+}
+
+.mult-select-tag .body {
+    min-width: 0 !important;
 }
 
 .select-btn svg{
@@ -49,8 +54,6 @@
     display: none;
     z-index: 10;
     width: 100%;
-    border: 2px solid #333;
-    padding: 5px 25px;
 }
 
 .vertical-line{
@@ -61,7 +64,7 @@
 
 .sBtn-text{
     /* border-right: solid 2px #DADDE0; */
-    flex: 1;
+    flex: 1;    
 }
 
 .select-menu.active .options{
@@ -78,12 +81,9 @@
     background: #fff;
 }
 
-/* .options{
-    height: 90%;
-} */
-
 .options .option:hover{
     background: #F3F4F6;
+    
     border: solid #DADDE0 1px;
 }
 

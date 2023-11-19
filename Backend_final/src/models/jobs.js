@@ -6,6 +6,10 @@ const Postschema=new mongoose.Schema({
         unique: true, 
         required: true,
     }, 
+    company:{
+        type: String,
+        required :true
+    },
     job_title: {
         type: String,
         required: true,

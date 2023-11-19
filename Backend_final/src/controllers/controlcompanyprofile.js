@@ -11,11 +11,12 @@ module.exports = {
         res.render("companyprofile",{
             companyname : data.companyname,
             companytype : data.companytype,
-            companyadd : data.companylocation,
+            companylocation : data.companylocation,
             number : data.number,
             email: data.email,
             des: data.yourdestination,
-            name: data.name
+            name: data.name,
+            description:data.description
         });
     }
 }

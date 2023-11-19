@@ -10,7 +10,7 @@ module.exports = {
         const data = await Register.findOne({email:req.body.email})
         res.render("myprofile",{
             name : data.name,
-            Email : data.email,
+            email : data.email,
             number : data.number,
             gender : data.gender,
             DOB : data.DOB,
@@ -27,3 +27,4 @@ module.exports = {
         });
     }
 }
+

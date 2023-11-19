@@ -1,12 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Description</title>
+    <title>JobFiction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Custom Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/custom-bs.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/fonts/line-icons/style.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.9.95/css/materialdesignicons.css"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
@@ -15,133 +25,280 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
         integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/6c6d85d0b7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style_jobDescription.css">
 
-    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_jobDescription.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
-<body>
-    <!-- Navbar top -->
-    <div class="navbar">
-        <span class="otherpagelinkleft">
-            <a href="#" class="otherpagelink logo">JOB FICTION</a>
-            <a href="#" class="otherpagelink">Jobs</a>
-            <a href="#" class="otherpagelink">Companies</a>
-            <a href="#" class="otherpagelink">Contact Us</a>
-        </span>
-        <span class="otherpagelinkright">
-            <a href="#" class="otherpagelink logout">Logout</a>
-        </span>
-    </div>
-    <!-- End -->
+<body id="top">
 
-    <div class="list-grid-item mt-4 p-2">
-        <div class="row">
-            <div class="col-md-9">
-                <div class="candidates-img float-left mr-4">
-                    <img src="images/job_logo_3.jpg" alt="" class="img-fluid d-block rounded">
-                </div>
-                <div class="candidates-list-desc job-single-meta  pt-2">
-                    <h5 class="mb-2 f-19"><a href="#" class="text-dark">{{job.company}}</a></h5>
-                    <ul class="list-inline mb-0">
-                        <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i> Pune</p>
-                        </li>
-                        <li class="list-inline-item mr-4">
-                            <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i> 0 - 1 Yrs
-                            </p>
-                        </li>
-                        <li class="list-inline-item">
-                            <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i> 50,000</p>
-                        </li>
-                    </ul>
-                    <hr>
-                    <span class="jobdescription">Ensure updation of product, system, process and policy knowledge . Adhere to rostered timing, scheduled shifts and activities. Technical Certification Qualification . Graduate / B Tech / BE degree / Diploma in Networking/ ElectronicsCCNA </span>
-                    <p class="text-muted mb-2 f-14 days">1 Day Ago</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="candidates-list-fav-btn">
-                    <div class="candidates-listing-btn mt-4 text-right">
-                        <button onclick="apply({{job.id}})" class="btn btn-outline btn-sm" >Apply Now</button>
-                        {{!-- <button id="save_{{@index}}" onclick="saveData({{jobid}})" type="submit" name="butt" aria-placeholder="Save Post">Save Post</button>
-                        <button id="unsave_{{@index}}" onclick="unsaveData({{jobid}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
-                        <span class="btn btn-sm">
-                            <i class="{{how}} fa-bookmark" id="saveIcon" onclick="toggleSaveState({{jobid}})"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- <div class="row">
-            <div class="col-lg-11 offset-lg-1">
-                <div class="candidates-item-desc ">
-                    <hr>
-                    
+    </div>
+
+
+    <div class="site-wrap">
+
+        <!-- .site-mobile-menu -->
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <!-- NAVBAR -->
+        <header class="site-navbar mt-3">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="site-logo col-6"><a href="index.html">JobFiction</a></div>
+
+                    <!-- <nav class="mx-auto site-navigation">
+              <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index_jobs.html">Job Postings</a></li>
+                <li> -->
+                    <!-- <a href="recommendations.html">Recommendations</a> -->
+                    <!-- </li> -->
+                    <!-- <li><a href="blog.html">Blogs</a></li> -->
+                    <!-- <li>
+                  <a href="about.html">About Us</a>
+                </li>
+                <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
+                <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+              </ul>
+            </nav> -->
+
+                    <!-- <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+              <div class="ml-auto">
+                <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a> -->
+                    <!-- <a href="index_login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a> -->
+                    <!-- </div>
+              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+            </div> -->
 
                 </div>
             </div>
-        </div> -->
-    </div>
-    <!-- Main -->
-    <!-- <div class="main"> -->
-    <!-- <div class="card-body"> -->
-    <div class="card mine">
-        <section class="styles_job-desc-container__txpYf">
-            <h2>Job description</h2>
-            <ul>
-                <!-- <div class="styles_JDC__dang-inner-html__h0K4t"> -->
-                <li>
-                    <p><strong>Role &amp; responsibilities</strong></p>
-                </li>
-                <p>Daily allocations</p>
-                <p>reports</p>
-                <p>MIS</p><br>
-                <li>
-                    <p><strong>Preferred candidate profile</strong> </p>
-                </li>
-                <p>Should be at least 12th pass or graduate with typing speed 40wpm+</p><br>
-                <!-- </div> -->
-                <li><strong>Standard</strong></li>
-                <div class="styles_other-details__oEN4O">
-                    <div class="styles_details__Y424J"><label>Role: </label><span> Data Entry / MIS<span
-                                class="styles_comma__6l5nn"></span></span></div>
-                    <hr>
-                    <div class="styles_details__Y424J"><label>Industry Type: </label><span>NBFC<span
-                                class="styles_comma__6l5nn"></span></span></div>
-                    <hr>
-                    <div class="styles_details__Y424J"><label>Department: </label><span>Customer
-                            Success<span class="styles_comma__6l5nn"></span>Service &amp;
-                            Operations<span class="styles_comma__6l5nn"></span></span></div>
-                    <hr>
-                    <div class="styles_details__Y424J"><label>Employment Type: </label><span><span>Full Time,
-                                Permanent</span></span></div>
-                    <hr>
-                    <div class="styles_details__Y424J"><label>Role Category: </label><span><span>Back
-                                Office</span></span>
-                    </div>
-                    <hr>
-                </div>
-                <div class="styles_education__KXFkO">
-                    <strong>Education</strong>
-                    <div class="styles_details__Y424J"><label>UG: </label><span class="">Any Graduate</span></div>
-                </div>
-                <hr>
-                <div class="styles_key-skill__GIPn_">
-                    <strong>Key Skills</strong>
-                    <div>
-                        <span>Typing Speed, English Typing, Communication Skills, Excel</span>
+        </header>
+
+
+        <!-- HOME -->
+        <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');"
+            id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="new2">
+                            <h1 class="text-white font-weight-bold">Description of Job</h1>
+                        </div>
+                        <div class="custom-breadcrumbs">
+                            <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
+                            <!-- <span class="text-white"><strong>Register</strong></span> -->
+                        </div>
                     </div>
                 </div>
-            </ul>
+            </div>
         </section>
+
+        <section class="containerr">
+            <div class="list-grid-item mt-4 p-2">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="candidates-img float-left mr-4">
+                            <!-- <a href="amazon" target="_blank" id="company_logo">
+                            <img src="job_log4o_3.jpg" alt="" class="img-fluid d-block rounded">
+                        </a> -->
+                        </div>
+                        <div class="candidates-list-desc job-single-meta  pt-2">
+                            <h5 class="mb-2 f-19 text-dark">{{jobTitle}}</h5>
+                            <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname">{{companyName}}</a></h6>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item mr-4">
+                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i>{{companyLocation}}</p>
+                                </li>
+                                <li class="list-inline-item mr-4">
+                                    <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i>{{comExperience}}
+                                    </p>
+                                </li>
+                                <li class="list-inline-item">
+                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i>{{giveSalary}}
+                                    </p>
+                                </li>
+                            </ul>
+                            <hr>
+                            <span>About Company <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+                                cum numquam error sunt ducimus eum veniam odit optio officiis illo.z</span>
+                            <hr>
+                            <!-- <hr id="myh"> -->
+                            <div id="dateofrole">Last Date:<span id="dateofroleform">{{lstDate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="candidates-list-fav-btn">
+                            <div class="candidates-listing-btn mt-4 text-right">
+                                <div class="btn btn-sm above">
+                                    <i class="{{how}} fa-bookmark fa-xl" id="saveIcon"
+                                         onclick="toggleSaveState({{jobid}})"><span id="myspan"> Save</span></i>
+                                   
+                                </div>
+                                <div class="below"><button type="submit" onclick="apply({{jobid}})" class="btn btn-outline btn-sm belowa">Apply
+                                        Now</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mine">
+                <h2>Job Description</h2>
+                <ul>
+                    <!-- <div class="styles_JDC__dang-inner-html__h0K4t"> -->
+                    <li>
+                        <p><strong>Role &amp; Responsibilities</strong></p>
+                    </li>
+                    <span>{{role}}</span>
+                    <li>
+                        <p><strong>Preferred Candidate Profile</strong> </p>
+                        <div class="styles_details__Y424J"><label>Experience:</label><span>{{comExperience}}<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Key Skills:</label><span>{{reqskills}}</span>
+                        </div>
+                        <!-- <hr> -->
+                    </li>
+                    <!-- <p>Should be at least 12th pass or graduate with typing speed 40wpm+</p> -->
+                    <!-- </div> -->
+                    <li>
+                        <p><strong>Standard</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><label>Job Title:</label><span>{{jobTitle}}<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Industry Type:</label><span> {{industry_type}}<span
+                                    class="styles_comma__6l5nn"></span></span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Employment Type:</label><span>{{empType}}</span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Work Mode:</label><span>{{wrkMode}}</span></div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Role Category:</label><span> Back
+                                Office</span>
+                        </div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Salary:</label><span>{{giveSalary}}</span>
+                        </div>
+                        <hr>
+                        <div class="styles_details__Y424J"><label>Location:</label><span>{{companyLocation}}</span>
+                        </div>
+                    </div>
+                    <li>
+                        <p><strong>Education</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><label>Degree:</label><span>{{ empDegree}}</span></div>
+                    </div>
+                    <li>
+                        <p><strong>Perks &amp; Benifites</strong></p>
+                    </li>
+                    <div class="styles_other-details__oEN4O">
+                        <div class="styles_details__Y424J"><span>{{giveperk}}</span></div>
+                    </div>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+
+            <a href="#top" class="smoothscroll scroll-top">
+                <span class="icon-keyboard_arrow_up"></span>
+            </a>
+
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Search Trending</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Developers</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">HTML5</a></li>
+                            <li><a href="#">CSS3</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Company</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Support</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Fraud alert</a></li>
+                            <li><a href="#">Grievances</a></li>
+                            <li><a href="#">Report issue</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Connect with us</h3>
+                        <div class="footer-social">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
     </div>
 
-     <script>
-        
+    <!-- SCRIPTS -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="/js/stickyfill.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/jquery.animateNumber.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+
+    <script src="/js/bootstrap-select.min.js"></script>
+
+    <script src="/js/custom.js"></script>
+
+    <script>
         async function toggleSaveState(id) {
             const saveIcon = document.getElementById("saveIcon");
             if (saveIcon.classList.contains("fa-solid")) {
@@ -199,50 +356,10 @@
                 
             }
         }
-        /*
-        async function saveData(id){
-        try {
-            var data = new URLSearchParams({"id":id});
-            const response = await fetch("http://localhost:3000/saveData", {
-                                method: "POST",
-                                body:data,
-                            });
-            if(response.ok){
-                
-                const htmlContent = await response.text();
-                document.open();
-                document.write(htmlContent);
-                document.close();
-            }else{
-                throw new Error("NETWORK RESPONSE ERROR");           
-            }
-                            
-        } catch (err) {
-            console.log(err);
-        }
-        }
 
-        async function unsaveData(id) {
-        try {
-            var data = new URLSearchParams({"id":id});
-            const response = await fetch("http://localhost:3000/unsaveData", {
-                                method:"POST",
-                                body:data,
-                            });
-            if (response.ok) {
-                const htmlContent = await response.text();
-                document.open();
-                document.write(htmlContent);
-                document.close();
-            }else{
-                throw new Error("NETWORK RESPONSE ERROR");  
-            }
-        }catch(err){
-            console.log(err);
-        }
-        }*/
 
-        async function apply(job_id) {
+
+         async function apply(job_id) {
             try {
                 var token = getBrowserCookie("jwt");
                 var data = { "id": job_id };
@@ -255,12 +372,29 @@
                     body: JSON.stringify(data)
                 }).then((response) => {
                     if (response.ok) {
+                        
+                     
+                       
                         return response.json();
                     } else {
                         throw  Error("NETWORK RESPONSE ERROR");
                     }
-                }).catch((error) => console.error("FETCH ERROR:", error));
-            } catch (err) {
+                })
+                
+                .then(data => {
+                    // Assuming the response contains a boolean value named "shouldRedirect"
+                    if (data.x === 1) {
+                        alert("you already have applied");
+                        window.location.href = `/job_description/${job_id}`;
+                    } else {
+                         alert("you applied successfully");
+                         window.location.href = `/job_description/${job_id}`;
+                    }
+                    })
+                .catch((error) => console.error("FETCH ERROR:", error));
+            } 
+            
+            catch (err) {
                 console.log(err);
             }
         }
@@ -277,6 +411,7 @@
         }
 
     </script>
+
 </body>
 
 </html>

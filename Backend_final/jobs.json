@@ -1,2297 +1,2203 @@
-[{
-    "id": 1,
-    "job_title": "Electrical Engineer",
-    "company": "Sprinklr",
-    "salary": 132000,
-    "location": "Bangalore",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 2,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 148000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 3,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 20000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 4,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 170000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 5,
-    "job_title": "Software Engineer",
-    "company": "Sprinklr",
-    "salary": 173000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 6,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 43000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 7,
-    "job_title": "UI Developer",
-    "company": "Google",
-    "salary": 163000,
-    "location": "Bangalore",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 8,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 116000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 9,
-    "job_title": "UI Developer",
-    "company": "Google",
-    "salary": 112000,
-    "location": "Bangalore",
-    "work_mode": "Remote",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 10,
-    "job_title": "Electrical Engineer",
-    "company": "Google",
-    "salary": 139000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 11,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 37000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 12,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 44000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "python",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 13,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 27000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 14,
-    "job_title": "Data Scientist",
-    "company": "Sprinklr",
-    "salary": 60000,
-    "location": "Hyderabad",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 15,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 161000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 16,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 154000,
-    "location": "Gurgaon",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 17,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 179000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python",
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 18,
-    "job_title": "Electrical Engineer",
-    "company": "Sprinklr",
-    "salary": 116000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 19,
-    "job_title": "UI Developer",
-    "company": "Google",
-    "salary": 48000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "WD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 20,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 39000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "java",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 21,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 72000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 22,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 143000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "python",
-        "java",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 23,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 175000,
-    "location": "Bangalore",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 24,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 71000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 25,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 149000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 26,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 193000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 27,
-    "job_title": "Software Engineer",
-    "company": "Microsoft",
-    "salary": 50000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "python",
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 28,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 41000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 29,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 46000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 30,
-    "job_title": "Electrical Engineer",
-    "company": "Sprinklr",
-    "salary": 105000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 31,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 134000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 32,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 43000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 33,
-    "job_title": "Software Engineer",
-    "company": "Sprinklr",
-    "salary": 171000,
-    "location": "Bangalore",
-    "work_mode": "Remote",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 34,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 192000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "c++",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 35,
-    "job_title": "Electrical Engineer",
-    "company": "Sprinklr",
-    "salary": 137000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python",
-        "WD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 36,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 79000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 37,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 110000,
-    "location": "Bangalore",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 38,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 198000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "python",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 39,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 38000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 40,
-    "job_title": "Electrical Engineer",
-    "company": "Google",
-    "salary": 146000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 41,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 111000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 42,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 181000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 43,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 130000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 44,
-    "job_title": "Electrical Engineer",
-    "company": "Sprinklr",
-    "salary": 137000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 45,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 154000,
-    "location": "Pune",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 46,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 120000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 47,
-    "job_title": "Software Engineer",
-    "company": "Google",
-    "salary": 189000,
-    "location": "Hyderabad",
-    "work_mode": "Remote",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 48,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 91000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 49,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 52000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 50,
-    "job_title": "Software Engineer",
-    "company": "Google",
-    "salary": 55000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "java",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 51,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 190000,
-    "location": "Pune",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 52,
-    "job_title": "UI Developer",
-    "company": "Google",
-    "salary": 133000,
-    "location": "Hyderabad",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 53,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 131000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 54,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 28000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 55,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 174000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 56,
-    "job_title": "Electrical Engineer",
-    "company": "Google",
-    "salary": 167000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 57,
-    "job_title": "Software Engineer",
-    "company": "Sprinklr",
-    "salary": 32000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 58,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 127000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 59,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 199000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 60,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 33000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "python",
-        "java",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 61,
-    "job_title": "Software Engineer",
-    "company": "Microsoft",
-    "salary": 39000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 62,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 82000,
-    "location": "Pune",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "python",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 63,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 56000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "java",
-        "c++",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 64,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 179000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 65,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 87000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "python",
-        "c++",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 66,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 59000,
-    "location": "Bangalore",
-    "work_mode": "Remote",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 67,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 168000,
-    "location": "Gurgaon",
-    "work_mode": "Office",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 68,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 80000,
-    "location": "Gandhinagar",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 69,
-    "job_title": "UI Developer",
-    "company": "Google",
-    "salary": 119000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 70,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 27000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 71,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 152000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "AD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 72,
-    "job_title": "Electrical Engineer",
-    "company": "Google",
-    "salary": 176000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 73,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 33000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 74,
-    "job_title": "Data Scientist",
-    "company": "Sprinklr",
-    "salary": 121000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "python",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 75,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 53000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 76,
-    "job_title": "Data Scientist",
-    "company": "Sprinklr",
-    "salary": 22000,
-    "location": "Gurgaon",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "python",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 77,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 56000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 78,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 143000,
-    "location": "Gurgaon",
-    "work_mode": "Office",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 79,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 59000,
-    "location": "Pune",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "python",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 80,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 156000,
-    "location": "Hyderabad",
-    "work_mode": "Office",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 81,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 81000,
-    "location": "Gurgaon",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "java",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 82,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 195000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 3,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 83,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 45000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 84,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 22000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "c++",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 85,
-    "job_title": "Electrical Engineer",
-    "company": "Microsoft",
-    "salary": 69000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "python",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 86,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 127000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "java",
-        "WD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 87,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 196000,
-    "location": "Gandhinagar",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "AD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 88,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 84000,
-    "location": "Hyderabad",
-    "work_mode": "Remote",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "AD",
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 89,
-    "job_title": "Electrical Engineer",
-    "company": "Deshaw",
-    "salary": 86000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 90,
-    "job_title": "UI Developer",
-    "company": "Microsoft",
-    "salary": 137000,
-    "location": "Bangalore",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 91,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 173000,
-    "location": "Hyderabad",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 92,
-    "job_title": "Data Scientist",
-    "company": "Sprinklr",
-    "salary": 110000,
-    "location": "Pune",
-    "work_mode": "Remote",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "python",
-        "WD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "BTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 93,
-    "job_title": "UI Developer",
-    "company": "Deshaw",
-    "salary": 178000,
-    "location": "Bangalore",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "python",
-        "WD",
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 94,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 83000,
-    "location": "Gurgaon",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "c++"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 95,
-    "job_title": "Data Scientist",
-    "company": "Microsoft",
-    "salary": 150000,
-    "location": "Bangalore",
-    "work_mode": "Hybrid",
-    "experience": 4,
-    "role": "coding",
-    "skills": [
-        "WD",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "full time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 96,
-    "job_title": "Data Scientist",
-    "company": "Deshaw",
-    "salary": 196000,
-    "location": "Pune",
-    "work_mode": "Office",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "python"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "PhD",
-    "criteria": "12 pass"
-},
-{
-    "id": 97,
-    "job_title": "UI Developer",
-    "company": "Sprinklr",
-    "salary": 190000,
-    "location": "Pune",
-    "work_mode": "Hybrid",
-    "experience": 1,
-    "role": "coding",
-    "skills": [
-        "python",
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 98,
-    "job_title": "Software Engineer",
-    "company": "Deshaw",
-    "salary": 130000,
-    "location": "Hyderabad",
-    "work_mode": "Hybrid",
-    "experience": 0,
-    "role": "coding",
-    "skills": [
-        "AD"
-    ],
-    "industry_type": "IT",
-    "employment_type": "part time",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 99,
-    "job_title": "Data Scientist",
-    "company": "Google",
-    "salary": 47000,
-    "location": "Bangalore",
-    "work_mode": "Hybrid",
-    "experience": 2,
-    "role": "coding",
-    "skills": [
-        "c++",
-        "AD",
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-},
-{
-    "id": 100,
-    "job_title": "Data Scientist",
-    "company": "Sprinklr",
-    "salary": 111000,
-    "location": "Gandhinagar",
-    "work_mode": "Hybrid",
-    "experience": 5,
-    "role": "coding",
-    "skills": [
-        "java"
-    ],
-    "industry_type": "IT",
-    "employment_type": "intern",
-    "perk": [
-        "travel expenses"
-    ],
-    "last_date": "2023-11-19",
-    "company_email": "202101203@daiict.ac.in",
-    "degree": "MTech",
-    "criteria": "12 pass"
-}]
+[
+    {
+        "id": 1,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 188000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "java",
+            "c++",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 2,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 156000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 3,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 133000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 4,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 132000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 5,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 195000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 6,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 41000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 7,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 141000,
+        "location": "Gurgaon",
+        "work_mode": "Hybrid",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 8,
+        "job_title": "Electrical Engineer",
+        "company": "Google",
+        "salary": 163000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 9,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 125000,
+        "location": "Hyderabad",
+        "work_mode": "Hybrid",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 10,
+        "job_title": "Software Engineer",
+        "company": "Deshaw",
+        "salary": 47000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "python",
+            "c++",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 11,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 24000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 12,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 45000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 13,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 188000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 14,
+        "job_title": "Electrical Engineer",
+        "company": "Microsoft",
+        "salary": 182000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "java",
+            "python",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 15,
+        "job_title": "Data Scientist",
+        "company": "Google",
+        "salary": 179000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 16,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 198000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 17,
+        "job_title": "UI Developer",
+        "company": "Sprinklr",
+        "salary": 58000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 18,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 38000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 19,
+        "job_title": "Electrical Engineer",
+        "company": "Microsoft",
+        "salary": 194000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 20,
+        "job_title": "Data Scientist",
+        "company": "Google",
+        "salary": 154000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 21,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 173000,
+        "location": "Bangalore",
+        "work_mode": "Hybrid",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 22,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 166000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "python",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 23,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 113000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 24,
+        "job_title": "Data Scientist",
+        "company": "Sprinklr",
+        "salary": 63000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 25,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 197000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 26,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 102000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java",
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 27,
+        "job_title": "Electrical Engineer",
+        "company": "Microsoft",
+        "salary": 96000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "python",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 28,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 70000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 29,
+        "job_title": "Data Scientist",
+        "company": "Sprinklr",
+        "salary": 168000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 30,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 181000,
+        "location": "Hyderabad",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 31,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 144000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 32,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 146000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 33,
+        "job_title": "Electrical Engineer",
+        "company": "Google",
+        "salary": 58000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 34,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 36000,
+        "location": "Bangalore",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "python",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 35,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 21000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java",
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 36,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 95000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 37,
+        "job_title": "Data Scientist",
+        "company": "Google",
+        "salary": 151000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "python",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 38,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 197000,
+        "location": "Bangalore",
+        "work_mode": "Hybrid",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "python",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 39,
+        "job_title": "Electrical Engineer",
+        "company": "Google",
+        "salary": 21000,
+        "location": "Gurgaon",
+        "work_mode": "Hybrid",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "python",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 40,
+        "job_title": "Software Engineer",
+        "company": "Deshaw",
+        "salary": 140000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 41,
+        "job_title": "UI Developer",
+        "company": "Sprinklr",
+        "salary": 129000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java",
+            "c++",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 42,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 165000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 43,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 43000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 44,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 175000,
+        "location": "Gurgaon",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "python",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 45,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 105000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "python",
+            "AD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 46,
+        "job_title": "Data Scientist",
+        "company": "Sprinklr",
+        "salary": 73000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "python",
+            "c++",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 47,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 182000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 48,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 146000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 49,
+        "job_title": "Electrical Engineer",
+        "company": "Sprinklr",
+        "salary": 49000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 50,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 62000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 51,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 60000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "WD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 52,
+        "job_title": "Software Engineer",
+        "company": "Deshaw",
+        "salary": 50000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 53,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 161000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 54,
+        "job_title": "Electrical Engineer",
+        "company": "Sprinklr",
+        "salary": 90000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 55,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 180000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "python",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 56,
+        "job_title": "Electrical Engineer",
+        "company": "Google",
+        "salary": 127000,
+        "location": "Hyderabad",
+        "work_mode": "Hybrid",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 57,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 32000,
+        "location": "Gurgaon",
+        "work_mode": "Hybrid",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 58,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 131000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "python",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 59,
+        "job_title": "Software Engineer",
+        "company": "Deshaw",
+        "salary": 159000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 60,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 80000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 61,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 95000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 62,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 134000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "java",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 63,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 96000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 64,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 53000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 65,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 26000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 66,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 161000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 67,
+        "job_title": "Electrical Engineer",
+        "company": "Sprinklr",
+        "salary": 189000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 68,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 74000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 69,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 111000,
+        "location": "Bangalore",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "python",
+            "AD",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 70,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 121000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 71,
+        "job_title": "UI Developer",
+        "company": "Sprinklr",
+        "salary": 102000,
+        "location": "Bangalore",
+        "work_mode": "Hybrid",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "python",
+            "java",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 72,
+        "job_title": "Electrical Engineer",
+        "company": "Google",
+        "salary": 170000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 73,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 52000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 74,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 192000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "java",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 75,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 169000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "python",
+            "c++",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 76,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 39000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 77,
+        "job_title": "Data Scientist",
+        "company": "Sprinklr",
+        "salary": 134000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 78,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 198000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 79,
+        "job_title": "Data Scientist",
+        "company": "Google",
+        "salary": 45000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "python",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 80,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 191000,
+        "location": "Gandhinagar",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 81,
+        "job_title": "Data Scientist",
+        "company": "Microsoft",
+        "salary": 116000,
+        "location": "Pune",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "python",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 82,
+        "job_title": "Data Scientist",
+        "company": "Google",
+        "salary": 151000,
+        "location": "Bangalore",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 83,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 88000,
+        "location": "Bangalore",
+        "work_mode": "Office",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "python",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 84,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 178000,
+        "location": "Gurgaon",
+        "work_mode": "Hybrid",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 85,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 73000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 86,
+        "job_title": "Electrical Engineer",
+        "company": "Deshaw",
+        "salary": 119000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "java",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 87,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 99000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 4,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "python",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 88,
+        "job_title": "Electrical Engineer",
+        "company": "Microsoft",
+        "salary": 105000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 89,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 50000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 90,
+        "job_title": "Data Scientist",
+        "company": "Deshaw",
+        "salary": 61000,
+        "location": "Hyderabad",
+        "work_mode": "Office",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 91,
+        "job_title": "UI Developer",
+        "company": "Sprinklr",
+        "salary": 65000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "AD",
+            "python"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 92,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 191000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 93,
+        "job_title": "UI Developer",
+        "company": "Deshaw",
+        "salary": 27000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "AD",
+            "WD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 94,
+        "job_title": "Software Engineer",
+        "company": "Google",
+        "salary": 164000,
+        "location": "Hyderabad",
+        "work_mode": "Remote",
+        "experience": 0,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "AD",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 95,
+        "job_title": "Software Engineer",
+        "company": "Sprinklr",
+        "salary": 169000,
+        "location": "Gandhinagar",
+        "work_mode": "Hybrid",
+        "experience": 3,
+        "role": "coding",
+        "skills": [
+            "java",
+            "WD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    },
+    {
+        "id": 96,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 126000,
+        "location": "Pune",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 97,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 183000,
+        "location": "Gurgaon",
+        "work_mode": "Remote",
+        "experience": 1,
+        "role": "coding",
+        "skills": [
+            "WD",
+            "c++"
+        ],
+        "industry_type": "IT",
+        "employment_type": "intern",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "PhD"
+    },
+    {
+        "id": 98,
+        "job_title": "UI Developer",
+        "company": "Microsoft",
+        "salary": 57000,
+        "location": "Gurgaon",
+        "work_mode": "Office",
+        "experience": 2,
+        "role": "coding",
+        "skills": [
+            "java"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 99,
+        "job_title": "UI Developer",
+        "company": "Google",
+        "salary": 93000,
+        "location": "Gandhinagar",
+        "work_mode": "Remote",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "c++",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "full time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "MTech"
+    },
+    {
+        "id": 100,
+        "job_title": "Software Engineer",
+        "company": "Microsoft",
+        "salary": 159000,
+        "location": "Pune",
+        "work_mode": "Hybrid",
+        "experience": 5,
+        "role": "coding",
+        "skills": [
+            "python",
+            "java",
+            "AD"
+        ],
+        "industry_type": "IT",
+        "employment_type": "part time",
+        "perk": [
+            "travel expenses"
+        ],
+        "last_date": "2023-11-19",
+        "company_email": "202101203@daiict.ac.in",
+        "degree": "BTech"
+    }
+]

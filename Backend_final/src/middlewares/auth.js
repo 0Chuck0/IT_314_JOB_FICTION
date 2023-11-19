@@ -185,6 +185,7 @@ async function companyloggedinonly(req, res, next) {
                 const check = await Companyregister.findOne({ _id: decoded._id });
 
                 req.body.email = check.email;
+                req.body.company_name=check.companyname;
 
                 if(check.email) next();
             }

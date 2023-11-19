@@ -16,7 +16,7 @@ const Postschema=new mongoose.Schema({
     },
     role:{
         type: String,
-        require: true,
+        required: true,
     },
     experience:{
         type: Number,
@@ -52,15 +52,12 @@ const Postschema=new mongoose.Schema({
     },
     degree: {
         type: String
-       
     },
    
     work_mode: {
         type: String,
     },
-    criteria: {
-        type: String,
-    },
+   
 
     company_email:{
         type: String

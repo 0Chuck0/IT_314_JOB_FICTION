@@ -8,7 +8,6 @@ const { json } = require('express')
 const { conectMongodb } = require("./db/conection");
 const bcrypt = require("bcryptjs")
 
-const jwt = require("jsonwebtoken")
 
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(() => {
     console.log(`Connection Successfully....`)
@@ -27,7 +26,6 @@ const Jobpost = require("./models/postschema")
 const Savedpost = require('./models/savePostSchema');
 const jobs = require("./models/jobs");
 const apply = require("./models/apply");
-
 const hbs = require('hbs')
 const { error } = require('console');
 app.use(express.json())
@@ -64,6 +62,7 @@ const candidateprofile = require("./routes/candidateprofile");
 const companyjobpostlist = require("./routes/companyjobpostlist");
 const newpost_route = require("./routes/newpost_route");
 const deletesaved_jobs=require("./routes/deletesaved_jobs");
+const applied_jobs=require("./routes/applied_jobs")
 const applyRouter = require( "./routes/applyRouter")
 
 app.use("/saveData", savepostroute);
@@ -86,6 +85,7 @@ app.use("/candidateprofile", candidateprofile);
 app.use("/file", uplodroute);
 app.use("/newpost",newpost_route)
 app.use("/deletesaved_jobs",deletesaved_jobs);
+app.use("/applied_jobs",applied_jobs);
 app.use("/apply", applyRouter)
 
 app.get("/", (req, res) => {

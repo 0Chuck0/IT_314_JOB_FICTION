@@ -61,7 +61,7 @@ const candidateslist = require("./routes/candidateslist");
 const candidateprofile = require("./routes/candidateprofile");
 const companyjobpostlist = require("./routes/companyjobpostlist");
 const newpost_route = require("./routes/newpost_route");
-
+const deletesaved_jobs=require("./routes/deletesaved_jobs");
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
 app.use("/forgotpass", forgotpassroute);
@@ -81,6 +81,7 @@ app.use("/candidateslist", candidateslist);
 app.use("/candidateprofile", candidateprofile);
 app.use("/file", uplodroute);
 app.use("/newpost",newpost_route)
+app.use("/deletesaved_jobs",deletesaved_jobs);
 
 app.get("/", (req, res) => {
     res.render("landingpage")

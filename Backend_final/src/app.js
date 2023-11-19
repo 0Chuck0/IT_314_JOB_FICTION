@@ -64,7 +64,7 @@ const candidateprofile = require("./routes/candidateprofile");
 const companyjobpostlist = require("./routes/companyjobpostlist");
 const newpost_route = require("./routes/newpost_route");
 const deletesaved_jobs=require("./routes/deletesaved_jobs");
-const applyRouter = require( "./routes/apply")
+const applyRouter = require( "./routes/applyRouter")
 
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);

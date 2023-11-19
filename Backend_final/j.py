@@ -38,7 +38,7 @@ for i in range(1, 101):
         "last_date" : "2023-11-19",
         "company_email":"202101203@daiict.ac.in",
         "degree":random.choice(educations),
-        "criteria":"12 pass"
+       
     }
     jobs.append(job)
 

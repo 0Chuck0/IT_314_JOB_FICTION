@@ -1,381 +1,458 @@
-{{!-- <h1>"This is the page of Companys new post page."</h1>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Job Application Form</title>
-    <style>
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        label,
-        input,
-        select,
-        textarea {
-            display: block;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Job Application Form</h1>
-    <form id="jobApplicationForm" action="/newpost" method="post">
-
-        <label for="job_title">Job Title (string):</label>
-        <input type="text" id="job_title" name="job_title" required>
-
-        <label for="company">Company (string):</label>
-        <input type="text" id="company" name="company_name" required>
-
-        <label for="salary">Salary (int):</label>
-        <input type="number" id="salary" name="salary" required>
-
-        <label for="location">Location (string):</label>
-        <input type="text" id="location" name="location" required>
-
-        <label for="work_mode">Work Mode (string):</label>
-        <input type="text" id="work_mode" name="work_mode" required>
-
-        <label for="education">Education (string):</label>
-        <input type="text" id="education" name="education" required>
-
-        <label for="experience">Experience (int):</label>
-        <input type="number" id="experience" name="experience" required>
-
-        <label for="skills">Skills (string array, comma-separated):</label>
-        <textarea id="skills" name="skills" required></textarea>
-
-        <button type="submit">Submit</button>
-    </form>
-</body>
-
-</html> --}}
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <title>JobFiction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
 
-    <link rel="stylesheet" href="/css/custom-bs.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/fonts/line-icons/style.css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/animate.min.css">
-    <link rel="stylesheet" href="/css/external.css">
-    <title>Post Job</title>
-
-    <!-- Custom Css -->
-    <link rel="stylesheet" href="/css/jobPost.css">
-
-    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/jobPost.css"> 
+    <link rel="stylesheet" href="css/external_jobpost.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-</head>
+  </head>
+  <body id="top">
 
-<body>
-    <div class="navbar">
-        <span class="otherpagelinkleft">
-            <a href="#" class="otherpagelink logo">JOB FICTION</a>
-            <a href="#" class="otherpagelink">Jobs</a>
-            <a href="#" class="otherpagelink">Companies</a>
-            <a href="#" class="otherpagelink">Contact Us</a>
-        </span>
-        <span class="otherpagelinkright">
-            <a href="#" class="otherpagelink logout">Logout</a>
-        </span>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
+  </div>
+    
 
-    <form action="/newpost" method="post" >
-        <div class="main">
-            <div class="card-body">
+<div class="site-wrap">
+
+    <!-- .site-mobile-menu -->
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div> 
+    
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="site-logo col-6"><a href="/companyhomepage">JobFiction</a></div>
+  
+            <nav class="mx-auto site-navigation">
+              <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                <li><a href="/companyhomepage" class="nav-link active">Home</a></li>
+                <li><a href="/companyjobpostlist">Job Postings</a></li>
+                <li>
+                  <!-- <a href="recommendations.html">Recommendations</a> -->
+                </li>
+                <!-- <li><a href="blog.html">Blogs</a></li> -->
+                <li>
+                  <a href="about.html">About Us</a>
+                </li>
+                <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
+                <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+              </ul>
+            </nav>
+            
+            <!-- <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+              <div class="ml-auto">
+                <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a> -->
+                <!-- <a href="index_login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a> -->
+              <!-- </div>
+              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+            </div> -->
+  
+          </div>
+        </div>
+      </header>
+
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="new2">
+              <h1 class="text-white font-weight-bold">Post a Job</h1>
+            </div>
+            <div class="custom-breadcrumbs">
+              <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
+              <!-- <span class="text-white"><strong>Register</strong></span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="containerr">
+          <form action="/newpost" id="myForm" method="post" >
+            <div class="main">
+              <div class="card-body">
                 <div class="card mine">
-                    <h2>Job Details</h2>
+                  <h2>Job Details</h2>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput" for="job_title">Job
+                        Title<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont"><span class="empty"><input class="differentinput" type="rext" id="job_title"
+                        name="job_title" placeholder="Enter Job Title Here.." required>
+                    </span>
+                  </div>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="candidate_name_last">Role & Responsibilities<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont "><span class="empty"><input class="differentinput" type="text" name="Responsibilities"
+                        id="job_responsibilities" placeholder="Enter Role & Responsibilities of Job" required>
+                    </span>
+                  </div>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="experience">Experience<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont "><span class="empty"><input class="differentinput" type="number" name="exp"
+                        id="job_responsibilities" placeholder="Eg. 2" required>
+                    </span>
+                  </div>
+                  <!-- <div class="widgetCont select-menu dropdown1"><span class="empty">
+                      <div class="select-btn widgetCont select-btn1">
+                        <span class="sBtn-text sBtn-text1">Open For All</span>
+                        <div class="vertical-line"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%" fill="none"
+                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="18 15 12 21 6 15"></polyline>
+                        </svg>
+                      </div>
+                      <ul class="options">
+                        <li class="option option1">
+                          <span class="option-text">Freshers</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">0 - 1 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">0 - 2 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">0 - 3 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">Min. 1 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">1 - 2 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">Min. 2 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">2 - 3 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">2 - 4 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">Min. 3 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">3 - 4 Yrs</span>
+                        </li>
+                        <li class="option option1">
+                          <span class="option-text">Open For All</span>
+                        </li>
+                      </ul>
+                    </span>
+                  </div> -->
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput" for="key_skills">Key
+                        Skills<sup>*</sup></label></span>
+                  </div>
+        
+                  <div class="widgetCont"><span class="empty">
+                      <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
+                      <select name="skills" id="key_skills" multiple>
+                        <option value="Any Technical Skills" selected>Any Technical Skills</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="Java_Script">Java Script</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="Data_Analytics">Data Analytics</option>
+                      </select>
+                    </span>
+                  </div>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="industry_type">Industry Type<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont select-menu dropdown2"><span class="empty">
+                      <div class="select-btn widgetCont select-btn2">   
+                        <span class="sBtn-text sBtn-text2">MNC</span>
+                        <textarea class="sBtn-text2 remv" name="industry_type" >MNC</textarea>
+                        <div class="vertical-line"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%" fill="none"
+                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="18 15 12 21 6 15"></polyline>
+                        </svg>
+                      </div>
+                      <ul class="options">
+                        <li class="option option2">
+                          <span class="option-text">IT</span>
+                        </li>
+                        <li class="option option2">
+                          <span class="option-text">Agriculture</span>
+                        </li>
+                        <li class="option option2">
+                          <span class="option-text">HFT</span>
+                        </li>
+                        <li class="option option2">
+                          <span class="option-text">MNC</span>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+        
+                 <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                    for="employment_type">Employment Type<sup>*</sup></label></span>
+              </div>
+              <div class="widgetCont"><span class="empty">
+                <span class="empty candidategender spandiff">
+                  <div>
+                      <input type="radio" id="Intern" name="employment_type" value="intern" checked />
+                      <label for="Intern">Intern</label>
+                  </div>
 
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="job_title">Job Title<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont">
-                        <span class="empty">
-                            <input class="differentinput" type="rext" id="job_title"
-                                name="job_title" placeholder="Enter Job Title Here.." required>
-                        </span>
-                    </div>
+                  <div>
+                      <input type="radio" id="Part_time" name="employment_type" value="part_time" />
+                      <label for="Part_time">Part Time</label>
+                  </div>
 
-                    <div class="widgetHead">
-                        <span class="widgetTitle typ-16Bold">
-                            <label class="profileinput"
-                                for="candidate_name_last">Role & Responsibilities<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont ">
-                        <span class="empty">
-                            <input class="differentinput" type="text"
-                                name="Responsibilities" id="job_responsibilities"
-                                placeholder="Enter Role & Responsibilities of Job" required>
-                        </span>
-                    </div>
+                  <div>
+                      <input type="radio" id="Full_time" name="employment_type" value="full_time" />
+                      <label for="Full_time">Full Time</label>
+                  </div>
+              </span>
+              </div>
 
-                    <div class="widgetHead">
-                        <span class="widgetTitle typ-16Bold">
-                            <label class="profileinput"
-                                for="Experience">Experience<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont ">
-                        <span class="empty">
-                            <input class="differentinput" type="number"
-                                name="exp" id="Experience"
-                                placeholder="ex. 2" required>
-                        </span>
-                    </div>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                    for="work_mode">Work
+                    Mode<sup>*</sup></label></span>
+              </div>
+              <div class="widgetCont">
+                <span class="empty candidategender spandiff">
+                  <div>
+                      <input type="radio" id="Office" name="work_mode" value="office" checked />
+                      <label for="Office">Office</label>
+                  </div>
 
-                    {{!-- <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="experience">Experience<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont select-menu dropdown1"><span class="empty">
-                            <div class="select-btn widgetCont select-btn1">
-                                <textarea class="sBtn-text sBtn-text1" name="exp" >Open For All</textarea>
-                                <div class="vertical-line"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="18 15 12 21 6 15"></polyline>
-                                </svg>
-                            </div>
-                            <ul class="options">
-                                <li class="option option1">
-                                    <span class="option-text">Freshers</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">0 - 1 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">0 - 2 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">0 - 3 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">Min. 1 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">1 - 2 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">Min. 2 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">2 - 3 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">2 - 4 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">Min. 3 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">3 - 4 Yrs</span>
-                                </li>
-                                <li class="option option1">
-                                    <span class="option-text">Open For All</span>
-                                </li>
-                            </ul>
-                        </span>
-                    </div> --}}
+                  <div>
+                      <input type="radio" id="Remote" name="work_mode" value="remote" />
+                      <label for="Remote">Remote</label>
+                  </div>
 
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="key_skills">Key Skills<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty">
-                            <select name="skills" id="key_skills" multiple>
-                                <option value="C" selected>C</option>
-                                <option value="C++">C++</option>
-                                <option value="Java_Script">Java Script</option>
-                                <option value="HTML">HTML</option>
-                                <option value="CSS">CSS</option>
-                                <option value="Data_Analytics">Data_Analytics</option>
-                            </select>
-                        </span>
-                    </div>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="industry_type">Industry Type<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont select-menu dropdown2"><span class="empty">
-                            <div class="select-btn widgetCont select-btn2">
-                                <textarea class="sBtn-text sBtn-text2" name="industry_type">MNC</textarea>
-                                <div class="vertical-line"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="18 15 12 21 6 15"></polyline>
-                                </svg>
-                            </div>
-                            <ul class="options">
-                                <li class="option option2">
-                                    <span class="option-text">IT</span>
-                                </li>
-                                <li class="option option2">
-                                    <span class="option-text">Agriculture</span>
-                                </li>
-                                <li class="option option2">
-                                    <span class="option-text">HFT</span>
-                                </li>
-                                <li class="option option2">
-                                    <span class="option-text">MNC</span>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="employment_type">Employment Type<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty">
-                            <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
-                            <select name="employment_type" id="employment_type" multiple>
-                                <option value="Intern" selected>Intern</option>
-                                <option value="Part Time">Part Time</option>
-                                <option value="Full Time">Full Time</option>
-                            </select>
-                        </span>
-                    </div>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="work_mode">Work Mode<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty">
-                            <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
-                            <select name="work_mode" id="work_mode" multiple>
-                                <option value="Office" selected>Office</option>
-                                <option value="Remote">Remote</option>
-                                <option value="Hybrid">Hybrid</option>
-                            </select>
-                        </span>
-                    </div>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="job_salary">Salary<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont "><span class="empty"><input class="differentinput" type="text" name="salary"
-                                id="job_salary" placeholder="Enter Job Salary Here" pattern="\d+(-\d+)?$" min="0"
-                                required>
-                        </span>
-                    </div>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="job_location">Location<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont "><span class="empty"><input class="differentinput" type="text"
-                                name="location" id="job_location" placeholder="Enter Work Location" required>
-                        </span>
-                    </div>
-
-                    {{!-- <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="job_opening">No.
-                                of Openings</label></span>
-                    </div>
-                    <div class="widgetCont "><span class="empty"><input class="differentinput" type="number"
-                                name="salary" id="job_opening" placeholder="Enter Number of Opening" min="1">
-                        </span>
-                    </div> --}}
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_highest_education">Last Date <sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="datetime-local"
-                                id="candidate_project" name="last_date" required>
-                        </span>
-                    </div>
+                  <div>
+                      <input type="radio" id="Hybrid" name="work_mode" value="hybrid" />
+                      <label for="Hybrid">Hybrid</label>
+                  </div>
+              </span>
+              </div>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="job_salary">Salary<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont "><span class="empty"><input class="differentinput" type="text" name="salary"
+                        id="job_salary" placeholder="Enter Job Salary Here" pattern="\d+(-\d+)?$" min="0" required>
+                    </span>
+                  </div>
+        
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="job_location">Location<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont "><span class="empty"><input class="differentinput" type="text" name="location"
+                        id="job_location" placeholder="Enter Work Location" required>
+                    </span>
+                  </div>
+<!--         
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput" for="job_opening">No.
+                        of Openings</label></span>
+                  </div>
+                  <div class="widgetCont "><span class="empty"><input class="differentinput" type="number" name="salary"
+                        id="job_opening" placeholder="Enter Number of Opening" min="1">
+                    </span>
+                  </div> -->
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="candidate_highest_education">Last Date <sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont"><span class="empty"><input class="differentinput" type="datetime-local"
+                        id="candidate_project" name="last_date" required>
+                    </span>
+                  </div>
                 </div>
-
+        
                 <div class="card">
-                    <h2>Education</h2>
-
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_expected_salary">Degree<sup>*</sup></label></span>
-                    </div>
-                    <div class="widgetCont select-menu dropdown3"><span class="empty">
-                            <div class="select-btn widgetCont select-btn3">
-                                <textarea class="sBtn-text sBtn-text3" name="degree">Bachelors</textarea>
-                                <div class="vertical-line"></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="18 15 12 21 6 15"></polyline>
-                                </svg>
-                            </div>
-                            <ul class="options">
-                                <li class="option option3">
-                                    <span class="option-text">Bachelors</span>
-                                </li>
-                                <li class="option option3">
-                                    <span class="option-text">Masters</span>
-                                </li>
-                                <li class="option option3">
-                                    <span class="option-text">Phd</span>
-                                </li>
-                            </ul>
-                        </span>
-                    </div>
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_project">Criteria</label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
-                                id="candidate_project" name="criteria" placeholder="Ex. 7">
-                        </span>
-                    </div>
+                  <h2>Education</h2>
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="candidate_expected_salary">Degree<sup>*</sup></label></span>
+                  </div>
+                  <div class="widgetCont select-menu dropdown3"><span class="empty">
+                      <div class="select-btn widgetCont select-btn3">
+                        <span class="sBtn-text sBtn-text3">BTECH</span>
+                        <textarea class="sBtn-text3 remv" name="degree">BTECH</textarea>
+                        <div class="vertical-line"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%" fill="none"
+                          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round">
+                          <polyline points="18 15 12 21 6 15"></polyline>
+                        </svg>
+                      </div>
+                      <ul class="options">
+                        <li class="option option3">
+                          <span class="option-text">BTECH</span>
+                        </li>
+                        <li class="option option3">
+                          <span class="option-text">Mtech</span>
+                        </li>
+                        <li class="option option3">
+                          <span class="option-text">Phd</span>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                
                 </div>
-
+        
                 <div class="card">
-                    <h2>Other</h2>
-                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                for="candidate_highest_education">Perks and Benifites</label></span>
-                    </div>
-                    <div class="widgetCont"><span class="empty">
-                            <textarea class="differentinput" name="Perks" id="pb" rows="10"
-                                cols="3"></textarea>
-                        </span>
-                    </div>
-
+                  <h2>Other</h2>
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        for="candidate_highest_education">Perks & Benifites</label></span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">
+                      <textarea class="differentinput" name="Perks" id="pb" rows="10" cols="3"></textarea>
+                    </span>
+                  </div>
+        
                 </div>
                 <div class="submitbtn">
-                    <button id="submitbutton" type="submit">Post Job</button>
+                  <button id="submitbutton" type="submit">Post Job</button>
                 </div>
-            </div>
-    </form>
-
-
+              </div>
+          </form>
+    </section>
     
+    <footer class="site-footer foot-new">
+
+      <a href="#top" class="smoothscroll scroll-top">
+        <span class="icon-keyboard_arrow_up"></span>
+      </a>
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Search Trending</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Web Developers</a></li>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">CSS3</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Company</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Support</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+              <li><a href="#">Fraud alert</a></li>
+              <li><a href="#">Grievances</a></li>
+              <li><a href="#">Report issue</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Connect with us</h3>
+            <div class="footer-social">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  
+  </div>
+
+    <!-- SCRIPTS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/stickyfill.min.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-
+    
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/jquery.animateNumber.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-
+    
     <script src="js/bootstrap-select.min.js"></script>
-
+    
     <script src="js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
     <script>
-        new MultiSelectTag('employment_type')  // id
-        new MultiSelectTag('work_mode')  // id
-        new MultiSelectTag('key_skills')  // id
+      
+      new MultiSelectTag('key_skills')  // id
     </script>
-    <script src="js/script.js"></script>
-</body>
+  <script src="js/script_newpost.js"></script>
+  <script>
+      document.getElementById('myForm').addEventListener('submit', function (event) {
+        var selectField = document.getElementById('key_skills');
+        var selectedOptions = [...selectField.options].filter(option => option.selected);
 
+        if (selectedOptions.length === 0) {
+          alert('Please select at least one option');
+          event.preventDefault(); // Prevents form submission
+        }
+      });
+    </script>
+
+
+     
+  </body>
 </html>

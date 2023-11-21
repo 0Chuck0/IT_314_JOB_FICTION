@@ -6,7 +6,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        res.render("newpost");
+        res.render("newpost.hbs");
 
     },
     post: async(req,res)=>{
@@ -47,7 +47,7 @@ module.exports = {
             
             await jobs.insertMany([data]);
            
-            res.render("companyhomepage")
+            res.render("companyhomepage.hbs")
         }
         catch (error)
         {

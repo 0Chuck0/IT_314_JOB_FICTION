@@ -13,7 +13,7 @@ module.exports = {
     get:async (req,res)=>{
         
         
-        res.render("edit_profile");
+        res.render("edit_profile.hbs");
     },
 
     post:async(req,res)=>{
@@ -97,7 +97,7 @@ module.exports = {
     
                     }
                     });
-                res.render("home");
+                res.render("home.hbs");
 
 
 

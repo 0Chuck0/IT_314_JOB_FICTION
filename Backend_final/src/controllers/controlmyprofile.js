@@ -8,7 +8,7 @@ module.exports = {
     get:async (req,res)=>{
         
         const data = await Register.findOne({email:req.body.email})
-        res.render("myprofile",{
+        res.render("myprofile.hbs",{
             name : data.name,
             email : data.email,
             number : data.number,

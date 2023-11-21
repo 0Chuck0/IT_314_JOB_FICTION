@@ -28,7 +28,7 @@ module.exports = {
              
                 if(await Savedpost.findOne({job_id:req.params.id, email:data.email}).count() == 1)
                 {
-                   res.render("job_description",{
+                   res.render("job_description.hbs",{
                              jobid : req.params.id,
                              how: "fa-solid",
                              jobTitle : jobData.job_title,
@@ -48,7 +48,7 @@ module.exports = {
                 }
                 else
                 {
-                  res.render("job_description",{
+                  res.render("job_description.hbs",{
                              jobid : req.params.id,
                              how: "fa-regular",
                              jobTitle : jobData.job_title,
@@ -73,7 +73,7 @@ module.exports = {
         else
         {  
           const jobData = await jobs.findOne({id:req.params.id});
-           res.render("job_description",{
+           res.render("job_description.hbs",{
                       jobid : req.params.id,
                       how: "fa-regular",
                       jobTitle : jobData.job_title,

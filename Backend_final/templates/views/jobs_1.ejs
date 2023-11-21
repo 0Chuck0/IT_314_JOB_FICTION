@@ -75,8 +75,12 @@
           
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-              <a href="/register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
-              <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+              <% if(logged === true) { %>
+                <a href="/logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log Out</a>
+                <%} else { %>+
+                  <a href="/register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
+                  <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+                  <% } %>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -87,7 +91,7 @@
 
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');" id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -338,19 +342,40 @@
 
 
                         <div id="jobListing-container" class="col container jobListing-container scroll">
+
+                          <% for (let key in data) { %>
                             
+                            <a href="/job_description/<%= data[key].id %>" >
 
-                           
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4><%= data[key].company %></h4>
+                                        <h3><%= data[key].job_title%></h3>
+                                        <p><%= data[key].location%></p>
+                                    </div>
 
-
-                           
-                        </div>
-                    </div>
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <span href="#" class="label-a">₹<%= data[key].salary%> a month</span>
+                                        </div>
+                                        <div class="row labels">
+                                            <span href="#" class="label-c"><%= data[key].work_mode%></span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <% } %>
+                                  </div>
+                                </div>
                 </div>
             </div>
         </div>
 </div>
 </div>
+
 
 </section>
     
@@ -412,22 +437,25 @@
     <!-- SCRIPTS -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    <script src="js/script_jobs.js"></script>
+    <script src="/js/script_jobs.js"></script>
+    <script >
+      
+    </script>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="/js/stickyfill.min.js"></script>
+    <script src="/js/jquery.fancybox.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
     
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/jquery.animateNumber.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
     
-    <script src="js/bootstrap-select.min.js"></script>
+    <script src="/js/bootstrap-select.min.js"></script>
 
-    <script src="js/custom.js"></script>
+    <script src="/js/custom.js"></script>
 
      
   </body>

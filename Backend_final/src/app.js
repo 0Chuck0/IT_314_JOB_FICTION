@@ -27,6 +27,7 @@ const Savedpost = require('./models/savePostSchema');
 const jobs = require("./models/jobs");
 const apply = require("./models/apply");
 const hbs = require('hbs')
+const ejs = require('ejs');
 const { error } = require('console');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -39,6 +40,8 @@ app.use(express.static(static_path))
 
 const template_path = path.join(__dirname, "../templates/views")
 app.set("views", template_path)
+
+app.set('view engine', 'ejs');
 // app.use(express.static(template_path))
 
 
@@ -91,6 +94,16 @@ app.use("/apply", applyRouter)
 app.get("/", (req, res) => {
     res.render("landingpage")
 })
+
+app.get("/logout", async(req, res) => {
+    try {
+         res.clearCookie("jwt");
+         res.send("<script> alert('logged out succesfully'); window.location = '/login' </script>")
+        //  res.render('login.hbs');
+    } catch (error) {
+         res.status(500).send(error);
+    }
+ })
 
 app.get("/companyhomepage", (req, res) => {
     res.render("companyhomepage")

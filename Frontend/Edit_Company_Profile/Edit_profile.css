@@ -66,12 +66,12 @@ body {
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
-    margin-left: 7%;
+    margin-left: 10%;
 }
 
-.card:hover{
+/* .card:hover{
     border: 3px solid #212529;
-}
+} */
 
 /* .sidenav:hover {
     transform: scale(1.04);
@@ -171,7 +171,7 @@ body {
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 68%;
+    height: fit-content;
     margin-left: 4%;
     position: absolute;
     left: 0;
@@ -183,6 +183,7 @@ body {
     box-sizing: border-box;
     position: fixed;
     box-shadow: 3px 5px 8px 0 grey;
+    padding-bottom: 20px;
 }
 
 #companyphoto{
@@ -249,7 +250,7 @@ body {
     padding-left: 15px;
     font-size: 18px;
     /* width: 100%; */
-    min-width: 14rem;
+    /* min-width: 14rem; */
     border: 1px solid #DADDE0;
 }
 
@@ -335,7 +336,7 @@ img{
     font-size: 28px;
     /* font-size: 20px; */
     padding: 0 10px;
-    width: 58%;
+    width: 70%;
     margin-bottom: 60px;
 }
 
@@ -369,6 +370,31 @@ h2 {
     width: 80%;
 }
 
+.empty{
+    overflow:auto;
+}
+
+.toggle-btn{
+    position:fixed;
+    top: 70px;
+    /* margin-top: 300px; */
+    left: 3%;
+}
+
+.toggle-btn span{
+    width: 45px;
+    height: 4px;
+    background: #212529;
+    display: block;
+    margin-top: 4px;
+}
+
+.sidenav .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
 hr {
     margin: 0 auto;
     width: 60%;
@@ -386,25 +412,90 @@ hr {
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
+    .lower-btn{
+        display: none;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+        position: fixed;
+    }
+    .upper-btn{
+        display: none;
+    }
+    .sidenav{
+        margin-left: -300px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .main{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 10%;
+        width: fit-content;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
+@media (max-width: 495px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    .widgetCont{
+        font-size: 16px;
+    }
+    .widgetHead{
+        font-size: 18px;
+    }
 }
 
-.fa-github:hover {
-    color: #161414 !important;
+@media (min-width: 226px) and (max-width:494px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    .main{
+        margin-left: 8%;
+    }
+    .toggle-btn{
+        left: 5px;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
 }
 
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+*{
+    box-sizing: border-box;
+}
+
+@media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
 }
 
 /* End */

@@ -1,25 +1,31 @@
 /* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+/* @import url(https://fonts.googleapis.com/css?family=Dancing+Script); */
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 * {
     margin: 0;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
 }
 
 body {
     /* background-color: #e7e7f1; */
     /* background-color: #4070f4; */
-    background-color: #2047b43a;
+    background-color: #fff;
     min-height: 100vh;
     height: max-content;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
     padding-bottom: 50px;
 }
 
+.uneditable{
+    /* display: block;
+    padding-left: 15px; */
+    padding: 5px;
+    background-color: #EEEEEE;
+}
+.input-container{
+    width: fit-content;
+}
 /* personal */
 /* .mult-select-tag .input-container {
     display: flex;
@@ -39,37 +45,23 @@ body {
     border-left: 1px solid var(--border-color);
 } */
 /* personal */
-<<<<<<< HEAD
 .submitbtn {
     text-align: center;
+    margin-top: 8%;
 }
 
 .widgetHead {
-=======
-#submit{
-    text-align: center;
-}
-.widgetHead{
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
     font-size: 20px;
     /* font-size: 16px; */
     color: #000;
     font-weight: 700;
 }
 
-<<<<<<< HEAD
 .widgetCont {
     margin: 10px 0 15px 0px;
     /* --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
     --border-color: rgb(218, 221, 224); */
-=======
-.widgetCont{
-    margin:10px 0 15px 0px;
-    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
-    --border-color: rgb(218, 221, 224);
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
 }
 
 
@@ -86,23 +78,30 @@ body {
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
+    margin-left: 10%;
 }
 
 /* .card:hover{
+    border: 3px solid #212529;
+} */
+
+.spandiff{
+    padding: 7px 0 7px 0;
+}
+
+/* .sidenav:hover {
     transform: scale(1.04);
     transition: all 0.5s;
 } */
-
-.sidenav:hover {
-    transform: scale(1.04);
-    transition: all 0.5s;
-}
 
 .widgetTitle {
     color: #121224;
 }
 
-
+.sidenav-url{
+    /* align-items: center; */
+    margin: 0 10px;
+}
 
 #identity {
     text-align: center;
@@ -117,7 +116,7 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family: 'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -178,33 +177,38 @@ body {
     position: relative;
 }
 
-
-
 /* End */
 
 /* Sidenav */
+
 .sidenav {
     background-color: #fff;
+    /* background-color: #212529; */
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 65%;
-    margin-left: 2%;
+    height: fit-content;
+    margin-left: 4%;
     position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 70px;
+    top: 7px;
     width: 25%;
     margin-top: 5%;
     box-sizing: border-box;
-    position: fixed;
     /* box-shadow: 3px 5px 8px 0 grey; */
+    padding-bottom: 20px;
+    border: 1px solid #DEE2E6;
 }
 
 #candidate_image {
     display: none;
+}
+
+#candidatephoto{
+    color: #fff;
 }
 
 /* .profileinput{
@@ -224,7 +228,7 @@ body {
 
 .candidategender {
     display: flex;
-    gap: 60px;
+    gap: 5%;
     font-size: 18px;
 }
 
@@ -233,7 +237,7 @@ body {
 }
 
 #submitbutton {
-    background-color: #04AA6D;
+    background-color: #4070fa;
     /* Green */
     border: none;
     color: white;
@@ -248,23 +252,40 @@ body {
     font-weight: 400;
 }
 
+#az{
+    width: 100px ;
+    height: 100px;
+}
+
+img{
+    font-size: 13px;
+}
+
 .differentinput {
     /* border: none; */
-    border-color: rgb(218, 221, 224);
-    border-radius: 0.375rem;
-    width: 100%;
+    border-radius: 8px;
     padding-left: 15px;
     font-size: 18px;
-    min-height: 2.15rem;
+    min-height: 2.25rem;
     width: 100%;
-    min-width: 14rem;
-    border-style: solid;
+    /* min-width: 14rem; */
+    border: 1px solid #DADDE0;
 }
 
 .profile {
-    margin-bottom: 20px;
-    margin-top: 12px;
+    margin-top: 25px;
+    margin-bottom: 10px;
     text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.lowerprofile {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+    color: red;
 }
 
 .profile img {
@@ -286,34 +307,37 @@ body {
     padding-top: 10px;
 }
 
-.url,
-hr {
+.url{
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .url hr {
-    margin: 5px auto;
+    /* margin: 15px; */
+    align-items: center;
     width: 60%;
 }
 
 .url a {
     color: #818181;
     display: block;
-    /* font-size: 20px; */
-    font-size: 16px;
+    font-size: 20px;
+    /* font-size: 18px; */
     margin: 10px 0;
-    padding: 6px 12px;
+    padding: 10px 12px;
     text-decoration: none;
 }
 
 .url a:hover,
 .url .active {
-    background-color: #e8f5ff;
+    background-color: #cee2f1;
     border-radius: 28px;
     color: #000;
-    margin-left: 14%;
     width: 65%;
 }
+
 
 .socialmediacontainer {
     /* width: 90px; */
@@ -327,9 +351,10 @@ hr {
     margin-top: 100px;
     margin-left: 29%;
     /* font-size: 28px; */
-    font-size: 20px;
+    font-size: 28px;
     padding: 0 10px;
-    width: 58%;
+    width: 70%;
+    margin-bottom: 60px;
 }
 
 
@@ -340,7 +365,7 @@ h2 {
 
 .main h2 {
     color: #333;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family: 'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -362,10 +387,35 @@ h2 {
     width: 80%;
 }
 
+.empty{
+    overflow:auto;
+}
+
+.toggle-btn{
+    position:fixed;
+    top: 70px;
+    /* margin-top: 300px; */
+    left: 3%;
+}
+
+.toggle-btn span{
+    width: 45px;
+    height: 4px;
+    background: #212529;
+    display: block;
+    margin-top: 4px;
+}
+
+.sidenav .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
 hr {
     margin: 0 auto;
-    width: 100%;
-    margin-bottom: 15px;
+    width: 60%;
+    /* margin-bottom: 15px; */
 }
 
 .edit {
@@ -379,25 +429,116 @@ hr {
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
+    .lower-btn{
+        display: none;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+        position: fixed;
+    }
+    .upper-btn{
+        display: none;
+    }
+    .sidenav{
+        margin-left: -300px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    /* body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    } */
+    .main{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .card{
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
+@media (max-width: 495px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    .widgetCont{
+        font-size: 16px;
+    }
+    .widgetHead{
+        font-size: 18px;
+    }
 }
 
-.fa-github:hover {
-    color: #161414 !important;
+@media (min-width: 226px) and (max-width:494px){
+    .main .card{
+        padding: 10px 20px;
+    }
+    /* .main{
+        margin-left: 20%;
+    } */
+    .toggle-btn{
+        left: 5px;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
 }
 
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+@media (max-width:380px){
+    .main{
+        margin-left: 5%;
+        width: 85%;
+    }
+    
 }
 
+textarea{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+}
+
+@media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
+}
+
+@media (max-width:450px){
+    .card{
+        width: 100%;
+    }
+    .main .card{
+        padding: 5px 10px;
+    }
+    .main{
+        margin-left: 14%;
+    }
+    .toggle-btn span{
+        width: 25px;
+    }
+}
 /* End */

@@ -27,6 +27,7 @@
 
 <div class="site-wrap">
 
+    <div class="site-wrap">
     <!-- .site-mobile-menu -->
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -34,8 +35,17 @@
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> 
+      <div class="site-mobile-menu-body">
+        <ul class="list-group">
+          <li class="list-group-item"><a class="respon-nav" href="/home" class="nav-link active">Home</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="/jobs_1">Jobs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="#">Recommendations</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="/blog">Blogs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="/register">Register</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="/login">Log In</a></li>
+        </ul>
+      </div>
+    </div>
     
 
     <!-- NAVBAR -->
@@ -45,11 +55,17 @@
           <div class="site-logo col-6"><a href="/home">JOBfiction</a></div>
 
           <nav class="mx-auto site-navigation">
+<<<<<<< HEAD
             <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
               <li><a href="/applied_jobs" class="nav-link active">applied jobs</a></li>
+=======
+            <ul class="site-menu d-none d-xl-block ml-0 pl-0">
+              <li><a href="/home" class="nav-link active">Home</a></li>
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
               <li><a href="/jobs_1">Jobs</a></li>
              
               <li>
+<<<<<<< HEAD
                 <a href="#">Recommnedations</a>
               </li>
               <li><a href="/saved_jobs">Saved jobs</a></li>
@@ -61,17 +77,32 @@
               <li class="d-lg-none"><a href="register">Register</a></li>
               <li class="d-lg-none"><a href="/logout">Log In</a></li>
               {{/if}}
+=======
+                <a href="#">Recommendations</a>
+              </li>
+              <li><a href="/blog">Blogs</a></li>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li class="d-lg-none"><a href="/register">Register</a></li>
+              <li class="d-lg-none"><a href="/login">Log In</a></li>
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
             </ul>
           </nav>
           
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
+<<<<<<< HEAD
               {{#if logged}}
                <a href="logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">logout</a>
               {{else}}
               <a href="register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
               <a href="login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">login</a>
                {{/if}}
+=======
+              <a href="register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
+              <a href="login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">login</a>
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -90,6 +121,7 @@
               <h1 class="text-white font-weight-bold">Find your <span class=" headline">perfect job</span> easily</h1>
               <p>With more than 5 lakh+ jobs for you to explore</p>
             </div>
+<<<<<<< HEAD
             <form action ="/jobs_1/search" method="post" class="search-jobs-form">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -97,6 +129,15 @@
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <select class="" name="locations" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
+=======
+            <form method="post" class="search-jobs-form">
+              <div class="row mb-5">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <input type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
                     <option>Anywhere</option>
                     <option>Bangalore</option>
                     <option>Hyderabad</option>
@@ -105,11 +146,18 @@
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+<<<<<<< HEAD
                   <select class="" name="work_modes" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
                     <option>Any</option>
                     <option>Remote</option>
                     <option>Office</option>
                     <option>Hybrid</option>
+=======
+                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
+                    <option>Part Time</option>
+                    <option>Full Time</option>
+                    <option>Internship</option>
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -133,8 +181,11 @@
       </div>
 
     </section>
+<<<<<<< HEAD
 
     {{logged}}
+=======
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
     
     <!-- JOBS -->
       <div class="job-list" id="jobs">
@@ -225,7 +276,11 @@
         </div>
         <button class="job-more">
             More List
+<<<<<<< HEAD
         </button>
+=======
+        </div>
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
     </div>
 
     
@@ -304,3 +359,7 @@
   </body>
 </html>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2

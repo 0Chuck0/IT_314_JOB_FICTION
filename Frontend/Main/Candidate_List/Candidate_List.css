@@ -2,17 +2,13 @@
     margin: 0;
 } */
 
-body {
-    margin-top: 20px;
-    background: #2047b43a;
-}
-
 .candidates-listing-item{
     width :70%;
     margin : 0 auto;
+    margin-bottom: 100px;
 }
 
-.text-muted-cl{
+.text-muted{
     color: #000 !important;
 }
 
@@ -33,13 +29,9 @@ body {
 
 .container{
     margin-top: 2%;
+    margin-bottom: 80px;
 }
 
-.scroll{
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
 h2{
     color: #fff;
     margin-top: 125px;
@@ -70,6 +62,11 @@ h2{
     transition: all 0.5s;
     text-decoration: none;
 }
+
+.boldspan{
+    font-weight: 500;
+}
+
 
 .logo{
     font-weight: 900;
@@ -182,4 +179,21 @@ h2{
 
 .btn-sm {
     padding: 8px 22px;
+}
+
+@media (max-width: 768px){
+    .candidates-listing-btn{
+        padding-top: 20px;
+        margin-top: 0 !important;
+        padding-right: 0%;
+    }
+    .col-md-3{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .candidates-item-desc{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
 }

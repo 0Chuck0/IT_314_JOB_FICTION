@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
 
-    <link rel="stylesheet" href="style_register.css">    
+    <link rel="stylesheet" href="style_register.css">  
+    <link rel="stylesheet" href="Company_Registration/C_registration.css">  
   </head>
   <body id="top">
 
@@ -80,6 +81,15 @@
               <!-- </div>
               <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
             </div> -->
+
+            <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+              <div class="ml-auto">
+                <!-- <a href="" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Already registered?</a> -->
+                <span class="new">Already registered?</span>
+                <a href="index_comp-login.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Log In</a>
+              </div>
+              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+            </div>
   
           </div>
         </div>
@@ -105,95 +115,109 @@
 
 
     <section class="containerr">
-        <form class="form-registration" action="" method="">
-          <h1>
-            Register
-          </h1>
-          <div class="mb-3">
-            <label for="exampleFormControlInput1 employee_name" class="form-label">Your Name<sup
-                class="mandatory_Filds"></sup></label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What is your name?" required>
+      <form class="form-registration" action="" method="">
+        <h1>
+          Register
+        </h1>
+        <h6>Company Details</h6>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 company_name" class="form-label">Company Name<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="text" class="form-control" id="Companyname" placeholder="What is your Company name?" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 company_type" class="form-label">Industry Type
+            <sup class="mandatory_Filds">*</sup>
+          </label>
+          <input type="text" class="form-control" placeholder="What is type of your Company" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 company_description" class="form-label">Company Description<sup
+              class="mandatory_Filds">*</sup></label>
+          <!-- <input type="text" class="form-control" placeholder="Tell About your Company" required> -->
+          <textarea class="form-control" name="company_description" id="company_description" rows="3"
+            placeholder="Tell About your Company"></textarea>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 company_location" class="form-label">Company Location<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="text" class="form-control" id="Company_location" placeholder="What is the address of yout Company?"
+            required>
+        </div>
+  
+        <h6 id="bottomh6">Employee Details</h6>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 employee_name" class="form-label">Your Name<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="What is your name?" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 employee_designation" class="form-label">Your Designation<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="text" class="form-control" id="Employee_designation"
+            placeholder="What is your Designation in Company?" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="validationDefaultUsername conatct_number" class="form-label">Contact Number<sup
+              class="mandatory_Filds">*</sup></label>
+          <div class="input-group">
+            <span class="input-group-text" id="inputGroupPrepend2">+91</span>
+            <input type="text" pattern="^(?=.*[0-9]).{10}$" class="form-control" id="validationDefaultUsername"
+              aria-describedby="inputGroupPrepend2" required placeholder="Enter Contact Number">
           </div>
-    
-          
-          <div class="mb-3">
-            <label for="validationDefaultUsername conatct_number" class="form-label">Contact Number<sup
-              class="mandatory_Filds"></sup></label>
-              <div class="input-group">
-                <span class="input-group-text" id="inputGroupPrepend2">+91</span>
-                <input type="text" pattern="^(?=.*[0-9]).{10}$" class="form-control" id="validationDefaultUsername"
-                aria-describedby="inputGroupPrepend2" required placeholder="Enter Contact Number">
-              </div>
-              <div class="form-text">
-                Help us to contact you
-              </div>
-            </div>
-            
-            <div class="mb-3">
-              <label for="exampleFormControlInput1 company_name" class="form-label">Company Name<sup
-                class="mandatory_Filds"></sup></label>
-                <input type="text" class="form-control" id="Companyname" placeholder="What is your Company name?" required>
-              </div>
-              
-              <div class="mb-3">
-                <label for="exampleFormControlInput1 company_type" class="form-label">Company Type<sup
-                    class="mandatory_Filds"></sup></label>
-                <input type="text" class="form-control" placeholder="What is type of your Company" required>
-              </div>
-    
-              <div class="mb-3">
-            <label for="exampleFormControlInput1 company_location" class="form-label">Company Location<sup
-                class="mandatory_Filds"></sup></label>
-            <input type="text" class="form-control" id="Company_location" placeholder="What is the address of yout Company?" required>
+          <div class="form-text">
+            Help us to contact you
           </div>
-    
-          <div class="mb-3">
-            <label for="exampleFormControlInput1 employee_designation" class="form-label">Your Designation<sup
-                class="mandatory_Filds"></sup></label>
-            <input type="text" class="form-control" id="Employee_designation" placeholder="What is your Designation in Company?" required>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputEmail1 email" class="form-label">Email ID<sup class="mandatory_Filds">*</sup></label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Tell us your official Email" required>
+          <div class="form-text">
+            We will contact you on this mail
           </div>
-    
-          <div class="mb-3">
-            <label for="exampleInputEmail1 email" class="form-label">Email ID<sup class="mandatory_Filds"></sup></label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Tell us your official Email" required>
-            <div class="form-text">
-              We will contact you on this mail
-            </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="exampleInputPassword1 password" class="form-label">Password<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter your new password" required>
+          <div id="Password1" class="form-text">
+            Password must contain at least 6 characters including UPPERCASE, lowercase, number & symbol
           </div>
-          
-          <div class="mb-3">
-            <label for="exampleInputPassword1 password" class="form-label">Password<sup class="mandatory_Filds"></sup></label>
-            <input type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$"
-              class="form-control" id="exampleInputPassword1" placeholder="Enter your new password" required>
-            <div id="Password1" class="form-text">
-              Password must contain at least 6 characters including UPPERCASE, lowercase, number & symbol 
-            </div>
+        </div>
+        <!-- New Updates Begin -->
+        <div class="mb-3">
+          <label for="exampleInputPassword1 confirm_Password" class="form-label">Confirm password<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$"
+            class="form-control" id="exampleInputPassword2" placeholder="Enter your confirm password" required>
+          <div id="Password2" class="form-text">
           </div>
-          <!-- New Updates Begin -->
-          <div class="mb-3">
-            <label for="exampleInputPassword1 confirm_Password" class="form-label">Confirm password<sup
-                class="mandatory_Filds"></sup></label>
-            <input type="password" pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$"
-              class="form-control" id="exampleInputPassword2" placeholder="Enter your confirm password">
-            <div id="Password2" class="form-text">
-            </div>
-          </div>
-          <!-- New Updates End -->
-    
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                I agree to receive important updates by email
-                <!-- <span><img src="images/email_logo.svg" alt="No_photo"></span> -->
-            </label>
-          </div>
-    
-          <div class="btn-container">
-            <button type="submit" class="btn btn-primary register-btn">Register</button>
-          </div>
-    
-        </form>
+        </div>
+        <!-- New Updates End -->
+  
+        <!-- <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+              I agree to receive important updates by email<span><img src="email_logo.svg" alt="No_photo"></span>
+          </label>
+        </div> -->
+  
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary register-btn">Create Account</button>
+        </div>
+  
+      </form>
     
       </section>
     

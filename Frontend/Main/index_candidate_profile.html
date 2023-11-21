@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/animate.min.css">
 
     <link rel="stylesheet" href="style.css">    
-    <link rel="stylesheet" href="Candidate_Info/Candidate_page.css">    
+    <link rel="stylesheet" href="Candidate_profile/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   </head>
   <body id="top">
 
@@ -58,21 +59,21 @@
           <div class="row align-items-center">
             <div class="site-logo col-6"><a href="index.html">JobFiction</a></div>
   
-            <!-- <nav class="mx-auto site-navigation">
+            <nav class="mx-auto site-navigation">
               <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="index_comp-home.html" class="nav-link active">Home</a></li>
                 <li><a href="index_jobs.html">Job Postings</a></li>
-                <li> -->
+                <li>
                   <!-- <a href="recommendations.html">Recommendations</a> -->
-                <!-- </li> -->
+                </li>
                 <!-- <li><a href="blog.html">Blogs</a></li> -->
-                <!-- <li>
+                <li>
                   <a href="about.html">About Us</a>
                 </li>
                 <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
                 <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
               </ul>
-            </nav> -->
+            </nav>
             
             <!-- <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
               <div class="ml-auto">
@@ -93,7 +94,7 @@
         <div class="row">
           <div class="col-md-7">
             <div class="new2">
-              <h1 class="text-white font-weight-bold">Register</h1>
+              <h1 class="text-white font-weight-bold">Candidate Profile</h1>
             </div>
             <div class="custom-breadcrumbs">
               <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
@@ -104,157 +105,157 @@
       </div>
     </section>
 
-
-    <div class="sidenav">
-        <div class="profile">
-          <img src="As_mine.png" alt="" width="100" height="100">
+    <section class="containerr">
+          <!-- Sidenav -->
+    <div class="toggle-btn" onclick="viewmenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
+  <div class="sidenav"  id="showmenu">
+      <div class="profile">
+          <img src="Candidate_profile/As_mine.png" alt="" width="100" height="100">
           <div class="name">
-            Maulik Patel 
+              Azahar Kureshi
           </div>
           <div class="job">
-            <i class="fa fa-briefcase" aria-hidden="true"> </i> Fresher
+              <i class="fa fa-briefcase" aria-hidden="true"></i> Fresher
           </div>
-        </div>
-    
-        <h2 class="identity">SKILLS</h2>
-        <hr class="navbarhr">
-        <div class="card socialmediacontainer ">
-          <div class="social-media mine">
-            HTML, CSS, JavaScript, Wordpress, PHP, jQueary
-          </div>
-        </div>
-    
-        <h2 class="identity">SOCIAL MEDIA</h2>
-        <hr class="navbarhr">
-        <div class="card socialmediacontainer">
-          <div class="social-media">
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
-            </span>
-            <span class="fa-stack fa-sm">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-            </span>
-          </div>
-        </div>
       </div>
-      <!-- End -->
-    
-      <!-- Main -->
-      <div class="main">
-        <div class="card">
-          <h2 class="mainheading">PERSONAL DETAILS</h2>
-          <div class="jobcard">
-            <div class="smallcontainer">
-              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+
+      <div class="sidenav-url">
+          <div class="url">
+              <a href="..\Saved Jobs\index.html" target="_blank" class="active">Saved Jobs</a>
+          </div>
+          <hr class="mehr">
+          <div class="url">
+              <a href=".\Saved Jobs\index.html" target="_blank" class="active">Applied Jobs</a>
+          </div>
+          <hr class="mehr">
+          <div class="url">
+              <a href="..\NEW_Edit_Candidate_Profile\Edit_profile.html" target="_blank" class="active">Edit Profile</a>
+          </div>
+      </div>
+  </div> 
+  <!-- End -->
+
+  <!-- Main -->
+  <div class="main" id="hideshow">
+      <div class="card-body">
+          <div class="card mine">
+              <h2>PERSONAL DETAILS</h2>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Full Name</span>
               </div>
-              <div class="spannumber">
-                <div class="widgetCont" style="margin-right: 10px;"><span class="empty">Maulik </span></div>
-                <div class="widgetCont"><span class="empty">Patel </span></div>
+              <div class="widgetCont"><span class="empty">Azahar Kureshi</span>
               </div>
-            </div>
-    
-            <div class="smallcontainer">
+              <hr>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
               </div>
               <div class="widgetCont"><span class="empty">imdezcode@gmail.com</span>
               </div>
-            </div>
-    
-            <div class="smallcontainer">
+              <hr>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
               </div>
-              <div class="spannumber">
-                <div id="number">(+91) </div>
-                <div class="widgetCont"><span class="empty">0123456789</span></div>
+              <div class="widgetCont"><span class="empty">(+91) 0123456789</span>
               </div>
-            </div>
-    
-            <div class="smallcontainer">
+              <hr>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Gender</span>
               </div>
               <div class="widgetCont"><span class="empty">Male</span>
               </div>
-            </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Birth Date</span>
+              </div>
+              <div class="widgetCont"><span class="empty">01-01-2001</span>
+              </div>
           </div>
-        </div>
-    
-        <div class="card">
-          <h2 class="mainheading">ABOUT</h2>
-          <div class="jobcard">
-            <div class="smallcontainer">
+          <div class="card">
+              <h2>ABOUT</h2>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Technical Skills</span>
+              </div>
+              <div class="widgetCont"><span class="empty">PHP, HTML, CSS, Java</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Languages</span>
+              </div>
+              <div class="widgetCont"><span class="empty">English, Gujarati</span>
+              </div>
+              <hr>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Resume</span>
               </div>
-              <div class="widgetCont"><a href="#" target="_blank"><span class="empty">Click</span></a>
+              <div class="widgetCont"><a class="nodecoration" href="" target="_blank"><span class="empty addhere">Click Here</span></a>
               </div>
-            </div>
-            <div class="smallcontainer">
+              <hr>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Experience</span>
               </div>
               <div class="widgetCont"><span class="empty">Fresher</span>
               </div>
-            </div>
           </div>
-        </div>
-    
-        <div class="card">
-          <h2 class="mainheading">PROJECT</h2>
-          <div class="jobcard">
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
-            </div>
-            <div class="widgetCont"><span class="empty">JOB FICTION, ONLINE TRADING</span>
-            </div>
+          <div class="card">
+              <h2>PROJECT</h2>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
+              </div>
+              <div class="widgetCont"><span class="empty">JOB FICTION, ONLINE TRADING</span>
+              </div>
           </div>
-        </div>
-        </div>
-    
-        <div class="card">
-          <h2 class="mainheading">EDUCATION</h2>
-          <div class="jobcard">
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education</span>
-            </div>
-            <div class="widgetCont"><span class="empty">Graduate</span>
-            </div>
+          <div class="card">
+              <h2>EDUCATION</h2>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education/Degree</span>
+              </div>
+              <div class="widgetCont"><span class="empty">Masters</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/Collage</span>
+              </div>
+              <div class="widgetCont"><span class="empty">DA-IICT</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
+              </div>
+              <div class="widgetCont"><span class="empty">ICT</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
+              </div>
+              <div class="widgetCont"><span class="empty">98.63</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
+              </div>
+              <div class="widgetCont"><span class="empty">99.32</span>
+              </div>
           </div>
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
-            </div>
-            <div class="widgetCont"><span class="empty">B.Tech</span>
-            </div>
+
+          <div class="card">
+              <h2>RECOMMENDATION</h2>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Job Type</span>
+              </div>
+              <div class="widgetCont"><span class="empty">Software Developer</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Expected salary range</span>
+              </div>
+              <div class="widgetCont"><span class="empty">₹20,000 - ₹50,000</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Preferred Work Location</span>
+              </div>
+              <div class="widgetCont"><span class="empty">Pune</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Employment Type</span>
+              </div>
+              <div class="widgetCont"><span class="empty">Full Time</span>
+              </div>
+              <hr>
+              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Work Mode</span>
+              </div>
+              <div class="widgetCont"><span class="empty">Office</span>
+              </div>
           </div>
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Collage/University</span>
-            </div>
-            <div class="widgetCont"><span class="empty">DAIICT</span>
-            </div>
-          </div>
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
-            </div>
-            <div class="widgetCont"><span class="empty">90.23</span>
-            </div>
-          </div>
-          <div class="smallcontainer">
-            <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
-            </div>
-            <div class="widgetCont"><span class="empty">89.56</span>
-            </div>
-          </div>
-        </div>
-        </div>
-    
       </div>
+  </div>
+    </section>
     
     <footer class="site-footer">
 
@@ -326,6 +327,7 @@
     <script src="js/bootstrap-select.min.js"></script>
     
     <script src="js/custom.js"></script>
+    <script src="Candidate_profile/script.js"></script>
 
      
   </body>

@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+<<<<<<< HEAD
+=======
+.respon-nav{
+  color: #000;
+  font-size:larger;
+}
+
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 .comp-home-img{
   height: 540px;
   width: 540px;

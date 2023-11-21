@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    <title>Profile Page</title>
+    <link rel="stylesheet" href="external.css">
+    <title>Edit Profille</title>
 
     <!-- Custom Css -->
     <link rel="stylesheet" href="Edit_profile.css">
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -37,147 +39,102 @@
     </div>
 
     <form action="form.php">
-        <div class="sidenav">
-            <div class="profile">
-                <div class="image" width="100" height="100">
 
-                    <input type="file" name="image" id="candidate_image">
-                    <label for="candidate_image"><img src="upload_photo.png" alt="" width="100" height="100"></label>
-                </div>
-
-                <!-- <div class="name">
-                    <label class="profileinput" for="candidate_name">Name</label>
-                    <input type="text" name="name" id="candidate_name">
-                </div> -->
-
-                <!-- <div class="job">
-                    <label class="profileinput" for="candidate_job">Job</label>
-                    <input type="text" name="job" id="candidate_job">
-                </div> -->
-            </div>
-
-            <!-- <div class="sidenav-url">
-                <div class="url">
-                    <a href="#" class="active">Wish List</a>
-                    <hr>
-                </div>
-                <div class="url">
-                    <a href="#settings" class="active">Settings</a>
-                    <hr>
-                </div>
-            </div>
-    
-            <h2 id="identity">SOCIAL MEDIA</h2>
-            <div class="card socialmediacontainer">
-                <div class="card-body">
-                    <div class="social-media">
-                      <hr>
-                        <span class="fa-stack fa-sm">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <span class="fa-stack fa-sm">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <span class="fa-stack fa-sm">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
-                        </span>
-                        <span class="fa-stack fa-sm">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                        </span>
-                    </div>
-                </div>
-            </div> -->
+        <div class="toggle-btn" onclick="viewmenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-
-
+        <div class="sidenav" id="showmenu">
+            <div class="profile">
+                <div class="image" id="az">
+                    <input type="file" name="image" id="candidate_image" onchange="func(event)">
+                    <label for="candidate_image"><img src="photo.webp" id= "candidatephoto" alt="Preview Not Available" width="100" height="100"></label>
+                </div>
+                
+            </div>
+            <div class="lowerprofile">Photo must be in form of .jpg/.jpeg/.png </div>
+            <div class="sidenav-url">
+                <div class="url">
+                    <a href="index.html" class="active">Home</a>
+                </div>
+                <hr class="mehr">
+                <div class="url">
+                    <a href="profile.html" class="active">Jobs</a>
+                </div>
+                <hr class="mehr">
+                <div class="url">
+                    <a href="profile.html" class="active">Profile</a>
+                </div>
+            </div>
+            <div class="submitbtn upper-btn">
+                <button id="submitbutton" type="submit">Save Changes</button>
+            </div>
+        </div>
 
 
         <!-- Sidenav -->
         <!-- End -->
 
         <!-- Main -->
-        <div class="main">
+        <div class="main" id="hideshow">
             <div class="card-body">
                 <div class="card mine">
-                    <h2>PERSONAL DETAILS</h2>
+                    <h2>Personal Details</h2>
                     <div>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-                                    for="candidate_name_first">First Name</label></span>
+                                    for="candidate_name">Full Name</label></span>
                         </div>
-                        <div class="widgetCont ">
-                            <span class="empty"><input class="differentinput" type="text" name="job"
-                                    id="candidate_name_first">
+                        <div class="widgetCont differentinput uneditable">
+                            <span class="empty ">Alice Dabhi
                             </span>
                         </div>
-                        <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                        <!-- <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                     for="candidate_name_last">Last Name</label></span>
                         </div>
                         <div class="widgetCont "><span class="empty"><input class="differentinput" type="text"
                                     name="job" id="candidate_name_last">
                             </span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_email">Email</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text" name="job"
-                                id="candidate_email">
+                    <div class="widgetCont differentinput uneditable"><span class="empty">alicedabhi@gmail.com
                         </span>
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_contact_number">Contact number</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="tel"
-                                id="candidate_contact_number" name="conatct_number" pattern="[0-9]{10}"
-                                placeholder="Ex: 0123456789">
+                    <div class="widgetCont differentinput uneditable"><span class="empty">123456789
                         </span>
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_gender">Gender</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty candidategender">
-                            <div>
-                                <input type="radio" id="Male" name="gender" value="Male" checked />
-                                <label for="Male">Male</label>
-                            </div>
-
-                            <div>
-                                <input type="radio" id="Female" name="gender" value="female" />
-                                <label for="Female">Female</label>
-                            </div>
-
-                            <div>
-                                <input type="radio" id="Other" name="gender" value="other" />
-                                <label for="Other">Other</label>
-                            </div>
+                    <div class="widgetCont differentinput uneditable"><span class="empty">Male
                         </span>
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_birth_date">Date Of Birth</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="date"
-                                id="candidate_birth_date" name="birth_date">
+                    <div class="widgetCont differentinput uneditable"><span class="empty">01-01-2001
                         </span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h2>ABOUT</h2>
+                    <h2>About</h2>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_technical_skills">Technical Skills</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty">
                             <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
                             <select name="skills" id="candidate_technical_skills" multiple>
-                                <option value="">--Please choose an option--</option>
                                 <option value="C">C</option>
                                 <option value="C++">C++</option>
                                 <option value="Java_Script">Java Script</option>
@@ -189,25 +146,16 @@
                     </div>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
-<<<<<<< HEAD
                                 for="candidate_language_skills">Language</label></span>
-=======
-                                for="candidate_language_skills">Language Skills</label></span>
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
                     </div>
                     <div class="widgetCont"><span class="empty">
                             <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
                             <select name="skills" id="candidate_language_skills" multiple>
-                                <option value="">--Please choose an option--</option>
                                 <option value="English">English</option>
                                 <option value="Hindi">Hindi</option>
                                 <option value="Gujarati">Gujarati</option>
                                 <option value="Urdu">Urdu</option>
-<<<<<<< HEAD
                                 <option value="Germany">Germany</option>
-=======
-                                <option value="Germany">German</option>
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
                             </select>
                         </span>
                     </div>
@@ -223,22 +171,19 @@
                                 for="candidate_experience">Experience</label></span>
                     </div>
                     <div class="widgetCont">
-                        <span class="empty candidategender">
-                            <span>
-                                <input type="radio" id="Fresher" name="experience" value="fresher" checked />
-                                <label for="Fresher">Fresher</label>
-                            </span>
-
-                            <span>
+                        <span class="empty">
+                            <input type="number" name="experience" class="differentinput" max="40"
+                                placeholder="Ex. 5" />
+                            <!-- <span>
                                 <input type="radio" id="Experienced" name="experience" value="experienced" />
                                 <label for="Experienced">Experienced</label>
-                            </span>
+                            </span> -->
                         </span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <h2>PROJECT</h2>
+                    <h2>Project</h2>
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_project">Name/Title</label></span>
@@ -250,12 +195,32 @@
                 </div>
 
                 <div class="card">
-                    <h2>EDUCATION</h2>
+                    <h2>Education</h2>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_highest_education">Highest Education/Degree</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
-                                id="candidate_highest_education" name="highest_education" placeholder="Eg. Graduate">
+                    <div class="widgetCont select-menu dropdown1"><span class="empty">
+                            <div class="select-btn widgetCont select-btn1">
+                                <span class="sBtn-text sBtn-text1"></span>
+                                <textarea class="sBtn-text1"></textarea>
+                                <div class="vertical-line"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="18 15 12 21 6 15"></polyline>
+                                </svg>
+                            </div>
+                            <ul class="options">
+                                <li class="option option1">
+                                    <span class="option-text">Bachelors</span>
+                                </li>
+                                <li class="option option1">
+                                    <span class="option-text">Masters</span>
+                                </li>
+                                <li class="option option1">
+                                    <span class="option-text">Phd</span>
+                                </li>
+                            </ul>
                         </span>
                     </div>
 
@@ -271,12 +236,28 @@
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_study">Field of Study</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty">
-                            <select name="study" id="candidate_study" class="differentinput">
-                                <option value="">--Please choose an option--</option>
-                                <option value="B.Tech">B.Tech - Bachelor of Technology</option>
-                                <option value="M.Tech">M.Tech - Master of Technology</option>
-                            </select>
+                    <div class="widgetCont select-menu dropdown2"><span class="empty">
+                            <div class="select-btn widgetCont select-btn2">
+                                <span class="sBtn-text sBtn-text2"></span>
+                                <textarea class="sBtn-text2"></textarea>
+                                <div class="vertical-line"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="18 15 12 21 6 15"></polyline>
+                                </svg>
+                            </div>
+                            <ul class="options">
+                                <li class="option option2">
+                                    <span class="option-text">ICT</span>
+                                </li>
+                                <li class="option option2">
+                                    <span class="option-text">CSE</span>
+                                </li>
+                                <li class="option option2">
+                                    <span class="option-text">ECE</span>
+                                </li>
+                            </ul>
                         </span>
                     </div>
 
@@ -284,34 +265,27 @@
                                 for="candidate_collage">Class XII Percentage</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-<<<<<<< HEAD
-                                id="candidate_class12" name="class12" min="0" max="100" step="0.01" placeholder="Ex. 99.99">
-=======
-                                id="candidate_class12" name="class12" min="0" max="100" step="0.01">
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
+                                id="candidate_class12" name="class12" min="0" max="100" step="0.01"
+                                placeholder="Ex. 99.99">
                         </span>
                     </div>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_class10">Class X Percentage</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-<<<<<<< HEAD
-                                id="candidate_collage" name="class10" min="0" max="100" step="0.01" placeholder="Ex. 99.99">
-=======
-                                id="candidate_collage" name="class10" min="0" max="100" step="0.01">
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
+                                id="candidate_collage" name="class10" min="0" max="100" step="0.01"
+                                placeholder="Ex. 99.99">
                         </span>
                     </div>
                 </div>
 
                 <div class="card last">
-                    <h2>RECOMMENDATION</h2>
+                    <h2>Recommendation</h2>
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_desired_job">Desired Job Type</label></span>
                     </div>
                     <div class="widgetCont"><span class="empty">
                             <select name="desired_job" id="candidate_desired_job" class="differentinput" multiple>
-                                <option value="">--Please choose an option--</option>
                                 <option value="Data Scientist">Data Scientist</option>
                                 <option value="Systems Analyst">Systems Analyst</option>
                                 <option value="Data Engineer">Data Engineer</option>
@@ -334,76 +308,40 @@
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_expected_salary">Expected Salary Range</label></span>
                     </div>
-                    <div class="widgetCont"><span class="empty">
-                            <select name="desired_salary" id="candidate_expected_salary"
-                                class="differentinput .mult-select-tag">
-<<<<<<< HEAD
-                                <option value="">--Please choose an option--</option>
-=======
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
-                                <option value="₹20,000 - ₹50,000">₹20,000 - ₹50,000</option>
-                                <option value="₹50,000 - ₹80,000">₹50,000 - ₹80,000</option>
-                                <option value="₹80,000 - ₹1,00,000">₹80,000 - ₹1,00,000</option>
-                                <option value="₹1,00,000 - ₹1,50,000">₹1,00,000 - ₹1,50,000</option>
-                                <option value="₹1,50,000 - ₹2,00,000">₹1,50,000 - ₹2,00,000</option>
-                                <option value="₹2,00,000 +">₹2,00,000 +</option>
-                            </select>
+
+                    <div class="widgetCont select-menu dropdown3"><span class="empty">
+                            <div class="select-btn widgetCont select-btn3">
+                                <span class="sBtn-text sBtn-text3"></span>
+                                <textarea class="sBtn-text3"></textarea>
+                                <div class="vertical-line"></div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="18 15 12 21 6 15"></polyline>
+                                </svg>
+                            </div>
+                            <ul class="options">
+                                <li class="option option3">
+                                    <span class="option-text">₹20,000 - ₹50,000</span>
+                                </li>
+                                <li class="option option3">
+                                    <span class="option-text">₹50,000 - ₹80,000</span>
+                                </li>
+                                <li class="option option3">
+                                    <span class="option-text">₹80,000 - ₹1,00,000</span>
+                                </li>
+                                <li class="option option3">
+                                    <span class="option-text">₹1,00,000 - ₹1,50,000</span>
+                                </li>
+                                <li class="option option3">
+                                    <span class="option-text">₹1,50,000 - ₹2,00,000</span>
+                                </li>
+                                <li class="option option3">
+                                    <span class="option-text">₹2,00,000 +</span>
+                                </li>
+                            </ul>
                         </span>
                     </div>
-                    <!-- <span class="empty">
-                        <select name="desired_job" id="candidate_desired_job" class="differentinput hidden" multiple="">
-                            <option value="">--Please choose an option--</option>
-                            <option value="Data Scientist">Data Scientist</option>
-                            <option value="Systems Analyst">Systems Analyst</option>
-                            <option value="Data Engineer">Data Engineer</option>
-                            <option value="Machine Learning Engineer">Machine Learning Engineer</option>
-                            <option value="Market Research Analyst">Market Research Analyst</option>
-                            <option value="Business Intelligence (BI) Analyst">Business Intelligence (BI) Analyst
-                            </option>
-                            <option value="IT Support Specialist">IT Support Specialist</option>
-                            <option value="Software Developer">Software Developer</option>
-                            <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-                            <option value="Marketing Analyst">Marketing Analyst</option>
-                            <option value="Web Developer">Web Developer</option>
-                            <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-                            <option value="Product Manager">Product Manager</option>
-                            <option value="Database Administrator">Database Administrator</option>
-                        </select>
-                        <div class="mult-select-tag">
-                            <div class="wrapper">
-                                <div class="body rounded">
-                                    <div class="input-container"></div>
-                                    <div class="btn-container"><button type="button"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="18 15 12 21 6 15"></polyline>
-                                            </svg></button></div>
-                                </div>
-                            </div>
-                            <div class="drawer hidden rounded">
-                                <inputbody class="input-body"><input class="input" placeholder="Search..."></inputbody>
-                                <ul>
-                                    <li data-value="">--Please choose an option--</li>
-                                    <li data-value="Data Scientist">Data Scientist</li>
-                                    <li data-value="Systems Analyst">Systems Analyst</li>
-                                    <li data-value="Data Engineer">Data Engineer</li>
-                                    <li data-value="Machine Learning Engineer">Machine Learning Engineer</li>
-                                    <li data-value="Market Research Analyst">Market Research Analyst</li>
-                                    <li data-value="Business Intelligence (BI) Analyst">Business Intelligence (BI)
-                                        Analyst</li>
-                                    <li data-value="IT Support Specialist">IT Support Specialist</li>
-                                    <li data-value="Software Developer">Software Developer</li>
-                                    <li data-value="Cybersecurity Analyst">Cybersecurity Analyst</li>
-                                    <li data-value="Marketing Analyst">Marketing Analyst</li>
-                                    <li data-value="Web Developer">Web Developer</li>
-                                    <li data-value="Cybersecurity Analyst">Cybersecurity Analyst</li>
-                                    <li data-value="Product Manager">Product Manager</li>
-                                    <li data-value="Database Administrator">Database Administrator</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </span> -->
 
                     <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                 for="candidate_preferred_location">Preferred Work Location</label></span>
@@ -422,7 +360,7 @@
                                 for="candidate_experience">Desired Employment Type</label></span>
                     </div>
                     <div class="widgetCont">
-                        <span class="empty candidategender">
+                        <span class="empty candidategender spandiff">
                             <div>
                                 <input type="radio" id="Intern" name="employment" value="intern" checked />
                                 <label for="Intern">Intern</label>
@@ -439,14 +377,31 @@
                             </div>
                         </span>
                     </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="candidate_work_mode">Desired Work Mode</label></span>
+                    </div>
+                    <div class="widgetCont">
+                        <span class="empty candidategender spandiff">
+                            <div>
+                                <input type="radio" id="Office" name="work_mode" value="office" checked />
+                                <label for="Office">Office</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="Remote" name="work_mode" value="remote" />
+                                <label for="Remote">Remote</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="Hybrid" name="work_mode" value="hybrid" />
+                                <label for="Hybrid">Hybrid</label>
+                            </div>
+                        </span>
+                    </div>
                 </div>
-<<<<<<< HEAD
-                <div class="submitbtn">
-                    <button id="submitbutton" type="submit">Save</button>
-=======
-                <div id="submit">
-                    <button type="submit">Save</button>
->>>>>>> db83bdedd378ed49301a85f5d94113cb15c1752d
+                <div class="submitbtn lower-btn">
+                    <button id="submitbutton" type="submit">Save Changes</button>
                 </div>
             </div>
         </div>
@@ -473,14 +428,63 @@
         new MultiSelectTag('candidate_preferred_location')  // id
     </script>
     <!-- <script>
-        new MultiSelectTag('countries', {
-            rounded: true,    // default true
-            shadow: true,      // default false
-            placeholder: 'Search',  // default Search...
-            onChange: function (values) {
-                console.log(values)
-            }
+        const optionMenu = document.querySelector(".select-menu"),
+            selectBtn = optionMenu.querySelector(".select-btn"),
+            options = optionMenu.querySelectorAll(".option"),
+            sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+        selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                let selectedOption = option.querySelector(".option-text").innerText;
+                sBtn_text.innerText = selectedOption;
+
+                optionMenu.classList.remove("active");
+            });
         });
+    </script> -->
+    <script src="script.js"></script>
+    <!-- <script>
+        function func(event){
+            var image =URL.createObjectURL(event.target.files[0]);
+            document.getElementById("candidatephoto").src = image;
+        }
+    </script> -->
+    
+    <script>
+        function func(event) {
+
+            const fi = document.getElementById('candidate_image');
+            const img = fi.value.split('.').pop().toLowerCase().toString();
+            var imageExts = ['jpg', 'jpeg', 'png'];
+            // Check if any file is selected. 
+            if (fi.files.length > 0) {
+                console.log(img)
+                if (imageExts.indexOf(img) === -1) {
+                    fi.value = null
+                    document.getElementById("candidatephoto").src = 'NEW_Edit_Candidate_Profile/photo.webp';
+                    alert('Only jpg/jpeg and png files are allowed!');
+                }
+                if (imageExts.indexOf(img) !== -1) {
+                    var image = URL.createObjectURL(event.target.files[0]);
+
+                    document.getElementById("candidatephoto").src = image;
+                }
+            }
+
+        }
+    </script>
+    <!-- <script>
+        document.addEventListener("click",function(event) {
+      // Your code here
+      //console.log('Click detected on the screen!');
+      //console.log('Mouse coordinates - X: ' + event.clientX + ', Y: ' + event.clientY);
+      let var1 = document.getElementsByClassName('dropdown1');
+      if(var1[0].classList.contains('active')){
+        var1[0].classList.remove('active');
+      }
+    });
     </script> -->
 </body>
 

@@ -117,7 +117,8 @@
                 <div class="container">
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-10">
-                            <form onsubmit="set_filters()" id="search-bar" action="./index_jobs.html" method="get" class="search-jobs-form">
+                            <form onsubmit="set_filters()" id="search-bar" action="./index_jobs.html" method="get"
+                                class="search-jobs-form">
                                 <div class="row">
                                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 search-fields">
                                         <!--<input name="job-title" id="job-title" type="text"
@@ -129,8 +130,9 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 search-fields">
-                                        <select id="region-dropdown" name="Region" class="selectpicker" data-style="btn-white btn-lg"
-                                            data-width="100%" data-live-search="true" title="Select Region">
+                                        <select id="region-dropdown" name="Region" class="selectpicker"
+                                            data-style="btn-white btn-lg" data-width="100%" data-live-search="true"
+                                            title="Select Region">
                                             <option value="Anywhere">Anywhere</option>
                                             <option value="Bengaluru">Bengaluru</option>
                                             <option value="Hyderabad">Hyderabad</option>
@@ -139,15 +141,16 @@
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                        <select id="work-mode-dropdown" name="work-mode" class="selectpicker" data-style="btn-white btn-lg"
-                                            data-width="100%" data-live-search="true" title="Select Job Type">
+                                        <select id="work-mode-dropdown" name="work-mode" class="selectpicker"
+                                            data-style="btn-white btn-lg" data-width="100%" data-live-search="true"
+                                            title="Select Job Type">
                                             <option value="Office">Office</option>
-                                            <option value="Remote">Remote</option> 
+                                            <option value="Remote">Remote</option>
                                             <option value="Hybrid">Hybrid</option>
                                         </select>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                        <button  id="search-submit" type="submit"
+                                        <button id="search-submit" type="submit"
                                             class="btn btn-primary btn-lg btn-block text-white btn-search search-btn"><span
                                                 class="icon-search icon mr-2"></span>Search Job</button>
                                     </div>
@@ -162,8 +165,7 @@
                         <div class="row">
                             <div class="col-4 form-class">
                                 <form id="filter-form" class="col-10" onchange="display_jobs()">
-                                    <input type="text" value="" name="job-title-company" id="job-title-company"
-                                        class="job-title-company" style="display: none;">
+
                                     <script>
                                         console.log(document.getElementById("job-title-company").style.value);
                                     </script>
@@ -340,18 +342,18 @@
 
 
 
-                            <div id="jobListing-container" class="col container jobListing-container scroll">
+                            <div id="jobListing-container" class="container mt-4">
+
                                 <div class="row jobs-card">
-                                    <div class="col-2 company-logo">
+                                    <div class="col-12 col-sm-2 company-logo">
                                         <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
                                     </div>
-                                    <div class="col job-detail">
+                                    <div class="col-12 col-sm-6 job-detail mt-2 mt-sm-0">
                                         <h4>Tesla</h4>
                                         <h3>Mechanical Engineer</h3>
                                         <p>Bangalore, Hyderabad, Noida</p>
                                     </div>
-
-                                    <div class="col-4 job-labels mt-2">
+                                    <div class="col-12 col-sm-4 job-labels mt-2 mt-sm-0">
                                         <div class="row labels">
                                             <a href="#" class="label-a">₹50000 a month</a>
                                         </div>
@@ -363,6 +365,11 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Repeat the structure for other job cards -->
+
+
+
                                 <div class="row jobs-card">
                                     <div class="col-2 company-logo">
                                         <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">

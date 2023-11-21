@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 .cards-container {
-    margin-top: 2rem;
+
+    margin-top: 2em;
+    max-height:100vh;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 1rem 2rem;
+    padding: 1em 2em;
     background: rgb(255, 255, 255);
     background: linear-gradient(278deg, rgba(255, 255, 255, 1) 0%, rgba(80, 80, 80, 0.7641107468377977) 100%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -13,8 +15,8 @@
 }
 
 i {
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
+    margin-right: 0.5em;
+    font-size: 1.2em;
 }
 
 body {
@@ -27,7 +29,7 @@ img {
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 1.3em;
 }
 
 .label-1,
@@ -35,7 +37,7 @@ p {
 .label-3 {
     text-decoration: none;
     color: black !important;
-    font-size: 1.2rem;
+    font-size: 1.2em;
 }
 
 .labels {
@@ -60,13 +62,13 @@ p {
 .saved{
     display: flex;
     justify-content: end;
-    font-size: 1.8rem;
+    font-size: 1.8em;
     color: rgb(82, 78, 78);
 }
 
 .user-profile {
-    height:3.5rem;
-    width:3.5rem;
+    height:3.5em;
+    width:3.5em;
 }
 
 .user-profile:hover {
@@ -83,8 +85,8 @@ p {
 }
 
 .image-title {
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2em;
+    padding-bottom: 1.5em;
     background: rgb(70, 241, 252);
     background: linear-gradient(275deg, rgba(70, 241, 252, 0.4) 0%, rgb(55, 83, 223, 0.4) 100%);
     border-radius: 16px;
@@ -101,6 +103,16 @@ p {
     
     .nav-profile{
         display: block !important;
+    }
+}
+
+@media (width < 600px)
+{
+    .company-logo{
+        display: none !important;
+    }
+    .cards-container{
+        width: 90%;
     }
 }
 

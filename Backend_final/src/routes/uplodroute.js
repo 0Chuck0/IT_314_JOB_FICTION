@@ -13,7 +13,7 @@ conn.once("open",function(){
 })
 
 router.get("/",(req,res)=>{
-    return res.render("exp");
+    return res.render("exp.hbs");
 })
 
 router.post("/upload",upload.single('file'),(req,res)=>{

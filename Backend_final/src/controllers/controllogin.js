@@ -9,7 +9,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        res.render("login");
+        res.render("login.hbs");
 
     },
     post: async(req,res)=>{
@@ -27,7 +27,7 @@ module.exports = {
                     secure:false,
                 });
 
-                res.render("home"); 
+                res.render("home.hbs",{logged:true}); 
 
             }
             else

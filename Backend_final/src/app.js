@@ -40,8 +40,11 @@ app.use(express.static(static_path))
 
 const template_path = path.join(__dirname, "../templates/views")
 app.set("views", template_path)
+<<<<<<< HEAD
 
 app.set('view engine', 'ejs');
+=======
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 // app.use(express.static(template_path))
 
 
@@ -95,6 +98,7 @@ app.get("/", (req, res) => {
     res.render("landingpage")
 })
 
+<<<<<<< HEAD
 app.get("/logout", async(req, res) => {
     try {
          res.clearCookie("jwt");
@@ -105,6 +109,8 @@ app.get("/logout", async(req, res) => {
     }
  })
 
+=======
+>>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 app.get("/companyhomepage", (req, res) => {
     res.render("companyhomepage")
 })

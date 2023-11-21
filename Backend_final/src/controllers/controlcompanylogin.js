@@ -9,7 +9,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        res.render("companylogin");
+        res.render("companylogin.hbs");
 
     },
     post: async(req,res)=>{
@@ -22,17 +22,17 @@ module.exports = {
             {
 
                 res.cookie("jwt",check.token,{
-                    maxAge:300000,
+                    maxAge:1800000,
                     httpOnly:true,
                     secure:false,
                 });
 
-                res.render("companyhomepage"); 
+                res.render("companyhomepage.hbs"); 
 
             }
             else
             {
-                res.status(400).send('<script>alert("Incorrect Password or Emailfbfvfhgvf"); window.location = "/companylogin";</script>');
+                res.status(400).send('<script>alert("Incorrect Password or Email"); window.location = "/companylogin";</script>');
             }
         }
         catch (error)

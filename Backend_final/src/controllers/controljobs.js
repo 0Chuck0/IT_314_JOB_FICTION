@@ -1,9 +1,10 @@
-const path = require("path")
+const path = require("path");
+const jobs = require("../models/jobs");
 module.exports = {
 
     get:async (req,res)=>{
-
-        res.sendFile(path.join(__dirname,"/../../templates/views/jobs_1.html"));
+        const data = await jobs.find();
+        res.send("jobs_1.ejs",{data:data , logged:true});
 
     },
 

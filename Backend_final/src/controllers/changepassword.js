@@ -8,7 +8,7 @@ module.exports = {
 
         const {token} = req.params;
 
-        res.render("forgotpass2",{token:token});
+        res.render("forgotpass2.hbs",{token:token});
 
     },
     post:async (req,res)=>{

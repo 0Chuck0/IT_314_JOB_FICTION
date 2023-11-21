@@ -16,6 +16,7 @@ module.exports = {
 
         const jobsdata=await jobs.find({"id": {"$in": listdata}});
         //console.log(jobsdata);
-        res.render("saved_jobs",{jobsdata});
+        res.render("saved_jobs.hbs",{jobsdata});
     }
 }
+

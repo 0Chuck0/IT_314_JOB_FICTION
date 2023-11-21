@@ -6,9 +6,12 @@ const Companyregister = require("../models/companyregisterschema");
 
 
 router.get("/",[companyloggedinonly],async function (req, res){
-    const check = await Companyregister.findOne({email:req.body.email});
-    const Jobs = await jobs.find({company:check.company});
-    res.render("posted_jobs",{Jobs});
+   // const check = await Companyregister.findOne({email:req.body.email});
+    const Jobs = await jobs.find({company_email:req.body.email});
+    const company=await Companyregister.findOne({email:req.body.email})
+   
+    
+    res.render("posted_jobs",{company,Jobs});
 });
 
 module.exports = router;

@@ -4,12 +4,12 @@ const controljobs = require("../controllers/controljobs");
 const jobs  = require("../models/jobs");
 const app=express();
 app.use(express.json())
+const path = require("path");
 
 router.get("/",function(req,res){
 
     controljobs.get(req,res);
 });
-
 
 
 router.post("/",async (req,res)=>{
@@ -22,7 +22,7 @@ router.post("/",async (req,res)=>{
 
 
 
-        const { job_titles,experience, locations, work_modes, educations, companies, skills,salary } = req.body;
+        var {search ,job_titles,experience, locations, work_modes, educations, companies, skills,salary } = req.body;
        
         
         const  defaultCompanies = await jobs.distinct('company');
@@ -51,6 +51,45 @@ router.post("/",async (req,res)=>{
         
         
         // Extract min and max values as integers
+
+        if(search != ''){
+
+                console.log(search);
+
+                search = search.toLowerCase();
+
+                for (let i of defaultCompanies) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if(companies === undefined) companies = [i];
+                        else if(!Array.isArray(companies)) companies = [companies,i];
+                        else companies.push(i);
+                    }
+
+                }
+
+                for (let i of defaultLocations) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if( locations === undefined)  locations = [i];
+                        else if(!Array.isArray(locations))  locations = [locations,i];
+                        else  locations.push(i);
+                    }
+
+                }
+
+                for (let i of defaultJobTitles) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if( job_titles === undefined)  job_titles = [i];
+                        else if(!Array.isArray(job_titles))  job_titles = [job_titles,i];
+                        else  job_titles.push(i);
+                    }
+
+                }
+
+    }
+
         
         const query=[];
   
@@ -108,6 +147,105 @@ router.post("/",async (req,res)=>{
         res.json(data);
        
                       
+
+        }
+        catch(err){
+            res.send(err);
+        }
+            
+
+});
+
+
+router.post("/search", async (req,res)=>{
+
+    try{
+        var {search ,locations, work_modes , companies , job_titles} = req.body;
+        const  defaultCompanies = await jobs.distinct('company');
+        const defaultJobTitles = await jobs.distinct('job_title');
+        const  defaultWorkModes = await jobs.distinct('work_mode');
+        const defaultLocations = await jobs.distinct('location');
+        locations = [locations,]
+
+        if(search != ''){
+
+                console.log(search);
+
+                search = search.toLowerCase();
+
+                for (let i of defaultCompanies) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if(companies === undefined) companies = [i];
+                        else if(!Array.isArray(companies)) companies = [companies,i];
+                        else companies.push(i);
+                    }
+
+                }
+
+                for (let i of defaultLocations) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if( locations === undefined)  locations = [i];
+                        else if(!Array.isArray(locations))  locations = [locations,i];
+                        else  locations.push(i);
+                    }
+
+                }
+
+                for (let i of defaultJobTitles) {
+
+                    if(i.toLowerCase().includes(search)){
+                        if( job_titles === undefined)  job_titles = [i];
+                        else if(!Array.isArray(job_titles))  job_titles = [job_titles,i];
+                        else  job_titles.push(i);
+                    }
+
+                }
+
+    }
+
+        
+        const query=[];
+  
+        if(job_titles!=undefined)
+        {
+                const obj={job_title:{ "$in": job_titles }};
+                query.push(obj);
+        }
+       
+        if( locations!=undefined)
+        {
+            if(locations == "Anywhere"){
+                locations = defaultLocations;
+            }
+            const obj={location:{ "$in": locations }};
+            query.push(obj);
+        }
+        if(work_modes!=undefined)
+        {
+            if(work_modes == "Any"){
+                work_modes = defaultWorkModes;
+            }
+            const obj={work_mode:{ "$in": work_modes }};
+            query.push(obj);
+        }
+        if(companies!=undefined)
+        {
+            const obj={company:{ "$in": companies }};
+            query.push(obj);
+        }
+        //console.log(query)
+        const data = await jobs.find({"$and": query}).exec();
+       // console.log(data);
+            console.log(data);
+            // res.send(data);
+                fs.readFile(path.join(__dirname,"/../../templates/views/jobs_1.html"), (err, data) => {
+                   res.send(data);
+                });
+            // res.sendFile(path.join(__dirname,"/../../templates/views/jobs_1.html"));
+            // res.append(data,[,data]);
+  
 
         }
         catch(err){

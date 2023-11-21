@@ -10,10 +10,12 @@
 
 .select-menu{
     width: 100%;
-    margin: 140px auto;
+    /* margin: 140px auto; */
     position: relative;
-    min-height: 2.15rem;
-    min-width: 14rem;
+    /* min-height: 2.15rem; */
+    /* min-width: 14rem; */
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .select-menu .select-btn{
@@ -49,7 +51,7 @@
     display: none;
     z-index: 10;
     width: 100%;
-    border: 2px solid #333;
+    border: 2px solid #DADDE0;
     padding: 5px 25px;
 }
 

@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 
 const SavepostSchema = new mongoose.Schema({
-    job_id : Number,
-    email: String
+    email: {
+        type:String
+        
+    },
+    job_id: {
+        type:Number,
+        unique:true
+    }
 });
 
 const Savedpost = mongoose.model("Savedpost", SavepostSchema);

@@ -25,7 +25,7 @@ const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
 const jobs = require("./models/jobs");
-
+const apply = require("./models/apply");
 const hbs = require('hbs')
 const { error } = require('console');
 app.use(express.json())
@@ -60,6 +60,10 @@ const uplodroute = require("./routes/uplodroute");
 const candidateslist = require("./routes/candidateslist");
 const candidateprofile = require("./routes/candidateprofile");
 const companyjobpostlist = require("./routes/companyjobpostlist");
+const newpost_route = require("./routes/newpost_route");
+const deletesaved_jobs=require("./routes/deletesaved_jobs");
+const applied_jobs=require("./routes/applied_jobs")
+const applyRouter = require( "./routes/applyRouter")
 
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
@@ -79,7 +83,10 @@ app.use("/companyjobpostlist", companyjobpostlist);
 app.use("/candidateslist", candidateslist);
 app.use("/candidateprofile", candidateprofile);
 app.use("/file", uplodroute);
-
+app.use("/newpost",newpost_route)
+app.use("/deletesaved_jobs",deletesaved_jobs);
+app.use("/applied_jobs",applied_jobs);
+app.use("/apply", applyRouter)
 
 app.get("/", (req, res) => {
     res.render("landingpage")
@@ -93,51 +100,51 @@ app.get("/companyprofile", (req, res) => {
     res.render("companyprofile")
 })
 
-app.get("/newpost", (req, res) => {
-    res.render("newpost")
-})
+// app.get("/newpost", (req, res) => {
+//     res.render("newpost")
+// })
 
 app.get("/jobpostlist", (req, res) => {
     res.render("jobpostlist")
 })
 
-app.post('/newpost', async (req, res) => {
-    try {
-        const lastJob = await Jobpost.findOne().sort('-job_id');
-        let newJobId = 1;
+// app.post('/newpost', async (req, res) => {
+//     try {
+//         const lastJob = await Jobpost.findOne().sort('-job_id');
+//         let newJobId = 1;
 
-        if (lastJob) {
-            newJobId = lastJob.job_id + 1;
-            console.log(newJobId)
-        }
-        const data = {
-            job_id: newJobId,
-            job_title: req.body.job_title,
-            role: req.body.Responsibilities,
-            experience: req.body.exp,
-            skills: req.body.skills,
-            industry_type: req.body.industry_type,
-            employment_type: req.body.employment_type,
-            work_mode: req.body.work_mode,
-            salary: req.body.salary,
-            location: req.body.location,
-            last_date: req.body.last_date,
-            degree: req.body.degree,
-            criteria: req.body.criteria,
-            perk: req.body.Perks,
-        }
+//         if (lastJob) {
+//             newJobId = lastJob.job_id + 1;
+//             console.log(newJobId)
+//         }
+//         const data = {
+//             job_id: newJobId,
+//             job_title: req.body.job_title,
+//             role: req.body.Responsibilities,
+//             experience: req.body.exp,
+//             skills: req.body.skills,
+//             industry_type: req.body.industry_type,
+//             employment_type: req.body.employment_type,
+//             work_mode: req.body.work_mode,
+//             salary: req.body.salary,
+//             location: req.body.location,
+//             last_date: req.body.last_date,
+//             degree: req.body.degree,
+//             criteria: req.body.criteria,
+//             perk: req.body.Perks,
+//         }
 
-        // const registered = await data.save();
-        // console.log(registered),
-        // Jobpost.insertOne(data)
-        await Jobpost.insertMany([data]);
-        console.log(data)
-        res.render("companyhomepage")
+//         // const registered = await data.save();
+//         // console.log(registered),
+//         // Jobpost.insertOne(data)
+//         await Jobpost.insertMany([data]);
+//         console.log(data)
+//         res.render("companyhomepage")
 
-    } catch (error) {
-        res.status(400).send(error);
-    }
-})
+//     } catch (error) {
+//         res.status(400).send(error);
+//     }
+// })
 
 app.get("/landingpage", async (req, res) => {
     res.render("landingpage");

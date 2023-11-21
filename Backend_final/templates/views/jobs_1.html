@@ -150,6 +150,10 @@
                         <div class="col-4 form-class">
                             <form id="filter-form" class="col-10" onchange="display_jobs()">
                                 <div class="col">
+                                  <h6 class="filter-button"> Serach </h6>
+                                  <input type="text" name = "search" class="form-control form-control-lg" placeholder="Job title, Company...">
+                                </div>
+                                <div class="col">
                                     <h6 id="filter-button1" class="filter-button">Job Titles</h6>
                                     <div id="options1" class="options col-10">
                                         <input id="f1-opt1" type="checkbox" value="Software Engineer" name="job_titles">
@@ -409,6 +413,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="js/script_jobs.js"></script>
+    <script >
+      console.log("Hii");
+      console.log(data);
+    </script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

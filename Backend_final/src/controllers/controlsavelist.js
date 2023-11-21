@@ -19,3 +19,4 @@ module.exports = {
         res.render("saved_jobs",{jobsdata});
     }
 }
+

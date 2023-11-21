@@ -1,7 +1,7 @@
 const { text } = require("express");
 const mongoose=require("mongoose");
 const Postschema=new mongoose.Schema({
-    job_id: { 
+    id: { 
         type: Number,
         unique: true, 
         required: true,
@@ -24,13 +24,13 @@ const Postschema=new mongoose.Schema({
     }],
     industry_type: {
         type:String,
-        require:true
+       
     },
-    employment_type: [{
+    employment_type: {
         type:String
 
-    }],
-    work_mode: [{
+    },
+    perk: [{
         type:String
 
     }],
@@ -47,14 +47,11 @@ const Postschema=new mongoose.Schema({
         require:true,
     },
     degree: {
-        type: String,
-        required: true,
+        type: String
+       
     },
-    criteria: {
-        type: Number,
-        require: true,
-    },
-    perk: {
+   
+    work_mode: {
         type: String,
     },
 }) 

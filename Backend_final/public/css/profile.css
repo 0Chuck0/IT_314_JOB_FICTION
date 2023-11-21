@@ -1,5 +1,4 @@
-/* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 * {
     margin: 0;
@@ -9,7 +8,8 @@
 body {
     /* background-color: #e7e7f1; */
     /* background-color: #4070f4; */
-    background-color: #2047b43a;
+    /* background-color: #2047b43a; */
+    background-color: #fff;
     min-height: 100vh;
     height: max-content;
 }
@@ -44,11 +44,13 @@ body {
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
+    overflow-wrap: break-word;
+    border: 1px solid #DEE2E6;
 }
 
-.card:hover{
+/* .card:hover{
     border: 3px solid black;
-}
+} */
 
 /* .sidenav:hover{
     border: 3px solid black;
@@ -138,13 +140,13 @@ body {
 
 /* Sidenav */
 .sidenav {
-    /* background-color: #fff; */
-    background-color: #212529;
+    background-color: #fff;
+    /* background-color: #212529; */
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 68%;
+    height: fit-content;
     margin-left: 4%;
     position: absolute;
     left: 0;
@@ -154,8 +156,11 @@ body {
     width: 20%;
     margin-top: 5%;
     box-sizing: border-box;
-    position: fixed;
-    box-shadow: 3px 5px 8px 0 grey;
+    /* position: fixed; */
+    /* box-shadow: 3px 5px 8px 0 grey; */
+    padding-bottom: 20px;
+    border: 1px solid #DEE2E6;
+    margin-top: 25rem;
 }
 
 .sidenav-url{
@@ -178,7 +183,7 @@ body {
     /* font-size: 16px; */
     font-weight: 300;
     padding-top: 20px;
-    color: #fff;
+    color: #000;
     margin-bottom: 5px;
 }
 
@@ -186,7 +191,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     padding-top: 10px;
-    color: rgb(214, 190, 190);
+    color: rgb(60, 56, 56);
 }
 
 .url{
@@ -278,6 +283,27 @@ h2{
     width: 80%;
 }
 
+.toggle-btn{
+    position:fixed;
+    top: 70px;
+    /* margin-top: 300px; */
+    left: 3%;
+}
+
+.toggle-btn span{
+    width: 45px;
+    height: 4px;
+    background: #212529;
+    display: block;
+    margin-top: 4px;
+}
+
+.sidenav .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
 hr{
     margin: 0 auto;
     width: 100%;
@@ -295,25 +321,47 @@ hr{
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+    }
+    .sidenav{
+        margin-left: -200px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .main{
+        margin-left: 0;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
-}
-
-.fa-github:hover {
-    color: #161414 !important;
-}
-
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+@media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
 }
 
 /* End */

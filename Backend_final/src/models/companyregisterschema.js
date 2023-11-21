@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 
 const CompanySchema=new mongoose.Schema({
-    name: {
+    employee_name: {
         type:String,
         required:true
     },
@@ -14,7 +14,7 @@ const CompanySchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    companytype: {
+    industrytype: {
         type:String,
         required:true
     },
@@ -22,10 +22,7 @@ const CompanySchema=new mongoose.Schema({
         type:String,
         required:true
     },
-    yourdestination: {
-        type:String,
-        required:true
-    },
+    
     email: {
         type:String,
         unique:true,
@@ -51,6 +48,16 @@ const CompanySchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    company_description:{
+        type:String,
+        
+    },
+   
+
+    employee_designation:{
+        type:String,
+    }
+
     
 }) 
 

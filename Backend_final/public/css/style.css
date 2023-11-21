@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+.comp-home-img{
+  height: 540px;
+  width: 540px;
+}
+
 .comp-home{
   margin-top: -14rem;
 }

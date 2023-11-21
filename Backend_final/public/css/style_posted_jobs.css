@@ -89,3 +89,18 @@ p {
     background: linear-gradient(275deg, rgba(70, 241, 252, 0.4) 0%, rgb(55, 83, 223, 0.4) 100%);
     border-radius: 16px;
 }
+
+.nav-profile{
+    display: none !important;
+}
+
+@media (width<1200px) {
+    .user-profile{
+        display: none;
+    }
+    
+    .nav-profile{
+        display: block !important;
+    }
+}
+

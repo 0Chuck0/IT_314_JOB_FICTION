@@ -22,7 +22,7 @@ module.exports = {
             {
 
                 res.cookie("jwt",check.token,{
-                    maxAge:300000,
+                    maxAge:1800000,
                     httpOnly:true,
                     secure:false,
                 });

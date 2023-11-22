@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="external.css">
+    <title>Edit Profille</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="Edit_profile.css">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <span class="otherpagelinkleft">
+            <a href="#" class="otherpagelink logo">JOB FICTION</a>
+            <a href="#" class="otherpagelink">Jobs</a>
+            <a href="#" class="otherpagelink">Companies</a>
+            <a href="#" class="otherpagelink">Contact Us</a>
+        </span>
+        <span class="otherpagelinkright">
+            <a href="#" class="otherpagelink logout">Logout</a>
+        </span>
+    </div>
+
+    <form action="form.php">
+        <div class="toggle-btn" onclick="viewmenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="sidenav" id="showmenu">
+            <div class="profile">
+                <div class="image" id="az">
+                    <input type="file" name="image" id="candidate_image" onchange="func(event)">
+                    <label for="candidate_image"><img src="photo.webp" id="companyphoto" alt="Preview Not Available"
+                            width="100" height="100"></label>
+                </div>
+            </div>
+
+            <div class="sidenav-url">
+                <div class="url">
+                    <a href="index.html" class="active">Home</a>
+                </div>
+                <hr class="mehr">
+                <div class="url">
+                    <a href="profile.html" class="active">Jobs</a>
+                </div>
+                <hr class="mehr">
+                <div class="url">
+                    <a href="profile.html" class="active">Profile</a>
+                </div>
+            </div>
+            <div class="submitbtn upper-btn">
+                <button id="submitbutton" type="submit">Save Changes</button>
+            </div>
+        </div>
+        <!-- Sidenav -->
+        <!-- End -->
+
+        <!-- Main -->
+        <div class="main" id="hideshow">
+            <div class="card-body">
+                <div class="card mine">
+                    <h2>Company Details</h2>
+                    <div>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                    for="company_name">Company Name</label></span>
+                        </div>
+                        <div class="widgetCont differentinput uneditable">
+                            <span class="empty ">Amazon
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="company_type">Industy Type</label></span>
+                    </div>
+                    <div class="widgetCont differentinput uneditable"><span class="empty">E-Commerce Company
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="company_contact_number">Contact number</label></span>
+                    </div>
+                    <div class="widgetCont differentinput uneditable"><span class="empty">123456789
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="company_address">Company Address</label></span>
+                    </div>
+                    <div class="widgetCont differentinput uneditable"><span class="empty">Ground Floor, Eros Plaza, Eros
+                            Corporate Centre, Nehru Place, New Delhi-110019 Delhi South Delhi DL IN 110019
+                        </span>
+                    </div>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="company_description">Company Description</label></span>
+                    </div>
+                    <div class="widgetCont differentinput uneditable"><span class="empty">Lorem ipsum dolor sit amet
+                            consectetur adipisicing elit. A harum eligendi fugiat alias error voluptatibus cum quo
+                            laboriosam ad vel officia, esse, id adipisci aperiam tempore.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Employee Details</h2>
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="employee_name">Name</label></span>
+                    </div>
+                    <div class="widgetCont "><span class="empty"><input class="differentinput except" type="text"
+                                id="employee_name" name="employeename">
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="employee_designation">Designation</label></span>
+                    </div>
+                    <div class="widgetCont "><span class="empty "><input class="differentinput except" type="text"
+                                id="employee_designation" name="designation">
+                        </span>
+                    </div>
+
+                    <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                for="employee_email">Email</label></span>
+                    </div>
+                    <div class="widgetCont"><span class="empty"><input class="differentinput except" type="email"
+                                id="employee_email" name="email">
+                        </span>
+                    </div>
+                </div>
+                <div class="submitbtn lower-btn">
+                    <button id="submitbutton" type="submit">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js"></script>
+    <!-- <script>
+        function func(event) {
+            var image = URL.createObjectURL(event.target.files[0]);
+            document.getElementById("companyphoto").src = image;
+        }
+    </script> -->
+
+    <script>
+        function func(event) {
+
+            const fi = document.getElementById('candidate_image');
+            const img = fi.value.split('.').pop().toLowerCase().toString();
+            var imageExts = ['jpg', 'jpeg', 'png'];
+            // Check if any file is selected. 
+            if (fi.files.length > 0) {
+                console.log(img)
+                if (imageExts.indexOf(img) === -1) {
+                    fi.value = null
+                    document.getElementById("companyphoto").src = 'photo.webp';
+                    alert('Only jpg/jpeg and png files are allowed!');
+                }
+                if (imageExts.indexOf(img) !== -1) {
+                    var image = URL.createObjectURL(event.target.files[0]);
+
+                    document.getElementById("companyphoto").src = image;
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

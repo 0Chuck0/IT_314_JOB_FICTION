@@ -8,7 +8,6 @@ const Register=require("../models/registers");
 
 router.post("/", [loggedinonly] ,async(req, res) => {
 
-    
     const body  = req.body;
     let payload = jwt.verify(req.cookies.jwt, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa' );
     
@@ -31,21 +30,6 @@ router.post("/", [loggedinonly] ,async(req, res) => {
     }
     else
     {
-        // const lastapplyJob = await apply.findOne().sort('-applied_jobs_id');
-        // let newJobId = 1;
-        
-        // if (lastapplyJob) {
-        //     newJobId = lastapplyJob.applied_jobs_id+ 1;
-         
-        // }
-
-        // const myData = new apply({
-        //     job_id: parseInt( body.id ),
-        //     email: check1.email,
-        //     applied_jobs_id:newJobId 
-        // });
-
-        // const job_app = await myData.save();
         console.log("hello1")
     return res.json({
         'x':0

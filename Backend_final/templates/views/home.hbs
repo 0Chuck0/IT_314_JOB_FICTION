@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <title>JobBoard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+        
   </head>
+  
   <body id="top">
 
   <div id="overlayer"></div>
@@ -84,92 +86,34 @@
     {{logged}}
     
     <!-- JOBS -->
-      <div class="job-list" id="jobs">
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Tesla.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Tesla</h4>
-                    <h3>Mechanical Engineer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
-                <a href="#" class="label-c">Internship</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Ebay.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Ebay</h4>
-                    <h3>Business Development</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
+                              <div id="jobListing-container" class="col container jobListing-container scroll">
+
+                                {{#each data}}
+
+                                <a href="/job_description/{{id}}" >
+
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>{{company}}</h4>
+                                        <h3>{{job_title}}</h3>
+                                        <p>{{location}}</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <span href="#" class="label-a">₹{{salary}} a month</span>
+                                        </div>
+                                        <div class="row labels">
+                                            <span href="#" class="label-c">{{work_mode}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                                    {{/each}}
                 </div>
-            </div> 
-            <div class="job-labels">
-                <a href="#" class="label-a">₹50000 a month</a>
-                <a href="#" class="label-c">Full-time</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/TikTok.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Tiktok</h4>
-                    <h3>Digital Marketing</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div>
-            </div> 
-            <div class="job-labels">
-                <a href="#" class="label-a">₹40000 - ₹80000 a month</a>
-                <a href="#" class="label-c">Part-time</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Youtube.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Youtube</h4>
-                    <h3>UI UX Designer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹50000 - ₹200000 a month</a>
-                <a href="#" class="label-c">Full-time</a>
-            </div>
-            <div class="job-posted">
-                Posted an hour ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Amazon.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Amazon</h4>
-                    <h3>Software Engineer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹500000 per annum</a>
-                <a href="#" class="label-c">Part-time</a>
-            </div>
-            <div class="job-posted">
-                Posted an hour ago
-            </div>
-        </div>
         <button class="job-more">
             More List
         </button>

@@ -18,7 +18,7 @@ router.get("/:jobid",[companyloggedinonly],async function (req, res) {
             // Step 2: Retrieve registers with these emails
             const registers = await Register.find({ email: { $in: uniqueEmails } });
             console.log(registers);
-            res.render("candidateslist", {registers});
+            res.render("candidateslist.hbs", {registers});
             // This will contain all the Register documents with emails found in the AppliedJobs schema for the specified job_id
         }
     });

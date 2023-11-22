@@ -28,11 +28,7 @@ module.exports = {
              
                 if(await Savedpost.findOne({job_id:req.params.id, email:data.email}).count() == 1)
                 {
-<<<<<<< HEAD
                    res.render("job_description.hbs",{
-=======
-                   res.render("job_description",{
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
                              jobid : req.params.id,
                              how: "fa-solid",
                              jobTitle : jobData.job_title,
@@ -52,11 +48,7 @@ module.exports = {
                 }
                 else
                 {
-<<<<<<< HEAD
                   res.render("job_description.hbs",{
-=======
-                  res.render("job_description",{
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
                              jobid : req.params.id,
                              how: "fa-regular",
                              jobTitle : jobData.job_title,
@@ -81,11 +73,7 @@ module.exports = {
         else
         {  
           const jobData = await jobs.findOne({id:req.params.id});
-<<<<<<< HEAD
            res.render("job_description.hbs",{
-=======
-           res.render("job_description",{
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
                       jobid : req.params.id,
                       how: "fa-regular",
                       jobTitle : jobData.job_title,

@@ -4,7 +4,12 @@ module.exports = {
 
     get:async (req,res)=>{
         const data = await jobs.find();
-        res.send("jobs_1.ejs",{data:data , logged:true});
+        var obj = {};
+        if(req.cookies.jwt){
+            res.render("jobs_1.ejs",{data:data , logged:true});
+        }else{
+            res.render("jobs_1.ejs",{data:data , logged:false});
+        }
 
     },
 

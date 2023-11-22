@@ -4,7 +4,7 @@ const controlhome = require("../controllers/controlhome");
 const {registerauth,loggedinonly} = require("../middlewares/auth");
 
 
-router.get("/",loggedinonly,function (req, res) {
+router.get("/",function (req, res) {
   controlhome.get(req, res);
 });
 

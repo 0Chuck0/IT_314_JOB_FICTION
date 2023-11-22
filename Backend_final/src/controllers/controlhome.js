@@ -1,8 +1,12 @@
 module.exports = {
 
     get:async (req,res)=>{
-
-        res.render("home.hbs",{logged:true});
+        if(req.cookies.jwt){
+            res.render("home.hbs",{logged:true});
+        }
+        else{
+        res.render("home.hbs");
+        }
 
     },
 

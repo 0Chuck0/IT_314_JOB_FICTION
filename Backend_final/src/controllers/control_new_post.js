@@ -6,11 +6,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-<<<<<<< HEAD
         res.render("newpost.hbs");
-=======
-        res.render("newpost");
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 
     },
     post: async(req,res)=>{
@@ -51,11 +47,7 @@ module.exports = {
             
             await jobs.insertMany([data]);
            
-<<<<<<< HEAD
             res.render("companyhomepage.hbs")
-=======
-            res.render("companyhomepage")
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
         }
         catch (error)
         {

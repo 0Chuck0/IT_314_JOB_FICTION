@@ -40,11 +40,8 @@ app.use(express.static(static_path))
 
 const template_path = path.join(__dirname, "../templates/views")
 app.set("views", template_path)
-<<<<<<< HEAD
 
 app.set('view engine', 'ejs');
-=======
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 // app.use(express.static(template_path))
 
 
@@ -95,10 +92,9 @@ app.use("/applied_jobs",applied_jobs);
 app.use("/apply", applyRouter)
 
 app.get("/", (req, res) => {
-    res.render("landingpage")
+    res.render("landingpage.hbs")
 })
 
-<<<<<<< HEAD
 app.get("/logout", async(req, res) => {
     try {
          res.clearCookie("jwt");
@@ -109,14 +105,12 @@ app.get("/logout", async(req, res) => {
     }
  })
 
-=======
->>>>>>> fc5b0b85376044a74163432589b30ab544d763b2
 app.get("/companyhomepage", (req, res) => {
-    res.render("companyhomepage")
+    res.render("companyhomepage.hbs")
 })
 
 app.get("/companyprofile", (req, res) => {
-    res.render("companyprofile")
+    res.render("companyprofile.hbs")
 })
 
 // app.get("/newpost", (req, res) => {
@@ -124,7 +118,7 @@ app.get("/companyprofile", (req, res) => {
 // })
 
 app.get("/jobpostlist", (req, res) => {
-    res.render("jobpostlist")
+    res.render("jobpostlist.hbs")
 })
 
 // app.post('/newpost', async (req, res) => {
@@ -166,7 +160,7 @@ app.get("/jobpostlist", (req, res) => {
 // })
 
 app.get("/landingpage", async (req, res) => {
-    res.render("landingpage");
+    res.render("landingpage.hbs");
 })
 
 

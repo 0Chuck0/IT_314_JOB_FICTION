@@ -1,6 +1,10 @@
 /* Import Font Dancing Script */
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+.new-class{
+    margin-top: -40.4rem;
+}
+
 * {
     margin: 0;
     font-family:'icomoon';
@@ -148,9 +152,14 @@ body {
     width: 20%;
     margin-top: 30px;
     box-sizing: border-box;
+<<<<<<< HEAD
+=======
+    /* position: fixed; */
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     border: 1px solid #DEE2E6;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
+    margin-top: 8rem;
 }
 
 .sidenav-url{

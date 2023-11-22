@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="css/style.css"> 
+     {{!-- <script src="handlebars.js"></script> --}}
+</head>
+<body>
+    <form action="/jobs_main" method="post">
+        <div>
+        <input type="text" name="search" placeholder="search">
+             </div>
+             <div><button type="submit" name="butt" aria-placeholder="click here">click here</button></div>
+    </form>
+
+     <div class="job-list" id="jobs">
+    <!-- Include the job listings here using the jobs.hbs partial -->
+    {{#each jobsdata}}
+      <div class="job-card">
+            <div class="job-name">
+                <img src="images/Ebay.svg" alt="" class="job-profile">
+                <div class="job-detail">
+                    <h4>{{this.company_name}}</h4>
+                    <h3>{{this.job_title}}</h3>
+                    <p>{{this.location}}</p>
+                </div>
+            </div> 
+            <div class="job-labels">
+                <a href="#" class="label-a">{{this.salary}} $</a>
+                <a href="#" class="label-c">Full-time</a>
+            </div>
+            <div>
+                {{!-- <button id="jobd_{{@index}}" onclick="jobdes({{this.job_id}})" type="submit" name="butt" aria-placeholder="Job Description">Job Description</button> --}}
+               {{!--- <button id="unsave_{{@index}}" onclick="unsaveData({{this.job_id}})" type="submit" name="butt" aria-placeholder="Unsave Post">Unsave Post</button> --}}
+            </div>
+            <div class="job-posted">
+                Posted 2 mins ago
+            </div>
+        </div>
+
+        {{/each}}
+
+        </div>
+  
+
+   
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+
+    {{!-- <script>
+
+        async function jobdes(job_id) {
+        try {
+            var data = new URLSearchParams({"id":job_id});
+            const response = await fetch("http://localhost:3000/job_description", {
+                                method:"POST",
+                                body:data,
+                            });
+                            if (response.ok) {
+                                const htmlContent = await response.text();
+                                document.open();
+                                document.write(htmlContent);
+                                document.close();
+                            } else {
+                                throw new Error("NETWORK RESPONSE ERROR");
+                            }
+            } catch (err) {
+                console.log(err);
+            }
+        }
+     
+    </script>  --}}
+</body>
+</html>

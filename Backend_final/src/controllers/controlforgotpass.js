@@ -6,7 +6,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        res.render("forgotpass");
+        res.render("forgotpass.hbs");
 
     },
     post:async (req,res)=>{

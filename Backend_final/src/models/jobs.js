@@ -6,13 +6,17 @@ const Postschema=new mongoose.Schema({
         unique: true, 
         required: true,
     }, 
+    company:{
+        type: String,
+        required :true
+    },
     job_title: {
         type: String,
         required: true,
     },
     role:{
         type: String,
-        require: true,
+        required: true,
     },
     experience:{
         type: Number,
@@ -48,15 +52,12 @@ const Postschema=new mongoose.Schema({
     },
     degree: {
         type: String
-       
     },
    
     work_mode: {
         type: String,
     },
-    criteria: {
-        type: String,
-    },
+   
 
     company_email:{
         type: String

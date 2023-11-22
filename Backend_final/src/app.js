@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+
+
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 require('dotenv').config()
@@ -25,8 +27,9 @@ const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
 const jobs = require("./models/jobs");
-
+const apply = require("./models/apply");
 const hbs = require('hbs')
+const ejs = require('ejs');
 const { error } = require('console');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -38,7 +41,12 @@ const static_path = path.join(__dirname, "../public")
 app.use(express.static(static_path))
 
 const template_path = path.join(__dirname, "../templates/views")
+const partialsPath=path.join(__dirname, "../templates/partials")
 app.set("views", template_path)
+
+hbs.registerPartials(partialsPath)
+
+app.set('view engine', 'ejs');
 // app.use(express.static(template_path))
 
 
@@ -61,6 +69,10 @@ const candidateslist = require("./routes/candidateslist");
 const candidateprofile = require("./routes/candidateprofile");
 const companyjobpostlist = require("./routes/companyjobpostlist");
 const newpost_route = require("./routes/newpost_route");
+const deletesaved_jobs=require("./routes/deletesaved_jobs");
+const applied_jobs=require("./routes/applied_jobs")
+const applyRouter = require( "./routes/applyRouter")
+const unapplyRouter = require ("./routes/unapplyRouter")
 
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
@@ -81,17 +93,33 @@ app.use("/candidateslist", candidateslist);
 app.use("/candidateprofile", candidateprofile);
 app.use("/file", uplodroute);
 app.use("/newpost",newpost_route)
+app.use("/deletesaved_jobs",deletesaved_jobs);
+app.use("/applied_jobs",applied_jobs);
+app.use("/apply", applyRouter)
+app.use("/unapply", unapplyRouter);
+
+
 
 app.get("/", (req, res) => {
-    res.render("landingpage")
+    res.render("landingpage.hbs")
 })
 
+app.get("/logout", async(req, res) => {
+    try {
+         res.clearCookie("jwt");
+         res.send("<script> alert('logged out succesfully'); window.location = '/login' </script>")
+        //  res.render('login.hbs');
+    } catch (error) {
+         res.status(500).send(error);
+    }
+ })
+
 app.get("/companyhomepage", (req, res) => {
-    res.render("companyhomepage")
+    res.render("companyhomepage.hbs")
 })
 
 app.get("/companyprofile", (req, res) => {
-    res.render("companyprofile")
+    res.render("companyprofile.hbs")
 })
 
 // app.get("/newpost", (req, res) => {
@@ -99,7 +127,16 @@ app.get("/companyprofile", (req, res) => {
 // })
 
 app.get("/jobpostlist", (req, res) => {
-    res.render("jobpostlist")
+    res.render("jobpostlist.hbs")
+})
+
+
+app.get("/about", (req, res) => {
+    res.render("about.hbs")
+})
+
+app.get("/blog", (req, res) => {
+    res.render("blog.hbs")
 })
 
 // app.post('/newpost', async (req, res) => {
@@ -141,7 +178,7 @@ app.get("/jobpostlist", (req, res) => {
 // })
 
 app.get("/landingpage", async (req, res) => {
-    res.render("landingpage");
+    res.render("landingpage.hbs");
 })
 
 

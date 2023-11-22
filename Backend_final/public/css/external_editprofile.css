@@ -1,11 +1,12 @@
 /* ===== Google Font Import - Poppins ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap'); */
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'icomoon';
 }
 
 .select-menu{
@@ -13,7 +14,7 @@
     margin: 140px auto;
     position: relative;
     min-height: 2.15rem;
-    min-width: 14rem;
+    /* min-width: 14rem; */
 }
 
 .select-menu .select-btn{
@@ -50,6 +51,7 @@
     margin-top: 0px;
     border-radius: 8px;
     background: #fff;
+    border: 1px solid #dadde0;
     /* box-shadow: 0 0 3px rgba(0,0,0,0.1); */
     display: none;
     z-index: 10;

@@ -52,18 +52,18 @@ router.post("/",async (req,res)=>{
         
         // Extract min and max values as integers
 
-        if(search != ''){
+        var nwcompanies=[],nwlocations=[],nwjob_titles=[];
 
-                console.log(search);
+        if(search != ''){
 
                 search = search.toLowerCase();
 
                 for (let i of defaultCompanies) {
 
                     if(i.toLowerCase().includes(search)){
-                        if(companies === undefined) companies = [i];
-                        else if(!Array.isArray(companies)) companies = [companies,i];
-                        else companies.push(i);
+                        if(companies === undefined) nwcompanies = [i];
+                        else if(!Array.isArray(nwcompanies)) nwcompanies = [nwcompanies,i];
+                        else nwcompanies.push(i);
                     }
 
                 }
@@ -71,9 +71,9 @@ router.post("/",async (req,res)=>{
                 for (let i of defaultLocations) {
 
                     if(i.toLowerCase().includes(search)){
-                        if( locations === undefined)  locations = [i];
-                        else if(!Array.isArray(locations))  locations = [locations,i];
-                        else  locations.push(i);
+                        if( nwlocations === undefined)  nwlocations = [i];
+                        else if(!Array.isArray(nwlocations))  nwlocations = [nwlocations,i];
+                        else  nwlocations.push(i);
                     }
 
                 }
@@ -81,9 +81,9 @@ router.post("/",async (req,res)=>{
                 for (let i of defaultJobTitles) {
 
                     if(i.toLowerCase().includes(search)){
-                        if( job_titles === undefined)  job_titles = [i];
-                        else if(!Array.isArray(job_titles))  job_titles = [job_titles,i];
-                        else  job_titles.push(i);
+                        if( nwjob_titles === undefined)   nwjob_titles = [i];
+                        else if(!Array.isArray(nwjob_titles))  nwjob_titles = [nwjob_titles,i];
+                        else  nwjob_titles.push(i);
                     }
 
                 }
@@ -142,7 +142,8 @@ router.post("/",async (req,res)=>{
         }
      
         //console.log(query)
-        const data = await jobs.find({"$and": query}).exec();
+        const data = await jobs.find({"$and": query})
+        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
        // console.log(data);
         res.json(data);
        
@@ -167,6 +168,8 @@ router.post("/search", async (req,res)=>{
         const defaultLocations = await jobs.distinct('location');
         locations = [locations,]
 
+        var nwcompanies=[],nwlocations=[],nwjob_titles=[];
+
         if(search != ''){
 
                 search = search.toLowerCase();
@@ -174,9 +177,9 @@ router.post("/search", async (req,res)=>{
                 for (let i of defaultCompanies) {
 
                     if(i.toLowerCase().includes(search)){
-                        if(companies === undefined) companies = [i];
-                        else if(!Array.isArray(companies)) companies = [companies,i];
-                        else companies.push(i);
+                        if(companies === undefined) nwcompanies = [i];
+                        else if(!Array.isArray(nwcompanies)) nwcompanies = [nwcompanies,i];
+                        else nwcompanies.push(i);
                     }
 
                 }
@@ -184,9 +187,9 @@ router.post("/search", async (req,res)=>{
                 for (let i of defaultLocations) {
 
                     if(i.toLowerCase().includes(search)){
-                        if( locations === undefined)  locations = [i];
-                        else if(!Array.isArray(locations))  locations = [locations,i];
-                        else  locations.push(i);
+                        if( nwlocations === undefined)  nwlocations = [i];
+                        else if(!Array.isArray(nwlocations))  nwlocations = [nwlocations,i];
+                        else  nwlocations.push(i);
                     }
 
                 }
@@ -194,9 +197,9 @@ router.post("/search", async (req,res)=>{
                 for (let i of defaultJobTitles) {
 
                     if(i.toLowerCase().includes(search)){
-                        if( job_titles === undefined)  job_titles = [i];
-                        else if(!Array.isArray(job_titles))  job_titles = [job_titles,i];
-                        else  job_titles.push(i);
+                        if( nwjob_titles === undefined)   nwjob_titles = [i];
+                        else if(!Array.isArray(nwjob_titles))  nwjob_titles = [nwjob_titles,i];
+                        else  nwjob_titles.push(i);
                     }
 
                 }
@@ -204,7 +207,7 @@ router.post("/search", async (req,res)=>{
     }
 
         
-        const query=[];
+        const query=[{ experience: { '$gte': 2.5 } },];
   
         if(job_titles!=undefined)
         {
@@ -237,7 +240,9 @@ router.post("/search", async (req,res)=>{
             query.push(obj);
         }
         //console.log(query)
-        const data = await jobs.find({"$and": query}).exec();
+
+        const data = await jobs.find({"$and": query})
+        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
             if(req.cookies.jwt)
             res.render("jobs_1.ejs",{data:data,search:search , locations:locations,work_modes:work_modes , logged:true});
             else

@@ -3,6 +3,7 @@ const bcrypt = require("bcryptjs");
 const express = require("express");
 const app = express()
 const cookieParser=require("cookie-parser");
+const jobs = require("../models/jobs");
 app.use(cookieParser());
 
 module.exports = {
@@ -27,7 +28,9 @@ module.exports = {
                     secure:false,
                 });
 
-                res.render("home.hbs",{logged:true}); 
+                const data = await jobs.find();
+
+                res.render("home.hbs",{data:data , logged:true}); 
 
             }
             else

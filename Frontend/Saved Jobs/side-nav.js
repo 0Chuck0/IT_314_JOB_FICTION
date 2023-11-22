@@ -15,22 +15,22 @@ const cardsContainer = document.getElementById('cards-container');
 const jobLabels = document.querySelectorAll('.job-labels');
 
 // Create a ResizeObserver instance
-const resizeObserver = new ResizeObserver(entries => {
-  for (const entry of entries) {
-    // Check if the width has changed
-    console.log(entry.contentRect.width);
-      // Change the display property based on your condition
-      if (entry.contentRect.width < 600) {
-        jobLabels.forEach(element => {
-          element.style.display = 'none';
-        });
-      } else {
-        jobLabels.forEach(element => {
-          element.style.display = 'block';
-        });
-      } 
-  }
-});
+// const resizeObserver = new ResizeObserver(entries => {
+//   for (const entry of entries) {
+//     // Check if the width has changed
+//     console.log(entry.contentRect.width);
+//       // Change the display property based on your condition
+//       if (entry.contentRect.width < 600) {
+//         jobLabels.forEach(element => {
+//           element.style.display = 'none';
+//         });
+//       } else {
+//         jobLabels.forEach(element => {
+//           element.style.display = 'block';
+//         });
+//       } 
+//   }
+// });
 
-// Start observing the target element
-resizeObserver.observe(cardsContainer);
+// // Start observing the target element
+// resizeObserver.observe(cardsContainer);

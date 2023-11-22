@@ -4,7 +4,7 @@
 
     margin-top: 2em;
     max-height:100vh;
-    height: 100vh;
+    height: fit-content;
     overflow-x: hidden;
     overflow-y: scroll;
     padding: 1em 2em;
@@ -106,13 +106,28 @@ p {
     }
 }
 
-@media (width < 600px)
+@media (width < 768px)
 {
     .company-logo{
         display: none !important;
     }
     .cards-container{
         width: 90%;
+    }
+    .job-labels{
+        margin-top: 0 !important;
+    }
+    .job-detail  p{
+        margin-bottom:0;
+    }
+    .label-3{
+        display: none;
+    }
+    i{
+        margin-right: 0.2rem;
+    }
+    .save-btn{
+        margin-left: auto;
     }
 }
 

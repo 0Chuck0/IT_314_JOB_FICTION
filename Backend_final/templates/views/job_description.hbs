@@ -412,7 +412,7 @@
                     })
                         .then(data => {
                             // Assuming the response contains a boolean value named "shouldRedirect"
-                            if(data.x === 0) {
+                            if(data.x === 1) {
                                 alert("you Unapplied successfully");
                                 window.location.href = `/job_description/${job_id}`;
                             }

@@ -26,7 +26,7 @@ router.post("/", [loggedinonly] ,async(req, res) => {
         console.log("hello")
         await apply.remove(check);
         return res.json({
-            'x':1
+            'x':0
         });
     }
     else
@@ -48,7 +48,7 @@ router.post("/", [loggedinonly] ,async(req, res) => {
         // const job_app = await myData.save();
         console.log("hello1")
     return res.json({
-        'x':0
+        'x':1
     });
     }
 

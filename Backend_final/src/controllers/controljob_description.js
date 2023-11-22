@@ -22,9 +22,10 @@ module.exports = {
 
           const data = await Register.findOne({ email: req.body.email });
           const jobData = await jobs.findOne({ id: req.params.id });
-          const job_status = await apply.findOne({ job_id: req.params.id, email: check.email });
+          var job_status = await apply.findOne({ job_id: req.params.id, email: check.email });
 
           if (await Savedpost.findOne({ job_id: req.params.id, email: data.email }).count() == 1) {
+            if(job_status){
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-solid",
@@ -43,8 +44,28 @@ module.exports = {
               role: jobData.role,
               job_status: job_status
             })
+          }else{
+            res.render("job_description.hbs", {
+              jobid: req.params.id,
+              how: "fa-solid",
+              jobTitle: jobData.job_title,
+              companyName: jobData.company,
+              companyLocation: jobData.location,
+              comExperience: jobData.experience,
+              giveSalary: jobData.salary,
+              empType: jobData.employment_type,
+              wrkMode: jobData.work_mode,
+              empDegree: jobData.degree,
+              lstDate: jobData.last_date,
+              giveperk: jobData.perk,
+              reqskills: jobData.skills,
+              industry_type: jobData.industry_type,
+              role: jobData.role,
+          });
+        }
           }
           else {
+            if(job_status){
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-regular",
@@ -63,7 +84,26 @@ module.exports = {
               role: jobData.role,
               job_status: job_status
             })
+          }else{
+            res.render("job_description.hbs", {
+              jobid: req.params.id,
+              how: "fa-regular",
+              jobTitle: jobData.job_title,
+              companyName: jobData.company,
+              companyLocation: jobData.location,
+              comExperience: jobData.experience,
+              giveSalary: jobData.salary,
+              empType: jobData.employment_type,
+              wrkMode: jobData.work_mode,
+              empDegree: jobData.degree,
+              lstDate: jobData.last_date,
+              giveperk: jobData.perk,
+              reqskills: jobData.skills,
+              industry_type: jobData.industry_type,
+              role: jobData.role,
+          });
           }
+        }
         }
 
       });
@@ -86,7 +126,6 @@ module.exports = {
         reqskills: jobData.skills,
         industry_type: jobData.industry_type,
         role: jobData.role,
-        job_status: false
       })
     }
   }

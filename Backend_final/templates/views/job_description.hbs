@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/fonts/line-icons/style.css">
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/animate.min.css">
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.9.95/css/materialdesignicons.css"
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
@@ -130,17 +130,21 @@
                         </div>
                         <div class="candidates-list-desc job-single-meta  pt-2">
                             <h5 class="mb-2 f-19 text-dark">{{jobTitle}}</h5>
-                            <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname">{{companyName}}</a></h6>
+                            <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname">{{companyName}}</a>
+                            </h6>
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item mr-4">
-                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-location-dot"></i>{{companyLocation}}</p>
+                                    <p class="text-muted f-15 mb-0"><i
+                                            class="fa-solid fa-location-dot"></i>{{companyLocation}}</p>
                                 </li>
                                 <li class="list-inline-item mr-4">
-                                    <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i>{{comExperience}}
+                                    <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase"
+                                            aria-hidden="true"></i>{{comExperience}}
                                     </p>
                                 </li>
                                 <li class="list-inline-item">
-                                    <p class="text-muted f-15 mb-0"><i class="fa-solid fa-indian-rupee-sign"></i>{{giveSalary}}
+                                    <p class="text-muted f-15 mb-0"><i
+                                            class="fa-solid fa-indian-rupee-sign"></i>{{giveSalary}}
                                     </p>
                                 </li>
                             </ul>
@@ -158,11 +162,17 @@
                             <div class="candidates-listing-btn mt-4 text-right">
                                 <div class="btn btn-sm above">
                                     <i class="{{how}} fa-bookmark fa-xl" id="saveIcon"
-                                         onclick="toggleSaveState({{jobid}})"><span id="myspan"> Save</span></i>
-                                   
+                                        onclick="toggleSaveState({{jobid}})"><span id="myspan"> Save</span></i>
+
                                 </div>
-                                <div class="below"><button type="submit" onclick="apply({{jobid}})" class="btn btn-outline btn-sm belowa">Apply
-                                        Now</button></div>
+                                <div class="below"><button id="applyButton" type="submit" onclick="apply({{jobid}})"
+                                        class="btn btn-outline btn-sm belowa">
+                                        {{#if job_status}}
+                                        unapply
+                                        {{else}}
+                                        Apply Now
+                                        {{/if}}
+                                        </button></div>
                             </div>
                         </div>
                     </div>
@@ -305,98 +315,161 @@
                 saveIcon.classList.remove("fa-solid");
                 saveIcon.classList.add("fa-regular");
                 try {
-                    var data = new URLSearchParams({"id":id});
+                    var data = new URLSearchParams({ "id": id });
                     const response = await fetch("http://localhost:3000/unsaveData", {
-                            method:"POST",
-                            body:data,
+                        method: "POST",
+                        body: data,
                     });
-                    if(response.ok) {
-                       const htmlContent = await response.text();
-                       document.open();
-                       document.write(htmlContent);
-                       document.close();
-                    }else {
-                      if(response.status === 400) {
-                        // Handle the case where the user is not logged in.
-                        alert("You have to log in first.");
-                        window.location = "/login";
-                     }else{
-                       throw new Error("NETWORK RESPONSE ERROR");
-                     }
+                    if (response.ok) {
+                        const htmlContent = await response.text();
+                        document.open();
+                        document.write(htmlContent);
+                        document.close();
+                    } else {
+                        if (response.status === 400) {
+                            // Handle the case where the user is not logged in.
+                            alert("You have to log in first.");
+                            window.location = "/login";
+                        } else {
+                            throw new Error("NETWORK RESPONSE ERROR");
+                        }
                     }
-                }catch(err){
+                } catch (err) {
                     console.log(err);
                 }
             } else {
                 saveIcon.classList.remove("fa-regular");
                 saveIcon.classList.add("fa-solid");
                 try {
-                    var data = new URLSearchParams({"id":id});
+                    var data = new URLSearchParams({ "id": id });
                     const response = await fetch("http://localhost:3000/saveData", {
-                            method: "POST",
-                            body:data,
+                        method: "POST",
+                        body: data,
                     });
-                    if(response.ok){
+                    if (response.ok) {
                         const htmlContent = await response.text();
                         document.open();
                         document.write(htmlContent);
                         document.close();
-                    }else {
-                      if(response.status === 400) {
-                        // Handle the case where the user is not logged in.
-                        alert("You have to log in first.");
-                        window.location = "/login";
-                     }else{
-                       throw new Error("NETWORK RESPONSE ERROR");
-                     }
-                    }       
+                    } else {
+                        if (response.status === 400) {
+                            // Handle the case where the user is not logged in.
+                            alert("You have to log in first.");
+                            window.location = "/login";
+                        } else {
+                            throw new Error("NETWORK RESPONSE ERROR");
+                        }
+                    }
                 } catch (err) {
-                        console.log(err);
+                    console.log(err);
                 }
-                
+
             }
         }
 
+        //let isApplied = false;
+        // isApplied = !isApplied;
+        // applyButton.textContent = isApplied ? 'Unapply' : 'Apply Now';
+        // applyButton.disabled = isApplied; 
 
 
-         async function apply(job_id) {
-            try {
-                var token = getBrowserCookie("jwt");
-                var data = { "id": job_id };
-                fetch('http://localhost:3000/apply', {
-                    method: "POST",
-                    headers: {
-                        "Cookie": `jwt=${token}`,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data)
-                }).then((response) => {
-                    if (response.ok) {
-                        
-                     
-                       
-                        return response.json();
-                    } else {
-                        throw  Error("NETWORK RESPONSE ERROR");
-                    }
-                })
-                
-                .then(data => {
-                    // Assuming the response contains a boolean value named "shouldRedirect"
-                    if (data.x === 1) {
-                        alert("you already have applied");
-                        window.location.href = `/job_description/${job_id}`;
-                    } else {
-                         alert("you applied successfully");
-                         window.location.href = `/job_description/${job_id}`;
-                    }
+        async function apply(job_id) {
+
+            const applyButton = document.getElementById('applyButton');
+
+            if (applyButton.textContent === "Apply Now") {
+
+                applyButton.textContent = "Unapply";
+
+                try {
+                    var token = getBrowserCookie("jwt");
+                    var data = { "id": job_id };
+                    fetch('http://localhost:3000/apply', {
+                        method: "POST",
+                        headers: {
+                            "Cookie": `jwt=${token}`,
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data)
+                    }).then((response) => {
+                        if (response.ok) {
+
+                            return response.json();
+                        } else {
+                            if (response.status === 400) {
+                                // Handle the case where the user is not logged in.
+                                alert("You have to log in first.");
+                                window.location = "/login";
+                            }
+                            else {
+                                throw Error("NETWORK RESPONSE ERROR");
+                            }
+
+
+                        }
                     })
-                .catch((error) => console.error("FETCH ERROR:", error));
-            } 
-            
-            catch (err) {
-                console.log(err);
+
+                        .then(data => {
+                            // Assuming the response contains a boolean value named "shouldRedirect"
+                            if (data.x === 1) {
+                                alert("you already have applied");
+                                window.location.href = `/job_description/${job_id}`;
+                            } else {
+                                alert("you applied successfully");
+                                window.location.href = `/job_description/${job_id}`;
+                            }
+                        })
+                        .catch((error) => console.error("FETCH ERROR:", error));
+                }
+
+                catch (err) {
+                    console.log(err);
+                }
             }
+
+            else {
+                applyButton.textContent = "Apply Now";
+
+                try {
+                    var token = getBrowserCookie("jwt");
+                    var data = { "id": job_id };
+                    fetch('http://localhost:3000/unapply', {
+                        method: "POST",
+                        headers: {
+                            "Cookie": `jwt=${token}`,
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data)
+                    }).then((response) => {
+                        if (response.ok) {
+
+                            return response.json();
+                        } else {
+                            if (response.status === 400) {
+                                // Handle the case where the user is not logged in.
+                                alert("You have to log in first.");
+                                window.location = "/login";
+                            }
+                            else {
+                                throw Error("NETWORK RESPONSE ERROR");
+                            }
+                        }
+                    })
+                        .then(data => {
+                            // Assuming the response contains a boolean value named "shouldRedirect"
+                            if(data.x === 0) {
+                                alert("you Unapplied successfully");
+                                window.location.href = `/job_description/${job_id}`;
+                            }
+                        })
+                        .catch((error) => console.error("FETCH ERROR:", error));
+                }
+
+                catch (err) {
+                    console.log(err);
+                }
+            }
+
         }
         // krushnag
         function getBrowserCookie(cookieName) {

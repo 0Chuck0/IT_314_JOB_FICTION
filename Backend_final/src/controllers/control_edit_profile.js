@@ -13,7 +13,7 @@ module.exports = {
     get:async (req,res)=>{
         
         
-        res.render("edit_profile.hbs");
+        res.render("edit_profile.hbs",{logged:true});
     },
 
     post:async(req,res)=>{

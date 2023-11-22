@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <title>JobBoard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+        
   </head>
+  
   <body id="top">
 
   <div id="overlayer"></div>
@@ -25,52 +27,7 @@
   </div>
     
 
-<div class="site-wrap">
-
-    <!-- .site-mobile-menu -->
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> 
-    
-
-    <!-- NAVBAR -->
-    <header class="site-navbar mt-3">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="site-logo col-6"><a href="/home">JOBfiction</a></div>
-
-          <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="/home" class="nav-link active">Home</a></li>
-              <li><a href="/jobs_1">Jobs</a></li>
-             
-              <li>
-                <a href="#">Recommnedations</a>
-              </li>
-              <li><a href="#">Blogs</a></li>
-              <li><a href="myprofile">My Profile</a></li>
-              <li><a href="Edit_Profile">Edit Profile</a></li>
-              <li class="d-lg-none"><a href="register">Register</a></li>
-              <li class="d-lg-none"><a href="login">Log In</a></li>
-            </ul>
-          </nav>
-          
-          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
-            <div class="ml-auto">
-              <a href="register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
-              <a href="login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">login</a>
-            </div>
-            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
-          </div>
-
-        </div>
-      </div>
-    </header>
+  {{> header}}
 
     <!-- HOME -->
     <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
@@ -82,25 +39,27 @@
               <h1 class="text-white font-weight-bold">Find your <span class=" headline">perfect job</span> easily</h1>
               <p>With more than 5 lakh+ jobs for you to explore</p>
             </div>
-            <form method="post" class="search-jobs-form">
+            <form action ="/jobs_1/search" method="post" class="search-jobs-form">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <input type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
+                  <input type="text" name = "search" class="form-control form-control-lg" placeholder="Job title, Company...">
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
+                  <select class="" name="locations" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
                     <option>Anywhere</option>
-                    <option>Bangalore</option>
+                    <option>Bengaluru</option>
                     <option>Hyderabad</option>
-                    <option>Noida</option>
-                    <option>Ahmedabad</option>
+                    <option>Gandhinagar</option>
+                    <option>Pune</option>
+                    <option>Gurgaon</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
-                    <option>Part Time</option>
-                    <option>Full Time</option>
-                    <option>Internship</option>
+                  <select class="" name="work_modes" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
+                    <option>Any</option>
+                    <option>Remote</option>
+                    <option>Office</option>
+                    <option>Hybrid</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -124,97 +83,41 @@
       </div>
 
     </section>
+
+    {{logged}}
     
     <!-- JOBS -->
-      <div class="job-list" id="jobs">
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Tesla.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Tesla</h4>
-                    <h3>Mechanical Engineer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹25000 - ₹50000 a month</a>
-                <a href="#" class="label-c">Internship</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Ebay.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Ebay</h4>
-                    <h3>Business Development</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
+                              <div id="jobListing-container" class="col container jobListing-container scroll">
+
+                                {{#each data}}
+
+                                <a href="/job_description/{{id}}" >
+
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>{{company}}</h4>
+                                        <h3>{{job_title}}</h3>
+                                        <p>{{location}}</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <span href="#" class="label-a">₹{{salary}} a month</span>
+                                        </div>
+                                        <div class="row labels">
+                                            <span href="#" class="label-c">{{work_mode}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                                    {{/each}}
                 </div>
-            </div> 
-            <div class="job-labels">
-                <a href="#" class="label-a">₹50000 a month</a>
-                <a href="#" class="label-c">Full-time</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/TikTok.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Tiktok</h4>
-                    <h3>Digital Marketing</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div>
-            </div> 
-            <div class="job-labels">
-                <a href="#" class="label-a">₹40000 - ₹80000 a month</a>
-                <a href="#" class="label-c">Part-time</a>
-            </div>
-            <div class="job-posted">
-                Posted 2 mins ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Youtube.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Youtube</h4>
-                    <h3>UI UX Designer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹50000 - ₹200000 a month</a>
-                <a href="#" class="label-c">Full-time</a>
-            </div>
-            <div class="job-posted">
-                Posted an hour ago
-            </div>
-        </div>
-        <div class="job-card">
-            <div class="job-name">
-                <img src="images/Amazon.svg" alt="" class="job-profile">
-                <div class="job-detail">
-                    <h4>Amazon</h4>
-                    <h3>Software Engineer</h3>
-                    <p>Bangalore, Hyderabad, Noida</p>
-                </div> 
-            </div>
-            <div class="job-labels">
-                <a href="#" class="label-a">₹500000 per annum</a>
-                <a href="#" class="label-c">Part-time</a>
-            </div>
-            <div class="job-posted">
-                Posted an hour ago
-            </div>
-        </div>
         <button class="job-more">
             More List
-        </div>
+        </button>
     </div>
 
     
@@ -292,5 +195,4 @@
 
   </body>
 </html>
-
 

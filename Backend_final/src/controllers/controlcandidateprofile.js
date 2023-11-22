@@ -10,7 +10,7 @@ module.exports = {
         const email  = req.params.email;
         
         const data = await Register.findOne({email:email})
-        res.render("candidateprofile",{
+        res.render("candidateprofile.hbs",{
             name : data.name,
             email : data.email,
             number : data.number,

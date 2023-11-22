@@ -9,7 +9,7 @@ module.exports = {
 
     get: async (req, res) => {
 
-        res.render("companyregister");
+        res.render("companyregister.hbs");
 
     },
     

@@ -1,133 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>JobFiction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Custom Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_companyprofile.css">
-
-    <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
-<body>
-    <!-- Navbar top -->
-    <div class="navbar">
-        <span class="otherpagelinkleft">
-            <a href="#" class="otherpagelink logo">JOB FICTION</a>
-            <a href="#" class="otherpagelink">Jobs</a>
-            <a href="#" class="otherpagelink">Companies</a>
-            <a href="#" class="otherpagelink">Contact Us</a>
-        </span>
-        <span class="otherpagelinkright">
-            <a href="#" class="otherpagelink">Logout</a>
-        </span>
-    </div>
-    <!-- End -->
+<body id="top">
 
-    <!-- Sidenav -->
-    <div class="sidenav">
-        <div class="profile">
-            <img src="images/job_logo_3.jpg" alt="" width="100" height="100">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 
-            <div class="name">
-                {{companyname}}
-            </div>
-            <div class="company_type job">
-                {{companytype}}
-            </div>
-        </div>
-
-        <div class="sidenav-url">
-            <div class="url">
-                <a href="/companyhomepage" class="active">Home</a>
-                <hr>
-            </div>
-            <div class="url">
-                <a href="/jobpostlist" class="active">Posted Job</a>
-                <hr>
-            </div>
-            <div class="url">
-                <a href="/companyeditprofile" class="active">Edit Profile</a>
-                <hr>
-            </div>
-        </div>
-
-        <h2 id="identity">SOCIAL MEDIA</h2>
-        <div class="card socialmediacontainer">
-            <div class="card-body">
-                <!-- <i class="fa fa-pen fa-xs edit"></i> -->
-                <div class="social-media">
-                    <hr>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-            </div>
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
-    <!-- End -->
 
-    <!-- Main -->
-    <div class="main">
-        <div class="card-body">
-            <div class="card mine">
-                <h2>Company Details</h2><i class="fa fa-pen fa-xs edit"></i>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Name</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{companyname}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Type</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{companytype}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{number}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Address</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{companyadd}}</span>
+
+     {{>header2}}
+
+
+
+        <!-- HOME -->
+        <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+            id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="new2">
+                            <h1 class="text-white font-weight-bold">Profile</h1>
+                        </div>
+                        <div class="custom-breadcrumbs">
+                            <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
+                            <!-- <span class="text-white"><strong>Register</strong></span> -->
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <h2>Employer Details</h2><i class="fa fa-pen fa-xs edit"></i>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+        </section>
+
+        <section class="containerr">
+            <div class="toggle-btn" onclick="viewmenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Sidenav -->
+            <div class="sidenav" id="showmenu">
+                <div class="profile">
+                    <img src="images/job_logo_3.jpg" alt="" width="100" height="100">
+
+                    <div class="name">
+                        {{companyname}}
+                    </div>
+                    <div class="company_type job">
+                        {{companytype}}
+                    </div>
                 </div>
-                <div class="widgetCont"><span class="empty">{{name}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Designation</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{des}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{email}}</span>
+
+                <div class="sidenav-url">
+                    <div class="url">
+                        <a href="/companyhomepage" class="active">Home</a>
+                    </div>
+                    <hr class="mehr">
+                    <div class="url">
+                        <a href="/jobpostlist" class="active">Posted Job</a>
+                    </div>
+                    <hr class="mehr">
+                    <div class="url">
+                        <a href="/companyeditprofile" class="active">Edit Profile</a>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- End -->
+
+            <!-- Main -->
+            <div class="main" id="hideshow">
+                <div class="card-body">
+                    <div class="card mine">
+                        <h2>Company Details</h2>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Name</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{companyname}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Industy Type</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{companytype}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{number}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Location</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{companylocation}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Description</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{description}}</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h2>Employee Details</h2>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{name}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Designation</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{des}}</span>
+                        </div>
+                        <hr>
+                        <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
+                        </div>
+                        <div class="widgetCont"><span class="empty">{{email}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+
+            <a href="#top" class="smoothscroll scroll-top">
+                <span class="icon-keyboard_arrow_up"></span>
+            </a>
+
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Search Trending</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Developers</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">HTML5</a></li>
+                            <li><a href="#">CSS3</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Company</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Support</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Fraud alert</a></li>
+                            <li><a href="#">Grievances</a></li>
+                            <li><a href="#">Report issue</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Connect with us</h3>
+                        <div class="footer-social">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
     </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="js/script_company_profile.js"></script>
+
 </body>
 
 </html>

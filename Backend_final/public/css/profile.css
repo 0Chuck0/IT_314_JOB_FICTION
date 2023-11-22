@@ -1,15 +1,16 @@
-/* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 * {
     margin: 0;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
 }
 
 body {
     /* background-color: #e7e7f1; */
     /* background-color: #4070f4; */
-    background-color: #2047b43a;
+    /* background-color: #2047b43a; */
+    background-color: #fff;
     min-height: 100vh;
     height: max-content;
 }
@@ -44,11 +45,13 @@ body {
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
+    overflow-wrap: break-word;
+    border: 1px solid #DEE2E6;
 }
 
-.card:hover{
+/* .card:hover{
     border: 3px solid black;
-}
+} */
 
 /* .sidenav:hover{
     border: 3px solid black;
@@ -71,7 +74,8 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -138,24 +142,26 @@ body {
 
 /* Sidenav */
 .sidenav {
-    /* background-color: #fff; */
-    background-color: #212529;
+    background-color: #fff;
+    /* background-color: #212529; */
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 68%;
+    height: fit-content;
     margin-left: 4%;
     position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 70px;
+    /* top: 70px; */
     width: 20%;
-    margin-top: 5%;
+    margin-top: 30px;
     box-sizing: border-box;
-    position: fixed;
-    box-shadow: 3px 5px 8px 0 grey;
+    /* position: fixed; */
+    /* box-shadow: 3px 5px 8px 0 grey; */
+    padding-bottom: 20px;
+    border: 1px solid #DEE2E6;
 }
 
 .sidenav-url{
@@ -178,7 +184,7 @@ body {
     /* font-size: 16px; */
     font-weight: 300;
     padding-top: 20px;
-    color: #fff;
+    color: #000;
     margin-bottom: 5px;
 }
 
@@ -186,7 +192,7 @@ body {
     font-size: 18px;
     font-weight: 500;
     padding-top: 10px;
-    color: rgb(214, 190, 190);
+    color: rgb(60, 56, 56);
 }
 
 .url{
@@ -244,7 +250,8 @@ body {
     /* font-size: 28px; */
     font-size: 20px;
     padding: 0 10px;
-    width: 58%;
+    width: 70%;
+    /* 58 */
     margin-bottom: 80px;
 }
 
@@ -256,7 +263,8 @@ h2{
 
 .main h2 {
     color: #333;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -278,6 +286,27 @@ h2{
     width: 80%;
 }
 
+.toggle-btn{
+    position:fixed;
+    top: 70px;
+    /* margin-top: 300px; */
+    left: 3%;
+}
+
+.toggle-btn span{
+    width: 45px;
+    height: 4px;
+    background: #212529;
+    display: block;
+    margin-top: 4px;
+}
+
+.sidenav .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
 hr{
     margin: 0 auto;
     width: 100%;
@@ -295,25 +324,184 @@ hr{
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+/* @media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+    }
+    .sidenav{
+        margin-left: -200px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .main{
+        margin-left: 0;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
+@media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
 }
 
-.fa-github:hover {
-    color: #161414 !important;
+End */
+
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
+    .lower-btn{
+        display: none;
+    }
 }
 
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+        position: relative;
+    }
+    .upper-btn{
+        display: none;
+    }
+    .sidenav{
+        /* margin-left: -300px; */
+        display: none;
+    }
+    .sidenav.active{
+        margin-left:100px ;
+        /* top: 90px; */
+        width: 300px;
+        margin-top: 100px;
+        transition: 0.8s;
+        display: block;
+        z-index: 5;
+        margin-bottom: 100px;
+        transition: 0.8;
+    }
+    .site-footer
+    {
+        margin-top: 1000px;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+    }
+    /* body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    } */
+    .main{
+        width: 70%;
+        margin-left: 15%;
+        transition: 0.8s;
+    }
+    .card{
+        width: 100%;
+        margin-left: 0;
+        transition: 0.8s;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
 }
 
+/* @media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
+} */
+
+@media (max-width: 760px){
+    .main .card{
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 495px){
+    .main{
+        width: 80%;
+    }
+    .widgetCont{
+        font-size: 16px;
+    }
+    .widgetHead{
+        font-size: 18px;
+    }
+}
+
+@media (max-width:460px){
+    .sidenav.active{
+        width: 60%;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 226px) and (max-width:494px){
+    /* .main{
+        margin-left: 20%;
+    } */
+    .toggle-btn{
+        left: 15px;
+    }
+}
+
+textarea{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+@media (max-width:450px){
+    .card{
+        width: 100%;
+    }
+    .main .card{
+        padding: 5px 10px;
+    }
+    .main{
+        width: 90%;
+        margin-left: 8%;
+    }
+    .toggle-btn span{
+        width: 35px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:350px){
+    .main{
+        margin-left: 4%;
+        width: 95%;
+    }
+}
 /* End */

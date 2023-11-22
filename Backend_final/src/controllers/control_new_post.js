@@ -6,7 +6,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        res.render("newpost");
+        res.render("newpost.hbs");
 
     },
     post: async(req,res)=>{
@@ -14,13 +14,14 @@ module.exports = {
             
             
             const companyemail=req.body.email;
-           
+           const company_name=req.body.company_name;
+          
             const lastJob = await jobs.findOne().sort('-id');
             let newJobId = 1;
             
             if (lastJob) {
                 newJobId = lastJob.id + 1;
-                console.log(newJobId)
+             
             }
             const data = {
                 id: newJobId,
@@ -36,17 +37,17 @@ module.exports = {
                 location: req.body.location,
                 last_date: req.body.last_date,
                 degree: req.body.degree,
-                criteria:req.body.criteria,
+               company:company_name,
                 perk: req.body.Perks,
             }
     
             // const registered = await data.save();
             // console.log(registered),
             // Jobpost.insertOne(data)
-            console.log(data);
+            
             await jobs.insertMany([data]);
            
-            res.render("companyhomepage")
+            res.render("companyhomepage.hbs")
         }
         catch (error)
         {

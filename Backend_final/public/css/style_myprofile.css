@@ -1,5 +1,4 @@
-/* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 * {
     margin: 0;
@@ -9,7 +8,8 @@
 body {
     /* background-color: #e7e7f1; */
     /* background-color: #4070f4; */
-    background-color: #2047b43a;
+    /* background-color: #2047b43a; */
+    background-color: #fff;
     min-height: 100vh;
     height: max-content;
 }
@@ -28,8 +28,8 @@ body {
 
 .widgetCont{
     margin:10px 0 15px 0px;
+    font-size: 18px;
 }
-
 
 .card{
     margin: 0.5rem 0 1rem;
@@ -44,23 +44,21 @@ body {
     /* background-color: #e7e7f1; */
     width: 80%;
     /* padding-left: 8%;     */
+    overflow-wrap: break-word;
+    border: 1px solid #DEE2E6;
 }
 
-.card:hover{
-    transform: scale(1.04);
-    transition: all 0.5s;
-}
+/* .card:hover{
+    border: 3px solid black;
+} */
 
-.sidenav:hover{
-    transform: scale(1.04);
-    transition: all 0.5s;
-}
+/* .sidenav:hover{
+    border: 3px solid black;
+} */
 
 .widgetTitle{
     color: #121224;
 }
-
-
 
 #identity{
     text-align: center;
@@ -143,28 +141,35 @@ body {
 /* Sidenav */
 .sidenav {
     background-color: #fff;
+    /* background-color: #212529; */
     color: #333;
     /* border-bottom-right-radius: 25px;
     border-top-right-radius: 25px; */
     border-radius: 25px;
-    height: 65%;
-    margin-left: 2%;
+    height: fit-content;
+    margin-left: 4%;
     position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
     top: 70px;
-    width: 25%;
+    width: 20%;
     margin-top: 5%;
     box-sizing: border-box;
-    position: fixed;
+    /* position: fixed; */
     /* box-shadow: 3px 5px 8px 0 grey; */
+    padding-bottom: 20px;
+    border: 1px solid #DEE2E6;
+    margin-top: 25rem;
 }
 
+.sidenav-url{
+    margin-top: 30px;
+}
 
 .profile {
     margin-bottom: 20px;
-    margin-top: 12px;    
+    margin-top: 20px;    
     text-align: center;
 }
 
@@ -176,43 +181,61 @@ body {
 .name {
     font-size: 20px;
     /* font-size: 16px; */
-    font-weight: bold;
+    font-weight: 300;
     padding-top: 20px;
     color: #000;
+    margin-bottom: 5px;
 }
 
 .job {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 500;
     padding-top: 10px;
+    color: rgb(60, 56, 56);
 }
 
-.url, hr {
+.url{
     text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .url hr {
-    margin: 5px auto;
+    align-items: center;
     width: 60%;
 }
+
+/* .url hr {
+    margin: 5px auto;
+} */
 
 .url a {
     color: #818181;
     display: block;
     /* font-size: 20px; */
-    font-size: 16px;
+    font-size: 20px;
     margin: 10px 0;
-    padding: 6px 12px;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+.nodecoration{
     text-decoration: none;
 }
 
 .url a:hover, .url .active {
-    background-color: #e8f5ff;
+    background-color: #cee2f1;
     border-radius: 28px;
     color: #000;
-    margin-left: 14%;
     width: 65%;
 }
+
+.mehr{
+    width: 60%;
+    margin-bottom: auto;
+}
+
 .socialmediacontainer{
     /* width: 90px; */
     margin: 0 auto;
@@ -227,6 +250,7 @@ body {
     font-size: 20px;
     padding: 0 10px;
     width: 58%;
+    margin-bottom: 80px;
 }
 
 
@@ -259,6 +283,27 @@ h2{
     width: 80%;
 }
 
+.toggle-btn{
+    position:fixed;
+    top: 70px;
+    /* margin-top: 300px; */
+    left: 3%;
+}
+
+.toggle-btn span{
+    width: 45px;
+    height: 4px;
+    background: #212529;
+    display: block;
+    margin-top: 4px;
+}
+
+.sidenav .toggle-btn{
+    position: absolute;
+    top: 30px;
+    left: 330px;
+}
+
 hr{
     margin: 0 auto;
     width: 100%;
@@ -276,25 +321,47 @@ hr{
     margin: 0 auto;
 }
 
-
-.fa-facebook:hover {
-    color: #4267b3 !important;
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
 }
 
-.fa-twitter:hover {
-    color: #1da1f2 !important;
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+    }
+    .sidenav{
+        margin-left: -200px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+        transition: 0.8s;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .main{
+        margin-left: 0;
+    }
 }
 
-.fa-invision:hover {
-    color: #f83263 !important;
-}
-
-.fa-github:hover {
-    color: #161414 !important;
-}
-
-.fa-whatsapp:hover {
-    color: #25d366 !important;
+@media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
 }
 
 /* End */

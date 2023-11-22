@@ -107,9 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (i <= 3 && document.getElementById("f3-opt" + i).value == work_type) {
             document.getElementById("f3-opt" + i).checked = true;
             display_jobs();
-        }
+        }   
 
     }
     // Assign the func function to the onchange event
-    document.getElementById("filter-form").onchange = display_jobs;
+
+    document.getElementById("filter-form").oninput = display_jobs;
 })

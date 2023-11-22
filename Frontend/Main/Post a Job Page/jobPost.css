@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700"); */
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 .foot-new{
     margin-bottom: -3rem;
@@ -6,7 +6,7 @@
 
 * {
     margin: 0;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
 }
 
 body {
@@ -15,7 +15,6 @@ body {
     /* background-color: #2047b43a; */
     min-height: 100vh;
     height: max-content;
-
     padding-bottom: 50px;
 }
 
@@ -55,7 +54,7 @@ body {
 }
 
 .widgetCont {
-    margin: 10px 0 15px 0px;
+    margin: 0 0 15px 0px;
     /* --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
     --border-color: rgb(218, 221, 224); */
@@ -120,7 +119,7 @@ sup{
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -205,6 +204,7 @@ sup{
     position: fixed;
     box-shadow: 3px 5px 8px 0 grey;
 }
+
 #candidate_image {
     display: none;
 }
@@ -230,7 +230,7 @@ sup{
 
 .candidategender {
     display: flex;
-    gap: 60px;
+    gap: 5%;
     font-size: 18px;
 }
 
@@ -278,7 +278,6 @@ img{
     font-size: 18px;
     min-height: 2.25rem;
     width: 100%;
-    min-width: 14rem;
     border: 1px solid #DADDE0;
 }
 
@@ -351,11 +350,11 @@ img{
 /* Main */
 .main {
     margin-top: 100px;
-    margin-left: 16%;
+    margin-left: 10%;
     /* font-size: 28px; */
     font-size: 28px;
     padding: 0 10px;
-    width: 70%;
+    width: 80%;
     margin-bottom: 60px;
     justify-content: center;
     align-items: center;
@@ -370,7 +369,7 @@ h2 {
 
 .main h2 {
     color: #333;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -407,8 +406,18 @@ hr {
 .remv{
     display: none;
 }
+
 *{
     box-sizing: border-box;
 }
 
+@media (max-width:550px){
+    .main .card{
+        padding: 20px;
+    }
+    .main{
+        width: 90%;
+        margin-left: 5%;
+    }
+}
 /* End */

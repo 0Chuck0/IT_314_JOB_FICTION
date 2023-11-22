@@ -2,7 +2,8 @@
 
 * {
     margin: 0;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
 }
 
 body {
@@ -73,7 +74,8 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -152,15 +154,14 @@ body {
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 70px;
+    /* top: 70px; */
     width: 20%;
-    margin-top: 5%;
+    margin-top: 30px;
     box-sizing: border-box;
     /* position: fixed; */
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
     border: 1px solid #DEE2E6;
-    margin-top: 25rem;
 }
 
 .sidenav-url{
@@ -249,7 +250,8 @@ body {
     /* font-size: 28px; */
     font-size: 20px;
     padding: 0 10px;
-    width: 58%;
+    width: 70%;
+    /* 58 */
     margin-bottom: 80px;
 }
 
@@ -261,7 +263,8 @@ h2{
 
 .main h2 {
     color: #333;
-    font-family: Satoshi,"Satoshi Fallback";
+    /* font-family: Satoshi,"Satoshi Fallback"; */
+    font-family: 'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -321,7 +324,7 @@ hr{
     margin: 0 auto;
 }
 
-@media (min-width:841px){
+/* @media (min-width:841px){
     .toggle-btn{
         display: none;
     }
@@ -364,4 +367,141 @@ hr{
     }
 }
 
+End */
+
+@media (min-width:841px){
+    .toggle-btn{
+        display: none;
+    }
+    .lower-btn{
+        display: none;
+    }
+}
+
+@media (max-width: 840px){
+    .toggle-btn{
+        z-index: 5;
+        position: relative;
+    }
+    .upper-btn{
+        display: none;
+    }
+    .sidenav{
+        /* margin-left: -300px; */
+        display: none;
+    }
+    .sidenav.active{
+        margin-left:100px ;
+        /* top: 90px; */
+        width: 300px;
+        margin-top: 100px;
+        transition: 0.8s;
+        display: block;
+        z-index: 5;
+        margin-bottom: 100px;
+        transition: 0.8;
+    }
+    .site-footer
+    {
+        margin-top: 1000px;
+    }
+    .main.hide{
+        display: none;
+        opacity: 0;
+    }
+    /* body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    } */
+    .main{
+        width: 70%;
+        margin-left: 15%;
+        transition: 0.8s;
+    }
+    .card{
+        width: 100%;
+        margin-left: 0;
+        transition: 0.8s;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
+}
+
+/* @media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
+} */
+
+@media (max-width: 760px){
+    .main .card{
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 495px){
+    .main{
+        width: 80%;
+    }
+    .widgetCont{
+        font-size: 16px;
+    }
+    .widgetHead{
+        font-size: 18px;
+    }
+}
+
+@media (max-width:460px){
+    .sidenav.active{
+        width: 60%;
+        margin-left: 25%;
+    }
+}
+
+@media (min-width: 226px) and (max-width:494px){
+    /* .main{
+        margin-left: 20%;
+    } */
+    .toggle-btn{
+        left: 15px;
+    }
+}
+
+textarea{
+    display: none;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+@media (max-width:450px){
+    .card{
+        width: 100%;
+    }
+    .main .card{
+        padding: 5px 10px;
+    }
+    .main{
+        width: 90%;
+        margin-left: 8%;
+    }
+    .toggle-btn span{
+        width: 35px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:350px){
+    .main{
+        margin-left: 4%;
+        width: 95%;
+    }
+}
 /* End */

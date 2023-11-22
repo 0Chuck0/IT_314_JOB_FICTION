@@ -109,6 +109,7 @@
 
 
     <!-- HOME -->
+    
     <section class="home-section" id="home-section">
 
         <div class="container main-container">
@@ -157,6 +158,11 @@
                                   <h6 class="filter-button"> Serach </h6>
                                   <input type="text" name = "search" class="form-control form-control-lg" placeholder="Job title, Company...">
                                 </div>
+                                <% if (typeof search !== 'undefined') { %>
+                                  <script>
+                                    document.getElementsByName("search")[0].value = '<%= search %>';
+                                  </script>
+                                <% } %>
                                 <div class="col">
                                     <h6 id="filter-button1" class="filter-button">Job Titles</h6>
                                     <div id="options1" class="options col-10">
@@ -220,6 +226,18 @@
                                         <br>
                                         <input id="f2-opt5" type="checkbox" value="Gandhinagar" name="locations">
                                         <label for="f2-opt5">Gandhinagar</label>
+
+                                        <% if (typeof locations !== 'undefined') { %>
+                                        <script>
+                                              let x = document.getElementsByName("locations");
+                                              for(let i in x){
+                                                console.log(x[i].value);
+                                                if(x[i].value == '<%= locations %>') x[i].checked = true;
+
+                                              }
+                                          </script>
+                                        <% } %>
+
                                     </div>
                                 </div>
                                 <div class="col">
@@ -233,6 +251,19 @@
                                                 <br>
                                                 <input id="f3-opt3" type="checkbox" value="Hybrid" name="work_modes">
                                                 <label for="f3-opt3">Hybrid</label>
+
+
+                                                <% if (typeof work_modes !== 'undefined') { %>
+                                                  <script>
+                                                        let y = document.getElementsByName("work_modes");
+                                                        for(let i in y){
+                                                          console.log(y[i].value);
+                                                          if(y[i].value == '<%= work_modes %>') y[i].checked = true;
+          
+                                                        }
+                                                    </script>
+                                                  <% } %>
+
                                     </div>
                                 </div>
 
@@ -438,9 +469,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script src="/js/script_jobs.js"></script>
-    <script >
-      
-    </script>
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>

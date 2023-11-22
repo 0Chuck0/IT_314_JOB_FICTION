@@ -317,7 +317,18 @@
               </div>
           </form>
     </section>
-    
+    <script>
+      document.getElementById('myForm').addEventListener('submit', function (event) {
+        var selectField = document.getElementById('key_skills');
+        var selectedOptions = [...selectField.options].filter(option => option.selected);
+
+        if (selectedOptions.length === 0) {
+          alert('Please select at least one option in Key Skills');
+          event.preventDefault(); // Prevents form submission
+
+        }
+      });
+    </script>
     <footer class="site-footer foot-new">
 
       <a href="#top" class="smoothscroll scroll-top">

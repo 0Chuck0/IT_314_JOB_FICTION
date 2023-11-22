@@ -69,7 +69,7 @@ body {
     margin: 0.5rem 0 1rem;
     background-color: #fff;
     transition: box-shadow .25s;
-    border-radius: 2px;
+    border-radius: 1px;
     font-size: 16px;
     /* font-size: 20px; */
     position: relative;
@@ -194,9 +194,9 @@ body {
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 7px;
+    /* top: 7px; */
     width: 25%;
-    margin-top: 5%;
+    margin-top: 30px;
     box-sizing: border-box;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
@@ -355,6 +355,7 @@ img{
     padding: 0 10px;
     width: 70%;
     margin-bottom: 60px;
+    transition: 0.8s;
 }
 
 
@@ -373,7 +374,7 @@ h2 {
 
 .main .card {
     background-color: #fff;
-    border-radius: 18px;
+    border-radius: 6px;
     /* box-shadow: 1px 1px 8px 0 grey; */
     height: auto;
     margin-bottom: 20px;
@@ -441,24 +442,33 @@ hr {
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
-        position: fixed;
+        position: relative;
     }
     .upper-btn{
         display: none;
     }
     .sidenav{
-        margin-left: -300px;
+        /* margin-left: -300px; */
+        display: none;
     }
     .sidenav.active{
-        margin-left:80px ;
-        top: 90px;
-        width: 60%;
+        margin-left:120px ;
+        /* top: 90px; */
+        width: 40%;
+        margin-top: 100px;
         transition: 0.8s;
+        display: block;
+        z-index: 5;
+        margin-bottom: 100px;
+        transition: 0.8;
+    }
+    .site-footer
+    {
+        margin-top: 1000px;
     }
     .main.hide{
         display: none;
         opacity: 0;
-        transition: 0.8s;
     }
     /* body{
         justify-content: center;
@@ -467,17 +477,36 @@ hr {
     } */
     .main{
         width: 70%;
-        margin-left: 20%;
+        margin-left: 15%;
     }
     .card{
         width: 100%;
         margin-left: 0;
     }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
+}
+
+/* @media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
+        transition: 0.8s;
+    }
+} */
+
+@media (max-width: 760px){
+    .main .card{
+        padding: 10px 20px;
+    }
 }
 
 @media (max-width: 495px){
-    .main .card{
-        padding: 10px 20px;
+    .main{
+        width: 80%;
     }
     .widgetCont{
         font-size: 16px;
@@ -488,27 +517,12 @@ hr {
 }
 
 @media (min-width: 226px) and (max-width:494px){
-    .main .card{
-        padding: 10px 20px;
-    }
     /* .main{
         margin-left: 20%;
     } */
     .toggle-btn{
-        left: 5px;
+        left: 15px;
     }
-    .differentinput{
-        overflow-wrap: break-word;
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width:380px){
-    .main{
-        margin-left: 5%;
-        width: 85%;
-    }
-    
 }
 
 textarea{
@@ -518,12 +532,10 @@ textarea{
     box-sizing: border-box;
 }
 
-@media (min-width: 500px) and (max-width: 840px){
+@media (max-width:460px){
     .sidenav.active{
-        margin-left:80px ;
-        top: 90px;
-        width: 40%;
-        transition: 0.8s;
+        width: 60%;
+        margin-left: 25%;
     }
 }
 
@@ -535,10 +547,22 @@ textarea{
         padding: 5px 10px;
     }
     .main{
-        margin-left: 14%;
+        width: 90%;
+        margin-left: 8%;
     }
     .toggle-btn span{
-        width: 25px;
+        width: 35px;
+        margin-left: 15px;
+    }.sidenav.active{
+        width: 70%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width:350px){
+    .main{
+        margin-left: 4%;
+        width: 95%;
     }
 }
 /* End */

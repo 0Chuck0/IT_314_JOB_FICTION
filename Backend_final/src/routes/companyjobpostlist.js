@@ -11,7 +11,7 @@ router.get("/",[companyloggedinonly],async function (req, res){
     const company=await Companyregister.findOne({email:req.body.email})
    
     
-    res.render("posted_jobs",{company,Jobs});
+    res.render("posted_jobs.hbs",{company,Jobs});
 });
 
 module.exports = router;

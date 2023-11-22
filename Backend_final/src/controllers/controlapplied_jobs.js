@@ -18,6 +18,6 @@ module.exports = {
         const jobsdata=await jobs.find({"id": {"$in": listdata}});
         //console.log(jobsdata);
         console.log(jobsdata)
-        res.render("applied_jobs",{jobsdata});
+        res.render("applied_jobs.hbs",{jobsdata});
     }
 }

@@ -2,6 +2,9 @@
     margin: 0;
 } */
 
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
+
 .candidates-listing-item{
     width :70%;
     margin : 0 auto;
@@ -129,11 +132,8 @@ h2{
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     background-color: #fff;
-}
-
-.list-grid-item:hover {
-    -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
-    box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+    -webkit-box-shadow: 0 0 20px 0px rgba(21, 20, 20, 0.09);
+    box-shadow: 0 0 20px 0px rgba(18, 17, 17, 0.09);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     border-color: transparent;

@@ -215,18 +215,21 @@ router.post("/search", async (req,res)=>{
         if( locations!=undefined)
         {
             if(locations == "Anywhere"){
-                locations = defaultLocations;
-            }
+                locations = undefined;
+            }else{
             const obj={location:{ "$in": locations }};
             query.push(obj);
+            }
         }
         if(work_modes!=undefined)
         {
             if(work_modes == "Any"){
-                work_modes = defaultWorkModes;
+                work_modes = undefined;
             }
+            else{
             const obj={work_mode:{ "$in": work_modes }};
             query.push(obj);
+            }
         }
         if(companies!=undefined)
         {
@@ -235,7 +238,10 @@ router.post("/search", async (req,res)=>{
         }
         //console.log(query)
         const data = await jobs.find({"$and": query}).exec();
-            res.render("jobs_1.ejs",{data:data,companies:companies , locations:locations,job_titles:job_titles, work_modes:work_modes , logged:true});
+            if(req.cookies.jwt)
+            res.render("jobs_1.ejs",{data:data,search:search , locations:locations,work_modes:work_modes , logged:true});
+            else
+            res.render("jobs_1.ejs",{data:data,search:search , locations:locations, work_modes:work_modes , logged:false});
         }
         catch(err){
             res.send(err);

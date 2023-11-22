@@ -67,6 +67,7 @@ const newpost_route = require("./routes/newpost_route");
 const deletesaved_jobs=require("./routes/deletesaved_jobs");
 const applied_jobs=require("./routes/applied_jobs")
 const applyRouter = require( "./routes/applyRouter")
+const unapplyRouter = require ("./routes/unapplyRouter")
 
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
@@ -90,6 +91,9 @@ app.use("/newpost",newpost_route)
 app.use("/deletesaved_jobs",deletesaved_jobs);
 app.use("/applied_jobs",applied_jobs);
 app.use("/apply", applyRouter)
+app.use("/unapply", unapplyRouter);
+
+
 
 app.get("/", (req, res) => {
     res.render("landingpage.hbs")

@@ -200,7 +200,36 @@
     
     <script src="/js/custom.js"></script>
     <script src="/js/script_candidate_list/.js"></script>
+    <script>
 
+      window.addEventListener("resize", function () {
+        if (window.innerWidth <= 500) {
+          let remv = document.body.getElementsByClassName('candidates-img');
+          let length = remv.length;
+          let i = 0;
+          while (length > 0 && i <= length) {
+            if (remv[i].classList.contains('float-left')) {
+  
+              remv[i].classList.remove('float-left');
+            }
+            i++;
+          }
+        }
+        else {
+          let remv = document.body.getElementsByClassName('candidates-img');
+          let length = remv.length;
+          let i = 0;
+          while (length > 0 && i <= length) {
+            if (!(remv[i].classList.contains('float-left'))) {
+              remv[i].classList.add('float-left');
+            }
+            i++;
+          }
+        }
+      },
+        true);
+  
+    </script>
      
   </body>
 </html>

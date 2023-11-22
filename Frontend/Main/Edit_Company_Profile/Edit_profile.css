@@ -1,14 +1,13 @@
 /* Import Font Dancing Script */
-@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 .new-footer{
     margin-bottom: -3.5rem;
   }
   
-
 * {
     margin: 0;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
 }
 
 body {
@@ -62,7 +61,7 @@ body {
     margin: 0.5rem 0 1rem;
     background-color: #fff;
     transition: box-shadow .25s;
-    border-radius: 2px;
+    border-radius: 1px;
     font-size: 16px;
     /* font-size: 20px; */
     position: relative;
@@ -105,7 +104,7 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -178,18 +177,17 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
-    /* position: fixed; */
+    position: absolute;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
-    top: 7px;
+    /* top: 7px; */
     width: 25%;
-    /* margin-top: 5%; */
+    margin-top: 30px;
     box-sizing: border-box;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
     border: 1px solid #DEE2E6;
-    margin-top: 8rem;
 }
 
 #companyphoto{
@@ -345,8 +343,7 @@ img{
 
 /* Main */
 .main {
-    /* margin-top: 100px; */
-    margin-top: -38.5rem;
+    margin-top: 100px;
     margin-left: 29%;
     font-size: 28px;
     /* font-size: 20px; */
@@ -363,7 +360,7 @@ h2 {
 
 .main h2 {
     color: #333;
-    font-family: Satoshi, "Satoshi Fallback";
+    font-family:'icomoon';
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;
@@ -371,7 +368,7 @@ h2 {
 
 .main .card {
     background-color: #fff;
-    border-radius: 18px;
+    border-radius: 6px;
     height: auto;
     margin-bottom: 20px;
     padding: 20px 50px 20px 50px ;
@@ -389,7 +386,7 @@ h2 {
 }
 
 .toggle-btn{
-    position:fixed;
+    position:absolute;
     top: 70px;
     /* margin-top: 300px; */
     left: 3%;
@@ -438,42 +435,71 @@ hr {
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
-        position: fixed;
+        position: relative;
     }
     .upper-btn{
         display: none;
     }
     .sidenav{
-        margin-left: -300px;
+        /* margin-left: -300px; */
+        display: none;
     }
     .sidenav.active{
-        margin-left:80px ;
-        top: 90px;
-        width: 60%;
+        margin-left:120px ;
+        /* top: 90px; */
+        width: 40%;
+        margin-top: 150px;
         transition: 0.8s;
+        display: block;
+        z-index: 5;
+        margin-bottom: 100px;
+        transition: 0.8;
+    }
+    .site-footer
+    {
+        margin-top: 1000px;
     }
     .main.hide{
         display: none;
         opacity: 0;
+    }
+    /* body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    } */
+    .main{
+        width: 70%;
+        margin-left: 15%;
+    }
+    .card{
+        width: 100%;
+        margin-left: 0;
+    }
+    .differentinput{
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+    }
+}
+
+/* @media (min-width: 500px) and (max-width: 840px){
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 40%;
         transition: 0.8s;
     }
-    body{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-    .main{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        margin-left: 10%;
-        width: fit-content;
+} */
+
+@media (max-width: 760px){
+    .main .card{
+        padding: 10px 20px;
     }
 }
 
 @media (max-width: 495px){
-    .main .card{
-        padding: 10px 20px;
+    .main{
+        width: 80%;
     }
     .widgetCont{
         font-size: 16px;
@@ -484,32 +510,52 @@ hr {
 }
 
 @media (min-width: 226px) and (max-width:494px){
-    .main .card{
-        padding: 10px 20px;
-    }
-    .main{
-        margin-left: 8%;
-    }
+    /* .main{
+        margin-left: 20%;
+    } */
     .toggle-btn{
-        left: 5px;
-    }
-    .differentinput{
-        overflow-wrap: break-word;
-        flex-wrap: wrap;
+        left: 15px;
     }
 }
 
+textarea{
+    display: none;
+}
 *{
     box-sizing: border-box;
 }
 
-@media (min-width: 500px) and (max-width: 840px){
+@media (max-width:660px){
     .sidenav.active{
-        margin-left:80px ;
-        top: 90px;
-        width: 40%;
-        transition: 0.8s;
+        width: 60%;
+        margin-left: 25%;
     }
 }
 
+@media (max-width:450px){
+    .card{
+        width: 100%;
+    }
+    .main .card{
+        padding: 5px 10px;
+    }
+    .main{
+        width: 90%;
+        margin-left: 8%;
+    }
+    .toggle-btn span{
+        width: 35px;
+        margin-left: 15px;
+    }.sidenav.active{
+        width: 70%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width:350px){
+    .main{
+        margin-left: 4%;
+        width: 95%;
+    }
+}
 /* End */

@@ -96,7 +96,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <div class="new2">
-                            <h1 class="text-white font-weight-bold">Register</h1>
+                            <h1 class="text-white font-weight-bold">Profile</h1>
                         </div>
                         <div class="custom-breadcrumbs">
                             <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
@@ -297,6 +297,7 @@
     <script src="js/bootstrap-select.min.js"></script>
 
     <script src="js/custom.js"></script>
+    <script src="Edit_Company_Profile/script.js"></script>
 
     <script>
         function func(event) {
@@ -309,7 +310,7 @@
                 console.log(img)
                 if (imageExts.indexOf(img) === -1) {
                     fi.value = null
-                    document.getElementById("companyphoto").src = 'photo.webp';
+                    document.getElementById("companyphoto").src = 'Edit_Company_Profile/photo.webp';
                     alert('Only jpg/jpeg and png files are allowed!');
                 }
                 if (imageExts.indexOf(img) !== -1) {

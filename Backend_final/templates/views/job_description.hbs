@@ -270,6 +270,7 @@
             if (saveIcon.classList.contains("fa-solid")) {
                 saveIcon.classList.remove("fa-solid");
                 saveIcon.classList.add("fa-regular");
+                document.getElementById('myspan').innerHTML = " Save";
                 try {
                     var data = new URLSearchParams({ "id": id });
                     const response = await fetch("http://localhost:3000/unsaveData", {
@@ -296,6 +297,7 @@
             } else {
                 saveIcon.classList.remove("fa-regular");
                 saveIcon.classList.add("fa-solid");
+                document.getElementById('myspan').innerHTML = " Saved";
                 try {
                     var data = new URLSearchParams({ "id": id });
                     const response = await fetch("http://localhost:3000/saveData", {

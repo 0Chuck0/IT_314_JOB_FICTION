@@ -93,12 +93,7 @@
                                             class="fa-solid fa-location-dot"></i>{{companyLocation}}</p>
                                 </li>
                                 <li class="list-inline-item mr-4">
-<<<<<<< HEAD
                                     <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase" aria-hidden="true"></i>{{comExperience}} <span style="color: black;"> Yrs</span>
-=======
-                                    <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase"
-                                            aria-hidden="true"></i>{{comExperience}}
->>>>>>> cd0bc391c721ba801811044af1d56a8bceb76adb
                                     </p>
                                 </li>
                                 <li class="list-inline-item">
@@ -124,14 +119,16 @@
                                         onclick="toggleSaveState({{jobid}})"><span id="myspan"> Save</span></i>
 
                                 </div>
-                                <div class="below"><button id="applyButton" type="submit" onclick="apply({{jobid}})"
-                                        class="btn btn-outline btn-sm belowa">
                                         {{#if job_status}}
+                                        <div class="below"><button id="applyButton" type="submit" onclick="apply({{jobid}},'unapply')"class="btn btn-outline btn-sm belowa">
                                         unapply
+                                        </button>
+                                        </div>
                                         {{else}}
+                                        <div class="below"><button id="applyButton" type="submit" onclick="apply({{jobid}},'apply')"class="btn btn-outline btn-sm belowa">
                                         Apply Now
-                                        {{/if}}
                                         </button></div>
+                                        {{/if}}
                             </div>
                         </div>
                     </div>
@@ -332,11 +329,11 @@
         // applyButton.disabled = isApplied; 
 
 
-        async function apply(job_id) {
+        async function apply(job_id , flag) {
 
             const applyButton = document.getElementById('applyButton');
 
-            if (applyButton.textContent === "Apply Now") {
+            if (flag === "apply") {
 
                 applyButton.textContent = "Unapply";
 
@@ -370,13 +367,14 @@
 
                         .then(data => {
                             // Assuming the response contains a boolean value named "shouldRedirect"
-                            if (data.x === 1) {
-                                alert("you already have applied");
-                                window.location.href = `/job_description/${job_id}`;
-                            } else {
+                            if (data.x === 0) {
                                 alert("you applied successfully");
                                 window.location.href = `/job_description/${job_id}`;
-                            }
+                            } 
+                            //else {
+                              //  alert("you applied successfully");
+                               // window.location.href = `/job_description/${job_id}`;
+                            // }
                         })
                         .catch((error) => console.error("FETCH ERROR:", error));
                 }

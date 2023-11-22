@@ -6,8 +6,7 @@ const apply = require("../models/appliedjob");
 const Register=require("../models/registers");
 router.post("/", [loggedinonly] , async(req, res) => {
 
-    
-  
+    console.log("apply running");
     const body  = req.body;
     let payload = jwt.verify(req.cookies.jwt, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa' );
     

@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 const app = express()
+
+
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 require('dotenv').config()
@@ -39,7 +41,10 @@ const static_path = path.join(__dirname, "../public")
 app.use(express.static(static_path))
 
 const template_path = path.join(__dirname, "../templates/views")
+const partialsPath=path.join(__dirname, "../templates/partials")
 app.set("views", template_path)
+
+hbs.registerPartials(partialsPath)
 
 app.set('view engine', 'ejs');
 // app.use(express.static(template_path))
@@ -123,6 +128,15 @@ app.get("/companyprofile", (req, res) => {
 
 app.get("/jobpostlist", (req, res) => {
     res.render("jobpostlist.hbs")
+})
+
+
+app.get("/about", (req, res) => {
+    res.render("about.hbs")
+})
+
+app.get("/blog", (req, res) => {
+    res.render("blog.hbs")
 })
 
 // app.post('/newpost', async (req, res) => {

@@ -15,50 +15,20 @@ module.exports = {
         
         const job_title = await jobs.distinct('job_title');
         const location=await jobs.distinct('location');
+        const data = await Register.findOne({email:req.body.email})
+        const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
+        const technical_skills = data.technical_skills;
         
-        res.render("edit_profile.hbs",{job_title , logged:true,location});
+        const r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        const resume_link=data.resume_link;
+     
+        
+        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data});
     },
 
     post:async(req,res)=>{
         try { 
   
-                // const data = req.body;
-
-                // if(req.body.password===req.body.cpassword){
-
-                // const HashPassword  = await bcrypt.hash(req.body.password , 10);
-                
-                // delete data.cpassword;
-       
-                // data.password = HashPassword;
-
-                // data.token = 'dummy';
-
-                // data.verified = false;
-
-                // await Register.insertMany([data]);
-        
-                // const checking = await Register.findOne({email:req.body.email});
-        
-                // const id = checking._id;
-        
-                // const token = jwt.sign({_id:id},'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
-        
-                // await Register.updateOne({_id:id},{$set:{token:token}});
-
-                // const message =`<h1> http://localhost:3000/register/${token} <h1>`;
-
-                // sendEmail(req.body.email,"Registration Verification",message);
-
-                // res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/login";</script>');
-                
-                // //res.render("Login")
-
-                // }else{
-
-                // res.status(400).send('<script>alert("password and confrim password is not matching."); window.location = "/register";</script>');
-
-                //  }
 
                 jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
                     if(err)
@@ -86,17 +56,6 @@ module.exports = {
                           };
                         //console.log(updateData);
                           await Register.findOneAndUpdate({ _id: userId }, updateData);
-                        //   , (err, result) => {
-                        //     if (err) {
-                        //       console.error(err);
-                        //       res.status(500).send('Error updating user');
-                        //     } else {
-                        //       res.send('User updated successfully');
-                        //     }
-                        //   });
-                        
-                        // if(check.email)
-                        //    next();
     
                     }
                     });

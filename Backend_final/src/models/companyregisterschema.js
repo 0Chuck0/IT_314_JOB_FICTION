@@ -46,7 +46,7 @@ const CompanySchema=new mongoose.Schema({
     },
     profile:{
         type:String,
-        required:true,
+        //required:true,
     },
     company_description:{
         type:String,

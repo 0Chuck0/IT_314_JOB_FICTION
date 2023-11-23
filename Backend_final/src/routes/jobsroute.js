@@ -54,8 +54,6 @@ router.post("/",async (req,res)=>{
 
         var nwcompanies=[],nwlocations=[],nwjob_titles=[];
 
-        if(search != ''){
-
                 search = search.toLowerCase();
 
                 for (let i of defaultCompanies) {
@@ -87,8 +85,6 @@ router.post("/",async (req,res)=>{
                     }
 
                 }
-
-    }
 
         
         const query=[];
@@ -170,7 +166,6 @@ router.post("/search", async (req,res)=>{
 
         var nwcompanies=[],nwlocations=[],nwjob_titles=[];
 
-        if(search != ''){
 
                 search = search.toLowerCase();
 
@@ -203,8 +198,6 @@ router.post("/search", async (req,res)=>{
                     }
 
                 }
-
-    }
 
         
         const query=[{ experience: { '$gte': 2.5 } },];

@@ -153,7 +153,7 @@
                 <div id="filter-container" class="container-fluid text-center filter-container">
                     <div class="row">
                         <div class="col-4 form-class">
-                            <form id="filter-form" class="col-10" onchange="display_jobs()">
+                            <form id="filter-form" class="col-10" onkeydown="return event.key != 'Enter';" onchange="display_jobs()">
                                 <div class="col">
                                   <h6 class="filter-button"> Serach </h6>
                                   <input type="text" name = "search" class="form-control form-control-lg" placeholder="Job title, Company...">

@@ -138,7 +138,9 @@ app.get("/about", (req, res) => {
 app.get("/blog", (req, res) => {
     res.render("blog.hbs")
 })
-
+app.get("/recommendations", (req, res) => {
+    res.render("recommendations.hbs")
+})
 // app.post('/newpost', async (req, res) => {
 //     try {
 //         const lastJob = await Jobpost.findOne().sort('-job_id');

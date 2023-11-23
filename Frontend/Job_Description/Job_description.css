@@ -1,0 +1,516 @@
+/* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+    font-family: Satoshi, "Satoshi Fallback";
+}
+
+body {
+    /* background-color: #e7e7f1; */
+    /* background-color: #4070f4; */
+    background-color: #2047b43a;
+    min-height: 100vh;
+    height: max-content;
+}
+
+.container {
+    flex-direction: row;
+}
+
+.row{
+    padding: 10px 20px;
+}
+
+.widgetHead {
+    font-size: 20px;
+    /* font-size: 16px; */
+    color: #000;
+    font-weight: 700;
+}
+
+.widgetCont {
+    margin: 10px 0 15px 0px;
+}
+
+.list-inline-item{
+    margin-top: 0;
+}
+
+#dateofrole{
+    margin-top: 10px;
+    /* color:#FF3F3F ; */
+    color:#000 ;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+#dateofroleform{
+    color:#FF3F3F;
+    font-weight: 700;
+}
+
+#myhr{
+    width: 60% !important;
+    margin-top: 20px;
+}
+
+#jobtitle{
+    color: #474d6a;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    margin: 1rem 0 1rem 0;
+    transition: box-shadow .25s;
+    font-size: 16px;
+    /* font-size: 20px; */
+    /* color: #666; */
+    line-height: 1.28;
+    /* background-color: #e7e7f1; */
+    padding: 3%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 15%;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    background-color: #fff;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+}
+
+/* .card:hover{
+    transform: scale(1.04);
+    transition: all 0.5s;
+} */
+
+.sidenav:hover {
+    transform: scale(1.04);
+    transition: all 0.5s;
+}
+
+.widgetTitle {
+    color: #121224;
+}
+
+.companyname{
+    text-decoration: none;
+    color: #474d6a;
+}
+
+#identity {
+    text-align: center;
+    margin-top: 12%;
+    margin-bottom: 8%;
+    /* font-size: 20px; */
+    font-size: 16px;
+}
+
+span{
+    color: #474d6a;
+    font-size: 18px;
+}
+
+.navbar {
+    /* background-color: #fff; */
+    background-color: #212529;
+    height: 50px;
+    padding: 0 90px;
+    font-family: Satoshi, "Satoshi Fallback";
+    align-items: center;
+    /* display: flex; */
+    justify-content: space-between;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    /* margin-bottom: 105px; */
+    /* box-shadow: 3px 5px 8px 0 grey; */
+    position: sticky;
+
+}
+
+label{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.text-dark{
+    font-size: 25px;
+    color: #000;
+    font-weight: 700;
+}
+
+.jobdescription{
+    color: #000;
+    font-size: 18px;
+}
+
+.otherpagelink {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    margin: 0 16px;
+    /* color: #4070f4; */
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 13px;
+}
+
+.logo {
+    font-weight: 900;
+    margin-right: 50px;
+}
+
+.logout {
+    border: 2px solid #fff;
+}
+
+.navbar-top ul {
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 18px 50px 0 40px;
+}
+
+.navbar-top ul li {
+    float: left;
+}
+
+.navbar-top ul li a {
+    color: #333;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon-count {
+    background-color: #ff0000;
+    color: #fff;
+    float: right;
+    font-size: 11px;
+    left: -25px;
+    padding: 2px;
+    position: relative;
+}
+
+/* Job Card */
+.text-muted {
+    color: #000 !important;
+    font-size: 18px;
+}
+
+.rightbottomapply {
+    display: inline;
+    position: relative;
+    margin-left: 60%;
+    margin-right: 0;
+}
+
+.list-grid-item {
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: #fff;
+    /* position: static; */
+    /* position: fixed; */
+    margin-top: 100px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 15%;
+}
+
+.list-grid-item:hover {
+    -webkit-box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+    box-shadow: 0 0 20px 0px rgba(47, 47, 47, 0.09);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    border-color: transparent;
+}
+
+.candidates-img img {
+    max-width: 90px;
+    border: 1px solid black;
+}
+
+.candidates-list-desc {
+    overflow: hidden;
+}
+
+.btn-outline {
+    color: #ff4f6c;
+    border-color: #ff4f6c;
+}
+
+.candidates-listing-btn {
+    padding-top: 0;
+}
+
+.above{
+    /* margin-bottom: 90%; */
+    padding-right: 15%;
+    margin-top: 0;
+    margin-bottom: 5%;
+    margin-left: auto;
+}
+
+.col-md-3{
+    padding-left: 20px;
+}
+.col-md-9{
+    padding-right: 0;
+}
+.below{
+    padding-right: 15%;
+    margin-bottom: 5%;
+    position: absolute;
+    bottom: 0;
+    margin-left: 15%;
+}
+
+.belowa{
+    font-size: 16px;
+}
+
+.styles_other-details__oEN4O{
+    padding-left: 10px;
+}
+/* End */
+
+/* Sidenav */
+.sidenav {
+    background-color: #fff;
+    color: #333;
+    /* border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px; */
+    border-radius: 25px;
+    height: 65%;
+    margin-left: 2%;
+    position: absolute;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    top: 70px;
+    width: 25%;
+    margin-top: 5%;
+    box-sizing: border-box;
+    position: fixed;
+    /* box-shadow: 3px 5px 8px 0 grey; */
+}
+
+
+.profile {
+    margin-bottom: 20px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px gray;
+}
+
+.name {
+    /* font-size: 20px; */
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.days{
+    color: gray !important;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.job {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.url,
+hr {
+    text-align: center;
+}
+
+.url hr {
+    margin: 5px auto;
+    width: 60%;
+}
+
+.url a {
+    color: #818181;
+    display: block;
+    /* font-size: 20px; */
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 6px 12px;
+    text-decoration: none;
+}
+
+.url a:hover,
+.url .active {
+    background-color: #e8f5ff;
+    border-radius: 28px;
+    color: #000;
+    margin-left: 14%;
+    width: 65%;
+}
+
+.socialmediacontainer {
+    /* width: 90px; */
+    margin: 0 auto;
+}
+
+/* End */
+
+/* Main */
+.main {
+    margin-top: 100px;
+    margin-left: 29%;
+    /* font-size: 28px; */
+    font-size: 20px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+strong{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 45px;
+}
+
+h2 {
+    text-align: left;
+    color: #000 !important;
+    margin-bottom: 25px;
+    /* font-weight: bold; */
+    font-size: 27px;
+    font-weight: 900;
+}
+
+p{
+    /* line-height: 10px; */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.main h2 {
+    color: #333;
+    font-family: Satoshi, "Satoshi Fallback";
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+li{
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    /* box-shadow: 1px 1px 8px 0 grey; */
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 50px 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.social-media {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width:644px){
+    .below{
+        margin-left: 5%;
+    }
+    .above{
+        margin-right: 5%;
+        padding-right: 10px;
+    } 
+    .below{
+        float: left;
+    } 
+    .above{
+        float: right;
+    }
+}
+
+@media (max-width:644px){
+    .list-grid-item{
+        margin-left: 15%;
+        width: 70%;
+    }
+    .card{
+        margin-left: 15%;
+        width: 70%;
+        margin-right: 15%;
+    }
+}
+
+@media (max-width:430px){
+    .list-grid-item{
+        margin-left: 15%;
+        width: 70%;
+    }
+    .card{
+        margin-left: 15%;
+        width: 70%;
+        margin-right: 5%;
+    }
+    #dateofrole{
+        font-size: 18px;
+    }
+    #dateofrolefrom{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:378px){
+    .above{
+        margin-right: 0;
+        padding-right: 10px;
+    }
+    .below{
+        margin-left: 0;
+        margin-right: 15%;
+    }
+}
+
+@media (max-width:320px){
+    .above{
+        padding-left: 0;
+        font-size: 14px;
+    }
+    .below{
+        font-size: 14px;
+    }
+}
+/* End */

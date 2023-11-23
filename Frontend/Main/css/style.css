@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+.respon-nav{
+  color: #000;
+  font-size:larger;
+}
+
 :root{
   --primaryColor: #4070f4;
   --whiteColor: #fff;
@@ -920,6 +925,7 @@ h1, h2, h3, h4 {
   color: #fff; 
   background-color: #4070f4;
   border-color: #4070f4;
+  font-size: 18px !important;
 }
   .btn.btn-primary:hover {
     background: #4070f4;
@@ -931,6 +937,7 @@ h1, h2, h3, h4 {
   border-color: #fff;
   color: #4070f4; 
   font-weight: 700;
+  font-size: 18px;
 }
   .btn.btn-outline-white:hover {
     background: #fff;

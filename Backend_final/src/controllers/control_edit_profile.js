@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 //const express = require("express");
 ///const app = express()
 const cookieParser=require("cookie-parser");
+const jobs = require("../models/jobs");
 app.use(cookieParser());
 require("dotenv").config();
 
@@ -12,8 +13,10 @@ module.exports = {
 
     get:async (req,res)=>{
         
+        const job_title = await jobs.distinct('job_title');
+        const location=await jobs.distinct('location');
         
-        res.render("edit_profile.hbs",{logged:true});
+        res.render("edit_profile.hbs",{job_title , logged:true,location});
     },
 
     post:async(req,res)=>{

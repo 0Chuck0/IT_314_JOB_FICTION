@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Poppins:wght@300;400;500;600&family=Satisfy&display=swap');
-=======
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 .new{
@@ -16,33 +13,24 @@
   margin-top: 15px;
   text-align: center;
 }
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    font-family: 'Poppins', sans-serif;
-=======
 }
 
 .form-label{
   color: #000;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 }
 
 .containerr{
     width: 100%;
     height: 100%;
     display: flex;
-<<<<<<< HEAD
-    background-color: #ffb95f;
-=======
     /* background-color: #4070f497; */
     /* background-color: #fff; */
     /* background-color: #8500de; */
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     align-items: center;
     justify-content: center;
 }
@@ -52,26 +40,16 @@
     width: 100%;
     background-color: #fff;
     justify-content: center;
-<<<<<<< HEAD
-    border-radius: 6px;
-=======
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     padding: 30px;
     margin: 5rem;
 }
 
 h1{
-<<<<<<< HEAD
-    font-size: 28px;
-    text-align: center;
-    font-weight: 600;
-=======
     font-size: 32px;
     text-align: center;
     font-weight: 500;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     color: #232836;
 }
 
@@ -86,10 +64,7 @@ h1{
 .register-btn{
     width: 100%;
     background-color: #4070f4;
-<<<<<<< HEAD
-=======
     /* background-color: #8500de; */
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     margin-top: 1.5rem;
 }
 
@@ -99,44 +74,13 @@ h1{
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-.Work-Status{
-    width: 100%;
-}
-.radioWrap{
-    width : 90%;
-    margin: 0 auto;
-}
-
-.work-exp{
-    /* width: 22rem; */
-=======
 .work-exp{
     width: 22rem;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     padding: 1rem;
     display: flex;
     background: #fff; 
     border-radius: 0.5rem;
-<<<<<<< HEAD
-    border: color #495057;
-    width: 45%;
-    justify-content: center;
-    align-items: center;
-}
-.work-exp:checked+label{
-    border: 3px solid #4070f4;
-}
-
-.image1{
-    margin-right: 30px;
-}
-
-#StatusRadio2, #StatusRadio1{
-    display:none;
-=======
     border: color #495057;;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 }
 
 .data{
@@ -145,10 +89,6 @@ h1{
     justify-content: space-between;
     align-items: center;
     padding-bottom: -0.5rem;
-<<<<<<< HEAD
-    /* justify-content: center; */
-=======
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 }
 
 .data img{
@@ -199,21 +139,6 @@ h1{
     font-weight: 500;
 }
 
-<<<<<<< HEAD
-.mandatory_Filds{
-    color: red;
-}
-
-.btn-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.register-btn{
-    width: 50%;
-}
-=======
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 @media screen and (max-width: 500px) {
     .radioWrap{
         display: block;
@@ -227,9 +152,6 @@ h1{
     .checks{
         display: block;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -1670,4 +1592,3 @@ h1, h2, h3, h4 {
 
 
   
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40

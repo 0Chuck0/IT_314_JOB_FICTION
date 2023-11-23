@@ -5,15 +5,12 @@ const UserScema=new mongoose.Schema({
         type:String,
         required:true
     },
-<<<<<<< HEAD
-=======
 
     experience:
     {
         type: Number,
     },
 
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     email: {
         type:String,
         unique:true,
@@ -26,9 +23,6 @@ const UserScema=new mongoose.Schema({
     number: {
         type: Number,
         required:true,
-<<<<<<< HEAD
-        unique:true
-=======
         
     },
     gender:{
@@ -38,7 +32,6 @@ const UserScema=new mongoose.Schema({
     DOB:{
         type: Date,
         required:true,
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     },
     token:{
         type:String,
@@ -47,11 +40,6 @@ const UserScema=new mongoose.Schema({
     verified:{
         type:Boolean,
         required:true,
-<<<<<<< HEAD
-    }
-
-}) 
-=======
     },
 
     resume_link:
@@ -108,7 +96,6 @@ const UserScema=new mongoose.Schema({
 
  
 }) ;
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 
 
 // now we need to create Collection

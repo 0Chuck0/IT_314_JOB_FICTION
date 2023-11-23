@@ -6,11 +6,7 @@ module.exports = {
 
     get:async (req,res)=>{
 
-<<<<<<< HEAD
-        res.render("forgotpass");
-=======
         res.render("forgotpass.hbs");
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 
     },
     post:async (req,res)=>{

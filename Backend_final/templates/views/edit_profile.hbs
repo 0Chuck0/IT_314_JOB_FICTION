@@ -318,22 +318,9 @@
                             <div class="widgetCont"><span class="empty">
                                     <select name="desired_job" id="candidate_desired_job" class="differentinput"
                                         multiple>
-                                        <option value="Data Scientist">Data Scientist</option>
-                                        <option value="Systems Analyst">Systems Analyst</option>
-                                        <option value="Data Engineer">Data Engineer</option>
-                                        <option value="Machine Learning Engineer">Machine Learning Engineer</option>
-                                        <option value="Market Research Analyst">Market Research Analyst</option>
-                                        <option value="Business Intelligence (BI) Analyst">Business Intelligence (BI)
-                                            Analyst
-                                        </option>
-                                        <option value="IT Support Specialist">IT Support Specialist</option>
-                                        <option value="Software Developer">Software Developer</option>
-                                        <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-                                        <option value="Marketing Analyst">Marketing Analyst</option>
-                                        <option value="Web Developer">Web Developer</option>
-                                        <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-                                        <option value="Product Manager">Product Manager</option>
-                                        <option value="Database Administrator">Database Administrator</option>
+                                        {{#each job_title}}
+                                        <option value = '{{this}}'> {{this}}</option>
+                                        {{/each}}
                                     </select>
                                 </span>
                             </div>
@@ -382,10 +369,10 @@
                             <div class="widgetCont"><span class="empty">
                                     <select name="preferred_work_location" id="candidate_preferred_location" class="differentinput"
                                         multiple>
-                                        <option value="Pune">Pune</option>
-                                        <option value="Hydrabad">Hydrabad</option>
-                                        <option value="Ahmedabad">Ahmedabad</option>
-                                        <option value="Any">PAN India</option>
+                                          {{#each location}}
+                                        <option value = '{{this}}'>{{this}}</option>
+                                        {{/each}}
+                                        
                                     </select>
                                 </span>
                             </div>
@@ -396,7 +383,7 @@
                             <div class="widgetCont">
                                 <span class="empty candidategender spandiff">
                                     <div>
-                                        <input type="radio" id="Intern" name="employment" value="intern" checked />
+                                        <input type="radio" id="Intern" name="employment" value="intern"  />
                                         <label for="Intern">Intern</label>
                                     </div>
 
@@ -409,6 +396,11 @@
                                         <input type="radio" id="Full_time" name="employment" value="full_time" />
                                         <label for="Full_time">Full Time</label>
                                     </div>
+
+                                     <div>
+                                        <input type="radio" id="Part_time" name="employment" value="Any" checked/>
+                                        <label for="Part_time">Any</label>
+                                    </div>
                                 </span>
                             </div>
 
@@ -418,7 +410,7 @@
                             <div class="widgetCont">
                                 <span class="empty candidategender spandiff">
                                     <div>
-                                        <input type="radio" id="Office" name="work_mode" value="office" checked />
+                                        <input type="radio" id="Office" name="work_mode" value="office"  />
                                         <label for="Office">Office</label>
                                     </div>
 
@@ -430,6 +422,11 @@
                                     <div>
                                         <input type="radio" id="Hybrid" name="work_mode" value="hybrid" />
                                         <label for="Hybrid">Hybrid</label>
+                                    </div>
+
+                                     <div>
+                                        <input type="radio" id="Part_time" name="work_mode" value="Any" checked/>
+                                        <label for="Part_time">Any</label>
                                     </div>
                                 </span>
                             </div>

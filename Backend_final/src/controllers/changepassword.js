@@ -8,11 +8,7 @@ module.exports = {
 
         const {token} = req.params;
 
-<<<<<<< HEAD
-        res.render("forgotpass2",{token:token});
-=======
         res.render("forgotpass2.hbs",{token:token});
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 
     },
     post:async (req,res)=>{
@@ -25,11 +21,7 @@ module.exports = {
 
                                 let id = "";
 
-<<<<<<< HEAD
-                                jwt.verify(token,process.env.SECRET_KEY,async(err,decoded)=>{
-=======
                                 jwt.verify(token,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
->>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
                                     if(err)
                                     {
 

@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
+
+.site-footer{
+    margin-top: 5rem;
+    margin-bottom: -2rem;
+}
+
+body {
+    background-color: rgba(189, 188, 188, 0.236);
+    margin-bottom: 2rem;
+}
+
+.main-container {
+    margin:auto;
+    max-width: 1600px !important;
+    margin-top: -1rem;
+}
+
+.filter-container{
+    margin-top: 8rem;
+}
+
+header {
+    color: #fff;
+}
+
+.logo {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.filter-button {
+    cursor: pointer;
+}
+
+.options {
+    text-align: left !important;
+    margin: auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 2rem;
+}
+
+#options6 {
+
+    margin-left: 5.5rem;
+}
+
+#filter-button1 {
+    border-top: none;
+}
+
+h6 {
+    border-bottom: 2px solid black;
+    font-size: large;
+    font-weight: 600;
+    /*background-color: rgb(102, 153, 225);*/
+}
+
+#filter-form {
+    color: black;
+    border: 1px solid rgb(110, 108, 108);
+    border-radius: 8px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    font-size: large;
+}
+
+/*-------------------------Range Slider-----------------------------*/
+
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --gradient-color: linear-gradient(95deg,
+            hsl(286, 97%, 57%) -7%,
+            hsl(256, 84%, 48%) 112%);
+    --first-color-light: hsl(256, 64%, 88%);
+    --first-color-lighten: hsl(256, 58%, 94%);
+    --white-color: hsl(0, 0%, 100%);
+    --body-color: hsl(256, 100%, 98%);
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat", sans-serif;
+    --h1-font-size: 1.5rem;
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+}
+
+/*=============== RANGE SLIDER ===============*/
+/* Custom input range */
+.range {
+    height: 64px;
+    width: 100%;
+    padding-inline: 0.2rem;
+    display: grid;  
+}
+
+.range__content {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.range__slider {
+    width: 100%;
+    height: 8px;
+    /*background-color: var(--first-color-lighten);*/
+    border-radius: 4rem;
+    box-shadow: 0 0 2px black;
+    overflow: hidden;
+}
+
+.range__slider-line {
+    width: 100%;
+    height: 100%;
+    background:var(--primaryColor);
+    width: 0;
+}
+
+.range__thumb {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0 0 12px hsla(256, 72%, 24%, .2);
+    position: absolute;
+}
+
+/* Value input range */
+.range__value {
+    width: 32px;
+    height: 32px;
+    background: var(--primaryColor);
+    position: absolute;
+    top: -40px;
+    left: -6px;
+    border-radius: 2rem 2rem 2rem .25rem;
+    transform: rotate(-45deg);
+    display: grid;
+    place-items: center;
+}
+
+.range__value-number {
+    transform: rotate(45deg);
+    color: var(--white-color);
+    font-size: 18px;
+}
+
+/* Default input range */
+.range__input {
+    appearance: none;
+    width: 100%;
+    height: 16px;
+    position: absolute;
+    opacity: 0;
+}
+
+.range__input::-webkit-slider-thumb {
+    appearance: none;
+    width: 32px;
+    height: 32px;
+}
+
+.range__input::-webkit-slider-thumb:hover {
+    cursor: pointer;
+}
+
+.range-ends {
+    margin: 0;
+    border: none;
+    font-weight: 400;
+}
+
+.range-min,
+.range-max {
+    padding: 0;
+    margin: auto;
+
+}
+.slider{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+/*------------------------------------------------------------------*/
+
+.scroll{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+}
+.jobs-card {
+    text-align: left;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+    background-color: #ffffff;
+    
+}
+
+.jobs-card:hover {
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 8px;
+    cursor: pointer;
+
+    .job-profile {
+        filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.874));
+    }
+
+    .job-detail h4 {
+        font-size: 1.7rem;
+    }
+}
+
+.job-detail p {
+    color: black;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label-a,
+.label-c {
+    text-decoration: none;
+    color: black !important;
+    margin: 0.5em 0;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    background-color: rgba(189, 188, 188, 0.236);
+    ;
+}
+
+.label-a:hover,
+.label-c:hover {
+
+    box-shadow: 0px 0 5px;
+    background-color: var(--primaryColor);
+    color: white !important;
+}
+
+.labels {
+    max-width: fit-content;
+}
+
+#f7-opt1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uk-pagination{
+    background-color: rgb(57, 55, 53);
+    margin-left: auto;
+    margin-right: auto;
+}

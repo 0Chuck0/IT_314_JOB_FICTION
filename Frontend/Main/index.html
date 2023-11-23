@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <title>JobFiction</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -25,8 +25,7 @@
   </div>
     
 
-<div class="site-wrap">
-
+  <div class="site-wrap">
     <!-- .site-mobile-menu -->
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
@@ -34,7 +33,16 @@
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="site-mobile-menu-body"></div>
+      <div class="site-mobile-menu-body">
+        <ul class="list-group">
+          <li class="list-group-item"><a class="respon-nav" href="index.html" class="nav-link active">Home</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_jobs.html">Jobs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="recommendations.html">Recommendations</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="blog.html">Blogs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_register.html">Register</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_login.html">Log In</a></li>
+        </ul>
+      </div>
     </div> 
     
 
@@ -45,16 +53,16 @@
           <div class="site-logo col-6"><a href="index.html">JOBfiction</a></div>
 
           <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+            <ul class="site-menu d-none d-xl-block ml-0 pl-0">
               <li><a href="index.html" class="nav-link active">Home</a></li>
-              <li><a href="#">Jobs</a></li>
+              <li><a href="index_jobs.html">Jobs</a></li>
               <li>
-                <a href="#">Companies</a>
+                <a href="recommendations.html">Recommendations</a>
               </li>
+              <li><a href="blog.html">Blogs</a></li>
               <li>
-                <a href="#">Recommnedations</a>
+                <a href="about.html">About Us</a>
               </li>
-              <li><a href="#">Blogs</a></li>
               <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
               <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
             </ul>
@@ -62,8 +70,8 @@
           
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
-              <a href="Registration Form/index.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
-              <a href="Login Form/index.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+              <a href="index_register.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
+              <a href="index_login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
           </div>
@@ -82,31 +90,33 @@
               <h1 class="text-white font-weight-bold">Find your <span class=" headline">perfect job</span> easily</h1>
               <p>With more than 5 lakh+ jobs for you to explore</p>
             </div>
-            <form method="post" class="search-jobs-form">
+            <form action="./index_jobs.html" target="_blank" method="get" class="search-jobs-form">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <input type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
+                  <input name="job-title" id="job-title" type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
-                    <option>Anywhere</option>
-                    <option>Bangalore</option>
-                    <option>Hyderabad</option>
-                    <option>Noida</option>
-                    <option>Ahmedabad</option>
+                  <select name="Region"class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
+                    <option value="Anywhere">Anywhere</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                  <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
-                    <option>Part Time</option>
-                    <option>Full Time</option>
-                    <option>Internship</option>
+                  <select name="work-mode" class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
+                    <option value="Office">Office</option>
+                    <option value="Remote">Remote</option>
+                    <option value="Hybrid">Hybrid</option>
                   </select>
                 </div>
+
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
                   <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
                 </div>
               </div>
+            </form>
               <div class="row">
                 <div class="col-md-12 popular-keywords">
                   <h3>Trending Keywords:</h3>
@@ -118,13 +128,14 @@
                   </ul>
                 </div>
               </div>
-            </form>
+            
           </div>
         </div>
       </div>
 
     </section>
-    
+
+
     <!-- JOBS -->
       <div class="job-list" id="jobs">
         <div class="job-card">

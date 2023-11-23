@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>JobFiction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="Edit_Company_Profile/Edit_profile.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <div id="overlayer"></div>
+    <div class="loader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+    <div class="site-wrap">
+
+        <!-- .site-mobile-menu -->
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+
+        <!-- NAVBAR -->
+        <header class="site-navbar mt-3">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="site-logo col-6"><a href="index.html">JobFiction</a></div>
+
+                    <nav class="mx-auto site-navigation">
+                        <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                          <li><a href="index_comp-home.html" class="nav-link active">Home</a></li>
+                          <li><a href="index_jobs.html">Job Postings</a></li>
+                          <li>
+                            <!-- <a href="recommendations.html">Recommendations</a> -->
+                          </li>
+                          <!-- <li><a href="blog.html">Blogs</a></li> -->
+                          <li>
+                            <a href="about.html">About Us</a>
+                          </li>
+                          <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
+                          <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+                        </ul>
+                      </nav>
+
+                    <!-- <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+              <div class="ml-auto">
+                <a href="post-job.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Post a Job</a> -->
+                    <!-- <a href="index_login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a> -->
+                    <!-- </div>
+              <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+            </div> -->
+
+                </div>
+            </div>
+        </header>
+
+
+        <!-- HOME -->
+        <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+            id="home-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="new2">
+                            <h1 class="text-white font-weight-bold">Profile</h1>
+                        </div>
+                        <div class="custom-breadcrumbs">
+                            <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
+                            <!-- <span class="text-white"><strong>Register</strong></span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="containerr">
+            <form action="form.php">
+                <div class="toggle-btn" onclick="viewmenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="sidenav" id="showmenu">
+                    <div class="profile">
+                        <div class="image" id="az">
+                            <input type="file" name="image" id="candidate_image" onchange="func(event)">
+                            <label for="candidate_image"><img src="Edit_Company_Profile/photo.webp" id="companyphoto"
+                                    alt="Preview Not Available" width="100" height="100"></label>
+                        </div>
+                    </div>
+                    <div class="lowerprofile">Photo must be in form of .jpg/.jpeg/.png </div>
+
+                    <div class="sidenav-url">
+                        <div class="url">
+                            <a href="index.html" class="active">Home</a>
+                        </div>
+                        <hr class="mehr">
+                        <div class="url">
+                            <a href="profile.html" class="active">Jobs</a>
+                        </div>
+                        <hr class="mehr">
+                        <div class="url">
+                            <a href="profile.html" class="active">Profile</a>
+                        </div>
+                    </div>
+                    <div class="submitbtn upper-btn">
+                        <button id="submitbutton" type="submit">Save Changes</button>
+                    </div>
+                </div>
+                <!-- Sidenav -->
+                <!-- End -->
+
+                <!-- Main -->
+                <div class="main" id="hideshow">
+                    <div class="card-body">
+                        <div class="card mine">
+                            <h2>Company Details</h2>
+                            <div>
+                                <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                            for="company_name">Company Name</label></span>
+                                </div>
+                                <div class="widgetCont differentinput uneditable">
+                                    <span class="empty ">Amazon
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="company_type">Industy Type</label></span>
+                            </div>
+                            <div class="widgetCont differentinput uneditable"><span class="empty">E-Commerce Company
+                                </span>
+                            </div>
+
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="company_contact_number">Contact number</label></span>
+                            </div>
+                            <div class="widgetCont differentinput uneditable"><span class="empty">123456789
+                                </span>
+                            </div>
+
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="company_address">Company Address</label></span>
+                            </div>
+                            <div class="widgetCont differentinput uneditable"><span class="empty">Ground Floor, Eros
+                                    Plaza, Eros
+                                    Corporate Centre, Nehru Place, New Delhi-110019 Delhi South Delhi DL IN 110019
+                                </span>
+                            </div>
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="company_description">Company Description</label></span>
+                            </div>
+                            <div class="widgetCont differentinput uneditable"><span class="empty">Lorem ipsum dolor sit
+                                    amet
+                                    consectetur adipisicing elit. A harum eligendi fugiat alias error voluptatibus cum
+                                    quo
+                                    laboriosam ad vel officia, esse, id adipisci aperiam tempore.
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <h2>Employee Details</h2>
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="employee_name">Name</label></span>
+                            </div>
+                            <div class="widgetCont "><span class="empty"><input class="differentinput except"
+                                        type="text" id="employee_name" name="employeename">
+                                </span>
+                            </div>
+
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="employee_designation">Designation</label></span>
+                            </div>
+                            <div class="widgetCont "><span class="empty "><input class="differentinput except"
+                                        type="text" id="employee_designation" name="designation">
+                                </span>
+                            </div>
+
+                            <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
+                                        for="employee_email">Email</label></span>
+                            </div>
+                            <div class="widgetCont"><span class="empty"><input class="differentinput except"
+                                        type="email" id="employee_email" name="email">
+                                </span>
+                            </div>
+                        </div>
+                        <div class="submitbtn lower-btn">
+                            <button id="submitbutton" type="submit">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <footer class="site-footer new-footer">
+
+            <a href="#top" class="smoothscroll scroll-top">
+                <span class="icon-keyboard_arrow_up"></span>
+            </a>
+
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Search Trending</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">Web Developers</a></li>
+                            <li><a href="#">Python</a></li>
+                            <li><a href="#">HTML5</a></li>
+                            <li><a href="#">CSS3</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Company</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Support</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Fraud alert</a></li>
+                            <li><a href="#">Grievances</a></li>
+                            <li><a href="#">Report issue</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-3 mb-4 mb-md-0">
+                        <h3>Connect with us</h3>
+                        <div class="footer-social">
+                            <a href="#"><span class="icon-facebook"></span></a>
+                            <a href="#"><span class="icon-twitter"></span></a>
+                            <a href="#"><span class="icon-instagram"></span></a>
+                            <a href="#"><span class="icon-linkedin"></span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+    <script src="Edit_Company_Profile/script.js"></script>
+
+    <script>
+        function func(event) {
+
+            const fi = document.getElementById('candidate_image');
+            const img = fi.value.split('.').pop().toLowerCase().toString();
+            var imageExts = ['jpg', 'jpeg', 'png'];
+            // Check if any file is selected. 
+            if (fi.files.length > 0) {
+                console.log(img)
+                if (imageExts.indexOf(img) === -1) {
+                    fi.value = null
+                    document.getElementById("companyphoto").src = 'Edit_Company_Profile/photo.webp';
+                    alert('Only jpg/jpeg and png files are allowed!');
+                }
+                if (imageExts.indexOf(img) !== -1) {
+                    var image = URL.createObjectURL(event.target.files[0]);
+
+                    document.getElementById("companyphoto").src = image;
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

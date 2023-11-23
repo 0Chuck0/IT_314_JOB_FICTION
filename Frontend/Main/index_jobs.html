@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>JobBoard &mdash; Website Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/custom-bs.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/line-icons/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_jobs.css">
+
+</head>
+  <body id="top">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+    
+
+  <div class="site-wrap">
+    <!-- .site-mobile-menu -->
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body">
+        <ul class="list-group">
+          <li class="list-group-item"><a class="respon-nav" href="index.html" class="nav-link active">Home</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_jobs.html">Jobs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="recommendations.html">Recommendations</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="blog.html">Blogs</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_register.html">Register</a></li>
+          <li class="list-group-item"><a class="respon-nav" href="index_login.html">Log In</a></li>
+        </ul>
+      </div>
+    </div> 
+    
+
+    <!-- NAVBAR -->
+    <header class="site-navbar mt-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="site-logo col-6"><a href="index.html">JOBfiction</a></div>
+
+          <nav class="mx-auto site-navigation">
+            <ul class="site-menu d-none d-xl-block ml-0 pl-0">
+              <li><a href="index.html" class="nav-link active">Home</a></li>
+              <li><a href="index_jobs.html">Jobs</a></li>
+              <li>
+                <a href="recommendations.html">Recommendations</a>
+              </li>
+              <li><a href="blog.html">Blogs</a></li>
+              <li>
+                <a href="about.html">About Us</a>
+              </li>
+              <li class="d-lg-none"><a href="Registration Form/index.html">Register</a></li>
+              <li class="d-lg-none"><a href="Login Form/index.html">Log In</a></li>
+            </ul>
+          </nav>
+          
+          <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+            <div class="ml-auto">
+              <a href="index_register.html" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
+              <a href="index_login.html" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+            </div>
+            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="new2">
+              <h1 class="text-white font-weight-bold">Jobs</h1>
+            </div>
+            <div class="custom-breadcrumbs">
+              <a href="#">Home</a> <span class="mx-2 slash">/</span>
+              <span class="text-white"><strong>Jobs</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HOME -->
+    <section class="home-section" id="home-section">
+
+        <div class="container main-container">
+            <!--<div class="row">
+                <div class="col-md-12  search-bar">
+                    <form method="post" class="search-jobs-form">
+                        <div class="row col-10 mb-5 search-bar-row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                <input type="text" class="form-control form-control-lg "
+                                    placeholder="Job title, Company...">
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 ">
+                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
+                                    data-live-search="true" title="Select Region">
+                                    <option>Anywhere</option>
+                                    <option>Bangalore</option>
+                                    <option>Hyderabad</option>
+                                    <option>Noida</option>
+                                    <option>Ahmedabad</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 ">
+                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
+                                    data-live-search="true" title="Select Job Type">
+                                    <option>Part Time</option>
+                                    <option>Full Time</option>
+                                    <option>Internship</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 ">
+                                <button type="submit"
+                                    class="btn btn-primary btn-lg btn-block text-white btn-search"><span
+                                        class="icon-search icon mr-2"></span>Search Job</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>-->
+            <div class="main-container container row">
+
+                <div id="filter-container" class="container-fluid text-center filter-container">
+                    <div class="row">
+                        <div class="col-4 form-class">
+                            <form id="filter-form" class="col-10" onchange="display_jobs()">
+                                <div class="col">
+                                    <h6 id="filter-button1" class="filter-button">Job Titles</h6>
+                                    <div id="options1" class="options col-10">
+                                        <input id="f1-opt1" type="checkbox" value="software+engineer">
+                                        <label for="f1-opt1">Software Engineer</label>
+                                        <br>
+                                        <input id="f1-opt2" type="checkbox" value="data+scientist">
+                                        <label for="f1-opt2">Data Scientist</label>
+                                        <br>
+                                        <input id="f1-opt3" type="checkbox" value="ui+developer">
+                                        <label for="f1-opt3">UI Developer</label>
+                                        <br>
+                                        <input id="f1-opt4" type="checkbox" value="electrical+engineer">
+                                        <label for="f1-opt4">Electrical Engineer</label>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 id="filter-button7" class="filter-button">Experience</h6>
+                                    <div class="row col-11 slider">
+                                        <div class="col-3  range-min">
+                                            <h6 class="range-ends">0 years</h6>
+                                        </div>
+                                        <div class="range col">
+                                            <div class="range__content">
+
+                                                <div class="range__slider">
+                                                    <div class="range__slider-line" id="range-line"></div>
+                                                </div>
+
+                                                <div class="range__thumb" id="range-thumb">
+                                                    <div class="range__value">
+                                                        <span class="range__value-number"
+                                                            id="range-number">50</span>
+                                                    </div>
+                                                </div>
+
+                                                <input type="range" class="range__input" id="range-input" min="0"
+                                                    max="100" value="50" step="10">
+                                            </div>
+                                        </div>
+                                        <div class="col-3 range-max">
+                                            <h6 class="range-ends">5 years</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 id="filter-button2" class="filter-button">Locations</h6>
+                                    <div id="options2" class="options col-10">
+                                        <input id="f2-opt1" type="checkbox" value="gurgaon">
+                                        <label for="f2-opt1">Gurgaon</label>
+                                        <br>
+                                        <input id="f2-opt2" type="checkbox" value="bengaluru">
+                                        <label for="f2-opt2">Bengaluru</label>
+                                        <br>
+                                        <input id="f2-opt3" type="checkbox" value="hyderabad">
+                                        <label for="f2-opt3">Hyderabad</label>
+                                        <br>
+                                        <input id="f2-opt4" type="checkbox" value="pune">
+                                        <label for="f2-opt4">Pune</label>
+                                        <br>
+                                        <input id="f2-opt5" type="checkbox" value="gandhinagar">
+                                        <label for="f2-opt5">Gandhinagar</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 id="filter-button3" class="filter-button">Work Modes</h6>
+                                    <div id="options3" class="options col-10">
+                                        <input id="f3-opt1" type="checkbox" value="office">
+                                        <label for="f3-opt1">Office</label>
+                                        <br>
+                                        <input id="f3-opt2" type="checkbox" value="remote">
+                                        <label for="f3-opt2">Remote</label>
+                                        <br>
+                                        <input id="f3-opt3" type="checkbox" value="hybrid">
+                                        <label for="f3-opt3">Hybrid</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <h6 id="filter-button4" class="filter-button">Qualification</h6>
+                                    <div id="options4" class="options col-10">
+                                        <input id="f4-opt1" type="checkbox" value="Bachelors">
+                                        <label for="f4-opt1">Bachelors</label>
+                                        <br>
+                                        <input id="f4-opt2" type="checkbox" value="Masters">
+                                        <label for="f4-opt2">Masters</label>
+                                        <br>
+                                        <input id="f4-opt3" type="checkbox" value="PhD">
+                                        <label for="f4-opt3">PhD</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 id="filter-button5" class="filter-button">Companies</h6>
+                                    <div id="options5" class="options col-10">
+                                        <input id="f5-opt1" type="checkbox" value="Google">
+                                        <label for="f5-opt1">Google</label>
+                                        <br>
+                                        <input id="f5-opt2" type="checkbox" value="Microsoft">
+                                        <label for="f5-opt2">Microsoft</label>
+                                        <br>
+                                        <input id="f5-opt3" type="checkbox" value="Deshaw">
+                                        <label for="f5-opt3">D.E Shaw</label>
+                                        <br>
+                                        <input id="f5-opt4" type="checkbox" value="Sprinklr">
+                                        <label for="f5-opt4">Sprinklr</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6 id="filter-button6" class="filter-button">Skills</h6>
+                                    <div id="options6" class="options col-10">
+                                        <input id="f6-opt1" type="checkbox" value="c++">
+                                        <label for="f6-opt1">C++</label>
+                                        <br>
+                                        <input id="f6-opt2" type="checkbox" value="python">
+                                        <label for="f6-opt2">Python</label>
+                                        <br>
+                                        <input id="f6-opt3" type="checkbox" value="java">
+                                        <label for="f6-opt3">Java</label>
+                                        <br>
+                                        <input id="f6-opt4" type="checkbox" value="AD">
+                                        <label for="f6-opt4">Android Development</label>
+                                        <br>
+                                        <input id="f6-opt4" type="checkbox" value="WD">
+                                        <label for="f6-opt4">Web Development</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <h6 id="filter-button8" class="filter-button">Salary (per month)</h6>
+                                    <div id="options8" class="options col-10">
+                                        <input id="f8-opt1" type="checkbox" value="'min':'0','max':'25000'">
+                                        <label for="f8-opt1">₹0 - ₹25,000</label>
+                                        <br>
+                                        <input id="f8-opt2" type="checkbox" value="'min':'25000','max':'50000'">
+                                        <label for="f8-opt2">₹25,000 - ₹50,000</label>
+                                        <br>
+                                        <input id="f8-opt3" type="checkbox" value="'min':'50000','max':'100000'">
+                                        <label for="f8-opt3">₹50,000 - ₹1,00,000</label>
+                                        <br>
+                                        <input id="f8-opt3" type="checkbox" value="'min':'100000','max':''">
+                                        <label for="f8-opt3">> ₹1,00,000</label>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+
+
+                        <script id="job-template" type="text/x-handlebars-template">
+                            <div class="jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>{{company}}</h4>
+                                    <h3>{{Job_title}}</h3>
+                                    <p>{{location}}</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">{{salary}} a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">{{job_type}}</a>
+                                    </div>
+                                </div>
+                              </div>
+                              </script>
+
+
+
+                        <div id="jobListing-container" class="col container jobListing-container scroll">
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-2">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row jobs-card">
+                                <div class="col-2 company-logo">
+                                    <img src="Images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                </div>
+                                <div class="col job-detail">
+                                    <h4>Tesla</h4>
+                                    <h3>Mechanical Engineer</h3>
+                                    <p>Bangalore, Hyderabad, Noida</p>
+                                </div>
+
+                                <div class="col-4 job-labels mt-3">
+                                    <div class="row labels">
+                                        <a href="#" class="label-a">₹50000 a month</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Internship</a>
+                                    </div>
+                                    <div class="row labels">
+                                        <a href="#" class="label-c">Full-time</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+</section>
+    
+    <footer class="site-footer">
+
+      <a href="#top" class="smoothscroll scroll-top">
+        <span class="icon-keyboard_arrow_up"></span>
+      </a>
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Search Trending</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Web Developers</a></li>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">CSS3</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Company</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Support</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+              <li><a href="#">Fraud alert</a></li>
+              <li><a href="#">Grievances</a></li>
+              <li><a href="#">Report issue</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Connect with us</h3>
+            <div class="footer-social">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  
+  </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="jobs/script.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/stickyfill.min.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    
+    <script src="js/bootstrap-select.min.js"></script>
+
+    <script src="js/custom.js"></script>
+
+     
+  </body>
+</html>

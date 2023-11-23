@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+.respon-nav{
+  color: #000;
+  font-size:larger;
+}
+
+.comp-home-img{
+  height: 540px;
+  width: 540px;
+}
+
+.comp-home{
+  margin-top: -14rem;
+}
+
 :root{
   --primaryColor: #4070f4;
   --whiteColor: #fff;
@@ -1419,3 +1433,10 @@ h1, h2, h3, h4 {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
+
+
+
+
+
+
+  

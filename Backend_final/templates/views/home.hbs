@@ -1,7 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
+<<<<<<< HEAD
     <title>JobBoard &mdash; Website Template by Colorlib</title>
+=======
+    <title>JobBoard</title>
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -13,8 +17,15 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/style.css">    
   </head>
+=======
+    <link rel="stylesheet" href="css/style.css">
+        
+  </head>
+  
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
   <body id="top">
 
   <div id="overlayer"></div>
@@ -25,6 +36,7 @@
   </div>
     
 
+<<<<<<< HEAD
 <div class="site-wrap">
 
     <!-- .site-mobile-menu -->
@@ -71,6 +83,9 @@
         </div>
       </div>
     </header>
+=======
+  {{> header}}
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
 
     <!-- HOME -->
     <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
@@ -82,6 +97,7 @@
               <h1 class="text-white font-weight-bold">Find your <span class=" headline">perfect job</span> easily</h1>
               <p>With more than 5 lakh+ jobs for you to explore</p>
             </div>
+<<<<<<< HEAD
             <form method="post" class="search-jobs-form">
               <div class="row mb-5">
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -101,6 +117,29 @@
                     <option>Part Time</option>
                     <option>Full Time</option>
                     <option>Internship</option>
+=======
+            <form action ="/jobs_1/search" method="post" class="search-jobs-form">
+              <div class="row mb-5">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <input type="text" name = "search" class="form-control form-control-lg" placeholder="Job title, Company...">
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <select class="" name="locations" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
+                    <option>Anywhere</option>
+                    <option>Bengaluru</option>
+                    <option>Hyderabad</option>
+                    <option>Gandhinagar</option>
+                    <option>Pune</option>
+                    <option>Gurgaon</option>
+                  </select>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  <select class="" name="work_modes" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
+                    <option>Any</option>
+                    <option>Remote</option>
+                    <option>Office</option>
+                    <option>Hybrid</option>
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
                   </select>
                 </div>
                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
@@ -124,6 +163,7 @@
       </div>
 
     </section>
+<<<<<<< HEAD
     
     <!-- JOBS -->
       <div class="job-list" id="jobs">
@@ -215,6 +255,43 @@
         <button class="job-more">
             More List
         </div>
+=======
+
+    {{logged}}
+    
+    <!-- JOBS -->
+                              <div id="jobListing-container" class="col container jobListing-container scroll">
+
+                                {{#each data}}
+
+                                <a href="/job_description/{{id}}" >
+
+                                <div class="row jobs-card">
+                                    <div class="col-2 company-logo">
+                                        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+                                    </div>
+                                    <div class="col job-detail">
+                                        <h4>{{company}}</h4>
+                                        <h3>{{job_title}}</h3>
+                                        <p>{{location}}</p>
+                                    </div>
+
+                                    <div class="col-4 job-labels mt-3">
+                                        <div class="row labels">
+                                            <span href="#" class="label-a">₹{{salary}} a month</span>
+                                        </div>
+                                        <div class="row labels">
+                                            <span href="#" class="label-c">{{work_mode}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                                    {{/each}}
+                </div>
+        <button class="job-more">
+            More List
+        </button>
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40
     </div>
 
     
@@ -291,4 +368,9 @@
 
 
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+>>>>>>> 9c5b061c5b09c8be6ca4241e1cab9b354da5ca40

@@ -14,7 +14,7 @@ module.exports = {
             
             
             const companyemail=req.body.email;
-           const company_name=req.body.company_name;
+           const company_name=req.body.companyname;
           
             const lastJob = await jobs.findOne().sort('-id');
             let newJobId = 1;

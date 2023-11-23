@@ -29,6 +29,4 @@ document.addEventListener("DOMContentLoaded", async() => {
         option.appendChild(optionText);
         jobTitle.appendChild(option);
     }
-
-
 })

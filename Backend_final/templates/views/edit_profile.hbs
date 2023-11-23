@@ -37,6 +37,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded');
+    fetch('/Edit_profile')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Data received:', data);
+        const resumeLink = data.data.resume_link;
+        console.log('Resume link:', resumeLink);
+        const resumeInput = document.getElementById('candidate_resume');
+        
+        if (resumeLink && resumeInput) {
+          resumeInput.value = resumeLink;
+          console.log('Resume input value set:', resumeLink);
+        } else {
+          console.error('Unable to find resume input or link');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  });
+</script>
+
 
     <div id="overlayer"></div>
     <div class="loader">
@@ -166,12 +195,16 @@
                                     <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
                                     <select name="technical_skills" id="candidate_technical_skills" multiple>
                                        
-                                        <option value="C">C</option>
-                                        <option value="C++">C++</option>
-                                        <option value="Java_Script">Java Script</option>
-                                        <option value="HTML">HTML</option>
-                                        <option value="CSS">CSS</option>
-                                        <option value="Data_Analytics">Data_Analytics</option>
+
+                                        {{#each technical_skills}}
+                                        <option value = '{{this}}' selected> {{this}}</option>
+                                        {{/each}}
+
+                                         {{#each r_technical_skills}}
+                                        <option value = '{{this}}' > {{this}}</option>
+                                        {{/each}}
+                                       
+                                       
                                     </select>
                                 </span>
                             </div>
@@ -203,7 +236,7 @@
                             </div>
                             <div class="widgetCont">
                                 <span class="empty">
-                                    <input type="number" name="experience" class="differentinput" max="40"
+                                    <input type="number" name="experience" class="differentinput" max="40" id="exp"
                                         placeholder="Ex. 5" />
                                     <!-- <span>
                                     <input type="radio" id="Experienced" name="experience" value="experienced" />
@@ -540,6 +573,22 @@
 
         }
     </script>
+
+   <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const resumeLinkFromData = '{{data.resume_link}}'; // Assuming data.resume_link is available in your Handlebars context
+
+    const resumeInput = document.getElementById('candidate_resume');
+    const expi=document.getElementById('exp');
+     const pi=document.getElementById('candidate_project');
+     pi.value='{{data.project}}';
+      
+    expi.value='{{data.experience}}';
+    if (resumeInput && resumeLinkFromData) {
+      resumeInput.value = resumeLinkFromData;
+    }
+  });
+</script>
 
 
 </body>

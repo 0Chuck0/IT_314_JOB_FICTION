@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { loggedinonly } = require("../middlewares/auth");
 const jwt = require("jsonwebtoken");
-const apply = require("../models/appliedjob");
-const Register = require("../models/registers");
+const apply = require("../models/appliedjob.js");
+const Register = require("../models/registers.js");
 
 
 router.post("/", [loggedinonly], async (req, res) => {
@@ -14,17 +14,11 @@ router.post("/", [loggedinonly], async (req, res) => {
 
     const check1 = await Register.findOne({ _id: payload._id });
 
-    let check = await apply.findOne({
-        $and: [
-            { job_id: parseInt(body.id) },
-            { email: check1.email },
-        ]
-    });
-
+    let check = await apply.findOne({ job_id: body.id ,email: check1.email});
 
     if (check) {
         console.log("hello")
-        await apply.remove(check);
+        await apply.deleteOne(check);
         return res.json({
             'x': 0
         });

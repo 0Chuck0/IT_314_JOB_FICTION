@@ -215,11 +215,14 @@
                             <div class="widgetCont"><span class="empty">
                                     <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
                                     <select name="language_skills" id="candidate_language_skills" multiple>
-                                        <option value="English">English</option>
-                                        <option value="Hindi">Hindi</option>
-                                        <option value="Gujarati">Gujarati</option>
-                                        <option value="Urdu">Urdu</option>
-                                        <option value="Germany">Germany</option>
+                                        
+                                          {{#each languages}}
+                                        <option value = '{{this}}' selected> {{this}}</option>
+                                        {{/each}}
+
+                                         {{#each r_languages}}
+                                        <option value = '{{this}}' > {{this}}</option>
+                                        {{/each}}
                                     </select>
                                 </span>
                             </div>

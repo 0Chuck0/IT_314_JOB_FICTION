@@ -1,28 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>JobFiction</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+<head>
+  <title>Candidate Information</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="css/custom-bs.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="fonts/line-icons/style.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/animate.min.css">
 
-    <link rel="stylesheet" href="css/style.css">    
-    <link rel="stylesheet" href="css/profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  </head>
-  <body id="top">
+  <link rel="stylesheet" href="/css/custom-bs.css">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="/fonts/line-icons/style.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/animate.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style_company_candidate_info.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body id="top">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -32,18 +34,20 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 
-  <div id="overlayer"></div>
+  <!-- <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div>
-    
+  </div> -->
 
-{{>header2}}
+
+  {{>header2}}
+
 
     <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+      id="home-section">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -59,158 +63,177 @@
       </div>
     </section>
 
-    <section class="containerr">
-          <!-- Sidenav -->
-    <div class="toggle-btn" onclick="viewmenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-  </div>
-  <div class="sidenav"  id="showmenu">
-      <div class="profile">
-          <img src="images/As_mine.png" alt="" width="100" height="100">
+    <!-- <section class="containerr">
+      <div class="toggle-btn" onclick="viewmenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> -->
+      <div class="sidenav" id="showmenu">
+        <div class="profile">
+          <img src="{{profile}}" alt="" width="100" height="100">
           <div class="name">
-              Azahar Kureshi
+           {{name}}
           </div>
           <div class="job">
-              <i class="fa fa-briefcase" aria-hidden="true"></i> Fresher
+            <i class="fa fa-briefcase" aria-hidden="true"> </i> {{experience}}
           </div>
-      </div>
+        </div>
 
-      <div class="sidenav-url">
-          <div class="url">
-              <a href="/saved_jobs" target="_blank" class="active">Saved Jobs</a>
+        <h2 class="identity">SKILLS</h2>
+        <hr class="navbarhr">
+        <div class="socialmediacontainer ">
+          <div class="social-media mine">
+           {{technical_skills}}
           </div>
-          <hr class="mehr">
-          <div class="url">
-              <a href="/apply_jobs" target="_blank" class="active">Applied Jobs</a>
-          </div>
-          <hr class="mehr">
-          <div class="url">
-              <a href="/edit_profile" target="_blank" class="active">Edit Profile</a>
-          </div>
+        </div>
       </div>
-  </div> 
-  <!-- End -->
+      <!-- End -->
 
-  <!-- Main -->
-  <div class="main" id="hideshow">
-      <div class="card-body">
-          <div class="card mine">
-                <h2>PERSONAL DETAILS</h2>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Full Name</span>
+      <!-- Main -->
+      <div class="main" >
+        <div class="card-body">
+          <div class="card" id="hideshow">
+            <div class="d">
+              <div class="profile">
+                <img src="{{profile}}" alt="" width="100" height="100">
+                <div class="name">
+                 {{name}}
                 </div>
-                <div class="widgetCont"><span class="empty">hhhhhh</span>
+                <div class="job">
+                  <i class="fa fa-briefcase" aria-hidden="true"> </i> {{experience}}
                 </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{email}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
-                </div>
-                <div class="widgetCont"><span class="empty">(+91) {{number}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Gender</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{gender}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Birth Date</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{DOB}}</span>
-                </div>
-            </div>
-          <div class="card">
-              <h2>ABOUT</h2>
-              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Technical Skills</span>
-                </div>
-                <div class="widgetCont"><span class="empty">PHP, HTML, CSS, Java</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Languages</span>
-                </div>
-                <div class="widgetCont"><span class="empty">English, Gujarati</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Resume</span>
-                </div>
-                <div class="widgetCont"><a class="nodecoration" href='{{resume_link}}' target="_blank"><span class="empty addhere">Click Here</span></a>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Experience</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Fresher</span>
-                </div>
-          </div>
-          <div class="card">
-              <h2>PROJECT</h2>
-              <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
               </div>
-              <div class="widgetCont"><span class="empty">JOB FICTION, ONLINE TRADING</span>
+
+              <h2 class="identity">SKILLS</h2>
+              <hr class="navbarhr">
+              <div class="socialmediacontainer ">
+                <div class="social-media mine">
+                 {{technical_skills}}
+                </div>
               </div>
-          </div>
-         <div class="card">
-                <h2>EDUCATION</h2>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education/Degree</span>
+              </div>
+            </div>
+            <div class="card">
+              <h2 class="mainheading">PERSONAL DETAILS</h2>
+              <div class="jobcard">
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
+                  </div>
+                  <div class="spannumber">
+                    <div class="widgetCont" style="margin-right: 10px;"><span class="empty">{{name}}</span></div>
+                    
+                  </div>
                 </div>
-                <div class="widgetCont"><span class="empty">{{highest_edu}}</span>
+
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{email}} </span>
+                  </div>
                 </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/Collage</span>
+
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
+                  </div>
+                  <div class="spannumber">
+                    <div id="number">(+91) </div>
+                    <div class="widgetCont"><span class="empty">{{number}}</span></div>
+                  </div>
                 </div>
-                <div class="widgetCont"><span class="empty">{{College}}</span>
+
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Gender</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{gender}}</span>
+                  </div>
                 </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
+
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Date of Birth</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{DOB}}</span>
+                  </div>
                 </div>
-                <div class="widgetCont"><span class="empty">{{field}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{ class12}}</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
-                </div>
-                <div class="widgetCont"><span class="empty">{{class10}}</span>
-                </div>
+              </div>
             </div>
 
-        <div class="card">
-                <h2>RECOMMENDATION</h2>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Job Type</span>
+            <div class="card">
+              <h2 class="mainheading">ABOUT</h2>
+              <div class="jobcard">
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Resume</span>
+                  </div>
+                  <div class="widgetCont"><a href='{{resume_link}}' target="_blank"><span class="empty">Click</span></a>
+                  </div>
                 </div>
-                <div class="widgetCont"><span class="empty">Software Developer</span>
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Languages</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{language_skills}}</span>
+                  </div>
                 </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Expected salary range</span>
+
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Experience</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{experience}} yrs</span>
+                  </div>
                 </div>
-                <div class="widgetCont"><span class="empty">₹20,000 - ₹50,000</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Preferred Work Location</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Pune</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Employment Type</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Full Time</span>
-                </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Work Mode</span>
-                </div>
-                <div class="widgetCont"><span class="empty">Office</span>
-                </div>
+              </div>
             </div>
-      </div>
-  </div>
+
+            <div class="card">
+              <h2 class="mainheading">PROJECT</h2>
+              <div class="jobcard">
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{project}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h2 class="mainheading">EDUCATION</h2>
+              <div class="jobcard">
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education/Degree</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{highest_edu}}</span>
+                  </div>
+                </div>
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">College/University</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{college}}</span>
+                  </div>
+                </div>
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{field}}</span>
+                  </div>
+                </div>
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">12th Percentage</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{class12}}</span>
+                  </div>
+                </div>
+                <div class="smallcontainer">
+                  <div class="widgetHead"><span class="widgetTitle typ-16Bold">10th Percentage</span>
+                  </div>
+                  <div class="widgetCont"><span class="empty">{{class10}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
-    
+
     <footer class="site-footer">
 
       <a href="#top" class="smoothscroll scroll-top">
@@ -263,26 +286,27 @@
 
       </div>
     </footer>
-  
+
   </div>
 
-    <!-- SCRIPTS -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/stickyfill.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    
-    <script src="js/bootstrap-select.min.js"></script>
-    
-    <script src="js/custom.js"></script>
-    <script src="js/script_candidateprofile.js"></script>
+  <!-- SCRIPTS -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/isotope.pkgd.min.js"></script>
+  <script src="/js/stickyfill.min.js"></script>
+  <script src="/js/jquery.fancybox.min.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
 
-     
-  </body>
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <script src="/js/jquery.animateNumber.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+
+  <script src="/js/bootstrap-select.min.js"></script>
+
+  <script src="/js/custom.js"></script>
+  <script src="/js/script_candiadate_info.js"></script>
+
+
+</body>
+
 </html>

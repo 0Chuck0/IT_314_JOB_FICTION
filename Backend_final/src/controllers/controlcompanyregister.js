@@ -32,7 +32,7 @@ module.exports = {
                 await Companyregister.insertMany([data]);
                 const checking = await Companyregister.findOne({ email: req.body.email });
                 const id = checking._id;
-                const token = jwt.sign({ _id: id ,flag:true}, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+                const token = jwt.sign({ _id: id ,flag:false}, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
                 await Companyregister.updateOne({ _id: id }, { $set: { token: token } });
                 const message = `<h1> http://localhost:3000/companyregister/${token} <h1>`;
                 sendEmail(req.body.email, "Registration Verification", message);

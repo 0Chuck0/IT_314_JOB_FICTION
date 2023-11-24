@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     setTimeout(() => {
         set_wrap_width();
     }, 10);
@@ -10,12 +10,21 @@ document.addEventListener("DOMContentLoaded", () => {
     filter_apply.addEventListener("click", close_filters);
     document.getElementById("filter-nav-apply").style.display = "none";
 
-    window.addEventListener("resize",set_wrap_width);
-   
+    window.addEventListener("resize", set_wrap_width);
+
     
+    window.addEventListener("resize",()=>{
+        let card_display =  document.getElementById("jobListing-container").style.display;
+        if(window.innerWidth > 991 && card_display == "none" )
+        {
+            close_filters();
+        }
+    })
+
+
 })
 function open_filters() {
-   setTimeout(() => {
+    setTimeout(() => {
         set_wrap_width();
     }, 10);
     document.getElementById("filter-nav-apply").style.display = "block";
@@ -31,14 +40,16 @@ function close_filters() {
     document.getElementById("jobListing-container").style.display = "block";
 }
 
-function set_wrap_width(){
+function set_wrap_width() {
     let wrap_width = document.getElementById("wrap-width").offsetWidth;
     console.log(wrap_width);
-    const filter_list = document.querySelectorAll(".options-wrap");
+    let filter_list = document.querySelectorAll(".options-wrap");
+
     for (let x in filter_list) {
-        if(x!=5){
-        filter_list[x].style.width = wrap_width + "px";
-        console.log(wrap_width + "px");
+        if (x != 5) {
+            filter_list[x].style.width = (wrap_width + "px");
+            console.log(wrap_width + "px");
         }
     }
+
 }

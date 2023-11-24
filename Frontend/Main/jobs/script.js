@@ -151,7 +151,21 @@ document.addEventListener("DOMContentLoaded", () => {
         let job_title = document.getElementById("job-title-dropdown").value;
         document.getElementById("job-title-company").value = job_title;
         
-        console.log(document.getElementById("job-title-company").value);
+        let region_input = document.getElementById("region-dropdown").value;
+        document.getElementById("region-input").value = region_input;
+
+        let work_mode_input = document.getElementById("work-mode-dropdown").value;
+        document.getElementById("work-mode-input").value =  work_mode_input;
+
+        // console.log(document.getElementById("job-title-company").value);
+        // console.log(document.getElementById("region-input").value);
+        // console.log(document.getElementById("work-mode-input").value);
+
+        //uncheck all the boxes first
+        let all_checkboxes = document.getElementsByName("checkboxes");
+        for(let i=0; i < all_checkboxes.length;i++){
+            all_checkboxes[i].checked = false;
+        }
 
         let region = document.getElementById("region-dropdown").value.toLowerCase();
         let work_type = document.getElementById("work-mode-dropdown").value.toLowerCase();
@@ -178,7 +192,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
         }
-
         display_jobs();
     }
     document.getElementById("search-bar").onsubmit = set_filters;

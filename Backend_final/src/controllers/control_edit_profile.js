@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express()
 const Register = require("../models/registers")
+const recommendation=require("../models/recommendation")
 const jwt = require("jsonwebtoken");
 //const express = require("express");
 ///const app = express()
@@ -42,7 +43,7 @@ module.exports = {
                     {
                          const check = await Register.findOne({_id:decoded._id});
                          //console.log(check);
-
+                        const useremail=check.email;
                         const userId = decoded._id;
 
                         const updateData = {
@@ -56,9 +57,41 @@ module.exports = {
                             college: req.body.college,
                             highest_edu: req.body.highest_edu,
                             field: req.body.field
+
                           };
                         //console.log(updateData);
                           await Register.findOneAndUpdate({ _id: userId }, updateData);
+                          const updaterecommendation={
+                            r_employment:req.body.r_employment,
+                            r_work_mode:req.body.r_work_mode,
+                            r_location:req.body.r_location,
+                            r_salary:req.body.r_salary,
+                            r_job_title:req.body.r_job_title
+                          }
+                        //console.log(req.body.r_work_mode)
+                            recommendation.findOneAndUpdate(
+                                { email: useremail }, // Search for a document with the provided email
+                                {
+                                $set: {
+                                    r_employment: req.body.r_employment,
+                                    r_work_mode: req.body.r_work_mode,
+                                    r_location: req.body.r_location,
+                                    r_salary: req.body.r_salary,
+                                    r_job_title: req.body.r_job_title
+                                }
+                                },
+                                { upsert: true, new: true }, // Creates a new document if no match is found
+                                (err, doc) => {
+                                if (err) {
+                                    console.error(err);
+                                    // Handle the error
+                                } else {
+                                    //console.log('Updated/Inserted recommendation:',doc);
+                                    // Document updated or inserted successfully
+                                }
+                                }
+                            );
+                        
     
                     }
                     });

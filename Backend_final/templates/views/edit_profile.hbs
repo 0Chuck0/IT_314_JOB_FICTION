@@ -352,7 +352,7 @@
                                         for="candidate_desired_job">Desired Job Type</label></span>
                             </div>
                             <div class="widgetCont"><span class="empty">
-                                    <select name="desired_job" id="candidate_desired_job" class="differentinput"
+                                    <select name="r_job_title" id="candidate_desired_job" class="differentinput"
                                         multiple>
                                         {{#each job_title}}
                                         <option value = '{{this}}'> {{this}}</option>
@@ -368,7 +368,7 @@
                             <div class="widgetCont select-menu dropdown3"><span class="empty">
                                     <div class="select-btn widgetCont select-btn3">
                                         <span class="sBtn-text sBtn-text3"></span>
-                                        <textarea class="sBtn-text3" name="desired_salary" ></textarea>
+                                        <textarea class="sBtn-text3" name="r_salary" ></textarea>
                                         <div class="vertical-line"></div>
                                         <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%"
                                             height="100%" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -403,7 +403,7 @@
                                         for="candidate_preferred_location">Preferred Work Location</label></span>
                             </div>
                             <div class="widgetCont"><span class="empty">
-                                    <select name="preferred_work_location" id="candidate_preferred_location" class="differentinput"
+                                    <select name="r_location" id="candidate_preferred_location" class="differentinput"
                                         multiple>
                                           {{#each location}}
                                         <option value = '{{this}}'>{{this}}</option>
@@ -419,22 +419,22 @@
                             <div class="widgetCont">
                                 <span class="empty candidategender spandiff">
                                     <div>
-                                        <input type="radio" id="Intern" name="employment" value="intern"  />
+                                        <input type="radio" id="Intern" name="r_employment" value="intern"  />
                                         <label for="Intern">Intern</label>
                                     </div>
 
                                     <div>
-                                        <input type="radio" id="Part_time" name="employment" value="part_time" />
+                                        <input type="radio" id="Part_time" name="r_employment" value="part_time" />
                                         <label for="Part_time">Part Time</label>
                                     </div>
 
                                     <div>
-                                        <input type="radio" id="Full_time" name="employment" value="full_time" />
+                                        <input type="radio" id="Full_time" name="r_employment" value="full_time" />
                                         <label for="Full_time">Full Time</label>
                                     </div>
 
                                      <div>
-                                        <input type="radio" id="Part_time" name="employment" value="Any" checked/>
+                                        <input type="radio" id="Part_time" name="r_employment" value="" checked/>
                                         <label for="Part_time">Any</label>
                                     </div>
                                 </span>
@@ -446,22 +446,22 @@
                             <div class="widgetCont">
                                 <span class="empty candidategender spandiff">
                                     <div>
-                                        <input type="radio" id="Office" name="work_mode" value="office"  />
+                                        <input type="radio" id="Office" name="r_work_mode" value="Office"  />
                                         <label for="Office">Office</label>
                                     </div>
 
                                     <div>
-                                        <input type="radio" id="Remote" name="work_mode" value="remote" />
+                                        <input type="radio" id="Remote" name="r_work_mode" value="Remote" />
                                         <label for="Remote">Remote</label>
                                     </div>
 
                                     <div>
-                                        <input type="radio" id="Hybrid" name="work_mode" value="hybrid" />
+                                        <input type="radio" id="Hybrid" name="r_work_mode" value="Hybrid" />
                                         <label for="Hybrid">Hybrid</label>
                                     </div>
 
                                      <div>
-                                        <input type="radio" id="Part_time" name="work_mode" value="Any" checked/>
+                                        <input type="radio" id="Part_time" name="r_work_mode" value="" checked/>
                                         <label for="Part_time">Any</label>
                                     </div>
                                 </span>

@@ -72,6 +72,7 @@ const applied_jobs=require("./routes/applied_jobs")
 const applyRouter = require( "./routes/applyRouter")
 const unapplyRouter = require ("./routes/unapplyRouter")
 
+const recommendation=require("./routes/recommendation_router")
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
 app.use("/forgotpass", forgotpassroute);
@@ -95,6 +96,7 @@ app.use("/deletesaved_jobs",deletesaved_jobs);
 app.use("/applied_jobs",applied_jobs);
 app.use("/apply", applyRouter)
 app.use("/unapply", unapplyRouter);
+app.use("/recommendation", recommendation);
 
 
 

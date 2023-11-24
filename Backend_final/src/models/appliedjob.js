@@ -3,23 +3,20 @@ const mongoose=require("mongoose");
 const ApplyScema=new mongoose.Schema({
    
     applied_jobs_id:{
-        type: Number,
-        unique: true, 
-        required: true,
+        type: Number
     },
    
     email: {
-        type:String,
-       
-        required:true
+        type:String
+         
     },
     job_id: {
-        type:Number,
+        type:Number
         
-        required:true
-    },
+    }
 }) 
 
+ApplyScema.index({ job_id: 1 , email: 1 }, { unique: true });
 
 // now we need to create Collection
 const Appliedjobs= mongoose.model("Appliedjob",ApplyScema) ;

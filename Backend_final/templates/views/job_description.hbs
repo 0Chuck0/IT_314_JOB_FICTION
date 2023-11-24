@@ -342,7 +342,7 @@
                 try {
                     var token = getBrowserCookie("jwt");
                     var data = { "id": job_id };
-                    fetch('http://localhost:3000/apply', {
+                    const response =  fetch('http://localhost:3000/apply', {
                         method: "POST",
                         headers: {
                             "Cookie": `jwt=${token}`,
@@ -392,7 +392,7 @@
                 try {
                     var token = getBrowserCookie("jwt");
                     var data = { "id": job_id };
-                    fetch('http://localhost:3000/unapply', {
+                    const response = fetch('http://localhost:3000/unapply', {
                         method: "POST",
                         headers: {
                             "Cookie": `jwt=${token}`,

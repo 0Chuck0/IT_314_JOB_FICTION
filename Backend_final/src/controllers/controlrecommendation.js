@@ -10,7 +10,14 @@ module.exports = {
         
         const r_data = await recommendation.findOne({email:req.body.email})
         const u_data = await Register.findOne({email:req.body.email})
-        //console.log(data);
+        if(!r_data)
+        {
+
+          res.render("recommendation.hbs",{logged:true});
+        }
+        else
+        {
+             //console.log(data);
         const query=[];
         const query1=[];
         // console.log(r_data)
@@ -67,5 +74,7 @@ module.exports = {
         //const jobsdata=await jobs.find({"id": {"$in": listdata}});
         //console.log(jobsdata);
         res.render("recommendation.hbs",{jobsdata,logged:true});
+        }
+       
     }
 }

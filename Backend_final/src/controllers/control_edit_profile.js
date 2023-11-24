@@ -17,13 +17,16 @@ module.exports = {
         const location=await jobs.distinct('location');
         const data = await Register.findOne({email:req.body.email})
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
+        const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
+        const languages=data.language_skills;
+        const r_languages = a_languages.filter(skill => !languages.includes(skill));
         const technical_skills = data.technical_skills;
         
         const r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
         const resume_link=data.resume_link;
      
         
-        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data});
+        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages});
     },
 
     post:async(req,res)=>{
@@ -59,7 +62,7 @@ module.exports = {
     
                     }
                     });
-                res.render("home.hbs");
+                    res.status(200).send('<script>window.location = "/home";</script>');
 
 
 

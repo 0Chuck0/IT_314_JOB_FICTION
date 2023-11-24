@@ -7,10 +7,11 @@ const SavepostSchema = new mongoose.Schema({
     },
     job_id: {
         type:Number,
-        unique:true
+       
     }
 });
 
+SavepostSchema.index({ email: 1, job_id: 1 }, { unique: true });
 const Savedpost = mongoose.model("Savedpost", SavepostSchema);
 
 module.exports = Savedpost;

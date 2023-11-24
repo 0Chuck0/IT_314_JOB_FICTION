@@ -68,7 +68,6 @@ async function loggedinonly(req , res , next){
                     
                     if(check.email)
                        next();
-
                 }
                 });
     }else{

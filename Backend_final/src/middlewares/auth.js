@@ -52,6 +52,27 @@ async function Emailauth(req , res , next){
 
 }
 
+async function companyEmailauth(req , res , next){
+
+    // console.log(req.body.Email);
+ 
+     const v = await Companyregister.find({email:req.body.email});
+ 
+     if(v.length==0){
+ 
+         return res.status(400).send('<script>alert("Entered Email id is not registed Enter a registered Email id."); window.location ="/forgotpass/company" </script>');
+ 
+         }
+ 
+     else{
+ 
+ 
+     next ();
+ 
+     }
+ 
+ }
+
 async function loggedinonly(req , res , next){
 
     
@@ -63,11 +84,16 @@ async function loggedinonly(req , res , next){
                 }
                 else
                 {
+                    if(decoded.flag === true){
+                        res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
+                    }
+                    else{
                     const check = await Register.findOne({_id:decoded._id});
                     req.body.email = check.email;
                     
                     if(check.email)
                        next();
+                    }
                 }
                 });
     }else{
@@ -183,12 +209,16 @@ async function companyloggedinonly(req, res, next) {
 
             }
             else {
+                if(decoded.flag === false){
+                    return res.status(400).send('<script>alert("You have to login first."); window.location = "/companylogin";</script>');
+                }else{
                 const check = await Companyregister.findOne({ _id: decoded._id });
 
                 req.body.email = check.email;
                 req.body.company_name=check.companyname;
 
                 if(check.email) next();
+                }
             }
         });
     } else {
@@ -206,6 +236,7 @@ module.exports = {registerauth ,
     Emailauth ,
     alredyregisterauth ,
     verifyauth,
+    companyEmailauth,
     companyalredyregisterauth,
     companyregisterauth , 
     companyverifyauth,

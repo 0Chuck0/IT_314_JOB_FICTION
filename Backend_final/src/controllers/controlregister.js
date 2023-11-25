@@ -1,9 +1,9 @@
 const Register  = require("../models/registers");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken"); 
+const { sendEmail } = require("../services/mailer");
+const { RegisterVerify } = require("../services/mailtemplates");
 require('dotenv').config()
-
-const {sendEmail} = require("../services/mailer");
 
 module.exports = {
 
@@ -15,13 +15,11 @@ module.exports = {
     post:async(req,res)=>{
         try { 
 
-                // if(req.file === undefined) return res.send("you must select a file");
+                if(req.file === undefined) return res.send("you must select a file");
 
-                const imgUrl = `http://localhost:3000/file/`;
+                const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
 
                 const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
-
-                console.log(data)
 
                 if(req.body.password===req.body.cpassword){
 
@@ -47,9 +45,11 @@ module.exports = {
         
                 await Register.updateOne({_id:id},{$set:{token:token}});
 
-                const message =`<h1> http://localhost:3000/register/${token} <h1>`;
+                const url =`http://localhost:3000/register/${token}`;
 
-                sendEmail(req.body.email,"Registration Verification",message);
+                const firstname  = data.name;
+
+                sendEmail(req.body.email , "Registration-Verication" , RegisterVerify(url,firstname));
 
                 res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/login";</script>');
                 

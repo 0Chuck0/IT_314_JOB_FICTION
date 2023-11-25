@@ -1,7 +1,5 @@
 const jobs=require('../models/jobs');
 const companyregister = require("../models/companyregisterschema");
-const Register = require('../models/registers');
-const { sendEmail } = require('../services/mailer');
 
 
 module.exports = {
@@ -13,15 +11,8 @@ module.exports = {
     },
     post: async(req,res)=>{
         try{
-
-            const person = await Register.find({verified:true});
-
-            for(let i in person){
-
-                await sendEmail(person[i].email, "sub", "<h1> message</h1>");
-
-            }
-
+            
+            
             const companyemail=req.body.email;
            const company_name=req.body.companyname;
           

@@ -140,6 +140,17 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
+<<<<<<< HEAD
+    position: static;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    top: 70px;
+    width: 20%;
+    margin-top: 3.5%;
+    box-sizing: border-box;
+    position: fixed;
+=======
     position: absolute;
     left: 0;
     overflow-x: hidden;
@@ -148,6 +159,7 @@ body {
     width: 20%;
     margin-top: 30px;
     box-sizing: border-box;
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     border: 1px solid #DEE2E6;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
@@ -301,18 +313,36 @@ hr{
     margin: 0 auto;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
 @media (min-width:841px){
     .toggle-btn{
         display: none;
     }
+<<<<<<< HEAD
+=======
     .lower-btn{
         display: none;
     }
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
 }
 
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
+<<<<<<< HEAD
+    }
+    .sidenav{
+        margin-left: -200px;
+    }
+    .sidenav.active{
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
+        transition: 0.8s;
+=======
         position: relative;
     }
     .upper-btn{
@@ -336,10 +366,26 @@ hr{
     .site-footer
     {
         margin-top: 1000px;
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     }
     .main.hide{
         display: none;
         opacity: 0;
+<<<<<<< HEAD
+        transition: 0.8s;
+    }
+    body{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    .main{
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 840px){
+=======
     }
     /* body{
         justify-content: center;
@@ -363,12 +409,18 @@ hr{
 }
 
 /* @media (min-width: 500px) and (max-width: 840px){
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     .sidenav.active{
         margin-left:80px ;
         top: 90px;
         width: 40%;
         transition: 0.8s;
     }
+<<<<<<< HEAD
+}
+
+/* End */
+=======
 } */
 
 @media (max-width: 760px){
@@ -437,3 +489,4 @@ textarea{
     }
 }
 /* End */
+>>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f

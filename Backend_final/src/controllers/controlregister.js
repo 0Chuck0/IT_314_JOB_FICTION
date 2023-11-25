@@ -1,9 +1,9 @@
 const Register  = require("../models/registers");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken"); 
-const { sendEmail } = require("../services/mailer");
-const { RegisterVerify } = require("../services/mailtemplates");
 require('dotenv').config()
+
+const {sendEmail} = require("../services/mailer");
 
 module.exports = {
 
@@ -47,11 +47,9 @@ module.exports = {
         
                 await Register.updateOne({_id:id},{$set:{token:token}});
 
-                const url =`http://localhost:3000/register/${token}`;
+                const message =`<h1> http://localhost:3000/register/${token} <h1>`;
 
-                const firstname  = data.name;
-
-                sendEmail(req.body.email , "Registration-Verication" , RegisterVerify(url,firstname));
+                sendEmail(req.body.email,"Registration Verification",message);
 
                 res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/login";</script>');
                 

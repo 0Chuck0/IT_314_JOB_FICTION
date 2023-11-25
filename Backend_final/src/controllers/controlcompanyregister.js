@@ -1,8 +1,8 @@
 const Companyregister = require("../models/companyregisterschema")
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+require('dotenv').config()
 const { sendEmail } = require("../services/mailer");
-const { Regverification } = require("../services/mailtemplates");
 
 
 module.exports = {
@@ -21,8 +21,7 @@ module.exports = {
 
             const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
 
-            const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
-
+            const data = req.body;
             if (req.body.password === req.body.cpassword) {
                 const HashPassword = await bcrypt.hash(req.body.password, 10);
                 delete data.cpassword;
@@ -33,15 +32,10 @@ module.exports = {
                 await Companyregister.insertMany([data]);
                 const checking = await Companyregister.findOne({ email: req.body.email });
                 const id = checking._id;
-                const token = jwt.sign({ _id: id ,flag:true}, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+                const token = jwt.sign({ _id: id ,flag:false}, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
                 await Companyregister.updateOne({ _id: id }, { $set: { token: token } });
-
-                const url=`http://localhost:3000/companyregister/${token}`;
-
-                const firstname = data.employee_name;
-
-                sendEmail(req.body.email,"Registration Verification",Regverification(url,firstname));
-
+                const message = `<h1> http://localhost:3000/companyregister/${token} <h1>`;
+                sendEmail(req.body.email, "Registration Verification", message);
                 res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/companylogin";</script>');
                 //res.render("Login")
             }

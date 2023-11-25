@@ -1,7 +1,6 @@
 
 const {sendEmail} = require("../services/mailer");
 const Register = require("../models/registers");
-const { resetPassword } = require("../services/mailtemplates");
 
 module.exports = {
 
@@ -18,11 +17,9 @@ module.exports = {
             
             const token = check.token;
     
-            const url =`<h1> http://localhost:3000/forgotpass/${token} <h1>`;
+            const message =`<h1> http://localhost:3000/forgotpass/${token} <h1>`;
 
-            const firstname = check.name;
-
-            sendEmail(req.body.email,"Set up new password",resetPassword(url,firstname));
+            sendEmail(req.body.email,"Set up new password",message);
     
             res.status(400).send('<script>alert("Set up newpassword link sent ,setup and after that do a login."); window.location = "/login";</script>');
     

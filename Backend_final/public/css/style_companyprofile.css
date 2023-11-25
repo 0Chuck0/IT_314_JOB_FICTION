@@ -140,7 +140,6 @@ body {
     border-radius: 25px;
     height: fit-content;
     margin-left: 4%;
-<<<<<<< HEAD
     position: static;
     left: 0;
     overflow-x: hidden;
@@ -150,16 +149,6 @@ body {
     margin-top: 3.5%;
     box-sizing: border-box;
     position: fixed;
-=======
-    position: absolute;
-    left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-    /* top: 70px; */
-    width: 20%;
-    margin-top: 30px;
-    box-sizing: border-box;
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     border: 1px solid #DEE2E6;
     /* box-shadow: 3px 5px 8px 0 grey; */
     padding-bottom: 20px;
@@ -313,26 +302,15 @@ hr{
     margin: 0 auto;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
 @media (min-width:841px){
     .toggle-btn{
         display: none;
     }
-<<<<<<< HEAD
-=======
-    .lower-btn{
-        display: none;
-    }
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
 }
 
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
-<<<<<<< HEAD
     }
     .sidenav{
         margin-left: -200px;
@@ -342,36 +320,10 @@ hr{
         top: 90px;
         width: 60%;
         transition: 0.8s;
-=======
-        position: relative;
-    }
-    .upper-btn{
-        display: none;
-    }
-    .sidenav{
-        /* margin-left: -300px; */
-        display: none;
-    }
-    .sidenav.active{
-        margin-left:100px ;
-        /* top: 90px; */
-        width: 300px;
-        margin-top: 100px;
-        transition: 0.8s;
-        display: block;
-        z-index: 5;
-        margin-bottom: 100px;
-        transition: 0.8;
-    }
-    .site-footer
-    {
-        margin-top: 1000px;
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     }
     .main.hide{
         display: none;
         opacity: 0;
-<<<<<<< HEAD
         transition: 0.8s;
     }
     body{
@@ -385,108 +337,12 @@ hr{
 }
 
 @media (min-width: 500px) and (max-width: 840px){
-=======
-    }
-    /* body{
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    } */
-    .main{
-        width: 70%;
-        margin-left: 15%;
-        transition: 0.8s;
-    }
-    .card{
-        width: 100%;
-        margin-left: 0;
-        transition: 0.8s;
-    }
-    .differentinput{
-        overflow-wrap: break-word;
-        flex-wrap: wrap;
-    }
-}
-
-/* @media (min-width: 500px) and (max-width: 840px){
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f
     .sidenav.active{
         margin-left:80px ;
         top: 90px;
         width: 40%;
         transition: 0.8s;
     }
-<<<<<<< HEAD
 }
 
 /* End */
-=======
-} */
-
-@media (max-width: 760px){
-    .main .card{
-        padding: 20px 30px;
-    }
-}
-
-@media (max-width: 495px){
-    .main{
-        width: 80%;
-    }
-    .widgetCont{
-        font-size: 16px;
-    }
-    .widgetHead{
-        font-size: 18px;
-    }
-}
-
-@media (max-width:460px){
-    .sidenav.active{
-        width: 70%;
-        margin-left: 15%;
-    }
-}
-
-@media (min-width: 226px) and (max-width:494px){
-    /* .main{
-        margin-left: 20%;
-    } */
-    .toggle-btn{
-        left: 15px;
-    }
-}
-
-textarea{
-    display: none;
-}
-*{
-    box-sizing: border-box;
-}
-
-
-@media (max-width:450px){
-    .card{
-        width: 100%;
-    }
-    .main .card{
-        padding: 15px 15px;
-    }
-    .main{
-        width: 90%;
-        margin-left: 8%;
-    }
-    .toggle-btn span{
-        width: 35px;
-        margin-left: 15px;
-    }
-}
-
-@media (max-width:350px){
-    .main{
-        margin-left: 4%;
-        width: 95%;
-    }
-}
-/* End */
->>>>>>> 4df2a9ac1c71ae865bb282de599ecc9a9e02775f

@@ -1,72 +1,103 @@
-const Register  = require("../models/registers");
+const Register = require("../models/registers");
+const emailValidator = require('email-validator');
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken"); 
+const jwt = require("jsonwebtoken");
 const { sendEmail } = require("../services/mailer");
 const { RegisterVerify } = require("../services/mailtemplates");
 require('dotenv').config()
 
 module.exports = {
 
-    get:async (req,res)=>{
+    get: async (req, res) => {
 
         res.render("register.hbs");
 
     },
-    post:async(req,res)=>{
-        try { 
+    post: async (req, res) => {
+        try {
 
-                if(req.file === undefined) return res.send("you must select a file");
+            const { name, email, password, cpassword, number, DOB, gender } = req.body;
+            const validGenders = ['male', 'female', 'other'];
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegexNotupper = /^[^A-Z]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+            if (!email) {
+                return res.status(400).json({ error: 'Email is required' });
+            }
+            else if (name === null || name === undefined || name.trim() === '') {
+                return res.status(400).json({ error: 'Name is required' });
+            }
+            else if (!emailValidator.validate(email)) {
+                return res.status(400).json({ error: 'Invalid email format' });
+            }
+            else if (!validGenders.includes(gender)) {
+                return res.status(400).json({ error: 'Invalid gender' });
+            }
+            else if (password !== cpassword) {
+                return res.status(400).json({ error: 'Passwords do not match' });
+            }
+            else if (!emailRegex.test(email)) {
+                return res.status(400).json({ error: 'Invalid email format' });
+            }
+            else if (!emailRegexNotupper.test(email)) {
+                return res.status(400).json({ error: 'Invalid email format. Uppercase letters are not allowed in the local part' });
+            }
+            else {
+                if (req.file === undefined) return res.send("you must select a file");
 
                 const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
 
                 const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
 
-                if(req.body.password===req.body.cpassword){
+                if (req.body.password === req.body.cpassword) {
 
-                const HashPassword  = await bcrypt.hash(req.body.password , 10);
-                
-                delete data.cpassword;
-       
-                data.password = HashPassword;
+                    const HashPassword = await bcrypt.hash(req.body.password, 10);
 
-                data.token = 'dummy';
+                    delete data.cpassword;
 
-                data.verified = false;
+                    data.password = HashPassword;
 
-                data.profile = imgUrl ;
+                    data.token = 'dummy';
 
-                await Register.insertMany([data]);
-        
-                const checking = await Register.findOne({email:req.body.email});
-        
-                const id = checking._id;
-        
-                const token = jwt.sign({_id:id , flag:false },'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
-        
-                await Register.updateOne({_id:id},{$set:{token:token}});
+                    data.verified = false;
 
-                const url =`http://localhost:3000/register/${token}`;
+                    data.profile = imgUrl;
 
-                const firstname  = data.name;
+                    await Register.insertMany([data]);
 
-                sendEmail(req.body.email , "Registration-Verication" , RegisterVerify(url,firstname));
+                    const checking = await Register.findOne({ email: req.body.email });
 
-                res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/login";</script>');
-                
-                //res.render("Login")
+                    const id = checking._id;
 
-                }else{
+                    const token = jwt.sign({ _id: id, flag: false }, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
 
-                res.status(400).send('<script>alert("password and confrim password is not matching."); window.location = "/register";</script>');
+                    await Register.updateOne({ _id: id }, { $set: { token: token } });
 
-                 }
+                    const url = `http://localhost:3000/register/${token}`;
 
+                    const firstname = data.name;
+
+                    sendEmail(req.body.email, "Registration-Verication", RegisterVerify(url, firstname));
+
+                    res.status(400).send('<script>alert("Verification link is sent to your mail please verify and after that do a login."); window.location = "/login";</script>');
+
+                    //res.render("Login")
+
+                } else {
+
+                    res.status(400).send('<script>alert("password and confrim password is not matching."); window.location = "/register";</script>');
+
+                }
             }
-            
-            catch (error) {
+
+        }
+
+        catch (error) {
             res.status(400).send(`${error}`);
         }
-    
+
     },
 
 
@@ -77,41 +108,39 @@ module.exports = {
 
 
 
-    
-    create: async(req,res) =>{
 
-        try{
+    create: async (req, res) => {
 
-        const {token} = req.params;
+        try {
 
-        let id = "";
+            const { token } = req.params;
 
-        jwt.verify(token,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
-            if(err)
-            {
+            let id = "";
 
-            res.status(400).send('<script>alert("You have not registred first register."); window.location = "/register";</script>');
+            jwt.verify(token, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa', async (err, decoded) => {
+                if (err) {
 
-            }
-            else
-            {
-                id = decoded._id;
-            }
-        });
+                    res.status(400).send('<script>alert("You have not registred first register."); window.location = "/register";</script>');
 
-        await Register.findOneAndUpdate({_id:id},{verified:true});
+                }
+                else {
+                    id = decoded._id;
+                }
+            });
 
-        res.status(400).send('<script>alert("Verified succesfully now you can login."); window.location = "/login";</script>');
+            await Register.findOneAndUpdate({ _id: id }, { verified: true });
 
-    }
+            res.status(400).send('<script>alert("Verified succesfully now you can login."); window.location = "/login";</script>');
 
-    catch(err){
+        }
 
-        console.log(err);
+        catch (err) {
 
-        res.status(400).send('<script>alert("fatal error."); window.location = "/login";</script>');
-        
-    }
+            console.log(err);
+
+            res.status(400).send('<script>alert("fatal error."); window.location = "/login";</script>');
+
+        }
 
     }
 }

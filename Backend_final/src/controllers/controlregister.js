@@ -15,11 +15,13 @@ module.exports = {
     post:async(req,res)=>{
         try { 
 
-                if(req.file === undefined) return res.send("you must select a file");
+                // if(req.file === undefined) return res.send("you must select a file");
 
-                const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
+                const imgUrl = `http://localhost:3000/file/`;
 
                 const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
+
+                console.log(data)
 
                 if(req.body.password===req.body.cpassword){
 

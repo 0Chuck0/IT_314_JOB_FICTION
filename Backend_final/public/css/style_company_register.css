@@ -55,7 +55,7 @@ h3 {
     padding-left: 40px;
     margin-top: 50px;
     margin-bottom: 30px;
-    color: #6C757D;
+    color: #6C757D !important;
 }
 
 .checks{
@@ -67,7 +67,7 @@ h3 {
 }
 
 .register-btn{
-    width: 100%;
+    width: 50% !important;
     background-color: #4070f4;
     margin-top: 1.5rem;
 }

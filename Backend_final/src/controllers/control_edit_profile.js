@@ -20,10 +20,15 @@ module.exports = {
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
         const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
         const languages=data.language_skills;
-        const r_languages = a_languages.filter(skill => !languages.includes(skill));
+        if(languages)
+        var r_languages = a_languages.filter(skill => !languages.includes(skill));
+        else
+        var r_languages = a_languages;
         const technical_skills = data.technical_skills;
-        
-        const r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        if(technical_skills)
+        var r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        else
+        var r_technical_skills=a_technical_skills;
         const resume_link=data.resume_link;
      
         

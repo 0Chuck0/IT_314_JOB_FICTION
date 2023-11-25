@@ -25,7 +25,7 @@ options2.forEach(option =>{
     option.addEventListener("click", ()=>{
         let selectedOption = option.querySelector(".option-text").innerText;
         sBtn_text2.innerText = selectedOption;
-
+        alias6(selectedOption);
         optionMenu2.classList.remove("active");
     });
 });
@@ -41,7 +41,7 @@ options.forEach(option =>{
     option.addEventListener("click", ()=>{
         let selectedOption = option.querySelector(".option-text").innerText;
         sBtn_text.innerText = selectedOption;
-
+        alias7(selectedOption);
         optionMenu.classList.remove("active");
     });
 });
@@ -57,7 +57,17 @@ options3.forEach(option =>{
     option.addEventListener("click", ()=>{
         let selectedOption = option.querySelector(".option-text").innerText;
         sBtn_text3.innerText = selectedOption;
-
+        
         optionMenu3.classList.remove("active");
     });
 });
+
+function alias6(selectedOption) {
+    // console.log(selectedOption);
+    document.getElementById("sBtn-text6").innerHTML = selectedOption
+}
+
+function alias7(selectedOption) {
+    // console.log(selectedOption);
+    document.getElementById("sBtn-text7").innerHTML = selectedOption
+}

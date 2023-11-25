@@ -2,8 +2,7 @@
 
 * {
     margin: 0;
-    /* font-family: Satoshi,"Satoshi Fallback"; */
-    font-family: 'icomoon';
+    font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -74,8 +73,7 @@ body {
     background-color: #212529;
     height: 50px;
     padding: 0 90px;
-    /* font-family: Satoshi,"Satoshi Fallback"; */
-    font-family: 'icomoon';
+    font-family: "Nunito", sans-serif;
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -263,8 +261,7 @@ h2{
 
 .main h2 {
     color: #333;
-    /* font-family: Satoshi,"Satoshi Fallback"; */
-    font-family: 'icomoon';
+    font-family: "Nunito", sans-serif;
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 800;

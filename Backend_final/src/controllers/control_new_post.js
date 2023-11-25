@@ -12,10 +12,10 @@ module.exports = {
     post: async(req,res)=>{
         try{
             
-            console.log(req.body)
+            
             const companyemail=req.body.email;
            const company_name=req.body.company_name;
-          console.log(company_name)
+          
             const lastJob = await jobs.findOne().sort('-id');
             let newJobId = 1;
             

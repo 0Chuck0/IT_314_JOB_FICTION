@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+*{
+    font-family: "Nunito", sans-serif;
+}
 
 .cards-container {
     margin-top: 2rem;

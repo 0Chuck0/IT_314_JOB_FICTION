@@ -84,8 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let work_type = main_str.slice(main_str.indexOf("=") + 1, len);
 
-<<<<<<< HEAD
-=======
     job_title = job_title.replaceAll("+", " ");
 
     function replaceChar(origString, replaceChar, index) {
@@ -107,19 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     console.log(job_title);
     console.log(region);
     console.log(work_type);
 
-<<<<<<< HEAD
-    if (region == "anywhere") {
-        for (let i = 1; i <= 5; i++) {
-            document.getElementById("f2-opt" + i).checked = true;
-            display_jobs();
-        }
-    }
-=======
 
 
     // if (region == "anywhere") {
@@ -129,21 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
     //         display_jobs();
     //     }
     // }
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 
     for (let i = 1; i <= 5; i++) {
         if (i <= 4 && document.getElementById("f1-opt" + i).value == job_title && i <= 4) {
             document.getElementById("f1-opt" + i).checked = true;
             display_jobs();
         }
-<<<<<<< HEAD
-=======
         if (i <= 4 && document.getElementById("f5-opt" + i).value == job_title && i <= 4) {
             document.getElementById("f5-opt" + i).checked = true;
             display_jobs();
         }
 
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
         if (i <= 5 && document.getElementById("f2-opt" + i).value == region) {
             document.getElementById("f2-opt" + i).checked = true;
             display_jobs();
@@ -151,14 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (i <= 3 && document.getElementById("f3-opt" + i).value == work_type) {
             document.getElementById("f3-opt" + i).checked = true;
             display_jobs();
-<<<<<<< HEAD
-        }   
-
-    }
-    // Assign the func function to the onchange event
-
-    document.getElementById("filter-form").oninput = display_jobs;
-=======
         }
 
     }
@@ -220,5 +197,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("search-bar").onsubmit = set_filters;
 
 
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 })

@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Poppins:wght@300;400;500;600&family=Satisfy&display=swap');
-=======
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 .resume{
@@ -20,33 +17,24 @@
   margin-top: 15px;
   text-align: center;
 }
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    font-family: 'Poppins', sans-serif;
-=======
 }
 
 .form-label{
   color: #000;
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 }
 
 .containerr{
     width: 100%;
     height: 100%;
     display: flex;
-<<<<<<< HEAD
-    background-color: #fff;
-=======
     /* background-color: #4070f497; */
     /* background-color: #fff; */
     /* background-color: #8500de; */
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     align-items: center;
     justify-content: center;
 }
@@ -56,56 +44,19 @@
     width: 100%;
     background-color: #fff;
     justify-content: center;
-<<<<<<< HEAD
-    border-radius: 6px;
-=======
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     padding: 30px;
     margin: 5rem;
 }
 
 h1{
-<<<<<<< HEAD
-    font-size: 28px;
-    text-align: center;
-    font-weight: 600;
-    color: #232836;
-}
-
-#bottomh6{
-    margin-top: 60px;
-}
-
-hr{
-    /* margin-bottom: 20px; */
-    margin-top: 10px;
-    width: 95%;
-    background-color: #6C757D;
-}   
-
-.sethr{
-    justify-content: center;
-    display: flex;
-}
-
-h6 {
-    font-size: 22px;
-    padding-left: 40px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: #6C757D;
-}
-
-=======
     font-size: 32px;
     text-align: center;
     font-weight: 500;
     color: #232836;
 }
 
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 .checks{
     margin-top: -0.5rem;
     margin-left: 0.5rem;
@@ -115,13 +66,6 @@ h6 {
 }
 
 .register-btn{
-<<<<<<< HEAD
-    width: 100%;
-    background-color: #4070f4;
-    margin-top: 1.5rem;
-}
-
-=======
   margin-top: 5rem;
   width: 100%;
     background-color: #4070f4;
@@ -135,25 +79,12 @@ h6 {
   justify-content: center;
 }
 
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 .radioWrap{
     display: flex;
     width: 90%;
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-.Work-Status{
-    width: 100%;
-}
-.radioWrap{
-    width : 90%;
-    margin: 0 auto;
-}
-
-.work-exp{
-    /* width: 22rem; */
-=======
 #StatusRadio2, #StatusRadio1{
   display:none;
 }
@@ -169,49 +100,26 @@ h6 {
 
 .work-exp{
     width: 22rem;
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     padding: 1rem;
     display: flex;
     background: #fff; 
     border-radius: 0.5rem;
-<<<<<<< HEAD
-    border: color #495057;
-    width: 45%;
-    justify-content: center;
-    align-items: center;
-=======
     border: color #495057;;
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 }
 .work-exp:checked+label{
     border: 3px solid #4070f4;
 }
 
-<<<<<<< HEAD
-.image1{
-    margin-right: 30px;
-}
-
-#StatusRadio2, #StatusRadio1{
-    display:none;
-}
-
-=======
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 .data{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: -0.5rem;
-<<<<<<< HEAD
-    /* justify-content: center; */
-=======
 }
 
 .image1{
   margin-right: 30px;
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 }
 
 .data img{
@@ -243,14 +151,9 @@ h6 {
 
 .Work-Status{
     margin-top: 0.7rem;
-<<<<<<< HEAD
-}
-
-=======
     /* NEW */
     width: 100%; 
 }
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 .Resume{
     margin-top: 1rem;
 }
@@ -268,21 +171,6 @@ h6 {
     font-weight: 500;
 }
 
-<<<<<<< HEAD
-.mandatory_Filds{
-    color: red;
-}
-
-.btn-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.register-btn{
-    width: 50%;
-}
-=======
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 @media screen and (max-width: 500px) {
     .radioWrap{
         display: block;
@@ -298,23 +186,6 @@ h6 {
     }
 }
 
-<<<<<<< HEAD
-@media (max-width: 500px) {
-    .form-registration{
-        margin: 2rem;
-    }
-}
-
-@media (max-width: 370px) {
-    .form-registration{
-        margin: 0.5rem;
-    }
-    input{
-        overflow-wrap: break-word;
-        text-overflow: clip;
-    }
-}
-=======
 
 
 
@@ -1753,4 +1624,3 @@ h1, h2, h3, h4 {
 
 
   
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242

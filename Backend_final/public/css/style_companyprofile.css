@@ -313,29 +313,15 @@ hr{
 @media (max-width: 840px){
     .toggle-btn{
         z-index: 5;
-        position: relative;
-    }
-    .upper-btn{
-        display: none;
     }
     .sidenav{
-        /* margin-left: -300px; */
-        display: none;
+        margin-left: -200px;
     }
     .sidenav.active{
-        margin-left:100px ;
-        /* top: 90px; */
-        width: 300px;
-        margin-top: 100px;
+        margin-left:80px ;
+        top: 90px;
+        width: 60%;
         transition: 0.8s;
-        display: block;
-        z-index: 5;
-        margin-bottom: 100px;
-        transition: 0.8;
-    }
-    .site-footer
-    {
-        margin-top: 1000px;
     }
     .main.hide{
         display: none;

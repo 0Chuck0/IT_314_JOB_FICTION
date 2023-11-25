@@ -29,7 +29,6 @@ module.exports = {
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-solid",
-              savestatus: "Saved",
               jobTitle: jobData.job_title,
               companyName: jobData.company,
               companyLocation: jobData.location,
@@ -49,7 +48,6 @@ module.exports = {
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-solid",
-              savestatus: "Saved",
               jobTitle: jobData.job_title,
               companyName: jobData.company,
               companyLocation: jobData.location,
@@ -71,7 +69,6 @@ module.exports = {
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-regular",
-              savestatus: "Save",
               jobTitle: jobData.job_title,
               companyName: jobData.company,
               companyLocation: jobData.location,
@@ -91,7 +88,6 @@ module.exports = {
             res.render("job_description.hbs", {
               jobid: req.params.id,
               how: "fa-regular",
-              savestatus: "Save",
               jobTitle: jobData.job_title,
               companyName: jobData.company,
               companyLocation: jobData.location,
@@ -117,7 +113,6 @@ module.exports = {
       res.render("job_description.hbs", {
         jobid: req.params.id,
         how: "fa-regular",
-        savestatus: "Save",
         jobTitle: jobData.job_title,
         companyName: jobData.company,
         companyLocation: jobData.location,

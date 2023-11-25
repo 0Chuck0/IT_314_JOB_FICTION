@@ -24,7 +24,6 @@ module.exports = {
             college: data.college,
             highest_edu: data.highest_edu,
             field: data.field,
-            profile:data.profile,
             logged:true
         });
     }

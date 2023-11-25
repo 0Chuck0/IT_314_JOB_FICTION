@@ -63,8 +63,8 @@
                 </select>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <select id="region-dropdown" class="selectpicker" name="locations" data-style="btn-white btn-lg" data-width="100%"
-                  data-live-search="true" title="Select Region">
+                <select id="region-dropdown" class="selectpicker" name="locations" data-style="btn-white btn-lg"
+                  data-width="100%" data-live-search="true" title="Select Region">
                   {{!-- <option>Anywhere</option>
                   <option>Bengaluru</option>
                   <option>Hyderabad</option>
@@ -74,8 +74,8 @@
                 </select>
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <select id="work-mode-dropdown"  class="selectpicker" name="work_modes" data-style="btn-white btn-lg" data-width="100%"
-                  data-live-search="true" title="Select Job Type">
+                <select id="work-mode-dropdown" class="selectpicker" name="work_modes" data-style="btn-white btn-lg"
+                  data-width="100%" data-live-search="true" title="Select Job Type">
                   {{!-- <option>Any</option>
                   <option>Remote</option>
                   <option>Office</option>
@@ -123,24 +123,34 @@
         <a href="/job_description/{{id}}">
 
           <div class="row jobs-card">
-            <div class="col-2 company-logo">
+            <div class="col-sm-2 company-logo">
               <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
             </div>
             <div class="col job-detail">
-              <h4>{{company}}</h4>
-              <h3>{{job_title}}</h3>
-              <p>{{location}}</p>
+              <div class="row col-sm">
+                <h4>{{company}}</h4>
+              </div>
+              <div class="row  col-sm">
+                <h3>{{Job_title}}</h3>
+              </div>
+              <div class="row  col-sm ">
+                <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
+              </div>
             </div>
 
-            <div class="col-4 job-labels mt-3">
-              <div class="row labels">
-                <span href="#" class="label-a">₹{{salary}} a month</span>
-              </div>
-              <div class="row labels">
-                <span href="#" class="label-c">{{work_mode}}</span>
+            <div class="col-sm-4 job-labels mt-3">
+              <div class="col-10">
+                <div class="row labels">
+                  <span class="label-1"><i class="fas fa-inr"></i>{{salary}}</span>
+                </div>
+                <div class="row labels">
+                  <span class="label-2"><i class="fas fa-business-time"></i>{{experience}}</span>
+                </div>
+                <div class="row labels">
+                  <span class="label-3"><i class="far fa-building"></i>{{job_type}}</span>
+                </div>
               </div>
             </div>
-          </div>
         </a>
         {{/each}}
       </div>

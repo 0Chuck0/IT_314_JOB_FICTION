@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    if (region == "anywhere") {
+    // if (region == "anywhere") {
 
-        for (let i = 1; i <= 5; i++) {
-            document.getElementById("f2-opt" + i).checked = true;
-            display_jobs();
-        }
-    }
+    //     for (let i = 1; i <= 5; i++) {
+    //         document.getElementById("f2-opt" + i).checked = true;
+    //         display_jobs();
+    //     }
+    // }
 
     for (let i = 1; i <= 5; i++) {
         if (i <= 4 && document.getElementById("f1-opt" + i).value == job_title && i <= 4) {

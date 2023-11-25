@@ -63,11 +63,16 @@ async function loggedinonly(req , res , next){
                 }
                 else
                 {
+                    if(decoded.flag === true){
+                        res.status(400).send('<script> alert("You have to login first."); window.location = "/login";</script>');
+                    }
+                    else{
                     const check = await Register.findOne({_id:decoded._id});
                     req.body.email = check.email;
                     
                     if(check.email)
                        next();
+                    }
                 }
                 });
     }else{
@@ -183,12 +188,16 @@ async function companyloggedinonly(req, res, next) {
 
             }
             else {
+                if(decoded.flag === false){
+                    return res.status(400).send('<script>alert("You have to login first."); window.location = "/companylogin";</script>');
+                }else{
                 const check = await Companyregister.findOne({ _id: decoded._id });
 
                 req.body.email = check.email;
                 req.body.company_name=check.companyname;
 
                 if(check.email) next();
+                }
             }
         });
     } else {

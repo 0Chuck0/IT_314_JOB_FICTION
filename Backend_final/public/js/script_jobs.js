@@ -84,11 +84,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let work_type = main_str.slice(main_str.indexOf("=") + 1, len);
 
+    job_title = job_title.replaceAll("+", " ");
+
+    function replaceChar(origString, replaceChar, index) {
+        replaceChar = replaceChar.toUpperCase();
+        let firstPart = origString.substr(0, index);
+        let lastPart = origString.substr(index + 1);
+
+        let newString = firstPart + replaceChar + lastPart;
+        return newString;
+    }
+
+    for (let i = 0; i <= job_title.length; i++) {
+        if (i == 0) {
+            job_title = replaceChar(job_title, job_title.charAt(i), i);
+        }
+
+        if (job_title.charAt(i) == " " && job_title.charAt(i + 1) != " ") {
+            job_title = replaceChar(job_title, job_title.charAt(i + 1), i + 1);
+        }
+
+    }
     console.log(job_title);
     console.log(region);
     console.log(work_type);
 
+
+
     if (region == "anywhere") {
+
         for (let i = 1; i <= 5; i++) {
             document.getElementById("f2-opt" + i).checked = true;
             display_jobs();
@@ -100,6 +124,11 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("f1-opt" + i).checked = true;
             display_jobs();
         }
+        if (i <= 4 && document.getElementById("f5-opt" + i).value == job_title && i <= 4) {
+            document.getElementById("f5-opt" + i).checked = true;
+            display_jobs();
+        }
+
         if (i <= 5 && document.getElementById("f2-opt" + i).value == region) {
             document.getElementById("f2-opt" + i).checked = true;
             display_jobs();
@@ -107,10 +136,65 @@ document.addEventListener("DOMContentLoaded", () => {
         if (i <= 3 && document.getElementById("f3-opt" + i).value == work_type) {
             document.getElementById("f3-opt" + i).checked = true;
             display_jobs();
-        }   
+        }
 
     }
     // Assign the func function to the onchange event
+    document.getElementById("filter-form").onchange = display_jobs;
 
-    document.getElementById("filter-form").oninput = display_jobs;
+    //setting the dropdown
+    document.querySelector("#search-bar").addEventListener("submit", function (event) {
+        event.preventDefault();
+    });
+    
+    function set_filters(){
+        let job_title = document.getElementById("job-title-dropdown").value;
+        document.getElementById("job-title-company").value = job_title;
+        
+        let region_input = document.getElementById("region-dropdown").value;
+        document.getElementById("region-input").value = region_input;
+
+        let work_mode_input = document.getElementById("work-mode-dropdown").value;
+        document.getElementById("work-mode-input").value =  work_mode_input;
+
+        // console.log(document.getElementById("job-title-company").value);
+        // console.log(document.getElementById("region-input").value);
+        // console.log(document.getElementById("work-mode-input").value);
+
+        //uncheck all the boxes first
+        let all_checkboxes = document.getElementsByName("checkboxes");
+        for(let i=0; i < all_checkboxes.length;i++){
+            all_checkboxes[i].checked = false;
+        }
+
+        let region = document.getElementById("region-dropdown").value.toLowerCase();
+        let work_type = document.getElementById("work-mode-dropdown").value.toLowerCase();
+
+        if (region == "anywhere") {
+
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById("f2-opt" + i).checked = true;
+            }
+        }
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= 4 && document.getElementById("f1-opt" + i).value == job_title) {
+                document.getElementById("f1-opt" + i).checked = true;
+            }
+            if (i <= 4 && document.getElementById("f5-opt" + i).value == job_title && i <= 4) {
+                document.getElementById("f5-opt" + i).checked = true;
+            }
+            if (i <= 5 && document.getElementById("f2-opt" + i).value == region) {
+                document.getElementById("f2-opt" + i).checked = true;
+            }
+            if (i <= 3 && document.getElementById("f3-opt" + i).value == work_type) {
+                document.getElementById("f3-opt" + i).checked = true;
+            }
+
+        }
+        display_jobs();
+    }
+    document.getElementById("search-bar").onsubmit = set_filters;
+
+
 })

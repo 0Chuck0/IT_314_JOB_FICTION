@@ -15,7 +15,6 @@ module.exports = {
     post:async(req,res)=>{
         try { 
 
-<<<<<<< HEAD
                 // if(req.file === undefined) return res.send("you must select a file");
 
                 const imgUrl = `http://localhost:3000/file/`;
@@ -24,14 +23,6 @@ module.exports = {
 
                 console.log(data)
 
-=======
-                if(req.file === undefined) return res.send("you must select a file");
-
-                const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
-
-                const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
-
->>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
                 if(req.body.password===req.body.cpassword){
 
                 const HashPassword  = await bcrypt.hash(req.body.password , 10);

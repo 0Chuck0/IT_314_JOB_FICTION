@@ -95,7 +95,7 @@ module.exports = {
     
                     }
                     });
-                    res.status(200).send('<script>window.location = "/home";</script>');
+                    res.status(200).send('<script>window.location = "/myprofile";</script>');
 
 
 

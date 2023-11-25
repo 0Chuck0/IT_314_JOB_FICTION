@@ -85,21 +85,21 @@
                     </div>
                     <div class="candidates-list-desc job-single-meta  pt-2">
                         <h5 class="mb-2 f-19 text-dark">{{jobTitle}}</h5>
-                        <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname">{{companyName}}</a>
+                        <h6 id="jobtitle"><a href="amazon" target="_blank" class="companyname"> {{companyName}}</a>
                         </h6>
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item mr-4">
                                 <p class="text-muted f-15 mb-0"><i
-                                        class="fa-solid fa-location-dot"></i>{{companyLocation}}</p>
+                                        class="fa-solid fa-location-dot"></i> {{companyLocation}}</p>
                             </li>
                             <li class="list-inline-item mr-4">
                                 <p class="text-muted f-15 mb-0"><i class="fa fa-briefcase"
-                                        aria-hidden="true"></i>{{comExperience}} <span style="color: black;"> Yrs</span>
+                                        aria-hidden="true"></i> {{comExperience}}<span style="color: black;">Yrs</span>
                                 </p>
                             </li>
                             <li class="list-inline-item">
                                 <p class="text-muted f-15 mb-0"><i
-                                        class="fa-solid fa-indian-rupee-sign"></i>{{giveSalary}}
+                                        class="fa-solid fa-indian-rupee-sign"></i> {{giveSalary}}
                                 </p>
                             </li>
                         </ul>
@@ -117,7 +117,7 @@
                         <div class="candidates-listing-btn mt-4 text-right">
                             <div class="btn btn-sm above">
                                 <i class="{{how}} fa-bookmark fa-xl" id="saveIcon"
-                                    onclick="toggleSaveState({{jobid}})"><span id="myspan"> {{savestatus}}</span></i>
+                                    onclick="toggleSaveState({{jobid}})"></i><span id="myspan"> {{savestatus}} save</span>
 
                             </div>
                             {{#if job_status}}
@@ -154,10 +154,7 @@
                     <hr>
                     <div class="styles_details__Y424J"><label>Key Skills:</label><span>{{reqskills}}</span>
                     </div>
-                    <!-- <hr> -->
                 </li>
-                <!-- <p>Should be at least 12th pass or graduate with typing speed 40wpm+</p> -->
-                <!-- </div> -->
                 <li>
                     <p><strong>Standard</strong></p>
                 </li>
@@ -275,7 +272,7 @@
             if (saveIcon.classList.contains("fa-solid")) {
                 saveIcon.classList.remove("fa-solid");
                 saveIcon.classList.add("fa-regular");
-                document.getElementById('myspan').innerHTML = " Save";
+                document.getElementById('myspan').innerHTML = "save";
                 try {
                     var data = new URLSearchParams({ "id": id });
                     const response = await fetch("http://localhost:3000/unsaveData", {

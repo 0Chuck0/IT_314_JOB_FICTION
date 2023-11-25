@@ -407,6 +407,9 @@ hr {
 .remv{
     display: none;
 }
+.widgetCont .active{
+    margin-bottom: 0 !important;
+}
 
 *{
     box-sizing: border-box;

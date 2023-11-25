@@ -85,15 +85,18 @@
                   for="candidate_name_last">Role & Responsibilities<sup>*</sup></label></span>
             </div>
             <div class="widgetCont "><span class="empty"><input class="differentinput" type="text"
-                  name="Responsibilities" id="job_responsibilities" placeholder="Enter Role & Responsibilities of Job" maxlength="2000" minlength="3" required>
+                  name="Responsibilities" id="job_responsibilities" placeholder="Enter Role & Responsibilities of Job"
+                  maxlength="2000" minlength="3" required>
               </span>
-              <span style="color: red; display: none;" id="validrole">Please Enter a valid Role & Responsibilities</span>
+              <span style="color: red; display: none;" id="validrole">Please Enter a valid Role &
+                Responsibilities</span>
             </div>
 
             <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                   for="experience">Experience<sup>*</sup></label></span>
             </div>
-            <div class="widgetCont "><span class="empty"><input class="differentinput" type="number" name="exp" max="30" min="0" id="job_responsibilities" placeholder="Eg. 2" required>
+            <div class="widgetCont "><span class="empty"><input class="differentinput" type="number" name="exp" max="30"
+                  min="0" id="job_responsibilities" placeholder="Eg. 2" required>
               </span>
             </div>
             <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
@@ -104,12 +107,82 @@
             <div class="widgetCont"><span class="empty">
                 <!-- <input class="differentinput" type="date" id="candidate_skills" name="skills"> -->
                 <select name="skills" id="key_skills" multiple>
-                  <option value="C">C</option>
-                  <option value="C++">C++</option>
-                  <option value="Java_Script">Java Script</option>
+                  <option value="Python">Python</option>
+                  <option value="Java">Java</option>
+                  <option value="C/C++">C/C++</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Ruby">Ruby</option>
+
                   <option value="HTML">HTML</option>
                   <option value="CSS">CSS</option>
-                  <option value="Data_Analytics">Data Analytics</option>
+                  <option value="JavaScript/jQuery">JavaScript/jQuery</option>
+                  <option value="React">React</option>
+                  <option value="Angular">Angular</option>
+
+                  <option value="SQL">SQL</option>
+                  <option value="NoSQL databases (e.g., MongoDB)">NoSQL databases</option>
+                  <option value="Data modeling">Data modeling</option>
+                  <option value="Query optimization">Query optimization</option>
+                  <option value="Data Analysis">Data Analysis</option>
+                  <option value="Data Mining">Data Mining</option>
+                  <option value="Data Visualization">Data Visualization</option>
+                  <option value="Big Data Technologies">Big Data Technologies</option>
+                  <option value="ETL (Extract, Transform, Load)">ETL (Extract, Transform, Load)</option>
+                  <option value="Statistical Analysis">Statistical Analysis</option>
+                  <option value="Predictive Modeling">Predictive Modeling</option>
+                  <option value="Data Warehousing">Data Warehousing</option>
+                  <option value="Business Intelligence">Business Intelligence</option>
+                  <option value="Data Cleaning">Data Cleaning</option>
+                  <option value="Natural Language Processing (NLP)">Natural Language Processing (NLP)</option>
+                  <option value="Data Governance">Data Governance</option>
+                  <option value="Hadoop">Hadoop</option>
+                  <option value="Spark">Spark</option>
+                  <option value="Stream Processing">Stream Processing</option>
+                  <option value="Database Administration">Database Administration</option>
+                  <option value="Dimensional Modeling">Dimensional Modeling</option>
+
+                  <option value="Agile">Agile</option>
+                  <option value="Scrum">Scrum</option>
+                  <option value="DevOps practices">DevOps practices</option>
+                  <option value="Version control systems (e.g., Git)">Version control systems</option>
+
+                  <option value="Network protocols">Network protocols</option>
+                  <option value="Cybersecurity basics">Cybersecurity basics</option>
+                  <option value="Encryption">Encryption</option>
+                  <option value="Firewalls">Firewalls</option>
+
+                  <option value="Algorithms">Algorithms</option>
+                  <option value="Data preprocessing">Data preprocessing</option>
+                  <option value="TensorFlow">TensorFlow</option>
+                  <option value="Keras">Keras</option>
+                  <option value="scikit-learn">scikit-learn</option>
+
+                  <option value="AWS">AWS</option>
+                  <option value="Azure">Azure</option>
+
+                  <option value="Linux/Unix">Linux/Unix</option>
+                  <option value="Windows">Windows</option>
+                  <option value="Shell scripting">Shell scripting</option>
+                  <option value="System administration">System administration</option>
+
+                  <option value="Algorithms">Algorithms</option>
+                  <option value="Problem-solving">Problem-solving</option>
+                  <option value="Data manipulation and analysis">Data manipulation and analysis</option>
+
+                  <option value="Sensor networks">Sensor networks</option>
+                  <option value="Data processing">Data processing</option>
+                  <option value="IoT architectures">IoT architectures</option>
+
+                  <option value="Communication Skills">Communication Skills</option>
+                  <option value="Problem-Solving">Problem-Solving</option>
+                  <option value="Teamwork and Collaboration">Teamwork and Collaboration</option>
+                  <option value="Adaptability and Learning Agility">Adaptability and Learning Agility</option>
+                  <option value="Time Management and Planning">Time Management and Planning</option>
+                  <option value="Research Methodologies">Research Methodologies</option>
+                  <option value="Specialization-Specific Knowledge">Specialization-Specific Knowledge</option>
+                  <option value="Publication and Presentation">Publication and Presentation</option>
+                  <option value="Critical Thinking and Innovation">Critical Thinking and Innovation</option>
+
                 </select>
               </span>
               <span style="color: red; display: none;" id="presentskill">Please select at least one option </span>
@@ -118,7 +191,7 @@
             <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                   for="industry_type">Industry Type<sup>*</sup></label></span>
             </div>
-            <div class="widgetCont select-menu dropdown2"><span class="empty">
+            <div class="widgetCont select-menu dropdown2" id="zeromargin"><span class="empty">
                 <div class="select-btn widgetCont select-btn2">
                   <span class="sBtn-text sBtn-text2">MNC</span>
                   <textarea id="sBtn-text6" class="remv" name="industry_type">MNC</textarea>
@@ -131,16 +204,79 @@
                 </div>
                 <ul class="options">
                   <li class="option option2">
-                    <span class="option-text">IT</span>
+                    <span class="option-text">Information Technology (IT)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Healthcare</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Finance and Banking</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Education</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Manufacturing</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Retail</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Automotive</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Telecommunications</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Hospitality and Tourism</span>
                   </li>
                   <li class="option option2">
                     <span class="option-text">Agriculture</span>
                   </li>
                   <li class="option option2">
-                    <span class="option-text">HFT</span>
+                    <span class="option-text">E-commerce</span>
                   </li>
                   <li class="option option2">
-                    <span class="option-text">MNC</span>
+                    <span class="option-text">Cybersecurity</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Artificial Intelligence (AI) and Machine Learning</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Blockchain Technology</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Fintech (Financial Technology)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Cloud Computing Services</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Gaming and Entertainment Technology</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Augmented Reality (AR) and Virtual Reality (VR)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Social Media and Networking</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">HealthTech (Healthcare Technology)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">EdTech (Educational Technology)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Smart Cities and Urban Development</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Sustainable Technology (Green Technology)</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Robotics and Automation</span>
+                  </li>
+                  <li class="option option2">
+                    <span class="option-text">Wearable Technology</span>
                   </li>
                 </ul>
               </span>
@@ -195,7 +331,7 @@
                   for="job_salary">Salary<sup>*</sup></label></span>
             </div>
             <div class="widgetCont "><span class="empty"><input class="differentinput" type="text" name="salary"
-                  id="job_salary" placeholder="Enter Job Salary Here" min="5000" max="500000" required>
+                  id="job_salary" placeholder="(In Rupees)" min="5000" max="500000" required>
               </span>
             </div>
 
@@ -210,8 +346,8 @@
             <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                   for="candidate_highest_education">Last Date <sup>*</sup></label></span>
             </div>
-            <div class="widgetCont"><span class="empty"><input class="differentinput" type="datetime-local"
-                  id="candidate_project" name="last_date" required>
+            <div class="widgetCont"><span class="empty"><input class="differentinput" type="date" id="job_last_date"
+                  name="last_date" required>
               </span>
             </div>
           </div>
@@ -221,10 +357,10 @@
             <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                   for="candidate_expected_salary">Degree<sup>*</sup></label></span>
             </div>
-            <div class="widgetCont select-menu dropdown3"><span class="empty">
+            <div class="widgetCont select-menu dropdown3" id="another"><span class="empty">
                 <div class="select-btn widgetCont select-btn3">
-                  <span class="sBtn-text sBtn-text3">BTECH</span>
-                  <textarea id="sBtn-text7" class="remv" name="degree">BTECH</textarea>
+                  <span class="sBtn-text sBtn-text3">Btech</span>
+                  <textarea id="sBtn-text7" class="remv" name="degree">Btech</textarea>
                   <div class="vertical-line"></div>
                   <svg xmlns="http://www.w3.org/2000/svg" class="changec" width="100%" height="100%" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -234,7 +370,7 @@
                 </div>
                 <ul class="options">
                   <li class="option option3">
-                    <span class="option-text">BTECH</span>
+                    <span class="option-text">Btech</span>
                   </li>
                   <li class="option option3">
                     <span class="option-text">Mtech</span>
@@ -254,7 +390,7 @@
                   for="candidate_highest_education">Perks & Benifites</label></span>
             </div>
             <div class="widgetCont"><span class="empty">
-                <textarea class="differentinput" name="Perks" id="pb" rows="10" cols="3" maxlength="2"></textarea>
+                <textarea class="differentinput" name="Perks" id="pb" rows="10" cols="3" maxlength="2000"></textarea>
               </span>
             </div>
 
@@ -271,7 +407,7 @@
       var selectedOptions = [...selectField.options].filter(option => option.selected);
 
       if (selectedOptions.length === 0) {
-        {{!-- alert('Please select at least one option in Key Skills'); --}}
+        { { !--alert('Please select at least one option in Key Skills'); --} }
         event.preventDefault(); // Prevents form submission
         document.getElementById('presentskill').style.display = 'block';
       }
@@ -315,6 +451,70 @@
         event.preventDefault();
       }
     });
+  </script>
+  <script>
+    const dateInput = document.getElementById('job_last_date');
+
+    dateInput.addEventListener('input', function (event) {
+      const selectedDate = new Date(event.target.value);
+      const today = new Date();
+
+      if (selectedDate < today) {
+        dateInput.value = ''; // Clear the input if a past date is selected
+        alert('Please select a date from today onwards.');
+      }
+    });
+  </script>
+  <script>
+
+    window.addEventListener('click', function (event) {
+      if (!event.target.matches('#toggleBtn')) {
+        if (dropdownContent.classList.contains('show')) {
+          dropdownContent.classList.remove('show');
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      let marginzero = document.getElementById('zeromargin');
+
+      window.addEventListener('click', function (event) {
+        if (event.target.matches('#zeromargin')) {
+          // Clicking on the element toggles the 'active' class
+          marginzero.classList.toggle('active');
+        } else {
+          // Clicking outside of the element removes the 'active' class
+          marginzero.classList.remove('active');
+        }
+      });
+
+      // Prevent the click inside the element from closing immediately
+      marginzero.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      let marginzero = document.getElementById('another');
+
+      window.addEventListener('click', function (event) {
+        if (event.target.matches('#another')) {
+          // Clicking on the element toggles the 'active' class
+          marginzero.classList.toggle('active');
+        } else {
+          // Clicking outside of the element removes the 'active' class
+          marginzero.classList.remove('active');
+        }
+      });
+
+      // Prevent the click inside the element from closing immediately
+      marginzero.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+    });
+
+
+
   </script>
 
   <footer class="site-footer new-foot">

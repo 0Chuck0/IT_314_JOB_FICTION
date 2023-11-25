@@ -25,7 +25,7 @@
     padding: 8px;
     font-size: 16px;
     font-weight: 400;
-    border-radius: 8px;
+    border-radius: 4px;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
@@ -45,7 +45,7 @@
     position:absolute;
     padding: 10px;
     margin-top: 0px;
-    border-radius: 8px;
+    border-radius: 2px;
     background: #fff;
     /* box-shadow: 0 0 3px rgba(0,0,0,0.1); */
     display: none;
@@ -68,14 +68,18 @@
 
 .select-menu.active .options{
     display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .options .option{
     display: flex;
     height: 35px;
     cursor: pointer;
-    padding: 0 10px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 4px;
     align-items: center;
     background: #fff;
 }
@@ -90,7 +94,6 @@
 
 .options .option:hover{
     background: #F3F4F6;
-    border: solid #DADDE0 1px;
 }
 
 .option i{
@@ -98,8 +101,8 @@
     margin-right: 12px;
 }
 .option .option-text{
-    font-size: 18px;
-    color: #333;
+    font-size: 16px;
+    color: #92848C;
 }
 
 .changec{

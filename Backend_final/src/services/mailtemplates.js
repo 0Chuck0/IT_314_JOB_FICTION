@@ -227,4 +227,75 @@ var resetPassword = (url, firstname) => {
     `;
   };
 
-  module.exports = {resetPassword , Regverification,RegisterVerify};
+
+  var Newjobposted = (data) => {
+    return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>New Job Opportunity</title>
+      <style>
+        /* Styles to make the email visually appealing */
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 0;
+          padding: 20px;
+          background-color: #F4F4F4;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, p {
+          margin-bottom: 20px;
+        }
+        .job-details {
+          border-top: 1px solid #ccc;
+          padding-top: 20px;
+          margin-top: 20px;
+        }
+        .footer {
+          margin-top: 30px;
+          font-size: 14px;
+          color: #555;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>New Opportunity at Job Fiction!</h1>
+        <div class="job-details">
+          <h2>${ data.job_title }</h2>
+          <p><strong>Company:</strong> ${ data.company}</p>
+          <p><strong>Role:</strong> ${ data.role }</p>
+          <p><strong>Experience Required:</strong> ${ data.experience } years</p>
+          <p><strong>Skills Required:</strong> ${data.skills}</p>
+          <p><strong>Industry Type:</strong> ${data.industry_type }</p>
+          <p><strong>Employment Type:</strong> ${ data.employment_type}</p>
+          <p><strong>Perks:</strong> ${data.perk}</p>
+          <p><strong>Salary:</strong> ${data.salary}</p>
+          <p><strong>Location:</strong>${ data.location}</p>
+          <p><strong>Last Date to Apply:</strong> ${ data.last_date}</p>
+          <p><strong>Degree Required:</strong> ${ data.degree}</p>
+          <p><strong>Work Mode:</strong> ${ data.work_mode }</p>
+          <p><strong>Contact Email:</strong> ${ data.company_email}</p>
+        </div>
+        <div class="footer">
+          <p><em>Please Do Not Respond back to this E-mail as this is Auto Generated E-mail, contact us at <a href="mailto:jobfiction@gmail.com">jobfiction@gmail.com</a> in case of any doubt.</em></p>
+          <p><strong>Regards,<br>Team Job Fiction</strong></p>
+          <p><a href="https://localhost:3000/">Visit our website</a></p>
+        </div>
+      </div>
+    </body>
+    </html
+    `;
+  };
+
+  module.exports = {resetPassword , Regverification,RegisterVerify,Newjobposted};

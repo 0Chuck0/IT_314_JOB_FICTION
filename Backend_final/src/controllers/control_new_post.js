@@ -1,5 +1,8 @@
 const jobs=require('../models/jobs');
 const companyregister = require("../models/companyregisterschema");
+const Register = require('../models/registers');
+const { sendEmail } = require('../services/mailer');
+const { Newjobposted } = require('../services/mailtemplates');
 
 
 module.exports = {
@@ -46,6 +49,16 @@ module.exports = {
             // Jobpost.insertOne(data)
             
             await jobs.insertMany([data]);
+
+            const registers = await Register.find({verified:true}).exec();
+
+            data.skills = data.skills.join();
+            
+            for(let i in registers){
+                console.log(registers[i].email);
+                if(registers[i].email != undefined)
+                sendEmail(registers[i].email ,"New Opportunity at Job Fiction",Newjobposted(data));
+            }
            
             res.render("companyhomepage.hbs")
         }

@@ -8,7 +8,7 @@ const CompanySchema=new mongoose.Schema({
     number: {
         type: Number,
         required:true,
-        unique:true
+       
     },
     companyname: {
         type:String,

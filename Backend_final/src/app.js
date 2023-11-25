@@ -12,7 +12,10 @@ const bcrypt = require("bcryptjs")
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(() => {
     console.log(`Connection Successfully....`)
 }).catch((e) => {
+<<<<<<< HEAD
     x
+=======
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     console.log(`No Connection`)
 })
 

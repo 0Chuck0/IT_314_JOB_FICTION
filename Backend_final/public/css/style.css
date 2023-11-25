@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
+<<<<<<< HEAD
+=======
+.new-foot{
+  margin-bottom: -3.5rem;
+}
+
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 .respon-nav{
   color: #000;
   font-size:larger;

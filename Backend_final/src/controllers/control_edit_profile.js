@@ -20,10 +20,22 @@ module.exports = {
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
         const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
         const languages=data.language_skills;
+<<<<<<< HEAD
         const r_languages = a_languages.filter(skill => !languages.includes(skill));
         const technical_skills = data.technical_skills;
         
         const r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+=======
+        if(languages)
+        var r_languages = a_languages.filter(skill => !languages.includes(skill));
+        else
+        var r_languages = a_languages;
+        const technical_skills = data.technical_skills;
+        if(technical_skills)
+        var r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        else
+        var r_technical_skills=a_technical_skills;
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
         const resume_link=data.resume_link;
      
         
@@ -95,7 +107,11 @@ module.exports = {
     
                     }
                     });
+<<<<<<< HEAD
                     res.status(200).send('<script>window.location = "/home";</script>');
+=======
+                    res.status(200).send('<script>window.location = "/myprofile";</script>');
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 
 
 

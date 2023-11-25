@@ -55,7 +55,11 @@ h3 {
     padding-left: 40px;
     margin-top: 50px;
     margin-bottom: 30px;
+<<<<<<< HEAD
     color: #6C757D;
+=======
+    color: #6C757D !important;
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
 }
 
 .checks{
@@ -67,7 +71,11 @@ h3 {
 }
 
 .register-btn{
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 50% !important;
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     background-color: #4070f4;
     margin-top: 1.5rem;
 }

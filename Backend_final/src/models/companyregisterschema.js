@@ -8,7 +8,11 @@ const CompanySchema=new mongoose.Schema({
     number: {
         type: Number,
         required:true,
+<<<<<<< HEAD
         unique:true
+=======
+       
+>>>>>>> 45fd5cce5fc383fda10cec767b41e9242799a242
     },
     companyname: {
         type:String,

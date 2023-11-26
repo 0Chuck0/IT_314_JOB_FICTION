@@ -44,6 +44,9 @@ module.exports = {
             else if (!emailRegexNotupper.test(email)) {
                 return res.status(400).json({ error: 'Invalid email format. Uppercase letters are not allowed in the local part' });
             }
+            else if (!number || !/^\d{10}$/.test(number)) {
+                return res.status(400).json({ error: 'Invalid phone number. It should be exactly 10 digits' });
+            }
             else {
                 if (req.file === undefined) return res.send("you must select a file");
 

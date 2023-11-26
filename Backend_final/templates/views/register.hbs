@@ -127,8 +127,8 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1 title" class="form-label">Email ID</label>
-          <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Tell us your Email ID"  required>
+          <input type="text" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Tell us your Email ID" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$" required>
           <span class="form-text" id="validemail">
             We will send you relevant jobs on this mail
             {{!-- pattern="[a-zA-Z0-9._]{2,}+@[a-zA-Z0-9._]{2,}+\.[a-zA-Z]{2,}" --}}

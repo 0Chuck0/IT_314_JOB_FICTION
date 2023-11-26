@@ -23,8 +23,10 @@ module.exports = {
             const emailRegexNotupper = /^[^A-Z]+@[^\s@]+\.[^\s@]+$/;
             const allowedFormats = /^(?:(?:\d{5}-\d{5})|(?:\d{10}))$/;
             const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?!.*\s).{8,15}$/;
-
-
+           
+            if (!allowedFormats.test(number)) {
+                return res.status(400).json({ error: 'Invalid phone number format.' });
+            }
             if (!email) {
                 return res.status(400).json({ error: 'Email is required' });
             }
@@ -69,9 +71,6 @@ module.exports = {
             }
             if (companylocation.length > 500) {
                 return res.status(400).json({ error: 'Company Location must have less than 500 characters.' });
-            }
-            if (!allowedFormats.test(number)) {
-                return res.status(400).json({ error: 'Invalid phone number format.' });
             }
             // if (!number || !/^\d{10}$/.test(number)) {
             //     return res.status(400).json({ error: 'Invalid phone number. It should be exactly 10 digits' });

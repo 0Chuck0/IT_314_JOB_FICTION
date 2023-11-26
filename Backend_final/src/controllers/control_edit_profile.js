@@ -14,13 +14,14 @@ module.exports = {
 
     get:async (req,res)=>{
         
-        const job_title = await jobs.distinct('job_title');
-        const location=await jobs.distinct('location');
+       var job_title = await jobs.distinct('job_title');
+        var location=await jobs.distinct('location');
         const data = await Register.findOne({email:req.body.email})
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
         const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
         const languages=data.language_skills;
-      
+      const recommendation_data= await recommendation.findOne({email:req.body.email});
+        console.log(recommendation_data)
         const technical_skills = data.technical_skills;
         var r_technical_skills=[]
         var r_languages=[]
@@ -40,10 +41,30 @@ module.exports = {
         {
              r_languages=a_languages;
         }
-        const resume_link=data.resume_link;
-     
+
+
+        if(recommendation_data.r_job_title)
+        {
+             job_title = job_title.filter(skill => !recommendation_data.r_job_title.includes(skill));
+        }
+        else
+        {
+             r_languages=a_languages;
+        }
+
         
-        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link});
+        if(recommendation_data.r_location)
+        {
+             location = location.filter(skill => !recommendation_data.r_location.includes(skill));
+        }
+        else
+        {
+             r_languages=a_languages;
+        }
+        const resume_link=data.resume_link;
+        
+        
+        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data});
     },
 
     post:async(req,res)=>{

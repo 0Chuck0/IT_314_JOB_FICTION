@@ -195,14 +195,14 @@
         <div class="mb-3">
           <img src="" id="abc" alt="Add your profile photo below" class="img">
         </div>
-        <input type="file" name="file" onchange="func(event)">
+        <input type="file" name="file"id="image" onchange="func(event)">
 
         <button type="submit" class="btn btn-primary register-btn" id ="final_submit">Register</button>
       </form>
     </section>
 
 
-    <script>
+    {{!-- <script>
       function func(event) {
 
 
@@ -211,6 +211,29 @@
         document.getElementById("abc").src = image;
 
       }
+    </script> --}}
+    <script>
+        function func(event) {
+
+            const fi = document.getElementById('image');
+            const img = fi.value.split('.').pop().toLowerCase().toString();
+            var imageExts = ['jpg', 'jpeg', 'png'];
+            // Check if any file is selected. 
+            if (fi.files.length > 0) {
+                console.log(img)
+                if (imageExts.indexOf(img) === -1) {
+                    fi.value = null
+                    document.getElementById("abc").src = image;
+                    alert('Only jpg/jpeg and png files are allowed!');
+                }
+                if (imageExts.indexOf(img) !== -1) {
+                    var image = URL.createObjectURL(event.target.files[0]);
+
+                    document.getElementById("abc").src = image;
+                }
+            }
+
+        }
     </script>
     <script>
       {{!-- document.getElementById('myForm').addEventListener('submit',function() {

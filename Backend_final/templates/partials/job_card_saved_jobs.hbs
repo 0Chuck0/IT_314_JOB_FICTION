@@ -36,7 +36,6 @@
     a:hover {
         text-decoration: none;
     }
-
     @media (width < 768px) {
         .company-logo {
             display: none !important;
@@ -60,40 +59,39 @@
 
     }
 </style>
+ 
+    <div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
+        <div class="col-sm-2 company-logo">
+            <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+        </div>
+        <div class="col job-detail">
+            <div class="row col-sm">
+                <h4>{{this.company}}</h4>
+            </div>
+            <div class="row  col-sm">
+                <h3>{{this.job_title}}</h3>
+            </div>
+            <div class="row  col-sm ">
+                <p><i class="fa-solid fa-location-dot"></i>{{this.location}}</p>
+            </div>
+        </div>
 
-<a href="/job_description/{{id}}"></a>
-<div class="row jobs-card">
-    <div class="col-sm-2 company-logo">
-        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
-    </div>
-    <div class="col job-detail">
-        <div class="row col-sm">
-            <h4>{{this.company}}</h4>
-        </div>
-        <div class="row  col-sm">
-            <h3>{{this.job_title}}</h3>
-        </div>
-        <div class="row  col-sm ">
-            <p><i class="fa-solid fa-location-dot"></i>{{this.location}}</p>
-        </div>
-    </div>
-
-    <div class="col-sm-3 job-labels mt-3">
-        <div class="col-10">
-            <div class="row labels">
-                <span class="label-1"><i class="fas fa-inr"></i>{{this.salary}} </span>
-            </div>
-            <div class="row labels">
-                <span class="label-2"><i class="fas fa-business-time"></i>{{this.experience}} years</a>
-            </div>
-            <div class="row labels">
-                <span class="label-3"><i class="far fa-building"></i>{{this.work_mode}}</a>
+        <div class="col-sm-3 job-labels mt-3">
+            <div class="col-10">
+                <div class="row labels">
+                    <span class="label-1"><i class="fas fa-inr"></i>{{this.salary}} </span>
+                </div>
+                <div class="row labels">
+                    <span class="label-2"><i class="fas fa-business-time"></i>{{this.experience}} years
+                    </span>
+                </div>
+                <div class="row labels">
+                    <span class="label-3"><i class="far fa-building"></i>{{this.work_mode}}</span>
+                </div>
             </div>
         </div>
+        <div class="col-2 col-sm-1 save-btn">
+            <a href="/deletesaved_jobs/{{this.id}}"><i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip"
+                    title="Unsave"></i></a>
+        </div>
     </div>
-    <div class="col-2 col-sm-1 save-btn">
-        <a href="/deletesaved_jobs/{{this.id}}"><i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip"
-                title="Unsave"></i></a>
-    </div>
-</div>
-</a>

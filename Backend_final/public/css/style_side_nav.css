@@ -13,6 +13,8 @@ body {
     transition: 0.5s;
     padding-top: 140px;
     box-shadow: 0 0 10px rgb(29, 29, 34);
+    background-color: rgb(255, 255, 255);
+    z-index: 9999;
 }
 
 
@@ -45,7 +47,45 @@ body {
 #main {
     transition: margin-right .5s;
 }
+.user-profile {
+    height:3.5em;
+    width:3.5em;
+}
 
+.user-profile:hover {
+    filter: drop-shadow(0px 0px 10px white);
+    cursor: pointer;
+
+}
+
+.user-profile-bar {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+.image-title {
+    padding-top: 2em;
+    padding-bottom: 1.5em;
+    background: rgb(70, 241, 252);
+    background: linear-gradient(275deg, rgba(70, 241, 252, 0.4) 0%, rgb(55, 83, 223, 0.4) 100%);
+    border-radius: 16px;
+}
+
+.nav-profile{
+    display: none !important;
+}
+
+@media (width<1200px) {
+    .user-profile{
+        display: none;
+    }
+    
+    .nav-profile{
+        display: block !important;
+    }
+}
 @media screen and (max-height: 450px) {
     .side-nav {
         padding-top: 15px;

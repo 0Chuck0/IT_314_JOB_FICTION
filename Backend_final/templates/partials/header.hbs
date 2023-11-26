@@ -8,13 +8,31 @@
       </div>
       <div class="site-mobile-menu-body">
         <ul class="list-group">
+          {{#if logged}}
+          <li class="list-group-item"><a class="respon-nav side-nav-profile" onclick="openNav()">Profile</a></li>
+          <style>
+            .side-nav-profile{
+              color:black !important; 
+              cursor:pointer;
+            }
+            .side-nav-profile:hover{
+              color:rgb(66, 66, 247) !important;
+              text-decoration: underline !important;
+            }
+          </style>
+          {{/if}}
           <li class="list-group-item"><a class="respon-nav" href="/home" class="nav-link active">Home</a></li>
           <li class="list-group-item"><a class="respon-nav" href="/jobs_1">Jobs</a></li>
           <li class="list-group-item"><a class="respon-nav" href="/recommendation">Recommendations</a></li>
           <li class="list-group-item"><a class="respon-nav" href="/blog">Blogs</a></li>
           <li class="list-group-item"><a class="respon-nav" href="/about">About us</a></li>
-          <li class="list-group-item"><a class="respon-nav" href="/register">Register</a></li>
-          <li class="list-group-item"><a class="respon-nav" href="/login">Log In</a></li>
+          {{#if logged}}
+           <li class="list-group-item"><a class="respon-nav" href="/logout">Log Out</a></li>
+          {{else}}
+            <li class="list-group-item"><a class="respon-nav" href="/register">Register</a></li>
+            <li class="list-group-item"><a class="respon-nav" href="/login">Log In</a></li>
+          {{/if}}
+
         </ul>
       </div>
     </div> 
@@ -33,12 +51,12 @@
               <li>
                 <a href="/recommendation  ">Recommendations</a>
               </li>
-              <li><a href="/blog">Blogs</a></li>
+              <li><a href="/blog">Blogs</a></li>  
               <li>
                 <a href="/about">About Us</a>
               </li>
-              <li class="d-lg-none"><a href="/register">Register</a></li>
-              <li class="d-lg-none"><a href="/login">Log In</a></li>
+                <li class="d-lg-none"><a href="/register">Register</a></li>
+                <li class="d-lg-none"><a href="/login">Log In</a></li>
             </ul>
           </nav>
           
@@ -46,6 +64,9 @@
             <div class="ml-auto">
               {{#if logged}}
                <a href="logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">logout</a>
+               <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="./images/user-profile1.png"
+                                    alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
+
               {{else}}
               <a href="register" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
               <a href="login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">login</a>

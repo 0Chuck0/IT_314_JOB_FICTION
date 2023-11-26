@@ -1,26 +1,27 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>JobFiction</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    
-    <link rel="stylesheet" href="/css/custom-bs.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/fonts/line-icons/style.css">
-    <link rel="stylesheet" href="/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/css/animate.min.css">
-    <link rel="stylesheet" href="/css/quill.snow.css">
-    
 
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="/css/style.css">    
-  </head>
-  <body id="top">
+<head>
+  <title>JobFiction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link rel="stylesheet" href="/css/custom-bs.css">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="/fonts/line-icons/style.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/animate.min.css">
+  <link rel="stylesheet" href="/css/quill.snow.css">
+
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="top">
 
   <div id="overlayer"></div>
   <div class="loader">
@@ -28,129 +29,134 @@
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-    
+
 
   {{>header}}
 
-    <!-- HOME -->
-    <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7">
-            <h1 class="text-white font-weight-bold">Our Blog</h1>
-            <div class="custom-breadcrumbs">
-              <a href="#">Home</a> <span class="mx-2 slash">/</span>
-              <span class="text-white"><strong>Blogs</strong></span>
-            </div>
+  {{!-- side navigation bar for profile --}}
+  {{>candidate_profile}}
+
+  <!-- HOME -->
+  <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
+    id="home-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="text-white font-weight-bold">Our Blog</h1>
+          <div class="custom-breadcrumbs">
+            <a href="#">Home</a> <span class="mx-2 slash">/</span>
+            <span class="text-white"><strong>Blogs</strong></span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="site-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_2.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_4.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_7.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_5.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5">
-            <a href="blog-page.html"><img src="images/sq_img_6.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
-            <h3><a href="blog-page.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
-          </div>
+  <section class="site-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_1.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
         </div>
-    </section>
-    
-    <footer class="site-footer">
-
-      <a href="#top" class="smoothscroll scroll-top">
-        <span class="icon-keyboard_arrow_up"></span>
-      </a>
-
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Search Trending</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Graphic Design</a></li>
-              <li><a href="#">Web Developers</a></li>
-              <li><a href="#">Python</a></li>
-              <li><a href="#">HTML5</a></li>
-              <li><a href="#">CSS3</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Company</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Career</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Resources</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Support</h3>
-            <ul class="list-unstyled">
-              <li><a href="#">Help center</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Terms and conditions</a></li>
-              <li><a href="#">Fraud alert</a></li>
-              <li><a href="#">Grievances</a></li>
-              <li><a href="#">Report issue</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4 mb-md-0">
-            <h3>Connect with us</h3>
-            <div class="footer-social">
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a>
-            </div>
-          </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_2.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
         </div>
-
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_4.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_7.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">7 Factors for Choosing Between Two Jobs</a></h3>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_5.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">How to Write a Creative Cover Letter</a></h3>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <a href="blog-page.html"><img src="images/sq_img_6.jpg" alt="Image" class="img-fluid rounded mb-4"></a>
+          <h3><a href="blog-page.html" class="text-black">The Right Way to Quit a Job You Started</a></h3>
+        </div>
       </div>
-    </footer>
-  
+  </section>
+
+  <footer class="site-footer">
+
+    <a href="#top" class="smoothscroll scroll-top">
+      <span class="icon-keyboard_arrow_up"></span>
+    </a>
+
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3>Search Trending</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Web Design</a></li>
+            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#">Web Developers</a></li>
+            <li><a href="#">Python</a></li>
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3>Company</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3>Support</h3>
+          <ul class="list-unstyled">
+            <li><a href="#">Help center</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+            <li><a href="#">Fraud alert</a></li>
+            <li><a href="#">Grievances</a></li>
+            <li><a href="#">Report issue</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-4 mb-md-0">
+          <h3>Connect with us</h3>
+          <div class="footer-social">
+            <a href="#"><span class="icon-facebook"></span></a>
+            <a href="#"><span class="icon-twitter"></span></a>
+            <a href="#"><span class="icon-instagram"></span></a>
+            <a href="#"><span class="icon-linkedin"></span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
   </div>
 
-    <!-- SCRIPTS -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/isotope.pkgd.min.js"></script>
-    <script src="/js/stickyfill.min.js"></script>
-    <script src="/js/jquery.fancybox.min.js"></script>
-    <script src="/js/jquery.easing.1.3.js"></script>
-    
-    <script src="/js/jquery.waypoints.min.js"></script>
-    <script src="/js/jquery.animateNumber.min.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/quill.min.js"></script>
-    
-    
-    <script src="/js/bootstrap-select.min.js"></script>
-    
-    <script src="/js/custom.js"></script>
-   
-   
-     
-  </body>
+  <!-- SCRIPTS -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/isotope.pkgd.min.js"></script>
+  <script src="/js/stickyfill.min.js"></script>
+  <script src="/js/jquery.fancybox.min.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <script src="/js/jquery.animateNumber.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/quill.min.js"></script>
+
+
+  <script src="/js/bootstrap-select.min.js"></script>
+
+  <script src="/js/custom.js"></script>
+
+
+
+</body>
+
 </html>

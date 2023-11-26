@@ -45,8 +45,30 @@
 
 
 
-        <!--Side Navigation-->
-    
+        {{!-- <!--Side Navigation-->
+          <div id="side-nav-bar" class="side-nav">
+            <div class="container-fluid">
+                <div class="col-md-12 image-title">
+                    <div class="row">
+                        <img class="user-profile-bar" src="./images/loggedin-user.png" alt="User Profile">
+                    </div>
+                    <div class="row mt-1">
+                        <h3 style="margin: auto;">User Name</h3>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="./candidateprofile1"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
+                    <a href="./change_password"><i class="fas fa-keyboard" style="font-size: 1.5rem;"></i>Change Password</a>
+                    <a href="./recommendation"><i class="fa fa-medal" style="font-size: 1.5rem"></i>Recommendations</a>
+                    <a href="./saved_jobs"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Saved Jobs</a>
+                    <a href="./applied_jobs"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Applied Jobs</a>
+                </div>
+            </div>
+        </div> --}}
+
+        {{>candidate_profile}}
+
 
         <section class="section-hero overlay inner-page bg-image"
             style="background-image: url('/images/hero_1.jpg');" id="home-section">

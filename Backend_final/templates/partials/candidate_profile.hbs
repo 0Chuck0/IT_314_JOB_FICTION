@@ -1,0 +1,137 @@
+<!--Side Navigation-->
+<div id="side-nav-bar" class="side-nav">
+    <div class="container-fluid">
+        <div class="col-md-12 image-title">
+            <div class="row">
+                <img class="user-profile-bar" src="./images/loggedin-user.png" alt="User Profile">
+            </div>
+            <div class="row mt-1">
+                <h3 style="margin: auto;">User Name</h3>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="./myprofile"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
+            <a href="./change_password"><i class="fas fa-keyboard" style="font-size: 1.5rem;"></i>Change Password</a>
+            <a href="./recommendation"><i class="fa fa-medal" style="font-size: 1.5rem"></i>Recommendations</a>
+            <a href="./saved_jobs"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Saved Jobs</a>
+            <a href="./applied_jobs"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Applied Jobs</a>
+        </div>
+    </div>
+    <style>
+        body {
+            transition: background-color .5s;
+        }
+
+        .side-nav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 140px;
+            box-shadow: 0 0 10px rgb(29, 29, 34);
+            background-color: rgb(255, 255, 255);
+            z-index: 9999;
+        }
+
+
+
+        .side-nav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #302f2f;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+            color: #122da5;
+        }
+
+        .closebtn:hover {
+            color: red !important;
+        }
+
+        .side-nav .closebtn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-right .5s;
+        }
+
+        .user-profile {
+            height: 3.5em;
+            width: 3.5em;
+        }
+
+        .user-profile:hover {
+            filter: drop-shadow(0px 0px 10px white);
+            cursor: pointer;
+
+        }
+
+        .user-profile-bar {
+            height: 100px;
+            width: 100px;
+            margin: auto;
+            display: block;
+        }
+
+        .image-title {
+            padding-top: 2em;
+            padding-bottom: 1.5em;
+            background: rgb(70, 241, 252);
+            background: linear-gradient(275deg, rgba(70, 241, 252, 0.4) 0%, rgb(55, 83, 223, 0.4) 100%);
+            border-radius: 16px;
+        }
+
+        .nav-profile {
+            display: none !important;
+        }
+
+        @media (width<1200px) {
+            .user-profile {
+                display: none;
+            }
+
+            .nav-profile {
+                display: block !important;
+            }
+        }
+
+        @media screen and (max-height: 450px) {
+            .side-nav {
+                padding-top: 15px;
+            }
+
+            .side-nav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("side-nav-bar").style.width = "22em";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.)";
+            document.getElementById("nav-bar-btn").style.width = "0";
+        }
+
+        function closeNav() {
+            document.getElementById("side-nav-bar").style.width = "0";
+            document.body.style.backgroundColor = "white";
+            document.getElementById("nav-bar-btn").style.width = "3.5rem";
+        }
+
+    </script>
+
+</div>

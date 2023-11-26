@@ -41,126 +41,136 @@
         </div>
     </div>
 
-  {{>header}}
+    {{>header}}
 
 
 
-        <!--Side Navigation-->
-    
+    <!--Side Navigation-->
+    {{>candidate_profile}}
 
-        <section class="section-hero overlay inner-page bg-image"
-            style="background-image: url('/images/hero_1.jpg');" id="home-section">
-            <div class="container">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');"
+        id="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="new2">
+                        <h1 class="text-white font-weight-bold page-heading">Recommendations</h1>
+                        <style>
+                            @media (width<400px) {
+                            
+                            .page-heading{
+                                font-size: 30px;
+                            }
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="cards-container" class="container cards-container">
+        {{#if jobsdata}}
+        {{#each jobsdata}}
+        <div class="row jobs-card">
+            <div class="col-2 company-logo">
+                <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+            </div>
+            <div class="col job-detail">
                 <div class="row">
-                    <div class="col-md-7">
-                        <div class="new2">
-                            <h1 class="text-white font-weight-bold">Saved Jobs</h1>
-                        </div>
-                    </div>
+                    <h4>{{this.company_name}}</h4>
+                </div>
+                <div class="row">
+                    <h3>{{this.job_title}}</h3>
+                </div>
+                <div class="row">
+                    <p><i class="fa-solid fa-location-dot"></i>{{this.location}}</p>
                 </div>
             </div>
-        </section>
 
-
-        <div id="cards-container" class="container cards-container">
-            {{#if jobsdata}}
-            {{#each jobsdata}}
-           <div class="row jobs-card">
-                <div class="col-2 company-logo">
-                    <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+            <div class="col-3 job-labels mt-3">
+                <div class="row labels">
+                    <span class="label-1"><i class="fas fa-inr"></i>{{this.salary}}</span>
                 </div>
-                <div class="col job-detail">
-                    <div class="row">
-                        <h4>{{this.company_name}}</h4>
-                    </div>
-                    <div class="row">
-                        <h3>{{this.job_title}}</h3>
-                    </div>
-                    <div class="row">
-                        <p><i class="fa-solid fa-location-dot"></i>{{this.location}}</p>
-                    </div>
+                <div class="row labels">
+                    <span class="label-2"><i class="fas fa-business-time"></i>{{this.experience}}</a>
                 </div>
-
-                <div class="col-3 job-labels mt-3">
-                    <div class="row labels">
-                        <span class="label-1"><i class="fas fa-inr"></i>{{this.salary}}</span>
-                    </div>
-                    <div class="row labels">
-                        <span class="label-2"><i class="fas fa-business-time"></i>{{this.experience}}</a>
-                    </div>
-                    <div class="row labels">
-                        <span class="label-3"><i class="far fa-building"></i>{{this.work_mode}}</a>
-                    </div>
+                <div class="row labels">
+                    <span class="label-3"><i class="far fa-building"></i>{{this.work_mode}}</a>
                 </div>
-                
             </div>
-
-            {{/each}}
-             {{else}}
-            <div style="text-align: center;">
-                <p><h1>No Recommendation jobs for you  yet</h1></p>
-             </div>
-
-           
-            {{/if}}
 
         </div>
 
+        {{/each}}
+        {{else}}
+        <div style="text-align: center;">
+            <p>
+            <h1 class="page-heading">No Recommendation jobs for you yet</h1>
+            </p>
+        </div>
+
+
+        {{/if}}
+
+    </div>
 
 
 
-        <footer class="site-footer new-foot">
 
-            <a href="#top" class="smoothscroll scroll-top">
-                <span class="icon-keyboard_arrow_up"></span>
-            </a>
+    <footer class="site-footer new-foot">
 
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Search Trending</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Graphic Design</a></li>
-                            <li><a href="#">Web Developers</a></li>
-                            <li><a href="#">Python</a></li>
-                            <li><a href="#">HTML5</a></li>
-                            <li><a href="#">CSS3</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Company</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Career</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Resources</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Support</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Help center</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Terms and conditions</a></li>
-                            <li><a href="#">Fraud alert</a></li>
-                            <li><a href="#">Grievances</a></li>
-                            <li><a href="#">Report issue</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-6 col-md-3 mb-4 mb-md-0">
-                        <h3>Connect with us</h3>
-                        <div class="footer-social">
-                            <a href="#"><span class="icon-facebook"></span></a>
-                            <a href="#"><span class="icon-twitter"></span></a>
-                            <a href="#"><span class="icon-instagram"></span></a>
-                            <a href="#"><span class="icon-linkedin"></span></a>
-                        </div>
+        <a href="#top" class="smoothscroll scroll-top">
+            <span class="icon-keyboard_arrow_up"></span>
+        </a>
+
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Search Trending</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Web Developers</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">HTML5</a></li>
+                        <li><a href="#">CSS3</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Company</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Support</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help center</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Fraud alert</a></li>
+                        <li><a href="#">Grievances</a></li>
+                        <li><a href="#">Report issue</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Connect with us</h3>
+                    <div class="footer-social">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-instagram"></span></a>
+                        <a href="#"><span class="icon-linkedin"></span></a>
                     </div>
                 </div>
-
             </div>
-        </footer>
+
+        </div>
+    </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>

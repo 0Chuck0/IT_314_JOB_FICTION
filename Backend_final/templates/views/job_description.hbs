@@ -276,7 +276,7 @@
                 document.getElementById('myspan').innerHTML = "save";
                 try {
                     var data = new URLSearchParams({ "id": id });
-                    const response = await fetch("http://localhost:3000/unsaveData", {
+                    const response = await fetch("/unsaveData", {
                         method: "POST",
                         body: data,
                     });
@@ -303,7 +303,7 @@
                 document.getElementById('myspan').innerHTML = " Saved";
                 try {
                     var data = new URLSearchParams({ "id": id });
-                    const response = await fetch("http://localhost:3000/saveData", {
+                    const response = await fetch("/saveData", {
                         method: "POST",
                         body: data,
                     });
@@ -346,7 +346,7 @@
                 try {
                     var token = getBrowserCookie("jwt");
                     var data = { "id": job_id };
-                    const response = fetch('http://localhost:3000/apply', {
+                    const response = fetch('/apply', {
                         method: "POST",
                         headers: {
                             "Cookie": `jwt=${token}`,
@@ -403,7 +403,7 @@
                 try {
                     var token = getBrowserCookie("jwt");
                     var data = { "id": job_id };
-                    const response = fetch('http://localhost:3000/unapply', {
+                    const response = fetch('/unapply', {
                         method: "POST",
                         headers: {
                             "Cookie": `jwt=${token}`,

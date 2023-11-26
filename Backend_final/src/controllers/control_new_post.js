@@ -18,6 +18,7 @@ module.exports = {
             
             const companyemail=req.body.email;
            const company_name=req.body.company_name;
+           const profile = req.body.profile;
           
             const lastJob = await jobs.findOne().sort('-id');
             let newJobId = 1;
@@ -42,6 +43,7 @@ module.exports = {
                 degree: req.body.degree,
                company:company_name,
                 perk: req.body.Perks,
+                profile:profile,
             }
     
             // const registered = await data.save();

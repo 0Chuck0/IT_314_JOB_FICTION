@@ -216,8 +216,9 @@ async function companyloggedinonly(req, res, next) {
 
                 req.body.email = check.email;
                 req.body.company_name=check.companyname;
+                req.body.profile = check.profile;
 
-                if(check.email) next();
+                if(check.email && check.companyname && check.companyname) next();
                 }
             }
         });

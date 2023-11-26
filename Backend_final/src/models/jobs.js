@@ -61,8 +61,12 @@ const Postschema=new mongoose.Schema({
 
     company_email:{
         type: String
-    }
+    },
 
+    profile:{
+        type:String,
+        required:true,
+    },
 
 }) 
 

@@ -20,14 +20,30 @@ module.exports = {
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
         const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
         const languages=data.language_skills;
-        const r_languages = a_languages.filter(skill => !languages.includes(skill));
+      
         const technical_skills = data.technical_skills;
-        
-        const r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        var r_technical_skills=[]
+        var r_languages=[]
+        if(technical_skills)
+        {
+            r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
+        }
+        else 
+        {
+             r_technical_skills=a_technical_skills;
+        }
+        if(languages)
+        {
+             r_languages = a_languages.filter(skill => !languages.includes(skill));
+        }
+        else
+        {
+             r_languages=a_languages;
+        }
         const resume_link=data.resume_link;
      
         
-        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages});
+        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link});
     },
 
     post:async(req,res)=>{

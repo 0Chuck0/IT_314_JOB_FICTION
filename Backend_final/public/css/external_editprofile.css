@@ -1,5 +1,4 @@
 /* ===== Google Font Import - Poppins ===== */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap'); */
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
 
 *{
@@ -10,11 +9,13 @@
 }
 
 .select-menu{
-    width: 100%;
-    margin: 140px auto;
+    /* width: 100%; */
+    /* margin: 140px auto; */
     position: relative;
-    min-height: 2.15rem;
+    /* min-height: 2.15rem; */
     /* min-width: 14rem; */
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .select-menu .select-btn{
@@ -24,16 +25,11 @@
     padding: 8px;
     font-size: 16px;
     font-weight: 400;
-    border-radius: 8px;
+    border-radius: 4px;
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
     border: solid #DADDE0 1px;
-    min-width: 0;
-}
-
-.mult-select-tag .body {
-    min-width: 0 !important;
 }
 
 .select-btn svg{
@@ -49,13 +45,14 @@
     position:absolute;
     padding: 10px;
     margin-top: 0px;
-    border-radius: 8px;
+    border-radius: 2px;
     background: #fff;
-    border: 1px solid #dadde0;
     /* box-shadow: 0 0 3px rgba(0,0,0,0.1); */
     display: none;
     z-index: 10;
     width: 100%;
+    border: 2px solid #DADDE0;
+    padding: 5px 25px;
 }
 
 .vertical-line{
@@ -66,27 +63,37 @@
 
 .sBtn-text{
     /* border-right: solid 2px #DADDE0; */
-    flex: 1;    
+    flex: 1;
 }
 
 .select-menu.active .options{
     display: block;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 .options .option{
     display: flex;
     height: 35px;
     cursor: pointer;
-    padding: 0 10px;
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 4px;
     align-items: center;
     background: #fff;
 }
 
+.mult-select-tag .body {
+    min-width: 0 !important;
+}
+
+/* .options{
+    height: 90%;
+} */
+
 .options .option:hover{
     background: #F3F4F6;
-    
-    border: solid #DADDE0 1px;
 }
 
 .option i{
@@ -94,8 +101,8 @@
     margin-right: 12px;
 }
 .option .option-text{
-    font-size: 18px;
-    color: #333;
+    font-size: 16px;
+    color: #92848C;
 }
 
 .changec{

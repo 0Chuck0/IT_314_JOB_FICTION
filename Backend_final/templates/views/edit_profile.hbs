@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/Edit_profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -266,7 +267,7 @@
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                     for="candidate_highest_education">Highest Education/Degree</label></span>
                         </div>
-                        <div class="widgetCont select-menu dropdown1"><span class="empty">
+                        <div class="widgetCont select-menu dropdown1" id="another"><span class="empty">
                                 <div class="select-btn widgetCont select-btn1">
                                     <span class="sBtn-text sBtn-text1"></span>
                                     <textarea id="sBtn-text6" name="highest_edu"></textarea>
@@ -303,7 +304,7 @@
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                     for="candidate_study">Field of Study</label></span>
                         </div>
-                        <div class="widgetCont select-menu dropdown2"><span class="empty">
+                        <div class="widgetCont select-menu dropdown2" id="zeromargin"><span class="empty">
                                 <div class="select-btn widgetCont select-btn2">
                                     <span class="sBtn-text sBtn-text2"></span>
                                     <textarea id="sBtn-text5" name="field"></textarea>
@@ -364,7 +365,7 @@
                                     for="candidate_expected_salary">Expected Salary Range</label></span>
                         </div>
 
-                        <div class="widgetCont select-menu dropdown3"><span class="empty">
+                        <div class="widgetCont select-menu dropdown3" id="dipak"><span class="empty">
                                 <div class="select-btn widgetCont select-btn3">
                                     <span class="sBtn-text sBtn-text3"></span>
                                     <textarea id="sBtn-text4" name="r_salary"></textarea>
@@ -575,7 +576,64 @@
 
         }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let marginzero = document.getElementById('another');
 
+            window.addEventListener('click', function (event) {
+                if (event.target.matches('#another')) {
+                    // Clicking on the element toggles the 'active' class
+                    marginzero.classList.toggle('active');
+                } else {
+                    // Clicking outside of the element removes the 'active' class
+                    marginzero.classList.remove('active');
+                }
+            });
+
+            // Prevent the click inside the element from closing immediately
+            marginzero.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            let marginzero = document.getElementById('zeromargin');
+
+            window.addEventListener('click', function (event) {
+                if (event.target.matches('#zeromargin')) {
+                    // Clicking on the element toggles the 'active' class
+                    marginzero.classList.toggle('active');
+                } else {
+                    // Clicking outside of the element removes the 'active' class
+                    marginzero.classList.remove('active');
+                }
+            });
+
+            // Prevent the click inside the element from closing immediately
+            marginzero.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            let marginzero = document.getElementById('dipak');
+
+            window.addEventListener('click', function (event) {
+                if (event.target.matches('#dipak')) {
+                    // Clicking on the element toggles the 'active' class
+                    marginzero.classList.toggle('active');
+                } else {
+                    // Clicking outside of the element removes the 'active' class
+                    marginzero.classList.remove('active');
+                }
+            });
+
+            // Prevent the click inside the element from closing immediately
+            marginzero.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const resumeLinkFromData = '{{data.resume_link}}'; // Assuming data.resume_link is available in your Handlebars context

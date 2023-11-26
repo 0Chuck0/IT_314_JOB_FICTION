@@ -133,7 +133,8 @@
 
 
     <section class="containerr">
-      <form class="form-registration" action="/companyregister" method="post" enctype="multipart/form-data">
+      <form class="form-registration" action="/companyregister" method="post" enctype="multipart/form-data"
+        id="checkformbefore">
         <h1>
           Company Register
         </h1>
@@ -142,16 +143,18 @@
         <div class="mb-3">
           <label for="exampleFormControlInput1 company_name" class="form-label">Company Name<sup
               class="mandatory_Filds">*</sup></label>
-          <input type="text" class="form-control" name="companyname" id="Companyname"
+          <input type="text" class="form-control" name="companyname" id="Companyname" maxlength="50" minlength="3"
             placeholder="What is your Company name?" required>
+          <span style="color: red; display: none;" id="validname">Please Enter a valid Name</span>
         </div>
 
         <div class="mb-3">
           <label for="exampleFormControlInput1 company_type" class="form-label">Industry Type
             <sup class="mandatory_Filds">*</sup>
           </label>
-          <input type="text" class="form-control" name="industrytype"
+          <input type="text" class="form-control" name="industrytype" maxlength="40" minlength="3" id="industrytype"
             placeholder="What is industry type of your Company" required>
+          <span style="color: red; display: none;" id="validtype">Please Enter a valid Type</span>
         </div>
 
         <div class="mb-3">
@@ -159,14 +162,16 @@
               class="mandatory_Filds">*</sup></label>
           <!-- <input type="text" class="form-control" placeholder="Tell About your Company" required> -->
           <textarea class="form-control" name="company_description" id="company_description" rows="3"
-            placeholder="Tell About your Company"></textarea>
+            placeholder="Tell About your Company" minlength="3" maxlength="2000" required></textarea>
+          <span style="color: red; display: none;" id="validdescription">Please Enter a valid Description</span>
         </div>
 
         <div class="mb-3">
           <label for="exampleFormControlInput1 company_location" class="form-label">Company Location<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" name="companylocation" id="Company_location"
-            placeholder="What is the address of yout Company?" required>
+            placeholder="What is the address of yout Company?" minlength="3" maxlength="2000" required>
+          <span style="color: red; display: none;" id="validlocation">Please Enter a valid Location</span>
         </div>
 
         <h3 id="bottomh6">Employee Details</h3>
@@ -175,14 +180,16 @@
           <label for="exampleFormControlInput1 employee_name" class="form-label">Your Name<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" name="employee_name" id="exampleFormControlInput1"
-            placeholder="What is your name?" required>
+            placeholder="What is your name?" minlength="3" maxlength="50" required>
+          <span style="color: red; display: none;" id="validemployeename">Please Enter a valid Name</span>
         </div>
 
         <div class="mb-3">
           <label for="exampleFormControlInput1 employee_designation" class="form-label">Your Designation<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" id="Employee_designation" name="employee_designation"
-            placeholder="What is your Designation in Company?" required>
+            placeholder="What is your Designation in Company?" minlength="3" maxlength="50" required>
+          <span style="color: red; display: none;" id="validemployeedesignation">Please Enter a valid Designation</span>
         </div>
 
         <div class="mb-3">
@@ -201,8 +208,8 @@
 
         <div class="mb-3">
           <label for="exampleInputEmail1 email" class="form-label">Email ID<sup class="mandatory_Filds">*</sup></label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Tell us your official Email" required>
+          <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Tell us your official Email" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$" required>
           <div class="form-text">
             We will contact you on this mail
           </div>
@@ -212,10 +219,10 @@
           <label for="exampleInputPassword1 password" class="form-label">Password<sup
               class="mandatory_Filds">*</sup></label>
           <input type="password" name="password"
-            pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$" class="form-control"
-            id="exampleInputPassword1" placeholder="Enter your new password" required>
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&'*+\/=?^_`,])(?=.*[^\w\s]).{8,15}$"
+            class="form-control" id="exampleInputPassword1" placeholder="Enter your new password" required>
           <div id="Password1" class="form-text">
-            Password must contain at least 6 characters including UPPERCASE, lowercase, number & symbol
+            Password must contain at least 8 characters including UPPERCASE, lowercase, number & symbol
           </div>
         </div>
         <!-- New Updates Begin -->
@@ -223,15 +230,15 @@
           <label for="exampleInputPassword1 confirm_Password" class="form-label">Confirm password<sup
               class="mandatory_Filds">*</sup></label>
           <input type="password" name="cpassword"
-            pattern="^(?=.*[A-Z])(?=.*[!@#$`!@#$%^&*&*])(?=.*[0-9])(?=.*[a-z]).{6,}$" class="form-control"
-            id="exampleInputPassword2" placeholder="Enter your confirm password" required>
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&'*+\/=?^_`,])(?=.*[^\w\s]).{8,15}$"
+            class="form-control" id="exampleInputPassword2" placeholder="Enter your confirm password" required>
           <div id="Password2" class="form-text">
           </div>
         </div>
         <div class="mb-3">
           <img src="" id="abc" alt="choosen image" class="img">
         </div>
-        <input type="file" name="file" onchange="func(event)">
+        <input type="file" name="file" onchange="func(event)" id="image">
         <div class="btn-container">
           <button type="submit" class="btn btn-primary register-btn">Create Account</button>
         </div>
@@ -242,9 +249,98 @@
 
     <script>
       function func(event) {
-        var image = URL.createObjectURL(event.target.files[0]);
-        document.getElementById("abc").src = image;
+        const fi = document.getElementById('image');
+        const img = fi.value.split('.').pop().toLowerCase().toString();
+        var imageExts = ['jpg', 'jpeg', 'png'];
+        // Check if any file is selected. 
+        if (fi.files.length > 0) {
+          console.log(img)
+          if (imageExts.indexOf(img) === -1) {
+            fi.value = null
+            document.getElementById("abc").src = '';
+            alert('Only jpg/jpeg and png files are allowed!');
+          }
+          if (imageExts.indexOf(img) !== -1) {
+            var image = URL.createObjectURL(event.target.files[0]);
+
+            document.getElementById("abc").src = image;
+          }
+        }
       }
+    </script>
+    <script>
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumericCharacters() {
+        let ychar = document.getElementById('Companyname').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validname').style.display = 'none';
+        }
+        else {
+          document.getElementById('validname').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
+        let ychar = document.getElementById('industrytype').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validtype').style.display = 'none';
+        }
+        else {
+          document.getElementById('validtype').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
+        let ychar = document.getElementById('company_description').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validdescription').style.display = 'none';
+        }
+        else {
+          document.getElementById('validdescription').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
+        let ychar = document.getElementById('Company_location').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validlocation').style.display = 'none';
+        }
+        else {
+          document.getElementById('validlocation').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
+        let ychar = document.getElementById('exampleFormControlInput1').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validemployeename').style.display = 'none';
+        }
+        else {
+          document.getElementById('validemployeename').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
+      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
+        let ychar = document.getElementById('Employee_designation').value;
+        if (/\D/.test(ychar)) {
+          console.log('character Present');
+          document.getElementById('validemployeedesignation').style.display = 'none';
+        }
+        else {
+          document.getElementById('validemployeedesignation').style.display = 'block';
+          console.log('not');
+          event.preventDefault();
+        }
+      });
     </script>
 
     <footer class="site-footer new-foot">

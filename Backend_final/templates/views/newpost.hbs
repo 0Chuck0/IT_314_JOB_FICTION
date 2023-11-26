@@ -407,7 +407,6 @@
       var selectedOptions = [...selectField.options].filter(option => option.selected);
 
       if (selectedOptions.length === 0) {
-        { { !--alert('Please select at least one option in Key Skills'); --} }
         event.preventDefault(); // Prevents form submission
         document.getElementById('presentskill').style.display = 'block';
       }

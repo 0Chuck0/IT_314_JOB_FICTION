@@ -167,8 +167,8 @@ document.addEventListener("DOMContentLoaded", () => {
             all_checkboxes[i].checked = false;
         }
 
-        let region = document.getElementById("region-dropdown").value.toLowerCase();
-        let work_type = document.getElementById("work-mode-dropdown").value.toLowerCase();
+        let region = document.getElementById("region-dropdown").value;
+        let work_type = document.getElementById("work-mode-dropdown").value;
 
         if (region == "anywhere") {
 
@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (i <= 5 && document.getElementById("f2-opt" + i).value == region) {
                 document.getElementById("f2-opt" + i).checked = true;
             }
+            console.log(work_type);
             if (i <= 3 && document.getElementById("f3-opt" + i).value == work_type) {
                 document.getElementById("f3-opt" + i).checked = true;
             }

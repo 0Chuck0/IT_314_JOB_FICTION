@@ -14,13 +14,8 @@ router.get("/",function(req,res){
 
 router.post("/",async (req,res)=>{
 
-    //console.log(req.body);
-
 
     try{
-
-
-
 
         var {search ,job_titles,experience, locations, work_modes, educations, companies, skills,salary } = req.body;
        
@@ -89,7 +84,7 @@ router.post("/",async (req,res)=>{
         
         const query=[];
   
-        if(job_titles!=undefined)
+        if( job_titles!=undefined && job_titles !== '' && !(job_titles.length === 1 && job_titles[0] === ''))
         {
                 const obj={job_title:{ "$in": job_titles }};
                 query.push(obj);
@@ -97,20 +92,29 @@ router.post("/",async (req,res)=>{
       
         //console.log(locations!=undefined);
        
-        if( locations!=undefined)
+        if( locations!=undefined && locations !== '' && !(locations.length === 1 && locations[0] === ''))
         {
+            if(locations == "Anywhere"){
+                locations = undefined;
+            }else{
             const obj={location:{ "$in": locations }};
             query.push(obj);
+            }
         }
         if( experience!=undefined)
         {
             const obj={experience:{ "$gte": parseFloat(experience)*(0.05) }};
             query.push(obj);
         }
-        if(work_modes!=undefined)
+        if(work_modes!=undefined && work_modes !== '' && !(work_modes.length === 1 && work_modes[0] === ''))
         {
+            if(work_modes == "Any"){
+                work_modes = undefined;
+            }
+            else{
             const obj={work_mode:{ "$in": work_modes }};
             query.push(obj);
+            }
         }
         if(educations!=undefined)
         {
@@ -157,7 +161,8 @@ router.post("/",async (req,res)=>{
 router.post("/search", async (req,res)=>{
 
     try{
-        var {search ,locations, work_modes , companies , job_titles} = req.body;
+
+        var {job_titles , locations, work_modes , companies} = req.body;
         const  defaultCompanies = await jobs.distinct('company');
         const defaultJobTitles = await jobs.distinct('job_title');
         const  defaultWorkModes = await jobs.distinct('work_mode');
@@ -165,6 +170,8 @@ router.post("/search", async (req,res)=>{
         locations = [locations,]
 
         var nwcompanies=[],nwlocations=[],nwjob_titles=[];
+
+        var search = '';
 
 
                 search = search.toLowerCase();
@@ -200,15 +207,15 @@ router.post("/search", async (req,res)=>{
                 }
 
         
-        const query=[{ experience: { '$gte': 2.5 } },];
+        const query=[{ experience: { '$gte': 2.5} },];
   
-        if(job_titles!=undefined)
+        if( job_titles!=undefined && job_titles !== '' && !(job_titles.length === 1 && job_titles[0] === ''))
         {
                 const obj={job_title:{ "$in": job_titles }};
                 query.push(obj);
         }
        
-        if( locations!=undefined)
+        if( locations!=undefined && locations !== '' && !(locations.length === 1 && locations[0] === ''))
         {
             if(locations == "Anywhere"){
                 locations = undefined;
@@ -217,7 +224,7 @@ router.post("/search", async (req,res)=>{
             query.push(obj);
             }
         }
-        if(work_modes!=undefined)
+        if(work_modes!=undefined && work_modes !== '' && !(work_modes.length === 1 && work_modes[0] === ''))
         {
             if(work_modes == "Any"){
                 work_modes = undefined;
@@ -232,14 +239,15 @@ router.post("/search", async (req,res)=>{
             const obj={company:{ "$in": companies }};
             query.push(obj);
         }
+
         //console.log(query)
 
         const data = await jobs.find({"$and": query})
         .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
             if(req.cookies.jwt)
-            res.render("jobs_1.ejs",{data:data,search:search , locations:locations,work_modes:work_modes , logged:true});
+            res.render("jobs_1.ejs",{data:data,search:search ,job_titles:job_titles, locations:locations,work_modes:work_modes,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:true});
             else
-            res.render("jobs_1.ejs",{data:data,search:search , locations:locations, work_modes:work_modes , logged:false});
+            res.render("jobs_1.ejs",{data:data,search:search ,job_titles:job_titles, locations:locations, work_modes:work_modes ,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:false});
         }
         catch(err){
             res.send(err);

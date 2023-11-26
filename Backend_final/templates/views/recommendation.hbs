@@ -73,7 +73,7 @@
     <div id="cards-container" class="container cards-container">
         {{#if jobsdata}}
         {{#each jobsdata}}
-        <div class="row jobs-card">
+        {{!-- <div class="row jobs-card">
             <div class="col-2 company-logo">
                 <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
             </div>
@@ -101,8 +101,8 @@
                 </div>
             </div>
 
-        </div>
-
+        </div> --}}
+        {{>job_card}}
         {{/each}}
         {{else}}
         <div style="text-align: center;">

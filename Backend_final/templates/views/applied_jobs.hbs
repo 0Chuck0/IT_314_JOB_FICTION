@@ -84,7 +84,7 @@
     <div id="cards-container" class="container cards-container">
         {{#if jobsdata}}
         {{#each jobsdata}}
-        <div class="row jobs-card">
+        {{!-- <div class="row jobs-card">
             <div class="col-2 company-logo">
                 <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
             </div>
@@ -110,11 +110,13 @@
                 <div class="row labels">
                     <span class="label-3"><i class="far fa-building"></i>{{this.work_mode}}</a>
                 </div>
-            </div>
+            </div> --}}
             {{!-- <div class="col-1">
                 <a href="/deletesaved_jobs/{{this.id}}"><i class="fa-solid fa-bookmark saved" data-bs-toggle="tooltip"
                         title="Unsave"></i></a>
             </div> --}}
+
+            {{>job_card}}
         </div>
 
         {{/each}}

@@ -125,7 +125,7 @@
 
                 {{#if Jobs}}
               {{#each Jobs}}
-            <div class="row jobs-card" onclick="func({{id}})">
+            {{!-- <div class="row jobs-card" onclick="func({{id}})">
                 <div class="col-2 company-logo">
                     <img src="{{../company.profile}}"  style="height: 64px; width: 64px;" style="height: 64px; width: 64px;" alt="Company-logo" class="job-profile">
                 </div>
@@ -155,7 +155,9 @@
                     </div>
                 </div>
                 
-            </div>
+            </div> --}}
+
+            {{>job_card}}
 
             {{/each}}
 

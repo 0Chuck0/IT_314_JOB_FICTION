@@ -127,12 +127,11 @@
       <h1>Jobs</h1>
 
     </div>
-    <div style="width: 80%; padding:auto ; margin:auto">
+    {{!-- <div style="width: 80%; padding:auto ; margin:auto"> --}}
       <div id="jobListing-container" class="col container jobListing-container scroll">
 
         {{#each data}}
-
-        <a href="/job_description/{{id}}">
+        {{!-- <a href="/job_description/{{id}}">
 
           <div class="row jobs-card">
             <div class="col-sm-2 company-logo">
@@ -163,10 +162,12 @@
                 </div>
               </div>
             </div>
-        </a>
+        </a> --}}
+
+        {{>job_card}}
         {{/each}}
       </div>
-    </div>
+    {{!-- </div> --}}
   </div>
   <button class="job-more">
     More List

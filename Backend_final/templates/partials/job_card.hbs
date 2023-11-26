@@ -1,94 +1,94 @@
 <style>
     .jobs-card i {
-    margin-right: 0.5em;
-    font-size: 1.2em;
-}
-
-.label-1,
-.label-2,
-.label-3 {
-    text-decoration: none;
-    color: black !important;
-    font-size: 1.2em;
-}
-
-.labels {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.job-labels-open-nav {
-    display: none;
-}
-
-.label-a:hover,
-.label-c:hover {
-
-    box-shadow: 0px 0 5px;
-    background-color: var(--primaryColor);
-    color: white !important;
-}
-
-.labels {
-    max-width: fit-content;
-}
-
-a:hover{
-    text-decoration: none;
-}
-@media (width < 768px) {
-    .company-logo {
-        display: none !important;
+        margin-right: 0.5em;
+        font-size: 1.2em;
     }
 
-    .job-labels {
-        margin-top: 0 !important;
-    }
-
-    .job-detail p {
-        margin-bottom: 0;
-    }
-
+    .label-1,
+    .label-2,
     .label-3 {
+        text-decoration: none;
+        color: black !important;
+        font-size: 1.2em;
+    }
+
+    .labels {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .job-labels-open-nav {
         display: none;
     }
 
-    .jobs-card i {
-        margin-right: 0.2rem;
+    .label-a:hover,
+    .label-c:hover {
+
+        box-shadow: 0px 0 5px;
+        background-color: var(--primaryColor);
+        color: white !important;
     }
-    
-}
+
+    .labels {
+        max-width: fit-content;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    @media (width < 768px) {
+        .company-logo {
+            display: none !important;
+        }
+
+        .job-labels {
+            margin-top: 0 !important;
+        }
+
+        .job-detail p {
+            margin-bottom: 0;
+        }
+
+        .label-3 {
+            display: none;
+        }
+
+        .jobs-card i {
+            margin-right: 0.2rem;
+        }
+
+    }
 </style>
-    <a href="/job_description/{{id}}" >
-        <div class="row jobs-card">
-            <div class="col-sm-2 company-logo">
-                <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
-            </div>
-            <div class="col job-detail">
-                <div class="row col-sm">
-                    <h4>{{company}}</h4>
-                </div>
-                <div class="row  col-sm">
-                    <h3>{{job_title}}</h3>
-                </div>
-                <div class="row  col-sm ">
-                    <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
-                </div>
-            </div>
 
-            <div class="col-sm-4 job-labels mt-3">
-                <div class="col-10">
-                    <div class="row labels">
-                        <span class="label-1"><i class="fas fa-inr"></i>{{salary}}</span>
-                    </div>
-                    <div class="row labels">
-                        <span class="label-2"><i class="fas fa-business-time"></i>{{experience}} years</span>
-                    </div>
-                    <div class="row labels">
-                        <span class="label-3"><i class="far fa-building"></i>{{work_mode}}</span>
-                    </div>
-                </div>
-            </div>
-
+<div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
+    <div class="col-sm-2 company-logo">
+        <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
+    </div>
+    <div class="col job-detail">
+        <div class="row col-sm">
+            <h4>{{company}}</h4>
         </div>
-    </a>
+        <div class="row  col-sm">
+            <h3>{{job_title}}</h3>
+        </div>
+        <div class="row  col-sm ">
+            <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
+        </div>
+    </div>
+
+    <div class="col-sm-4 job-labels mt-3">
+        <div class="col-10">
+            <div class="row labels">
+                <span class="label-1"><i class="fas fa-inr"></i>{{salary}}</span>
+            </div>
+            <div class="row labels">
+                <span class="label-2"><i class="fas fa-business-time"></i>{{experience}} years</span>
+            </div>
+            <div class="row labels">
+                <span class="label-3"><i class="far fa-building"></i>{{work_mode}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

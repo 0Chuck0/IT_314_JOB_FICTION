@@ -44,7 +44,7 @@ module.exports = {
             }
             if (!employee_name) {
                 return res.status(400).json({ error: 'employee_name is required' });
-            }
+            }         
             if (!employee_designation) {
                 return res.status(400).json({ error: 'employee_designation is required' });
             }

@@ -759,9 +759,10 @@
              class10.value='{{data.class10}}'
             class12.value='{{data.class12}}'
             college.value='{{data.college}}'
-            highest_edu.value='{{data.highest_edu}}'
-            field.value='{{data.field}}'
+            highest_edu.innerHTML='{{data.highest_edu}}'
+            field.innerHTML='{{data.field}}'
             expi.value = '{{data.experience}}';
+            console.log(field.innerHTML)
             if (resumeInput && resumeLinkFromData) {
                 resumeInput.value = resumeLinkFromData;
             }

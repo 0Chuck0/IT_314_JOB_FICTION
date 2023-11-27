@@ -42,29 +42,32 @@ module.exports = {
              r_languages=a_languages;
         }
 
-
-        if(recommendation_data.r_job_title)
+        if(recommendation_data)
         {
-             job_title = job_title.filter(skill => !recommendation_data.r_job_title.includes(skill));
+            if(recommendation_data.r_job_title)
+            {
+                 job_title = job_title.filter(skill => !recommendation_data.r_job_title.includes(skill));
+            }
+            else
+            {
+                 r_languages=a_languages;
+            }
+    
+            
+            if(recommendation_data.r_location)
+            {
+                 location = location.filter(skill => !recommendation_data.r_location.includes(skill));
+            }
+            else
+            {
+                 r_languages=a_languages;
+            }
         }
-        else
-        {
-             r_languages=a_languages;
-        }
-
-        
-        if(recommendation_data.r_location)
-        {
-             location = location.filter(skill => !recommendation_data.r_location.includes(skill));
-        }
-        else
-        {
-             r_languages=a_languages;
-        }
+       var profile=data.profile
         const resume_link=data.resume_link;
         
         
-        res.render("edit_profile.hbs",{job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data});
+        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data});
     },
 
     post:async(req,res)=>{
@@ -86,7 +89,7 @@ module.exports = {
                 return res.status(400).json({ error: 'project name is required' });
             }
             if (!college) {
-                return res.status(400).json({ error: 'collage name is required' });
+                return res.status(400).json({ error: 'college name is required' });
             }
             if (!class12) {
                 return res.status(400).json({ error: 'class12 grade is required' });
@@ -106,9 +109,7 @@ module.exports = {
             if (class10 < 0 || class10 > 100) {
                 return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
             }
-            if (!driveLinkRegex.test(resume_link)) {
-                 return res.status(400).json({ error: 'Invalid Google Drive link format' });
-            }
+           
             if (!projectNamePattern.test(project)) {
                 return res.status(400).json({
                     error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'

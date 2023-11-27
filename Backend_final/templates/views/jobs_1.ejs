@@ -141,100 +141,100 @@
       <div class="container main-container">
         <div class="container">
           <div class="row align-items-center justify-content-center">
-            <div class="col-md-10">
+            <div class="col-12 col-md-8 search-fields">
               <form onsubmit="set_filters()" id="search-bar" action="./index_jobs.html" method="get"
                 class="search-jobs-form">
                 <div class="row">
-                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 search-fields">
-                    <select id="job-title-dropdown" name="Job-title" class="selectpicker" data-style="btn-white btn-lg"
+                  <div class="col-8" id="input-search" style="border-right: 1px solid gray;">
+                    <!-- <select id="job-title-dropdown" name="Job-title" class="selectpicker" data-style="btn-white btn-lg"
                       data-width="100%" data-live-search="true" title="Job titles">
-                    </select>
+                    </select> -->
+                    <input type="text" id="input-text-search" name="search" class="form-control input-search"
+                    placeholder="Job title, Company...">
                   </div>
-                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0 search-fields">
-                    <select id="region-dropdown" name="Region" class="selectpicker  " data-style="btn-white btn-lg"
-                      data-width="100%" data-live-search="true" title="Select Region">
-                    </select>
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                    <select id="work-mode-dropdown" name="work-mode" class="selectpicker" data-style="btn-white btn-lg"
-                      data-width="100%" data-live-search="true" title="Select Job Type">
-                    </select>
-                  </div>
-                  <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                  </style>
+                  <div class="col-4">
                     <button id="search-submit" type="submit"
                       class="btn btn-primary btn-lg btn-block text-white btn-search search-btn"><span
-                        class="icon-search icon mr-2"></span>Search Job</button>
+                        class="icon-search icon mr-2"></span><span id="search-tag">Search Job</span></button>
+                        <style>
+                          @media (width<470px){ 
+                            #search-tag{
+                              display: none;
+                              }
+                          }
+                        </style>
                   </div>
                 </div>
-                <% if (typeof defaultJobTitles !=='undefined' ) { %>
+            </div>
+            <% if (typeof defaultJobTitles !=='undefined' ) { %>
+              <script>
+                var data_job_title = '<%= defaultJobTitles %>';
+                data_job_title = data_job_title.split(',')
+                for (let x in data_job_title) {
+                  let jobTitle = document.getElementById("job-title-dropdown");
+                  const option = document.createElement("option");
+                  option.setAttribute('value', data_job_title[x]);
+                  let optionText = document.createTextNode(data_job_title[x]);
+                  option.appendChild(optionText);
+                  jobTitle.appendChild(option);
+                }
+              </script>
+              <% } %>
+
+                <% if (typeof defaultLocations !=='undefined' ) { %>
                   <script>
-                    var data_job_title = '<%= defaultJobTitles %>';
-                    data_job_title = data_job_title.split(',')
-                    for (let x in data_job_title) {
-                      let jobTitle = document.getElementById("job-title-dropdown");
+                    var data_region = '<%= defaultLocations %>';
+                    data_region = data_region.split(',')
+                    let Region_dd = document.getElementById("region-dropdown");
+                    for (let x in data_region) {
                       const option = document.createElement("option");
-                      option.setAttribute('value', data_job_title[x]);
-                      let optionText = document.createTextNode(data_job_title[x]);
+                      option.setAttribute('value', data_region[x]);
+                      let optionText = document.createTextNode(data_region[x]);
                       option.appendChild(optionText);
-                      jobTitle.appendChild(option);
+                      Region_dd.appendChild(option);
                     }
                   </script>
                   <% } %>
 
-                    <% if (typeof defaultLocations !=='undefined' ) { %>
+                    <% if (typeof defaultWorkModes !=='undefined' ) { %>
                       <script>
-                        var data_region = '<%= defaultLocations %>';
-                        data_region = data_region.split(',')
-                        let Region_dd = document.getElementById("region-dropdown");
-                        for (let x in data_region) {
+                        var data_work_mode = '<%= defaultWorkModes %>';
+                        data_work_mode = data_work_mode.split(',')
+                        let work_mode_dd = document.getElementById("work-mode-dropdown");
+                        for (let x in data_work_mode) {
                           const option = document.createElement("option");
-                          option.setAttribute('value', data_region[x]);
-                          let optionText = document.createTextNode(data_region[x]);
+                          option.setAttribute('value', data_work_mode[x]);
+                          let optionText = document.createTextNode(data_work_mode[x]);
                           option.appendChild(optionText);
-                          Region_dd.appendChild(option);
+                          work_mode_dd.appendChild(option);
                         }
                       </script>
                       <% } %>
 
-                        <% if (typeof defaultWorkModes !=='undefined' ) { %>
-                          <script>
-                            var data_work_mode = '<%= defaultWorkModes %>';
-                            data_work_mode = data_work_mode.split(',')
-                            let work_mode_dd = document.getElementById("work-mode-dropdown");
-                            for (let x in data_work_mode) {
-                              const option = document.createElement("option");
-                              option.setAttribute('value', data_work_mode[x]);
-                              let optionText = document.createTextNode(data_work_mode[x]);
-                              option.appendChild(optionText);
-                              work_mode_dd.appendChild(option);
-                            }
-                          </script>
-                          <% } %>
-
-              </form>
-            </div>
+                        </form>
           </div>
         </div>
-        <div class="main-container container row">
-          <span class="col-6 justify-content-left filter-nav-btn">
-            <div id="filter-nav-btn" style="cursor: pointer;">
-              <i class="fa-solid fa-filter" style="color:black"></i>
-              <h4 style="display: inline;">Filters</h4>
-            </div>
-          </span>
+      </div>
+      <div class="main-container container row">
+        <span class="col-6 justify-content-left filter-nav-btn">
+          <div id="filter-nav-btn" style="cursor: pointer;">
+            <i class="fa-solid fa-filter" style="color:black"></i>
+            <h4 style="display: inline;">Filters</h4>
+          </div>
+        </span>
 
-          <span class="col-6 text-right filter-nav-apply">
-            <div id="filter-nav-apply" style="cursor: pointer;">
-              <i class="fas fa-calendar-check" style="color:black"></i>
-              <h4 style="display: inline;">Apply</h4>
-            </div>
-          </span>
-          <div id="filter-container" class="container-fluid text-center filter-container">
-            <div class="row">
-              <div id="form-class" class="col-4 form-class">
-                <form id="filter-form" class="col-10" onkeydown="return event.key != 'Enter';"
-                  onchange="display_jobs()">
-                  <!-- <div class="col">
+        <span class="col-6 text-right filter-nav-apply">
+          <div id="filter-nav-apply" style="cursor: pointer;">
+            <i class="fas fa-calendar-check" style="color:black"></i>
+            <h4 style="display: inline;">Apply</h4>
+          </div>
+        </span>
+        <div id="filter-container" class="container-fluid text-center filter-container">
+          <div class="row">
+            <div id="form-class" class="col-4 form-class">
+              <form id="filter-form" class="col-10" onkeydown="return event.key != 'Enter';" onchange="display_jobs()">
+                <!-- <div class="col">
                     <h6 class="filter-button"> Serach </h6>
                     <input type="text" name="search" class="form-control form-control-lg"
                       placeholder="Job title, Company...">
@@ -245,222 +245,212 @@
                     </script>
                     <% } %> -->
 
-                  <!-- Hidden Inputs -->
-                  <input name="job_titles" id="job-title-company" type="text" class="form-control form-control-lg"
-                    placeholder="Job title, Company..." style="display: none;">
+                <!--hidden input-->
+                <div class="col" style="display: none;">
+                  <input type="text" name="search"  id="hidden-input" class="form-control form-control-lg"
+                    placeholder="Job title, Company...">
+                </div>
+                <% if (typeof search !=='undefined' ) { %>
+                  <script>
+                    document.getElementsByName("search")[0].value = '<%= search %>';
+                  </script>
+                  <% } %>
+                    <div class="col">
+                      <h6 id="filter-button1" class="filter-button">Job Titles</h6>
+                      <div id="options1" class="options col-10">
+                        <input id="f1-opt1" type="checkbox" value="Software Engineer" name="job_titles">
+                        <label for="f1-opt1">Software Engineer</label>
+                        <br>
+                        <input id="f1-opt2" type="checkbox" value="Data Scientist" name="job_titles">
+                        <label for="f1-opt2">Data Scientist</label>
+                        <br>
+                        <input id="f1-opt3" type="checkbox" value="UI Developer" name="job_titles">
+                        <label for="f1-opt3">UI Developer</label>
+                        <br>
+                        <input id="f1-opt4" type="checkbox" value="Electrical Engineer" name="job_titles">
+                        <label for="f1-opt4">Electrical Engineer</label>
 
-                  <input name="locations" id="region-input" type="text" class="form-control form-control-lg"
-                    placeholder="Job title, Company..." style="display: none;">
+                        <% if (typeof job_titles !=='undefined' ) { %>
+                          <script>
+                            let ch = document.getElementsByName("job_titles");
+                            for (let i in ch) {
+                              console.log(ch[i].value);
+                              if (ch[i].value == '<%= job_titles %>') ch[i].checked = true;
 
-                  <input name="work_modes" id="work-mode-input" type="text" class="form-control form-control-lg"
-                    placeholder="Job title, Company..." style="display: none;">
+                            }
+                          </script>
+                          <% } %>
 
-                  <div class="col">
-                    <h6 class="filter-button"> Serach </h6>
-                    <input type="text" name="search" class="form-control form-control-lg"
-                      placeholder="Job title, Company...">
-                  </div>
-                  <% if (typeof search !=='undefined' ) { %>
-                    <script>
-                      document.getElementsByName("search")[0].value = '<%= search %>';
-                    </script>
-                    <% } %>
-                      <div class="col">
-                        <h6 id="filter-button1" class="filter-button">Job Titles</h6>
-                        <div id="options1" class="options col-10">
-                          <input id="f1-opt1" type="checkbox" value="Software Engineer" name="job_titles">
-                          <label for="f1-opt1">Software Engineer</label>
-                          <br>
-                          <input id="f1-opt2" type="checkbox" value="Data Scientist" name="job_titles">
-                          <label for="f1-opt2">Data Scientist</label>
-                          <br>
-                          <input id="f1-opt3" type="checkbox" value="UI Developer" name="job_titles">
-                          <label for="f1-opt3">UI Developer</label>
-                          <br>
-                          <input id="f1-opt4" type="checkbox" value="Electrical Engineer" name="job_titles">
-                          <label for="f1-opt4">Electrical Engineer</label>
-
-                          <% if (typeof job_titles !=='undefined' ) { %>
-                            <script>
-                              let ch = document.getElementsByName("job_titles");
-                              for (let i in ch) {
-                                console.log(ch[i].value);
-                                if (ch[i].value == '<%= job_titles %>') ch[i].checked = true;
-
-                              }
-                            </script>
-                            <% } %>
-
-                        </div>
                       </div>
-                      <div class="col">
-                        <h6 id="filter-button7" class="filter-button">Experience</h6>
-                        <div class="row col-11 slider">
-                          <div class="col-3  range-min">
-                            <h6 class="range-ends">0 years</h6>
-                          </div>
-                          <div class="range col">
-                            <div class="range__content">
+                    </div>
+                    <div class="col">
+                      <h6 id="filter-button7" class="filter-button">Experience</h6>
+                      <div class="row col-11 slider">
+                        <div class="col-3  range-min">
+                          <h6 class="range-ends">0 years</h6>
+                        </div>
+                        <div class="range col">
+                          <div class="range__content">
 
-                              <div class="range__slider">
-                                <div class="range__slider-line" id="range-line"></div>
-                              </div>
-
-                              <div class="range__thumb" id="range-thumb">
-                                <div class="range__value">
-                                  <span class="range__value-number" id="range-number">50</span>
-                                </div>
-                              </div>
-
-                              <input type="range" class="range__input" id="range-input" min="0" max="100" value="50"
-                                step="10" name="experience">
+                            <div class="range__slider">
+                              <div class="range__slider-line" id="range-line"></div>
                             </div>
+
+                            <div class="range__thumb" id="range-thumb">
+                              <div class="range__value">
+                                <span class="range__value-number" id="range-number">50</span>
+                              </div>
+                            </div>
+
+                            <input type="range" class="range__input" id="range-input" min="0" max="100" value="50"
+                              step="10" name="experience">
                           </div>
-                          <div class="col-3 range-max">
-                            <h6 class="range-ends">5 years</h6>
-                          </div>
+                        </div>
+                        <div class="col-3 range-max">
+                          <h6 class="range-ends">5 years</h6>
                         </div>
                       </div>
-                      <div class="col">
-                        <h6 id="filter-button2" class="filter-button">Locations</h6>
-                        <div id="options2" class="options col-10">
-                          <input id="f2-opt1" type="checkbox" value="Gurgaon" name="locations">
-                          <label for="f2-opt1">Gurgaon</label>
-                          <br>
-                          <input id="f2-opt2" type="checkbox" value="Bangalore" name="locations">
-                          <label for="f2-opt2">Bangalore</label>
-                          <br>
-                          <input id="f2-opt3" type="checkbox" value="Hyderabad" name="locations">
-                          <label for="f2-opt3">Hyderabad</label>
-                          <br>
-                          <input id="f2-opt4" type="checkbox" value="Pune" name="locations">
-                          <label for="f2-opt4">Pune</label>
-                          <br>
-                          <input id="f2-opt5" type="checkbox" value="Gandhinagar" name="locations">
-                          <label for="f2-opt5">Gandhinagar</label>
+                    </div>
+                    <div class="col">
+                      <h6 id="filter-button2" class="filter-button">Locations</h6>
+                      <div id="options2" class="options col-10">
+                        <input id="f2-opt1" type="checkbox" value="Gurgaon" name="locations">
+                        <label for="f2-opt1">Gurgaon</label>
+                        <br>
+                        <input id="f2-opt2" type="checkbox" value="Bangalore" name="locations">
+                        <label for="f2-opt2">Bangalore</label>
+                        <br>
+                        <input id="f2-opt3" type="checkbox" value="Hyderabad" name="locations">
+                        <label for="f2-opt3">Hyderabad</label>
+                        <br>
+                        <input id="f2-opt4" type="checkbox" value="Pune" name="locations">
+                        <label for="f2-opt4">Pune</label>
+                        <br>
+                        <input id="f2-opt5" type="checkbox" value="Gandhinagar" name="locations">
+                        <label for="f2-opt5">Gandhinagar</label>
 
-                          <% if (typeof locations !=='undefined' ) { %>
-                            <script>
-                              let x = document.getElementsByName("locations");
-                              for (let i in x) {
-                                console.log(x[i].value);
-                                if (x[i].value == '<%= locations %>') x[i].checked = true;
+                        <% if (typeof locations !=='undefined' ) { %>
+                          <script>
+                            let x = document.getElementsByName("locations");
+                            for (let i in x) {
+                              console.log(x[i].value);
+                              if (x[i].value == '<%= locations %>') x[i].checked = true;
 
-                              }
-                            </script>
-                            <% } %>
+                            }
+                          </script>
+                          <% } %>
 
-                        </div>
                       </div>
-                      <div class="col">
-                        <h6 id="filter-button3" class="filter-button">Work Modes</h6>
-                        <div id="options3" class="options col-10">
-                          <input id="f3-opt1" type="checkbox" value="Office" name="work_modes">
-                          <label for="f3-opt1">Office</label>
-                          <br>
-                          <input id="f3-opt2" type="checkbox" value="Remote" name="work_modes">
-                          <label for="f3-opt2">Remote</label>
-                          <br>
-                          <input id="f3-opt3" type="checkbox" value="Hybrid" name="work_modes">
-                          <label for="f3-opt3">Hybrid</label>
+                    </div>
+                    <div class="col">
+                      <h6 id="filter-button3" class="filter-button">Work Modes</h6>
+                      <div id="options3" class="options col-10">
+                        <input id="f3-opt1" type="checkbox" value="Office" name="work_modes">
+                        <label for="f3-opt1">Office</label>
+                        <br>
+                        <input id="f3-opt2" type="checkbox" value="Remote" name="work_modes">
+                        <label for="f3-opt2">Remote</label>
+                        <br>
+                        <input id="f3-opt3" type="checkbox" value="Hybrid" name="work_modes">
+                        <label for="f3-opt3">Hybrid</label>
 
 
-                          <% if (typeof work_modes !=='undefined' ) { %>
-                            <script>
-                              let y = document.getElementsByName("work_modes");
-                              for (let i in y) {
-                                console.log(y[i].value);
-                                if (y[i].value == '<%= work_modes %>') y[i].checked = true;
+                        <% if (typeof work_modes !=='undefined' ) { %>
+                          <script>
+                            let y = document.getElementsByName("work_modes");
+                            for (let i in y) {
+                              console.log(y[i].value);
+                              if (y[i].value == '<%= work_modes %>') y[i].checked = true;
 
-                              }
-                            </script>
-                            <% } %>
+                            }
+                          </script>
+                          <% } %>
 
-                        </div>
                       </div>
+                    </div>
 
-                      <div class="col">
-                        <h6 id="filter-button4" class="filter-button">Qualification</h6>
-                        <div id="options4" class="options col-10">
-                          <input id="f4-opt1" type="checkbox" value="BTech" name="educations">
-                          <label for="f4-opt1">Bachelors</label>
-                          <br>
-                          <input id="f4-opt2" type="checkbox" value="MTech" name="educations">
-                          <label for="f4-opt2">Masters</label>
-                          <br>
-                          <input id="f4-opt3" type="checkbox" value="PhD" name="educations">
-                          <label for="f4-opt3">PhD</label>
-                        </div>
+                    <div class="col">
+                      <h6 id="filter-button4" class="filter-button">Qualification</h6>
+                      <div id="options4" class="options col-10">
+                        <input id="f4-opt1" type="checkbox" value="BTech" name="educations">
+                        <label for="f4-opt1">Bachelors</label>
+                        <br>
+                        <input id="f4-opt2" type="checkbox" value="MTech" name="educations">
+                        <label for="f4-opt2">Masters</label>
+                        <br>
+                        <input id="f4-opt3" type="checkbox" value="PhD" name="educations">
+                        <label for="f4-opt3">PhD</label>
                       </div>
-                      <div class="col">
-                        <h6 id="filter-button5" class="filter-button">Companies</h6>
-                        <div id="options5" class="options col-10">
-                          <input id="f5-opt1" type="checkbox" value="Google" name="companies">
-                          <label for="f5-opt1">Google</label>
-                          <br>
-                          <input id="f5-opt2" type="checkbox" value="Microsoft" name="companies">
-                          <label for="f5-opt2">Microsoft</label>
-                          <br>
-                          <input id="f5-opt3" type="checkbox" value="Deshaw" name="companies">
-                          <label for="f5-opt3">D.E Shaw</label>
-                          <br>
-                          <input id="f5-opt4" type="checkbox" value="Sprinklr" name="companies">
-                          <label for="f5-opt4">Sprinklr</label>
-                        </div>
+                    </div>
+                    <div class="col">
+                      <h6 id="filter-button5" class="filter-button">Companies</h6>
+                      <div id="options5" class="options col-10">
+                        <input id="f5-opt1" type="checkbox" value="Google" name="companies">
+                        <label for="f5-opt1">Google</label>
+                        <br>
+                        <input id="f5-opt2" type="checkbox" value="Microsoft" name="companies">
+                        <label for="f5-opt2">Microsoft</label>
+                        <br>
+                        <input id="f5-opt3" type="checkbox" value="Deshaw" name="companies">
+                        <label for="f5-opt3">D.E Shaw</label>
+                        <br>
+                        <input id="f5-opt4" type="checkbox" value="Sprinklr" name="companies">
+                        <label for="f5-opt4">Sprinklr</label>
                       </div>
-                      <div class="col">
-                        <h6 id="filter-button6" class="filter-button">Skills</h6>
-                        <div id="options6" class="options col-10">
-                          <input id="f6-opt1" type="checkbox" value="c++" name="skills">
-                          <label for="f6-opt1">C++</label>
-                          <br>
-                          <input id="f6-opt2" type="checkbox" value="python" name="skills">
-                          <label for="f6-opt2">Python</label>
-                          <br>
-                          <input id="f6-opt3" type="checkbox" value="java" name="skills">
-                          <label for="f6-opt3">Java</label>
-                          <br>
-                          <input id="f6-opt4" type="checkbox" value="AD" name="skills">
-                          <label for="f6-opt4">Android Development</label>
-                          <br>
-                          <input id="f6-opt4" type="checkbox" value="WD" name="skills">
-                          <label for="f6-opt4">Web Development</label>
-                        </div>
+                    </div>
+                    <div class="col">
+                      <h6 id="filter-button6" class="filter-button">Skills</h6>
+                      <div id="options6" class="options col-10">
+                        <input id="f6-opt1" type="checkbox" value="c++" name="skills">
+                        <label for="f6-opt1">C++</label>
+                        <br>
+                        <input id="f6-opt2" type="checkbox" value="python" name="skills">
+                        <label for="f6-opt2">Python</label>
+                        <br>
+                        <input id="f6-opt3" type="checkbox" value="java" name="skills">
+                        <label for="f6-opt3">Java</label>
+                        <br>
+                        <input id="f6-opt4" type="checkbox" value="AD" name="skills">
+                        <label for="f6-opt4">Android Development</label>
+                        <br>
+                        <input id="f6-opt4" type="checkbox" value="WD" name="skills">
+                        <label for="f6-opt4">Web Development</label>
                       </div>
+                    </div>
 
-                      <div class="col">
-                        <h6 id="filter-button8" class="filter-button">Salary (per month)</h6>
-                        <div id="options8" class="options col-10">
-                          <input id="f8-opt1" type="radio" value='{"min":0,"max":25000}' name="salary">
-                          <label for="f8-opt1">₹0 - ₹25,000</label>
-                          <br>
-                          <input id="f8-opt2" type="radio" value='{"min":25000,"max":50000}' name="salary">
-                          <label for="f8-opt2">₹25,000 - ₹50,000</label>
-                          <br>
-                          <input id="f8-opt3" type="radio" value='{"min":50000,"max":100000}' name="salary">
-                          <label for="f8-opt3">₹50,000 - ₹1,00,000</label>
-                          <br>
-                          <input id="f8-opt4" type="radio" value='{"min":100000,"max":1000000}' name="salary">
+                    <div class="col">
+                      <h6 id="filter-button8" class="filter-button">Salary (per month)</h6>
+                      <div id="options8" class="options col-10">
+                        <input id="f8-opt1" type="radio" value='{"min":0,"max":25000}' name="salary">
+                        <label for="f8-opt1">₹0 - ₹25,000</label>
+                        <br>
+                        <input id="f8-opt2" type="radio" value='{"min":25000,"max":50000}' name="salary">
+                        <label for="f8-opt2">₹25,000 - ₹50,000</label>
+                        <br>
+                        <input id="f8-opt3" type="radio" value='{"min":50000,"max":100000}' name="salary">
+                        <label for="f8-opt3">₹50,000 - ₹1,00,000</label>
+                        <br>
+                        <input id="f8-opt4" type="radio" value='{"min":100000,"max":1000000}' name="salary">
 
-                          <label for="f8-opt4">> ₹1,00,000</label>
-                          <br>
-                          <input id="f8-opt5" type="radio" value="None" name="salary">
-                          <label for="f8-opt5">No range</label>
+                        <label for="f8-opt4">> ₹1,00,000</label>
+                        <br>
+                        <input id="f8-opt5" type="radio" value="None" name="salary">
+                        <label for="f8-opt5">No range</label>
 
 
-                        </div>
                       </div>
-                      <style>
-                        a:hover {
-                          text-decoration: none;
-                        }
-                      </style>
-                </form>
-              </div>
+                    </div>
+                    <style>
+                      a:hover {
+                        text-decoration: none;
+                      }
+                    </style>
+              </form>
+            </div>
 
 
 
-              <script id="job-template" type="text/x-handlebars-template">
+            <script id="job-template" type="text/x-handlebars-template">
                             <a href="/job_description/{{id}}" >
                               
                                 <!-- <div class="row jobs-card">
@@ -519,13 +509,13 @@
 
 
 
-              <div id="jobListing-container" class="col container jobListing-container scroll">
+            <div id="jobListing-container" class="col container jobListing-container scroll">
 
-                <% for (let key in data) { %>
+              <% for (let key in data) { %>
 
-                  <a href="/job_description/<%= data[key].id %>">
+                <a href="/job_description/<%= data[key].id %>">
 
-                    <!-- <div class="row jobs-card">
+                  <!-- <div class="row jobs-card">
                       <div class="col-2 company-logo">
                         <img src="/images/Tesla.svg" alt="Company-logo" class="job-profile">
                       </div>
@@ -553,58 +543,58 @@
                       </div>
                     </div> -->
 
-                    <div class="row jobs-card">
-                      <div class="col-sm-2 company-logo">
-                        <img src="<%= data[key].profile %>" alt="Company-logo" class="job-profile">
+                  <div class="row jobs-card">
+                    <div class="col-sm-2 company-logo">
+                      <img src="<%= data[key].profile %>" alt="Company-logo" class="job-profile">
+                    </div>
+                    <div class="col job-detail">
+                      <div class="row col-sm">
+                        <h4>
+                          <%= data[key].company %>
+                        </h4>
                       </div>
-                      <div class="col job-detail">
-                        <div class="row col-sm">
-                          <h4>
-                            <%= data[key].company %>
-                          </h4>
-                        </div>
-                        <div class="row  col-sm">
-                          <h3>
-                            <%= data[key].job_title%>
-                          </h3>
-                        </div>
-                        <div class="row  col-sm ">
-                          <p><i class="fa-solid fa-location-dot"></i>
-                            <%= data[key].location%>
-                          </p>
-                        </div>
+                      <div class="row  col-sm">
+                        <h3>
+                          <%= data[key].job_title%>
+                        </h3>
                       </div>
-
-                      <div class="col-sm-4 job-labels mt-3">
-                        <div class="col-10">
-                          <div class="row labels">
-                            <span class="label-1"><i class="fas fa-inr"></i>
-                              <%= data[key].salary%>
-                            </span>
-                          </div>
-                          <div class="row labels">
-                            <span class="label-2"><i class="fas fa-business-time"></i>
-                              <!-- {{experience}}-->
-                              <%= data[key].experience%> years
-                            </span>
-                          </div>
-                          <div class="row labels">
-                            <span class="label-3"><i class="far fa-building"></i>
-                              <%= data[key].work_mode%>
-                            </span>
-                          </div>
-                        </div>
+                      <div class="row  col-sm ">
+                        <p><i class="fa-solid fa-location-dot"></i>
+                          <%= data[key].location%>
+                        </p>
                       </div>
-
                     </div>
 
-                  </a>
-                  <% } %>
-              </div>
+                    <div class="col-sm-4 job-labels mt-3">
+                      <div class="col-10">
+                        <div class="row labels">
+                          <span class="label-1"><i class="fas fa-inr"></i>
+                            <%= data[key].salary%>
+                          </span>
+                        </div>
+                        <div class="row labels">
+                          <span class="label-2"><i class="fas fa-business-time"></i>
+                            <!-- {{experience}}-->
+                            <%= data[key].experience%> years
+                          </span>
+                        </div>
+                        <div class="row labels">
+                          <span class="label-3"><i class="far fa-building"></i>
+                            <%= data[key].work_mode%>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </a>
+                <% } %>
             </div>
           </div>
         </div>
       </div>
+  </div>
   </div>
   </div>
 

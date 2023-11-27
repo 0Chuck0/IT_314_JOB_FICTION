@@ -21,11 +21,11 @@ body {
     box-shadow: 0 0 8px rgb(91, 74, 74);
 }
 
-.search-fields {
+/* .search-fields {
     border-right: 1px solid rgba(0, 0, 0, 0.532);
-}
+} */
 
-@media (width<992px) {
+@media (width<991px) {
     .search-fields {
         border-right: 0;
     }
@@ -52,7 +52,6 @@ body {
     }
     
 }
-
 .search-btn {
     border-radius: 48px !important;
 }

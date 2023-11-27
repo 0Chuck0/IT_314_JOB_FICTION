@@ -100,7 +100,9 @@
                 <h2>PERSONAL DETAILS</h2>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Full Name</span>
                 </div>
+                
                 <div class="widgetCont"><span class="empty">{{name}}</span>
+
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>
@@ -127,56 +129,96 @@
               <h2>ABOUT</h2>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Technical Skills</span>
                 </div>
+                {{#if technical_skills}}
                 <div class="widgetCont"><span class="empty">{{technical_skills}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your technical skills in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Languages</span>
                 </div>
+                 {{#if language_skills}}
                 <div class="widgetCont"><span class="empty">{{language_skills}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your language skills in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Resume</span>
                 </div>
+                 {{#if resume_link}}
                 <div class="widgetCont"><a class="nodecoration" href='{{resume_link}}' target="_blank"><span class="empty addhere">Click Here</span></a>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your resume link in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Experience</span>
                 </div>
+                 {{#if experience}}
                 <div class="widgetCont"><span class="empty">{{experience}} yrs</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your experience in edit profile</span>
+                {{/if}}
                 </div>
           </div>
           <div class="card">
               <h2>PROJECT</h2>
               <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name/Title</span>
               </div>
-              <div class="widgetCont"><span class="empty">{{project}}</span>
+              {{#if project}}
+                <div class="widgetCont"><span class="empty">{{project}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your projects in edit profile</span>
+                {{/if}}
               </div>
           </div>
          <div class="card">
                 <h2>EDUCATION</h2>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Highest Education/Degree</span>
                 </div>
+                {{#if highest_edu}}
                 <div class="widgetCont"><span class="empty">{{highest_edu}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your highest education in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/Collage</span>
+                <div class="widgetHead"><span class="widgetTitle typ-16Bold">University/College</span>
                 </div>
+                 {{#if college}}
                 <div class="widgetCont"><span class="empty">{{college}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your last or current college in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Field of Study</span>
                 </div>
+                 {{#if field}}
                 <div class="widgetCont"><span class="empty">{{field}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your field of study in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class XII</span>
                 </div>
-                <div class="widgetCont"><span class="empty">{{ class12}}</span>
+                {{#if class12}}
+                <div class="widgetCont"><span class="empty">{{class12}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your class 12 percentage in edit profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Class X</span>
                 </div>
+                 {{#if class10}}
                 <div class="widgetCont"><span class="empty">{{class10}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Add your class 10 percentage in edit profile</span>
+                {{/if}}
                 </div>
             </div>
 

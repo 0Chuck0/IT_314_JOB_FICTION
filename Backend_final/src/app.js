@@ -134,13 +134,10 @@ app.get("/logout", async(req, res) => {
     }
  })
 
-app.get("/companyhomepage", (req, res) => {
+app.get("/companyhomepage",[companyloggedinonly], (req, res) => {
     res.render("companyhomepage.hbs")
 })
 
-app.get("/companyprofile", (req, res) => {
-    res.render("companyprofile.hbs")
-})
 
 // app.get("/newpost", (req, res) => {
 //     res.render("newpost")

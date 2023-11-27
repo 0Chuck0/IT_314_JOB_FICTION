@@ -149,14 +149,18 @@
               <li><a href="/home">Home</a></li>
               <li><a href="/jobs_1" class="nav-link active">Jobs</a></li>
               <li>
-                <a href="/recommendation  ">Recommendations</a>
+                <a href="/recommendations">Recommendations</a>
               </li>
               <li><a href="/blog">Blogs</a></li>
               <li>
                 <a href="/about">About Us</a>
               </li>
-              <li class="d-lg-none"><a href="/register">Register</a></li>
-              <li class="d-lg-none"><a href="/login">Log In</a></li>
+              <% if(logged===true) { %>
+                  <li class="d-lg-none"><a href="/logout">Logout</a></li>
+                <%} else { %>
+                  <li class="d-lg-none"><a href="/register">Register</a></li>
+                  <li class="d-lg-none"><a href="/login">Log In</a></li>
+                  <% } %>
             </ul>
           </nav>
 

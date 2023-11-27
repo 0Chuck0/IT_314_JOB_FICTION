@@ -45,6 +45,7 @@
      {{>header2}}
 
 
+
         <!-- HOME -->
         <section class="section-hero overlay inner-page bg-image" style="background-image: url('images/hero_1.jpg');"
             id="home-section">
@@ -72,7 +73,7 @@
             <!-- Sidenav -->
             <div class="sidenav" id="showmenu">
                 <div class="profile">
-                    <img src="images/job_logo_3.jpg" alt="" width="100" height="100">
+                    <img src="{{profile}}" alt="" width="100" height="100">
 
                     <div class="name">
                         {{companyname}}
@@ -88,12 +89,12 @@
                     </div>
                     <hr class="mehr">
                     <div class="url">
-                        <a href="/jobpostlist" class="active">Posted Job</a>
+                        <a href="/companyjobpostlist" class="active">Posted Job</a>
                     </div>
                     <hr class="mehr">
-                    <div class="url">
-                        <a href="/companyeditprofile" class="active">Edit Profile</a>
-                    </div>
+                    {{!-- <div class="url">
+                        <a href="#" class="active">Edit Profile</a>
+                    </div> --}}
                 </div>
             </div>
             <!-- End -->
@@ -110,7 +111,7 @@
                         <hr>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Industy Type</span>
                         </div>
-                        <div class="widgetCont"><span class="empty">{{companytype}}</span>
+                        <div class="widgetCont"><span class="empty">{{industrytype}}</span>
                         </div>
                         <hr>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Contact Number</span>
@@ -125,19 +126,19 @@
                         <hr>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Company Description</span>
                         </div>
-                        <div class="widgetCont"><span class="empty">{{description}}</span>
+                        <div class="widgetCont"><span class="empty">{{company_description}}</span>
                         </div>
                     </div>
                     <div class="card">
                         <h2>Employee Details</h2>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Name</span>
                         </div>
-                        <div class="widgetCont"><span class="empty">{{name}}</span>
+                        <div class="widgetCont"><span class="empty">{{employee_name}}</span>
                         </div>
                         <hr>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Designation</span>
                         </div>
-                        <div class="widgetCont"><span class="empty">{{des}}</span>
+                        <div class="widgetCont"><span class="empty">{{employee_designation}}</span>
                         </div>
                         <hr>
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold">Email</span>

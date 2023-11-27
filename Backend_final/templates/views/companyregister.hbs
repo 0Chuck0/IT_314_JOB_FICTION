@@ -144,8 +144,10 @@
           <label for="exampleFormControlInput1 company_name" class="form-label">Company Name<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" name="companyname" id="Companyname" maxlength="50" minlength="3"
-            placeholder="What is your Company name?" required>
-          <span style="color: red; display: none;" id="validname">Please Enter a valid Name</span>
+            placeholder="What is your Company name?" oninput="lidateName()" required>
+          <p id="validname" style="color: red;"></p>
+
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Name</span> --}}
         </div>
 
         <div class="mb-3">
@@ -153,8 +155,9 @@
             <sup class="mandatory_Filds">*</sup>
           </label>
           <input type="text" class="form-control" name="industrytype" maxlength="40" minlength="3" id="industrytype"
-            placeholder="What is industry type of your Company" required>
-          <span style="color: red; display: none;" id="validtype">Please Enter a valid Type</span>
+            placeholder="What is industry type of your Company" oninput="lidtype()" required>
+          <p id="validtype" style="color: red;"></p>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Type</span> --}}
         </div>
 
         <div class="mb-3">
@@ -162,16 +165,20 @@
               class="mandatory_Filds">*</sup></label>
           <!-- <input type="text" class="form-control" placeholder="Tell About your Company" required> -->
           <textarea class="form-control" name="company_description" id="company_description" rows="3"
-            placeholder="Tell About your Company" minlength="3" maxlength="2000" required></textarea>
-          <span style="color: red; display: none;" id="validdescription">Please Enter a valid Description</span>
+            placeholder="Tell About your Company" minlength="3" maxlength="2000" oninput="liddescription()"
+            required></textarea>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Description</span> --}}
+          <p id="validdescription" style="color: red;"></p>
         </div>
 
         <div class="mb-3">
           <label for="exampleFormControlInput1 company_location" class="form-label">Company Location<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" name="companylocation" id="Company_location"
-            placeholder="What is the address of your Company?" minlength="3" maxlength="2000" required>
-          <span style="color: red; display: none;" id="validlocation">Please Enter a valid Location</span>
+            placeholder="What is the address of yout Company?" minlength="3" maxlength="2000" oninput="lidlocation()"
+            required>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Location</span> --}}
+          <p id="validlocation" style="color: red;"></p>
         </div>
 
         <h3 id="bottomh6">Employee Details</h3>
@@ -180,16 +187,19 @@
           <label for="exampleFormControlInput1 employee_name" class="form-label">Your Name<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" name="employee_name" id="exampleFormControlInput1"
-            placeholder="What is your name?" minlength="3" maxlength="50" required>
-          <span style="color: red; display: none;" id="validemployeename">Please Enter a valid Name</span>
+            placeholder="What is your name?" minlength="3" maxlength="50" oninput="lidemployeename()" required>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Name</span> --}}
+          <p id="validemployeename" style="color: red;"></p>
         </div>
 
         <div class="mb-3">
           <label for="exampleFormControlInput1 employee_designation" class="form-label">Your Designation<sup
               class="mandatory_Filds">*</sup></label>
           <input type="text" class="form-control" id="Employee_designation" name="employee_designation"
-            placeholder="What is your Designation in Company?" minlength="3" maxlength="50" required>
-          <span style="color: red; display: none;" id="validemployeedesignation">Please Enter a valid Designation</span>
+            placeholder="What is your Designation in Company?" minlength="3" maxlength="50" oninput="liddesignation()"
+            required>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Designation</span> --}}
+          <p id="validemployeedesignation" style="color: red;"></p>
         </div>
 
         <div class="mb-3">
@@ -269,78 +279,102 @@
       }
     </script>
     <script>
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumericCharacters() {
-        let ychar = document.getElementById('Companyname').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validname').style.display = 'none';
+      function lidateName() {
+        var nameInput = document.getElementById('Companyname');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validname').textContent = 'Name should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validname').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-        else {
-          document.getElementById('validname').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
+      }
+      function lidtype() {
+        var nameInput = document.getElementById('industrytype');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validtype').textContent = 'Type should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validtype').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-      });
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
-        let ychar = document.getElementById('industrytype').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validtype').style.display = 'none';
+      }
+      function liddescription() {
+        var nameInput = document.getElementById('company_description');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validdescription').textContent = 'Description should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validdescription').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-        else {
-          document.getElementById('validtype').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
+      }
+      function lidlocation() {
+        var nameInput = document.getElementById('Company_location');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validlocation').textContent = 'Location should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validlocation').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-      });
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
-        let ychar = document.getElementById('company_description').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validdescription').style.display = 'none';
+      }
+      function lidemployeename() {
+        var nameInput = document.getElementById('exampleFormControlInput1');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validemployeename').textContent = 'Name should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validemployeename').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-        else {
-          document.getElementById('validdescription').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
+      }
+      function liddesignation() {
+        var nameInput = document.getElementById('Employee_designation');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validemployeedesignation').textContent = 'Designation should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validemployeedesignation').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
         }
-      });
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
-        let ychar = document.getElementById('Company_location').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validlocation').style.display = 'none';
-        }
-        else {
-          document.getElementById('validlocation').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
-        }
-      });
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
-        let ychar = document.getElementById('exampleFormControlInput1').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validemployeename').style.display = 'none';
-        }
-        else {
-          document.getElementById('validemployeename').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
-        }
-      });
-      document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumer() {
-        let ychar = document.getElementById('Employee_designation').value;
-        if (/\D/.test(ychar)) {
-          console.log('character Present');
-          document.getElementById('validemployeedesignation').style.display = 'none';
-        }
-        else {
-          document.getElementById('validemployeedesignation').style.display = 'block';
-          console.log('not');
-          event.preventDefault();
-        }
-      });
+      }
     </script>
 
     <footer class="site-footer new-foot">

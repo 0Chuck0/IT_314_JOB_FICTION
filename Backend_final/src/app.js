@@ -106,8 +106,16 @@ app.get("/", (req, res) => {
 
 app.get("/logout", async(req, res) => {
     try {
+
+        if(req.cookies.jwt){
          res.clearCookie("jwt");
          res.send("<script> alert('logged out succesfully'); window.location = '/login' </script>")
+        }else if(req.cookies.company){
+            res.clearCookie("company");
+            res.send("<script> alert('logged out succesfully'); window.location = '/companylogin' </script>")
+        }else{
+            res.send("<script> alert('You are no longer logged in'); window.location = '/' </script>")
+        }
         //  res.render('login.hbs');
     } catch (error) {
          res.status(500).send(error);

@@ -219,7 +219,7 @@
         <div class="mb-3">
           <label for="exampleInputEmail1 email" class="form-label">Email ID<sup class="mandatory_Filds">*</sup></label>
           <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Tell us your official Email" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$" required>
+            placeholder="Tell us your official Email" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$" maxlength="320" required>
           <div class="form-text">
             We will contact you on this mail
           </div>
@@ -245,9 +245,13 @@
           <div id="Password2" class="form-text">
           </div>
         </div>
+
         <div class="mb-3">
-          <img src="" id="abc" alt="choosen image" class="img">
+          <label for="exampleFormControlInput1 employee_name" class="form-label">Company Logo<sup
+              class="mandatory_Filds">*</sup></label>
         </div>
+        <img src="" id="abc" alt="choosen image" class="img">
+        <div></div>
         <input type="file" name="file" onchange="func(event)" id="image">
         <div class="btn-container">
           <button type="submit" class="btn btn-primary register-btn">Create Account</button>

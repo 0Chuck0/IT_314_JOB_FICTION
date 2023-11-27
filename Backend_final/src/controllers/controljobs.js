@@ -1,5 +1,7 @@
 const path = require("path");
 const jobs = require("../models/jobs");
+const jwt = require("jsonwebtoken");
+const Register = require("../models/registers");
 module.exports = {
 
     get:async (req,res)=>{
@@ -9,7 +11,21 @@ module.exports = {
         const defaultLocations = await jobs.distinct('location');
         var obj = {};
         if(req.cookies.jwt){
-            res.render("jobs_1.ejs",{data:data , logged:true,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes});
+            jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+                if(err)
+                {
+                return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+                }
+                else
+                {
+                    const check = await Register.findOne({_id:decoded._id});
+                    const profile=check.profile;
+                    const name=check.name
+                    res.render("jobs_1.ejs",{profile:profile,name:name,data:data , logged:true,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes});
+
+                }
+            });
+            //res.render("jobs_1.ejs",{data:data , logged:true,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes});
         }else{
             res.render("jobs_1.ejs",{data:data , logged:false,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes});
         }

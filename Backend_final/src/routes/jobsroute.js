@@ -5,6 +5,8 @@ const jobs  = require("../models/jobs");
 const app=express();
 app.use(express.json())
 const path = require("path");
+const Register = require("../models/registers");
+const jwt = require("jsonwebtoken");
 
 router.get("/",function(req,res){
 
@@ -242,10 +244,27 @@ router.post("/search", async (req,res)=>{
 
         //console.log(query)
 
-        const data = await jobs.find({"$and": query})
+        var data = await jobs.find({"$and": query})
         .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
+        //console.log(data)
             if(req.cookies.jwt)
-            res.render("jobs_1.ejs",{data:data,search:search ,job_titles:job_titles, locations:locations,work_modes:work_modes,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:true});
+            {
+                jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+                    if(err)
+                    {
+                    return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+                    }
+                    else
+                    {
+                        const check = await Register.findOne({_id:decoded._id});
+                        const profile=check.profile;
+                        const name=check.name
+                        res.render("jobs_1.ejs",{profile:profile,name:name,data:data,search:search ,job_titles:job_titles, locations:locations,work_modes:work_modes,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:true});
+    
+                    }
+                });
+            }
+            // res.render("jobs_1.ejs",{data:data,search:search ,job_titles:job_titles, locations:locations,work_modes:work_modes,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:true});
             else
             res.render("jobs_1.ejs",{data:data,search:search ,job_titles:job_titles, locations:locations, work_modes:work_modes ,defaultJobTitles:defaultJobTitles , defaultLocations:defaultLocations , defaultWorkModes:defaultWorkModes, logged:false});
         }

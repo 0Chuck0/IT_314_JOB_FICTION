@@ -89,7 +89,7 @@ module.exports = {
 
             if (req.file === undefined) return res.send("you must select a file");
 
-            const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
+            const imgUrl = `${process.env.Base_Url}/file/${req.file.filename}`;
 
             const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
 
@@ -113,11 +113,11 @@ module.exports = {
 
                 const id = checking._id;
 
-                const token = jwt.sign({ _id: id, flag: false }, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+                const token = jwt.sign({ _id: id, flag: false }, process.env.SECRET_KEY);
 
                 await Register.updateOne({ _id: id }, { $set: { token: token } });
 
-                const url = `http://localhost:3000/register/${token}`;
+                const url = `${process.env.Base_Url}/register/${token}`;
 
                 const firstname = data.name;
 
@@ -159,7 +159,7 @@ module.exports = {
 
             let id = "";
 
-            jwt.verify(token, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa', async (err, decoded) => {
+            jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
                 if (err) {
 
                     res.status(400).send('<script>alert("You have not registred first register."); window.location = "/register";</script>');

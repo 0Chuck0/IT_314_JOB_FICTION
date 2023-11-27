@@ -18,7 +18,7 @@ module.exports = {
             
             const token = check.token;
     
-            const url =`http://localhost:3000/forgotpass/company/${token}`;
+            const url =`${process.env.Base_Url}/forgotpass/company/${token}`;
 
             const firstname = check.employee_name;
 

@@ -10,7 +10,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken");
 
 
-conectMongodb("mongodb://127.0.0.1:27017/Randome").then(() => {
+conectMongodb(process.env.DATABASE_URL).then(() => {
     console.log(`Connection Successfully....`)
 }).catch((e) => {
     x

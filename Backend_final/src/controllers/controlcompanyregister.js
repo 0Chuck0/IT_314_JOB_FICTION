@@ -95,7 +95,7 @@ module.exports = {
 
             if (req.file === undefined) return res.send("you must select a file");
 
-            const imgUrl = `http://localhost:3000/file/${req.file.filename}`;
+            const imgUrl = `${process.env.Base_Url}/file/${req.file.filename}`;
 
             const data = Object.create(Object.prototype, Object.getOwnPropertyDescriptors(req.body));
 
@@ -109,10 +109,10 @@ module.exports = {
                 await Companyregister.insertMany([data]);
                 const checking = await Companyregister.findOne({ email: req.body.email });
                 const id = checking._id;
-                const token = jwt.sign({ _id: id, flag: true }, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+                const token = jwt.sign({ _id: id, flag: true }, process.env.SECRET_KEY);
                 await Companyregister.updateOne({ _id: id }, { $set: { token: token } });
 
-                const url = `http://localhost:3000/companyregister/${token}`;
+                const url = `${process.env.Base_Url}/companyregister/${token}`;
 
                 const firstname = data.employee_name;
 
@@ -139,7 +139,7 @@ module.exports = {
         try {
             const { token } = req.params;
             let id = "";
-            jwt.verify(token, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa', async (err, decoded) => {
+            jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
                 if (err) {
 
                     res.status(400).send('<script>alert("You have not registred first register."); window.location = "/companyregister";</script>');

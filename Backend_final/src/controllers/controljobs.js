@@ -11,7 +11,7 @@ module.exports = {
         const defaultLocations = await jobs.distinct('location');
         var obj = {};
         if(req.cookies.jwt){
-            jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+            jwt.verify(req.cookies.jwt,process.env.SECRET_KEY,async(err,decoded)=>{
                 if(err)
                 {
                 return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');

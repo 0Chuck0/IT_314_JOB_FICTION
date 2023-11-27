@@ -2,7 +2,7 @@ const multer = require("multer");
 const { GridFsStorage } = require("multer-gridfs-storage");
 
 const storage = new GridFsStorage({
-    url: "mongodb://127.0.0.1:27017/Randome",
+    url: process.env.DATABASE_URL,
     options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {
 

@@ -290,7 +290,7 @@ var resetPassword = (url, firstname) => {
         <div class="footer">
           <p><em>Please Do Not Respond back to this E-mail as this is Auto Generated E-mail, contact us at <a href="mailto:jobfiction@gmail.com">jobfiction@gmail.com</a> in case of any doubt.</em></p>
           <p><strong>Regards,<br>Team Job Fiction</strong></p>
-          <p><a href="https://localhost:3000/">Visit our website</a></p>
+          <p><a href="${process.env.Base_Url}/">Visit our website</a></p>
         </div>
       </div>
     </body>

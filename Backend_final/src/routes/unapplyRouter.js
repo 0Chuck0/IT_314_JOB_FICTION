@@ -11,7 +11,7 @@ router.post("/", [loggedinonly], async (req, res) => {
 
     const body = req.body;
 
-    let payload = jwt.verify(req.cookies.jwt, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa');
+    let payload = jwt.verify(req.cookies.jwt, process.env.SECRET_KEY);
 
     const check1 = await Register.findOne({ _id: payload._id });
 

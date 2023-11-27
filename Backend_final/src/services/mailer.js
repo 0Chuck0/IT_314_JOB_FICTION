@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
     secure:false,
     service: 'Gmail',
     auth: {
-        user: 'dabhidipak6412@gmail.com',
-        pass: 'acwgdbjohgfmvlca',
+        user: process.env.user,
+        pass: process.env.pass,
     }
 });
 
@@ -16,7 +16,7 @@ async function sendEmail(toemail,sub,messsage){
 
     const info = await transporter.sendMail({
 
-        from:'dabhidipak6412@gmail.com',
+        from:process.env.user,
         to:toemail,
         subject:sub,
         html:`${messsage}`,

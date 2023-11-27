@@ -21,7 +21,7 @@ module.exports = {
 
                                 let id = "";
 
-                                jwt.verify(token,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+                                jwt.verify(token,process.env.SECRET_KEY,async(err,decoded)=>{
                                     if(err)
                                     {
 

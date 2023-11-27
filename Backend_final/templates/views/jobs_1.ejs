@@ -16,7 +16,7 @@
 
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/style_jobs.css">
-  <link rel="stylesheet" href="/css/side-nav.css">
+  <!-- <link rel="stylesheet" href="/css/side-nav.css"> -->
   <script src="https://kit.fontawesome.com/7ff784d1a8.js" crossorigin="anonymous"></script>
 </head>
 
@@ -39,6 +39,63 @@
     </div>
   </div>
 
+  <!-- <div class="site-wrap">-->
+
+    <!-- .site-mobile-menu -->
+  <!-- <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div> -->
+
+
+  <!-- NAVBAR -->
+  <!-- <header class="site-navbar mt-3">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="site-logo col-6"><a href="/home">JOBfiction</a></div>
+
+        <nav class="mx-auto site-navigation">
+          <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+            <li><a href="/home" class="nav-link active">Home</a></li>
+            <li><a href="/jobs_1">Jobs</a></li>
+            <li>
+              <a href="recommendations.html">Recommendations</a>
+            </li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li>
+              <a href="about.html">About Us</a>
+            </li>
+            <% if(logged===true) { %>
+              <%} else { %>
+                <li class="d-lg-none"><a href="/register">Register</a></li>
+                <li class="d-lg-none"><a href="/login">Log In</a></li>
+                <% } %>
+          </ul>
+        </nav>
+
+        <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+          <div class="ml-auto">
+            <% if(logged===true) { %>
+              <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="/images/user-profile1.png"
+                alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
+              <%} else { %>
+                <a href="/register"
+                  class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
+                <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+                <% } %>
+          </div>
+          <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
+              class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+        </div>
+
+      </div>
+    </div>
+  </header>-->
+
   <div class="site-wrap">
 
     <!-- .site-mobile-menu -->
@@ -48,7 +105,36 @@
           <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="site-mobile-menu-body"></div>
+      <div class="site-mobile-menu-body">
+        <ul class="list-group">
+          <% if(logged===true) { %>
+            <li class="list-group-item"><a class="respon-nav side-nav-profile" onclick="openNav()">Profile</a></li>
+            <style>
+              .side-nav-profile {
+                color: black !important;
+                cursor: pointer;
+              }
+
+              .side-nav-profile:hover {
+                color: rgb(66, 66, 247) !important;
+                text-decoration: underline !important;
+              }
+            </style>
+            <% } %>
+              <li class="list-group-item"><a class="respon-nav" href="/home" >Home</a></li>
+              <li class="list-group-item"><a class="respon-nav" href="/jobs_1" class="nav-link active">Jobs</a></li>
+              <li class="list-group-item"><a class="respon-nav" href="/recommendation">Recommendations</a></li>
+              <li class="list-group-item"><a class="respon-nav" href="/blog">Blogs</a></li>
+              <li class="list-group-item"><a class="respon-nav" href="/about">About us</a></li>
+              <% if(logged===true) { %>
+                <!-- {{!-- <li class="list-group-item"><a class="respon-nav" href="/logout">Log Out</a></li> --}} -->
+                <%} else { %>
+                  <li class="list-group-item"><a class="respon-nav" href="/register">Register</a></li>
+                  <li class="list-group-item"><a class="respon-nav" href="/login">Log In</a></li>
+                  <% } %>
+
+        </ul>
+      </div>
     </div>
 
 
@@ -59,15 +145,15 @@
           <div class="site-logo col-6"><a href="/home">JOBfiction</a></div>
 
           <nav class="mx-auto site-navigation">
-            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
-              <li><a href="/home" class="nav-link active">Home</a></li>
-              <li><a href="/jobs_1">Jobs</a></li>
+            <ul class="site-menu d-none d-xl-block ml-0 pl-0">
+              <li><a href="/home">Home</a></li>
+              <li><a href="/jobs_1" class="nav-link active">Jobs</a></li>
               <li>
-                <a href="recommendations.html">Recommendations</a>
+                <a href="/recommendation  ">Recommendations</a>
               </li>
-              <li><a href="blog.html">Blogs</a></li>
+              <li><a href="/blog">Blogs</a></li>
               <li>
-                <a href="about.html">About Us</a>
+                <a href="/about">About Us</a>
               </li>
               <li class="d-lg-none"><a href="/register">Register</a></li>
               <li class="d-lg-none"><a href="/login">Log In</a></li>
@@ -77,11 +163,14 @@
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               <% if(logged===true) { %>
-                <a href="/logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log Out</a>
+                <!-- {{!-- <a href="logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">logout</a> --}} -->
+                <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="/images/user-profile1.png"
+                  alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
+
                 <%} else { %>
-                  <a href="/register"
+                  <a href="register"
                     class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"></span>Register</a>
-                  <a href="/login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">Log In</a>
+                  <a href="login" class="btn btn-primary border-width-2 d-none d-lg-inline-block">login</a>
                   <% } %>
             </div>
             <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span
@@ -90,30 +179,150 @@
 
         </div>
       </div>
+          
     </header>
+
 
     <!--Side Navigation-->
     <div id="side-nav-bar" class="side-nav">
       <div class="container-fluid">
         <div class="col-md-12 image-title">
           <div class="row">
-            <img class="user-profile-bar" src="./images/loggedin-user.png" alt="User Profile">
+            <img class="user-profile-bar" src="{{profile}}" alt="User Profile">
           </div>
           <div class="row mt-1">
-            <h3 style="margin: auto;">User Name</h3>
+            <h3 style="margin: auto;">{{name}}</h3>
           </div>
         </div>
         <div class="row mt-5">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="./myprofile"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
-          <a href="./change_password"><i class="fas fa-keyboard" style="font-size: 1.5rem;"></i>Change Password</a>
-          <a href="./recommendation"><i class="fa fa-medal" style="font-size: 1.5rem"></i>Recommendations</a>
-          <a href="./saved_jobs"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Saved Jobs</a>
-          <a href="./applied_jobs"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Applied Jobs</a>
+          <a href="/myprofile"><i class="fa fa-user" style="font-size: 1.5rem;"></i>View Profile</a>
+          <a href="/change_password"><i class="fas fa-keyboard" style="font-size: 1.5rem;"></i>Change Password</a>
+          <a href="/saved_jobs"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Saved Jobs</a>
+          <a href="/applied_jobs"><i class="fa fa-clipboard-list" style="font-size: 1.5rem"></i>Applied Jobs</a>
+          <a href="/logout"><i class="fas fa-sign-out-alt" style="font-size: 1.5rem"></i>Log Out</a>
         </div>
       </div>
-    </div>
+      <style>
+        body {
+          transition: background-color .5s;
+        }
 
+        .side-nav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 140px;
+          box-shadow: 0 0 10px rgb(29, 29, 34);
+          background-color: rgb(255, 255, 255);
+          z-index: 9999;
+        }
+
+        .side-nav i {
+          margin-right: 0.5em;
+        }
+
+        .side-nav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #302f2f;
+          display: block;
+          transition: 0.3s;
+        }
+
+        .side-nav a:hover {
+          color: #122da5;
+        }
+
+        .closebtn:hover {
+          color: red !important;
+        }
+
+        .side-nav .closebtn {
+          position: absolute;
+          top: 25px;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+
+        #main {
+          transition: margin-right .5s;
+        }
+
+        .user-profile {
+          height: 3.5em;
+          width: 3.5em;
+        }
+
+        .user-profile:hover {
+          filter: drop-shadow(0px 0px 10px white);
+          cursor: pointer;
+
+        }
+
+        .user-profile-bar {
+          height: 100px;
+          width: 100px;
+          margin: auto;
+          display: block;
+          border-radius: 48px;
+        }
+
+        .image-title {
+          padding-top: 2em;
+          padding-bottom: 1.5em;
+          background: rgb(70, 241, 252);
+          background: linear-gradient(275deg, rgba(70, 241, 252, 0.4) 0%, rgb(55, 83, 223, 0.4) 100%);
+          border-radius: 16px;
+        }
+
+        .nav-profile {
+          display: none !important;
+        }
+
+        @media (width<1200px) {
+          .user-profile {
+            display: none;
+          }
+
+          .nav-profile {
+            display: block !important;
+          }
+        }
+
+        @media screen and (max-height: 450px) {
+          .side-nav {
+            padding-top: 15px;
+          }
+
+          .side-nav a {
+            font-size: 18px;
+          }
+        }
+      </style>
+      <script>
+        function openNav() {
+          document.getElementById("side-nav-bar").style.width = "22em";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.2)";
+          document.getElementById("nav-bar-btn").style.width = "0";
+        }
+
+        function closeNav() {
+          document.getElementById("side-nav-bar").style.width = "0";
+          document.body.style.backgroundColor = "rgba(189, 188, 188, 0.236)";
+          document.getElementById("nav-bar-btn").style.width = "3.5rem";
+        }
+
+      </script>
+
+    </div>
 
     <!-- HOME -->
     <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');"
@@ -150,20 +359,20 @@
                       data-width="100%" data-live-search="true" title="Job titles">
                     </select> -->
                     <input type="text" id="input-text-search" name="search" class="form-control input-search"
-                    placeholder="Job title, Company...">
+                      placeholder="Job title, Company...">
                   </div>
                   </style>
                   <div class="col-4">
                     <button id="search-submit" type="submit"
                       class="btn btn-primary btn-lg btn-block text-white btn-search search-btn"><span
                         class="icon-search icon mr-2"></span><span id="search-tag">Search Job</span></button>
-                        <style>
-                          @media (width<470px){ 
-                            #search-tag{
-                              display: none;
-                              }
-                          }
-                        </style>
+                    <style>
+                      @media (width<470px) {
+                        #search-tag {
+                          display: none;
+                        }
+                      }
+                    </style>
                   </div>
                 </div>
             </div>
@@ -247,7 +456,7 @@
 
                 <!--hidden input-->
                 <div class="col" style="display: none;">
-                  <input type="text" name="search"  id="hidden-input" class="form-control form-control-lg"
+                  <input type="text" name="search" id="hidden-input" class="form-control form-control-lg"
                     placeholder="Job title, Company...">
                 </div>
                 <% if (typeof search !=='undefined' ) { %>
@@ -676,7 +885,7 @@
   <script src="/js/filters-nav.js"></script>
   <script src="/js/dynamic_dropdown.js"></script>
   <script src="/js/custom.js"></script>
-  <script src="/js/side-nav.js"></script>
+  <!-- <script src="/js/side-nav.js"></script> -->
 
 
 </body>

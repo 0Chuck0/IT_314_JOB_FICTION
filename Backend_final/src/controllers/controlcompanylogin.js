@@ -27,7 +27,7 @@ module.exports = {
                     secure:false,
                 });
 
-                res.render("companyhomepage.hbs"); 
+                res.redirect("/companyhomepage"); 
 
             }
             else

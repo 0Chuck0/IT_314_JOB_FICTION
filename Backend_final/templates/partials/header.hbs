@@ -27,7 +27,7 @@
           <li class="list-group-item"><a class="respon-nav" href="/blog">Blogs</a></li>
           <li class="list-group-item"><a class="respon-nav" href="/about">About us</a></li>
           {{#if logged}}
-           <li class="list-group-item"><a class="respon-nav" href="/logout">Log Out</a></li>
+           {{!-- <li class="list-group-item"><a class="respon-nav" href="/logout">Log Out</a></li> --}}
           {{else}}
             <li class="list-group-item"><a class="respon-nav" href="/register">Register</a></li>
             <li class="list-group-item"><a class="respon-nav" href="/login">Log In</a></li>
@@ -63,8 +63,8 @@
           <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
             <div class="ml-auto">
               {{#if logged}}
-               <a href="logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">logout</a>
-               <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="./images/user-profile1.png"
+               {{!-- <a href="logout" class="btn btn-primary border-width-2 d-none d-lg-inline-block">logout</a> --}}
+               <img id="nav-bar-btn" onclick="openNav()" class="user-profile" src="/images/user-profile1.png"
                                     alt="User Profile" data-bs-toggle="tooltip" title="User Profile">
 
               {{else}}

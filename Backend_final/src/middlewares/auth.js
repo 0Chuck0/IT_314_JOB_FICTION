@@ -201,8 +201,8 @@ async function companyregisterauth(req, res, next) {
 
 async function companyloggedinonly(req, res, next) {
     
-    if (req.cookies.jwt) {
-        jwt.verify(req.cookies.jwt, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa', async (err, decoded) => {
+    if (req.cookies.company) {
+        jwt.verify(req.cookies.company, 'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa', async (err, decoded) => {
             if (err) {
 
                 return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/companylogin";</script>');

@@ -21,7 +21,7 @@ module.exports = {
             if(match)
             {
 
-                res.cookie("jwt",check.token,{
+                res.cookie("company",check.token,{
                     maxAge:1800000,
                     httpOnly:true,
                     secure:false,

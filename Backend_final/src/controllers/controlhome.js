@@ -3,7 +3,8 @@ const jobs = require("../models/jobs");
 module.exports = {
 
     get:async (req,res)=>{
-        const data = await jobs.find();
+        const data = await jobs.find().limit(10);
+        console.log(data);
         const defaultJobTitles = await jobs.distinct('job_title');
         const  defaultWorkModes = await jobs.distinct('work_mode');
         const defaultLocations = await jobs.distinct('location');

@@ -66,7 +66,7 @@ var resetPassword = (url, firstname) => {
           <p>If you didn't request to reset your password, please ignore this message or contact our support team.</p>
         </div>
         <div class="footer">
-          <p>Best regards,<br>Dabhi Dipak</p>
+          <p>Best regards,<br>Job Fiction Team</p>
         </div>
       </div>
     </body>
@@ -142,7 +142,7 @@ var resetPassword = (url, firstname) => {
           <p>If you didn't request to Registration , please ignore this message or contact our support team.</p>
         </div>
         <div class="footer">
-          <p>Best regards,<br>Dabhi Dipak</p>
+          <p>Best regards,<br>Job Fiction Team</p>
         </div>
       </div>
     </body>
@@ -219,7 +219,7 @@ var resetPassword = (url, firstname) => {
           <p>If you didn't request to Registration , please ignore this message or contact our support team.</p>
         </div>
         <div class="footer">
-          <p>Best regards,<br>Dabhi Dipak</p>
+          <p>Best regards,<br>Job Fiction Team</p>
         </div>
       </div>
     </body>

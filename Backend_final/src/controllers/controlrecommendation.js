@@ -13,7 +13,7 @@ module.exports = {
         if(!r_data)
         {
 
-          res.render("recommendation.hbs",{logged:true});
+          res.render("recommendation.hbs",{logged:true,profile:u_data.profile,name:u_data.name});
         }
         else
         {
@@ -73,7 +73,7 @@ module.exports = {
       console.log(jobsdata)
         //const jobsdata=await jobs.find({"id": {"$in": listdata}});
         //console.log(jobsdata);
-        res.render("recommendation.hbs",{jobsdata,logged:true});
+        res.render("recommendation.hbs",{jobsdata,logged:true,profile:u_data.profile,name:u_data.name});
         }
        
     }

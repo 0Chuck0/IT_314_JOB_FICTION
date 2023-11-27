@@ -14,10 +14,10 @@ module.exports = {
         const listdata = await applied_jobs.distinct("job_id", {"email": data.email});
         console.log(listdata)
        // console.log(listdata);
-
+        var profile=data.profile;
         const jobsdata=await jobs.find({"id": {"$in": listdata}});
         //console.log(jobsdata);
         console.log(jobsdata)
-        res.render("applied_jobs.hbs",{jobsdata});
+        res.render("applied_jobs.hbs",{jobsdata,profile,logged:true,name:data.name});
     }
 }

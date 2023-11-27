@@ -28,8 +28,9 @@ module.exports = {
             highest_edu: data.highest_edu,
             field: data.field,
             logged:true,
-            profile:data.profile
-        ,recommendation_data});
+            profile:data.profile,
+            name:data.name,
+        recommendation_data});
     }
 }
 

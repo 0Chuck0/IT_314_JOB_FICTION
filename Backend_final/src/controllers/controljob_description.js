@@ -42,7 +42,10 @@ module.exports = {
               reqskills: jobData.skills,
               industry_type: jobData.industry_type,
               role: jobData.role,
-              job_status: job_status
+              job_status: job_status,
+              name:data.name,
+              profile:data.profile,
+              logged:true
             })
           }else{
             res.render("job_description.hbs", {
@@ -61,6 +64,10 @@ module.exports = {
               reqskills: jobData.skills,
               industry_type: jobData.industry_type,
               role: jobData.role,
+              name:data.name,
+              profile:data.profile,
+              logged:true
+
           });
         }
           }
@@ -82,7 +89,10 @@ module.exports = {
               reqskills: jobData.skills,
               industry_type: jobData.industry_type,
               role: jobData.role,
-              job_status: job_status
+              job_status: job_status,
+              name:data.name,
+              profile:data.profile,
+              logged:true
             })
           }else{
             res.render("job_description.hbs", {
@@ -101,6 +111,9 @@ module.exports = {
               reqskills: jobData.skills,
               industry_type: jobData.industry_type,
               role: jobData.role,
+              name:data.name,
+              profile:data.profile,
+              logged:true
           });
           }
         }

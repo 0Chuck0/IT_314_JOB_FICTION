@@ -2,12 +2,15 @@ const express = require("express");
 const app = express()
 const Register = require("../models/registers")
 
+const recommendation = require("../models/recommendation");
 
 module.exports = {
 
     get:async (req,res)=>{
         
         const data = await Register.findOne({email:req.body.email})
+        const recommendation_data=await recommendation.findOne({email:req.body.email})
+        console.log(recommendation_data)
         res.render("myprofile.hbs",{
             name : data.name,
             email : data.email,
@@ -24,8 +27,9 @@ module.exports = {
             college: data.college,
             highest_edu: data.highest_edu,
             field: data.field,
-            logged:true
-        });
+            logged:true,
+            profile:data.profile
+        ,recommendation_data});
     }
 }
 

@@ -73,7 +73,7 @@
       <div class="profile">
           <img src='{{profile}}' alt="Loading..." width="100" height="100">
           <div class="name">
-              {{name}}
+              {{name}} 
           </div>
       </div>
 
@@ -184,27 +184,39 @@
                 <h2>RECOMMENDATION</h2>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Job Type</span>
                 </div>
-                <div class="widgetCont"><span class="empty">Software Developer</span>
+                {{#if recommendation_data.r_job_title}}
+                <div class="widgetCont"><span class="empty">{{recommendation_data.r_job_title}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">update your Desired Job Type Recommendation in your profile</span>
+                {{/if}}
                 </div>
-                <hr>
-                <div class="widgetHead"><span class="widgetTitle typ-16Bold">Expected salary range</span>
-                </div>
-                <div class="widgetCont"><span class="empty">₹20,000 - ₹50,000</span>
-                </div>
+                
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Preferred Work Location</span>
                 </div>
-                <div class="widgetCont"><span class="empty">Pune</span>
+                {{#if recommendation_data.r_location}}
+                <div class="widgetCont"><span class="empty">{{recommendation_data.r_location}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">update your Preferred Work Location Recommendation in your profile</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Employment Type</span>
                 </div>
-                <div class="widgetCont"><span class="empty">Full Time</span>
+                {{#if recommendation_data.r_employment}}
+                <div class="widgetCont"><span class="empty">{{recommendation_data.r_employment}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Any Employment Type</span>
+                {{/if}}
                 </div>
                 <hr>
                 <div class="widgetHead"><span class="widgetTitle typ-16Bold">Desired Work Mode</span>
                 </div>
-                <div class="widgetCont"><span class="empty">Office</span>
+                {{#if recommendation_data.r_work_mode}}
+                <div class="widgetCont"><span class="empty">{{recommendation_data.r_work_mode}}</span>
+                {{else}}
+                <div class="widgetCont"><span class="empty">Any work mode</span>
+                {{/if}}
                 </div>
             </div>
       </div>

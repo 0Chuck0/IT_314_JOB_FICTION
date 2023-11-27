@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="new2">
-                        <h1 class="text-white font-weight-bold">Register</h1>
+                        <h1 class="text-white font-weight-bold">Edit Profile</h1>
                     </div>
                     <div class="custom-breadcrumbs">
                         <!-- <a href="#">Home</a> <span class="mx-2 slash">/</span> -->
@@ -438,7 +438,7 @@
                                     for="candidate_class10">Class X Percentage</label></span>
                         </div>
                         <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-                                    id="candidate_collage" name="class10" min="0" max="100" step="0.01"
+                                    id="class10" name="class10" min="0" max="100" step="0.01"
                                     placeholder="Ex. 99.99" required>
                             </span>
                         </div>
@@ -451,6 +451,10 @@
                         </div>
                         <div class="widgetCont"><span class="empty">
                                 <select name="r_job_title" id="candidate_desired_job" class="differentinput" multiple>
+
+                                    {{#each recommendation_data.r_job_title}}
+                                    <option value='{{this}}' selected> {{this}}</option>
+                                    {{/each}}
                                     {{#each job_title}}
                                     <option value='{{this}}'> {{this}}</option>
                                     {{/each}}
@@ -505,8 +509,11 @@
                         <div class="widgetCont"><span class="empty">
                                 <select name="r_location" id="candidate_preferred_location" class="differentinput"
                                     multiple>
+                                    {{#each recommendation_data.r_location}}
+                                    <option value='{{this}}' selected> {{this}}</option>
+                                    {{/each}}
                                     {{#each location}}
-                                    <option value='{{this}}'>{{this}}</option>
+                                    <option value='{{this}}'> {{this}}</option>
                                     {{/each}}
 
                                 </select>
@@ -743,8 +750,17 @@
             const resumeInput = document.getElementById('candidate_resume');
             const expi = document.getElementById('exp');
             const pi = document.getElementById('candidate_project');
+             const class10=document.getElementById('class10')
+            const class12=document.getElementById('candidate_class12')
+            const college=document.getElementById('candidate_collage')
+            const highest_edu=document.getElementById('sBtn-text6')
+            const field=document.getElementById('sBtn-text5')
             pi.value = '{{data.project}}';
-
+             class10.value='{{data.class10}}'
+            class12.value='{{data.class12}}'
+            college.value='{{data.college}}'
+            highest_edu.value='{{data.highest_edu}}'
+            field.value='{{data.field}}'
             expi.value = '{{data.experience}}';
             if (resumeInput && resumeLinkFromData) {
                 resumeInput.value = resumeLinkFromData;

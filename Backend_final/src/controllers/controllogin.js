@@ -30,7 +30,7 @@ module.exports = {
 
                 const data = await jobs.find();
 
-                res.render("home.hbs",{data:data , logged:true}); 
+                res.redirect("/home"); 
 
             }
             else

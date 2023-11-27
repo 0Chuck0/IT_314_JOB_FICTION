@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function display_jobs() {
         try {
             const formdata = new URLSearchParams(new FormData(document.getElementById("filter-form")));
-            const response = await fetch("http://localhost:3000/jobs_1", {
+            const response = await fetch("/jobs_1", {
                 method: "post",
                 body: formdata,
             }).then((response) => {

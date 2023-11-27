@@ -10,6 +10,11 @@ module.exports = {
 
     get:async (req,res)=>{
 
+
+        if(req.cookies.jwt){
+            res.redirect("/home");
+        }
+        else
         res.render("login.hbs");
 
     },

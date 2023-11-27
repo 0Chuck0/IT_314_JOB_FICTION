@@ -70,7 +70,55 @@ module.exports = {
     post:async(req,res)=>{
         try { 
   
+            const {resume_link,experience,project,college,class12,class10} = req.body;
 
+            const driveLinkRegex = /^https:\/\/drive\.google\.com\/(file\/d\/|open\?id=)([a-zA-Z0-9_-]+)\/?$/;
+            const projectNamePattern = /^[a-zA-Z]([0-9A-Za-z@#$&_,.-])*$/;
+            const collegeNamePattern = /^[a-zA-Z\s]+$/;
+
+            if (!resume_link) {
+                return res.status(400).json({ error: 'resume_link is required' });
+            }
+            if (!experience) {
+                return res.status(400).json({ error: 'experience is required' });
+            }
+            if (!project) {
+                return res.status(400).json({ error: 'project name is required' });
+            }
+            if (!college) {
+                return res.status(400).json({ error: 'collage name is required' });
+            }
+            if (!class12) {
+                return res.status(400).json({ error: 'class12 grade is required' });
+            }
+            if (!class10) {
+                return res.status(400).json({ error: 'class10 grade is required' });
+            }
+            if (project.length < 3 || project.length > 50) {
+                return res.status(400).json({ error: 'Project name must be between 3 and 50 characters.' });
+            }
+            if (experience < 0 || experience > 25) {
+                return res.status(400).json({ error: 'experience must be between 0 and 25 years.' });
+            }
+            if (class12 < 0 || class12 > 100) {
+                return res.status(400).json({ error: 'class12 grade must be between 0 and 100 percentage.' });
+            }
+            if (class10 < 0 || class10 > 100) {
+                return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
+            }
+            if (!driveLinkRegex.test(resume_link)) {
+                 return res.status(400).json({ error: 'Invalid Google Drive link format' });
+            }
+            if (!projectNamePattern.test(project)) {
+                return res.status(400).json({
+                    error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'
+                });
+            }
+            if (!collegeNamePattern.test(college)) {
+                return res.status(400).json({
+                    error: 'Invalid college name. Please ensure it includes only characters from A-Z or a-z.'
+                });
+            }
                 jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
                     if(err)
                     {

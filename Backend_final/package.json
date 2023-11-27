@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "start": "nodemon src/app.js -e js,hbs",
-    "test-report":"mocha test --reporter mochawesome --require mochawesome/register"
+    "test-report": "mocha test --reporter mochawesome --require mochawesome/register"
   },
   "keywords": [],
   "author": "",

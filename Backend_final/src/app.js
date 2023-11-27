@@ -7,6 +7,7 @@ require('dotenv').config()
 const { json } = require('express')
 const { conectMongodb } = require("./db/conection");
 const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken");
 
 
 conectMongodb("mongodb://127.0.0.1:27017/Randome").then(() => {
@@ -20,7 +21,7 @@ conectMongodb("mongodb://127.0.0.1:27017/Randome").then(() => {
 
 
 const Register = require("./models/registers")
-const { Emailauth, loggedinonly } = require("./middlewares/auth");
+const { Emailauth, loggedinonly, companyloggedinonly } = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');
 const Savedpost = require('./models/savePostSchema');
@@ -110,7 +111,18 @@ app.get("/logout", async(req, res) => {
         if(req.cookies.jwt){
          res.clearCookie("jwt");
          res.send("<script> alert('logged out succesfully'); window.location = '/login' </script>")
-        }else if(req.cookies.company){
+        }else{
+            res.send("<script> alert('You are no longer logged in'); window.location = '/' </script>")
+        }
+        //  res.render('login.hbs');
+    } catch (error) {
+         res.status(500).send(error);
+    }
+ })
+
+ app.get("/companylogout",(req,res)=>{
+    try {
+        if(req.cookies.company){
             res.clearCookie("company");
             res.send("<script> alert('logged out succesfully'); window.location = '/companylogin' </script>")
         }else{
@@ -138,16 +150,79 @@ app.get("/jobpostlist", (req, res) => {
     res.render("jobpostlist.hbs")
 })
 
+app.get("/companyabout",[companyloggedinonly],(req,res)=>{
+    res.render("aboutcompany.hbs");
+
+});
 
 app.get("/about", (req, res) => {
-    res.render("about.hbs")
+    if(req.cookies.jwt){
+        jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+            if(err)
+            {
+            return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+            }
+            else
+            {
+                const check = await Register.findOne({_id:decoded._id});
+                const profile = check.profile;
+                const name = check.name;
+                res.render("about.hbs",{profile,name,logged:true})
+            }
+            });
+        
+    }
+    else{
+
+        res.render("about.hbs");
+
+    }
 })
 
 app.get("/blog", (req, res) => {
-    res.render("blog.hbs")
+    if(req.cookies.jwt){
+        jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+            if(err)
+            {
+            return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+            }
+            else
+            {
+                const check = await Register.findOne({_id:decoded._id});
+                const profile = check.profile;
+                const name = check.name;
+                res.render("blog.hbs",{profile,name,logged:true})
+            }
+            });
+        
+    }
+    else{
+
+        res.render("blog.hbs");
+
+    }
 })
-app.get("/recommendations", (req, res) => {
-    res.render("recommendations.hbs")
+app.get("/recommendations", (req, res) => {    if(req.cookies.jwt){
+    jwt.verify(req.cookies.jwt,'ehewlkjjfsafasjflkasfjjkfsjflkasjffjsjasfasffafa',async(err,decoded)=>{
+        if(err)
+        {
+        return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+        }
+        else
+        {
+            const check = await Register.findOne({_id:decoded._id});
+            const profile = check.profile;
+            const name = check.name;
+            res.render("recommendations.hbs",{profile,name,logged:true})
+        }
+        });
+    
+}
+else{
+
+    res.render("recommendations.hbs.hbs");
+
+}
 })
 // app.post('/newpost', async (req, res) => {
 //     try {

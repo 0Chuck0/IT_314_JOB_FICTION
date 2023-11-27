@@ -3,7 +3,7 @@
 
 * {
     margin: 0;
-    font-family: "Nunito", sans-serif;
+    font-family: "Nunito", sans-serif !important;
 }
 
 body {
@@ -410,7 +410,7 @@ p{
 }
 
 li{
-    font-size: 22px;
+    /* font-size: 22px; */
     margin-top: 20px;
 }
 

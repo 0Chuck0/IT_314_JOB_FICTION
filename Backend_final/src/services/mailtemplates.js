@@ -294,7 +294,7 @@ var resetPassword = (url, firstname) => {
         </div>
       </div>
     </body>
-    </html
+    </html>
     `;
   };
 

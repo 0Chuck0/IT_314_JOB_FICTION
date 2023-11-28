@@ -9,6 +9,10 @@ module.exports = {
 
     get:async (req,res)=>{
 
+        if(req.cookies.company){
+            res.redirect("/companyhomepage");
+        }
+        else
         res.render("companylogin.hbs");
 
     },

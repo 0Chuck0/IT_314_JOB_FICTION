@@ -210,14 +210,14 @@ app.get("/recommendations", (req, res) => {    if(req.cookies.jwt){
             const check = await Register.findOne({_id:decoded._id});
             const profile = check.profile;
             const name = check.name;
-            res.render("recommendations.hbs",{profile,name,logged:true})
+            res.render("recommendation.hbs",{profile,name,logged:true})
         }
         });
     
 }
 else{
 
-    res.render("recommendations.hbs.hbs");
+    res.render("recommendation.hbs");
 
 }
 })

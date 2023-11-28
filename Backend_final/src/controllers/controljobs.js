@@ -5,7 +5,7 @@ const Register = require("../models/registers");
 module.exports = {
 
     get:async (req,res)=>{
-        const data = await jobs.find();
+        const data = await jobs.find().sort({_id:-1});
         const defaultJobTitles = await jobs.distinct('job_title');
         const  defaultWorkModes = await jobs.distinct('work_mode');
         const defaultLocations = await jobs.distinct('location');

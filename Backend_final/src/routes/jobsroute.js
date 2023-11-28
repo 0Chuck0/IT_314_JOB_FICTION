@@ -145,7 +145,7 @@ router.post("/",async (req,res)=>{
      
         //console.log(query)
         const data = await jobs.find({"$and": query})
-        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
+        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).sort({_id:-1});
        // console.log(data);
         res.json(data);
        
@@ -245,7 +245,7 @@ router.post("/search", async (req,res)=>{
         //console.log(query)
 
         var data = await jobs.find({"$and": query})
-        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).exec();
+        .find({"$or":[{location:{"$in":nwlocations}},{job_title:{ "$in": nwjob_titles}},{company:{ "$in": nwcompanies }}]}).sort({_id:-1});
         //console.log(data)
             if(req.cookies.jwt)
             {

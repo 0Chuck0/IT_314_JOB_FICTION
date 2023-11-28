@@ -126,6 +126,7 @@ module.exports = {
 
             const registers = await Register.find({verified:true}).exec();
 
+            if(Array.isArray(data.skills))
             data.skills = data.skills.join();
             
             for(let i in registers){

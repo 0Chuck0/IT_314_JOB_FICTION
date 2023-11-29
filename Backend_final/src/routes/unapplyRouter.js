@@ -29,7 +29,7 @@ router.post("/", [loggedinonly], async (req, res) => {
 
     else {
         if (check) {
-            console.log("hello")
+            //console.log("hello")
             await apply.deleteOne(check);
             return res.json({
                 'x': 0

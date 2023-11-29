@@ -373,14 +373,31 @@
 
                         .then(data => {
                             // Assuming the response contains a boolean value named "shouldRedirect"
-                            if (data.x === 0) {
+                            if (data.x === 1) {
                                 alert("you applied successfully");
                                 window.location.href = `/job_description/${job_id}`;
                             }
+                            
                             else if (data.y === 1) {
-                                alert("application not accepted")
+                                alert("after duedate application is not accepted")
                                 window.location.href = `/job_description/${job_id}`;
                             }
+
+                            else if(data.b === 1){
+                                alert("Please complete your profile first")
+                                window.location.href = `/job_description/${job_id}`;
+                            }
+
+                            else if(data.z === 1){
+                                alert("Your Experience is less than expected")
+                                window.location.href = `/job_description/${job_id}`;
+                            }
+
+                            else if(data.a === 1){
+                                alert("Skills are not matching")
+                                window.location.href = `/job_description/${job_id}`;
+                            }
+                            
                             else {
 
                             }

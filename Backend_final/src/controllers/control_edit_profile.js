@@ -67,7 +67,7 @@ module.exports = {
         const resume_link=data.resume_link;
         
         
-        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data});
+        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data,name:data.name});
     },
 
     post:async(req,res)=>{

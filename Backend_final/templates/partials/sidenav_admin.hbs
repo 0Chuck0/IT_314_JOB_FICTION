@@ -23,7 +23,6 @@
     <style>
         body {
             transition: .5s;
-
         }
 
         .side-nav {
@@ -136,12 +135,15 @@
             closeNav();
             document.getElementById("vf-comp-list").className = "card blue";
             setTimeout(changeBG, 300);
+            document.getElementById("vf-cards-container").style.maxHeight = "1000px";
+
         }
         function focusEle2() {
             closeNav();
             document.getElementById("un_comp_list").className = "card blue";
-
             setTimeout(changeBG, 300);
+            document.getElementById("uv-cards-container").style.maxHeight = "1000px";
+
         }
         function changeBG() {
             document.getElementById("un_comp_list").className = "card white";

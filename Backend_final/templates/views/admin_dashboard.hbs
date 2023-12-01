@@ -201,9 +201,13 @@
 
             let btn = document.getElementById("un_comp_list");
             let btn2 = document.getElementById("vf-comp-list");
-            btn.addEventListener("click", () => {
+            btn.addEventListener("click", open_list1 );
+            btn2.addEventListener("click", open_list2);
+
+            function open_list1()
+            {
                 let disp_prop = document.getElementById("uv-cards-container");
-                if (disp_prop.style.maxHeight == "0px") {
+                if (disp_prop.style.maxHeight === "0px") {
                     disp_prop.style.maxHeight = "1000px";
                     console.log(disp_prop.style.maxHeight);
                 }
@@ -211,16 +215,16 @@
                     disp_prop.style.maxHeight = "0px";
                     console.log(disp_prop.style.maxHeight);
                 }
-            })
-
-            btn2.addEventListener("click", () => {
+            }
+            
+            function open_list2()
+            {
                 let disp_prop = document.getElementById("vf-cards-container");
                 if (disp_prop.style.maxHeight === "0px")
                     disp_prop.style.maxHeight = "1000px";
                 else
                     disp_prop.style.maxHeight = "0px";
-            })
-
+            }
 
 
         });
@@ -228,7 +232,7 @@
 </head>
 
 
-<body id="top">
+<body id="top" style="min-height: 150vh;">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -288,12 +292,12 @@
                 </div>
             </div>
         </div>
-
+    <hr>
 
         <div class="row">
-            <div class="col-md-12 mt-0">
+            <div class="col-md-12 mt-0 align-items-center">
                 <div id="un_comp_list" class="card white">
-                    <div class="card-body" style="cursor: pointer;">
+                    <div class="card-body " style="cursor: pointer;">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title mb-0 ">Unverified Companies</h5>
                             <i class="fas fa-angle-down"></i>
@@ -330,7 +334,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-12 mt-0">
                 <div id="vf-comp-list" class="card white">
                     <div class="card-body" style="cursor: pointer;">

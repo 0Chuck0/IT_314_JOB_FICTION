@@ -95,7 +95,47 @@ router.get("/company_description/:email",async (req,res)=>{
 });
 
 router.get("/changepassword",[isAdmin],async (req,res)=>{
-    res.send("Shekhar Gupta you have to implement this.")
+    
+    res.render("change_password_Admin.hbs")
+})
+
+router.post("/changepassword",[isAdmin],async (req,res)=>{
+    
+
+    
+    const check = await Adminschema.findOne({ _id: req.id });
+    const isMatch = await bcrypt.compare(req.body.currentpassword, check.password);
+        
+
+    
+        if (!isMatch) {
+
+            
+            return res.status(400).send('<script>alert("current password and your password is not matching "); window.location = "/Admin/changepassword";</script>');
+
+            
+        } 
+
+        
+        if(req.body.Newpassword === req.body.currentpassword) 
+        {
+            return res.status(400).send('<script>alert("New password and current password are same enter new password"); window.location = "/Admin/changepassword";</script>');
+
+        }
+
+        if(req.body.Newpassword !== req.body.conforimpassword) 
+        {
+            return res.status(400).send('<script>alert("new password and confirm password is not matching"); window.location = "/Admin/changepassword";</script>');
+
+        }
+
+
+            
+        const HashPassword  = await bcrypt.hash(req.body.Newpassword, 10);
+
+        await Adminschema.findOneAndUpdate({_id:req.id},{password:HashPassword});
+        res.status(200).send('<script>alert("Password updated successfully."); window.location = "/Admin/home";</script>');
+
 })
 
 module.exports = router;

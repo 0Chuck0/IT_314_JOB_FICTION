@@ -40,11 +40,11 @@ module.exports = {
             const obj={location:{ "$in":r_data.r_location }};
             query.push(obj);
         }
-        if( u_data.experience!=undefined)
-        {
-            const obj={experience:{ "$lte":  u_data.experience }};
-            query.push(obj);
-        }
+        // if( u_data.experience!=undefined)
+        // {
+        //     const obj={experience:{ "$lte":  u_data.experience }};
+        //     query.push(obj);
+        // }
 
         if (r_data.r_work_mode !== undefined && r_data.r_work_mode.trim().length > 0) {
             const obj = { work_mode: r_data.r_work_mode };

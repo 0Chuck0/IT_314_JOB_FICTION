@@ -94,7 +94,7 @@ module.exports = {
                 r_work_modeA=true
             }
 
-            if(recommendation_data.r_work_mode)
+            if(recommendation_data.r_employment)
             {
                 if(recommendation_data.r_employment==="intern")
                 {

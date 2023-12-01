@@ -25,7 +25,7 @@ router.post("/",async (req,res)=>{
         const  defaultCompanies = await jobs.distinct('company');
         const defaultJobTitles = await jobs.distinct('job_title');
         const  defaultWorkModes = await jobs.distinct('work_mode');
-        const defaultEducations = await jobs.distinct('education');
+        const defaultEducations = await jobs.distinct('degree');
         const defaultLocations = await jobs.distinct('location');
         const  defaultSkills = await jobs.distinct('skills');
 
@@ -120,7 +120,7 @@ router.post("/",async (req,res)=>{
         }
         if(educations!=undefined)
         {
-            const obj={education:{ "$in":  educations}};
+            const obj={degree:{ "$in":  educations}};
             query.push(obj);
         }
         if(companies!=undefined)

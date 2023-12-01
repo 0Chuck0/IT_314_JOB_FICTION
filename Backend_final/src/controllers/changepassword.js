@@ -15,8 +15,11 @@ module.exports = {
 
         try{
 
-                                if(req.body.Newpassword !== req.body.conforimpassword) throw new Error("new password and confirm password is not matching");
+                                if(req.body.Newpassword !== req.body.conforimpassword) 
+                                {
+                                    return res.status(400).send('<script>alert("new password and confirm password is not matching"); window.location = "/forgotpass";</script>');
 
+                                }
                                 const {token} = req.params;
 
                                 let id = "";

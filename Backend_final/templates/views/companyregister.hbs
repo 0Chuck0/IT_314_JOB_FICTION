@@ -337,22 +337,7 @@
           nameInput.setCustomValidity(''); // Reset custom validity
         }
       }
-      function liddescription() {
-        var nameInput = document.getElementById('company_description');
-        var nameValue = nameInput.value.trim();
-
-        // Regular expression to check if the value contains only alphabets and spaces
-        var regex = /^[A-Za-z\s]+$/;
-
-        // Check if the value matches the regular expression
-        if (!regex.test(nameValue)) {
-          document.getElementById('validdescription').textContent = 'Description should contain only alphabets and spaces.';
-          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
-        } else {
-          document.getElementById('validdescription').textContent = '';
-          nameInput.setCustomValidity(''); // Reset custom validity
-        }
-      }
+     
       function lidlocation() {
         var nameInput = document.getElementById('Company_location');
         var nameValue = nameInput.value.trim();

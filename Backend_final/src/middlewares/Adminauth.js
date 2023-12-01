@@ -13,7 +13,7 @@ async function isAdmin(req,res,next){
                 const check = await Adminschema.findOne({_id:decoded._id});
                 req.body.name = check.name;
                 req.body.email = check.email;
-                
+                req.id=decoded._id
                 if(check.email)
                 next();
             }

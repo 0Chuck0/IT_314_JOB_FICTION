@@ -30,6 +30,11 @@ module.exports = {
         var r_work_modeA=true
         var r_work_modeH=undefined
         var r_work_modeO=undefined
+        var r_employmentA=true
+        var r_employmentP=undefined
+        var r_employmentI=undefined
+        var r_employmentF=undefined
+        
         if(technical_skills)
         {
             r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
@@ -89,6 +94,27 @@ module.exports = {
                 r_work_modeA=true
             }
 
+            if(recommendation_data.r_work_mode)
+            {
+                if(recommendation_data.r_employment==="intern")
+                {
+                    r_employmentI=true
+                }
+                else if(recommendation_data.r_employment==="part time")
+                {
+                    r_employmentP=true
+                }
+                else if(recommendation_data.r_employment==="full time")
+                {
+                    r_employmentF=true
+                }
+                r_employmentA=false
+            }
+            else
+            {
+                r_employmentA=true
+            }
+
            
 
             
@@ -97,7 +123,7 @@ module.exports = {
         const resume_link=data.resume_link;
         
         
-        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data,name:data.name,r_work_modeR,r_work_modeO,r_work_modeA,r_work_modeH});
+        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data,name:data.name,r_work_modeR,r_work_modeO,r_work_modeA,r_work_modeH,r_employmentA,r_employmentP,r_employmentF,r_employmentI});
     },
 
     post:async(req,res)=>{

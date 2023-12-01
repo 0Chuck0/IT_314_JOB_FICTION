@@ -201,7 +201,7 @@
 
 
     <section class="section-hero overlay inner-page bg-image"
-        style="background-image: url('../Main/images/hero_1.jpg');" id="home-section">
+        style="background-image: url('images/hero_1.jpg');" id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -256,8 +256,8 @@
                     </div>
                 </div>
                 <div class="cards-container" id="uv-cards-container">
-                    {{#if jobsdata}}
-                    {{#each jobsdata}}
+                    {{#if verified}}
+                    {{#each verified}}
                     <div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
                         <div class="col-md-2 company-logo">
                             <img src={{profile}} alt="Company-logo" class="job-profile">
@@ -297,8 +297,8 @@
                     </div>
                 </div>
                 <div class="cards-container" id="vf-cards-container">
-                    {{#if jobsdata}}
-                    {{#each jobsdata}}
+                    {{#if notverified}}
+                    {{#each notverified}}
                     <div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
                         <div class="col-md-2 company-logo">
                             <img src={{profile}} alt="Company-logo" class="job-profile">

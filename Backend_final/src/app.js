@@ -48,7 +48,7 @@ hbs.registerPartials(partialsPath)
 app.set('view engine', 'ejs');
 // app.use(express.static(template_path))
 
-
+const Admin =  require("./routes/Admin");
 const forgotpassroute = require("./routes/forgotpassroute");
 const loginroute = require("./routes/loginroute");
 const registerroute = require("./routes/registerroute");
@@ -72,8 +72,9 @@ const deletesaved_jobs=require("./routes/deletesaved_jobs");
 const applied_jobs=require("./routes/applied_jobs")
 const applyRouter = require( "./routes/applyRouter")
 const unapplyRouter = require ("./routes/unapplyRouter")
-
 const recommendation=require("./routes/recommendation_router")
+
+app.use("/Admin",Admin)
 app.use("/saveData", savepostroute);
 app.use("/unsaveData", unsavepostroute);
 app.use("/forgotpass", forgotpassroute);
@@ -143,9 +144,9 @@ app.get("/companyhomepage",[companyloggedinonly], (req, res) => {
 //     res.render("newpost")
 // })
 
-app.get("/jobpostlist", (req, res) => {
-    res.render("jobpostlist.hbs")
-})
+// app.get("/jobpostlist", (req, res) => {
+//     res.render("jobpostlist.hbs")
+// })
 
 app.get("/companyabout",[companyloggedinonly],(req,res)=>{
     res.render("aboutcompany.hbs");
@@ -259,9 +260,9 @@ else{
 //     }
 // })
 
-app.get("/landingpage", async (req, res) => {
-    res.render("landingpage.hbs");
-})
+// app.get("/landingpage", async (req, res) => {
+//     res.render("landingpage.hbs");
+// })
 
 
 // app.get("/jobs_main",(req,res)=>{

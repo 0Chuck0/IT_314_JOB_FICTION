@@ -33,7 +33,7 @@ module.exports = {
                     secure:false,
                 });
 
-                const data = await jobs.find();
+                // const data = await jobs.find();
 
                 res.redirect("/home"); 
 

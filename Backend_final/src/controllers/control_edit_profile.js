@@ -16,15 +16,20 @@ module.exports = {
         
        var job_title = await jobs.distinct('job_title');
         var location=await jobs.distinct('location');
+        var work_mode=[]
         const data = await Register.findOne({email:req.body.email})
         const a_technical_skills = ["c++", "python", "java", "AD", "WD", "javascript", "R", "Typescript","HTML","CSS"];
         const a_languages = ["English", "Spanish", "Mandarin Chinese", "Hindi", "Arabic", "Bengali", "Russian", "Portuguese", "Japanese", "German", "French", "Urdu", "Korean", "Italian", "Turkish"];
         const languages=data.language_skills;
       const recommendation_data= await recommendation.findOne({email:req.body.email});
-        console.log(recommendation_data)
+        //console.log(recommendation_data)
         const technical_skills = data.technical_skills;
         var r_technical_skills=[]
         var r_languages=[]
+        var r_work_modeR=undefined
+        var r_work_modeA=true
+        var r_work_modeH=undefined
+        var r_work_modeO=undefined
         if(technical_skills)
         {
             r_technical_skills = a_technical_skills.filter(skill => !technical_skills.includes(skill));
@@ -62,12 +67,37 @@ module.exports = {
             {
                  r_languages=a_languages;
             }
+
+            if(recommendation_data.r_work_mode)
+            {
+                if(recommendation_data.r_work_mode==="Office")
+                {
+                    r_work_modeO=true
+                }
+                else if(recommendation_data.r_work_mode==="Hybrid")
+                {
+                    r_work_modeH=true
+                }
+                else if(recommendation_data.r_work_mode==="Remote")
+                {
+                    r_work_modeR=true
+                }
+                r_work_modeA=false
+            }
+            else
+            {
+                r_work_modeA=true
+            }
+
+           
+
+            
         }
        var profile=data.profile
         const resume_link=data.resume_link;
         
         
-        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data,name:data.name});
+        res.render("edit_profile.hbs",{profile,job_title , logged:true,location,technical_skills,r_technical_skills,data,languages,r_languages,resume_link,recommendation_data,name:data.name,r_work_modeR,r_work_modeO,r_work_modeA,r_work_modeH});
     },
 
     post:async(req,res)=>{
@@ -90,7 +120,7 @@ module.exports = {
             }
             if (!college) {
                 return res.status(400).json({ error: 'college name is required' });
-            }
+            }   
             if (!class12) {
                 return res.status(400).json({ error: 'class12 grade is required' });
             }
@@ -110,11 +140,11 @@ module.exports = {
                 return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
             }
            
-            if (!projectNamePattern.test(project)) {
-                return res.status(400).json({
-                    error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'
-                });
-            }
+            // if (!projectNamePattern.test(project)) {
+            //     return res.status(400).json({
+            //         error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'
+            //     });
+            // }
             if (!collegeNamePattern.test(college)) {
                 return res.status(400).json({
                     error: 'Invalid college name. Please ensure it includes only characters from A-Z or a-z.'

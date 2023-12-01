@@ -511,22 +511,46 @@
                         <div class="widgetCont">
                             <span class="empty candidategender spandiff">
                                 <div>
-                                    <input type="radio" id="Office" name="r_work_mode" value="Office" />
+                                    {{#if r_work_modeO }}
+                                    <input type="radio" id="Office" name="r_work_mode" value="Office" checked/>
+                                    {{else}}
+                                     <input type="radio" id="Office" name="r_work_mode" value="Office" />
+                                    {{/if}}
                                     <label for="Office">Office</label>
                                 </div>
 
                                 <div>
-                                    <input type="radio" id="Remote" name="r_work_mode" value="Remote" />
+                                     {{#if r_work_modeR}}
+                                    <input type="radio" id="Remote" name="r_work_mode" value="Remote" checked />
+                                    {{else}}
+                                     <input type="radio" id="Remote" name="r_work_mode" value="Remote" />
+                                    {{/if}}
+                                    
                                     <label for="Remote">Remote</label>
                                 </div>
 
                                 <div>
+
+                                    
+                                     {{#if r_work_modeH }}
+                                   <input type="radio" id="Hybrid" name="r_work_mode" value="Hybrid" checked />
+                                    {{else}}
                                     <input type="radio" id="Hybrid" name="r_work_mode" value="Hybrid" />
+                                    {{/if}}
+                                    
                                     <label for="Hybrid">Hybrid</label>
                                 </div>
 
                                 <div>
-                                    <input type="radio" id="Part_time" name="r_work_mode" value="" checked />
+                                   
+                                     {{#if r_work_modeA}}
+                                     
+                                     <input type="radio" id="Part_time" name="r_work_mode" value="" checked />
+                                     
+                                    {{else}}
+                                    <input type="radio" id="Part_time" name="r_work_mode" value=""  />
+                                    {{/if}}
+                                   
                                     <label for="Part_time">Any</label>
                                 </div>
                             </span>

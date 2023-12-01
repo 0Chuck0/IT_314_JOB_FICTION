@@ -115,7 +115,8 @@
                     </div>
 
                 </div>
-                <div class="lowerprofile">Click on above to edit your photo <br>Photo must be in form of .jpg/.jpeg/.png </div>
+                <div class="lowerprofile">Click on above to edit your photo <br>Photo must be in form of .jpg/.jpeg/.png
+                </div>
                 <div class="sidenav-url">
                     <div class="url">
                         <a href="home" class="active">Home</a>
@@ -252,9 +253,9 @@
                                     for="candidate_project">Name/Title</label></span>
                         </div>
                         <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
-                                    id="candidate_project" name="project" required>
+                                    id="candidate_project" name="project" maxlength="50" minlength="3" oninput="lidateName()" required>
                             </span>
-                            <span style="color: red; display: none;" id="validproject">Please Enter a valid name</span>
+                            <span style="color: red;" id="validproject"></span>
                         </div>
                     </div>
 
@@ -294,10 +295,9 @@
                         </div>
                         <div class="widgetCont"><span class="empty"><input class="differentinput" type="text"
                                     id="candidate_collage" name="college"
-                                    placeholder="Enter your Collage or University Name" required>
+                                    placeholder="Enter your Collage or University Name" maxlength="50" minlength="3" oninput="lidatecollege()" required>
                             </span>
-                            <span style="color: red; display: none;" id="validcollege">Please Enter a valid
-                                University/College Name</span>
+                            <span style="color: red;" id="validcollege"></span>
                         </div>
 
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
@@ -315,7 +315,7 @@
                                     </svg>
                                 </div>
                                 <ul class="options">
-                                    <li class="option option2" >
+                                    <li class="option option2">
                                         <span class="option-text">Computer Science and Engineering</span>
                                     </li>
 
@@ -431,8 +431,8 @@
                                     for="candidate_class10">Class X Percentage</label></span>
                         </div>
                         <div class="widgetCont"><span class="empty"><input class="differentinput" type="number"
-                                    id="class10" name="class10" min="0" max="100" step="0.01"
-                                    placeholder="Ex. 99.99" required>
+                                    id="class10" name="class10" min="0" max="100" step="0.01" placeholder="Ex. 99.99"
+                                    required>
                             </span>
                         </div>
                     </div>
@@ -457,8 +457,8 @@
                                 option </span>
                         </div>
 
-                       
-                        
+
+
                         <div class="widgetHead"><span class="widgetTitle typ-16Bold"><label class="profileinput"
                                     for="candidate_preferred_location">Preferred Work Location</label></span>
                         </div>
@@ -706,50 +706,55 @@
             const resumeInput = document.getElementById('candidate_resume');
             const expi = document.getElementById('exp');
             const pi = document.getElementById('candidate_project');
-             const class10=document.getElementById('class10')
-            const class12=document.getElementById('candidate_class12')
-            const college=document.getElementById('candidate_collage')
-          
+            const class10 = document.getElementById('class10')
+            const class12 = document.getElementById('candidate_class12')
+            const college = document.getElementById('candidate_collage')
+
             pi.value = '{{data.project}}';
-             class10.value='{{data.class10}}'
-            class12.value='{{data.class12}}'
-            college.value='{{data.college}}'
-           
+            class10.value = '{{data.class10}}'
+            class12.value = '{{data.class12}}'
+            college.value = '{{data.college}}'
+
             expi.value = '{{data.experience}}';
-            
+
             if (resumeInput && resumeLinkFromData) {
                 resumeInput.value = resumeLinkFromData;
             }
         });
     </script>
     <script>
-        document.getElementById('checkformbefore').addEventListener('submit', function hasNonNumericCharacters() {
-            let ychar = document.getElementById('candidate_project').value;
-            if (/\D/.test(ychar)) {
-                console.log('character Present');
-                document.getElementById('validproject').style.display = 'none';
-            }
-            else {
-                document.getElementById('validproject').style.display = 'block';
-                console.log('not');
-                event.preventDefault();
-            }
-            hacters();
-            checkskill();
-        });
-        function hacters() {
-            let ychar = document.getElementById('candidate_collage').value;
-            if (/\D/.test(ychar)) {
-                console.log('character Present');
-                document.getElementById('validcollege').style.display = 'none';
-            }
-            else {
-                document.getElementById('validcollege').style.display = 'block';
-                console.log('not');
-                event.preventDefault();
+        function lidateName() {
+            var nameInput = document.getElementById('candidate_project');
+            var nameValue = nameInput.value.trim();
+
+            // Regular expression to check if the value contains only alphabets and spaces
+            var regex = /^[A-Za-z\s]+$/;
+
+            // Check if the value matches the regular expression
+            if (!regex.test(nameValue)) {
+                document.getElementById('validproject').textContent = 'Name should contain only alphabets and spaces.';
+                nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+            } else {
+                document.getElementById('validproject').textContent = '';
+                nameInput.setCustomValidity(''); // Reset custom validity
             }
         }
+        function lidatecollege() {
+            var nameInput = document.getElementById('candidate_collage');
+            var nameValue = nameInput.value.trim();
 
+            // Regular expression to check if the value contains only alphabets and spaces
+            var regex = /^[A-Za-z\s]+$/;
+
+            // Check if the value matches the regular expression
+            if (!regex.test(nameValue)) {
+                document.getElementById('validcollege').textContent = 'Name should contain only alphabets and spaces.';
+                nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+            } else {
+                document.getElementById('validcollege').textContent = '';
+                nameInput.setCustomValidity(''); // Reset custom validity
+            }
+        }
     </script>
     <script>
 

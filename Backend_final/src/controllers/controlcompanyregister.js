@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { sendEmail } = require("../services/mailer");
 const { Regverification } = require("../services/mailtemplates");
+const Adminschema = require("../models/adminschema");
 
 
 module.exports = {
@@ -105,6 +106,7 @@ module.exports = {
                 data.password = HashPassword;
                 data.token = 'dummy';
                 data.verified = false;
+                data.permission = false;
                 data.profile = imgUrl;
                 await Companyregister.insertMany([data]);
                 const checking = await Companyregister.findOne({ email: req.body.email });
@@ -152,7 +154,15 @@ module.exports = {
 
             await Companyregister.findOneAndUpdate({ _id: id }, { verified: true });
 
-            res.status(400).send('<script>alert("Verified succesfully now you can login."); window.location = "/companylogin";</script>');
+            const Admins = await Adminschema.find();
+
+            for(let i in Admins){
+
+                sendEmail(Admins[i].email,"New company Added at Job-Fiction","<h1>template email containing vefiry button and delete button</h1>");
+
+            }
+
+            res.status(400).send('<script>alert("wait some time after verification complete you got a mail after you are able to login."); window.location = "/companylogin";</script>');
 
         }
 

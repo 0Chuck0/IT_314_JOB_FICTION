@@ -11,6 +11,7 @@ async function isAdmin(req,res,next){
             else
             {
                 const check = await Adminschema.findOne({_id:decoded._id});
+                req.body.name = check.name;
                 req.body.email = check.email;
                 
                 if(check.email)
@@ -18,8 +19,20 @@ async function isAdmin(req,res,next){
             }
             });
     }else{
-    res.status(400).send('<script> alert("You have to login As a Admin first."); window.location = "/Admin/login";</script>');
+    return res.status(400).send('<script> alert("You have to login As a Admin first."); window.location = "/Admin/login";</script>');
     }
 }
 
-module.exports = {isAdmin};
+async function Adminexists(req,res,next){
+
+    const check = await Adminschema.findOne({email:req.body.email});
+
+    if(check === null){
+        return res.status(400).send('<script> alert("Email is not Registered As Admin."); window.location = "/Admin/login";</script>');
+    }else{
+        next();
+    }
+
+}
+
+module.exports = {isAdmin,Adminexists};

@@ -1,50 +1,86 @@
 const express = require("express");
 const Adminschema = require("../models/adminschema");
-const { isAdmin } = require("../middlewares/Adminauth");
+const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken");
+const { isAdmin, Adminexists } = require("../middlewares/Adminauth");
 const controlAdmin = require("../controllers/controlAdmin");
 const Companyregister = require("../models/companyregisterschema");
 const router = express.Router();
 
+router.get("/register",[isAdmin],async (req, res) =>{
+    res.render("Adminregister.hbs");
+  });
+
+router.post("/register",[isAdmin],async (req, res) =>{
+    const HashPassword = await bcrypt.hash(req.body.password, 10);
+    const data = {
+        email:req.body.newemail,
+        name:req.body.newname,
+        password:HashPassword,
+        token:"xyz",
+    }
+    await Adminschema.insertMany([data]);
+    res.send("<script> alert('New Admin Added Succesfully'); window.location = '/Admin/home' </script>")
+  });  
+
 router.get("/login",async (req, res) =>{
-  res.send("Adminlogin");
+    if(req.cookies.Admin) res.redirect("/Admin/home")
+    else  res.render("Adminlogin.hbs");
 });
 
-router.post("/login", async (req, res) =>{
-    
-    const check = await Adminschema.findOne({email:req.body.email});
-    const match = await bcrypt.compare(req.body.password,check.password);
-            
-    if(match)
-    {
+router.get("/logout",async (req,res)=>{
+    try {
+        if(req.cookies.Admin){
 
-        const token = jwt.sign({ _id:check._id}, process.env.SECRET_KEY);
+         res.clearCookie("Admin");
+         res.send("<script> alert('logged out succesfully'); window.location = '/Admin/login' </script>")
 
-        await Adminschema.updateOne({ _id:check._id}, { $set: { token: token }});
+        }else{
 
-        res.cookie("Admin",token,{
-            maxAge:1800000,
-            httpOnly:true,
-            secure:false,
-        });
+        res.send("<script> alert('You are no longer logged in'); window.location = '/Admin/login' </script>")
 
-        res.redirect("Adminhome");
-
-    }
-    else
-    {
-         res.status(400).send('<script>alert("Incorrect Password or Email."); window.location = "/login";</script>');
+        }
+        //  res.render('login.hbs');
+    } catch (error) {
+         res.status(500).send(error);
     }
 });
 
-router.get("/home",[],function (req, res) {
+router.post("/login", [Adminexists], async (req, res) =>{
+            const check = await Adminschema.findOne({email:req.body.email});
+            const match = await bcrypt.compare(req.body.password,check.password);
+                    
+            if(match)
+            {
+
+                const token = jwt.sign({ _id:check._id}, process.env.SECRET_KEY);
+
+                await Adminschema.updateOne({ _id:check._id}, { $set: { token: token }});
+
+                res.cookie("Admin",token,{
+                    maxAge:1800000,
+                    httpOnly:true,
+                    secure:false,
+                });
+
+                res.redirect("/Admin/home");
+
+            }
+            else
+            {
+                res.status(400).send('<script>alert("Incorrect Password or Email."); window.location = "/Admin/login";</script>');
+            }
+});
+
+router.get("/home",[isAdmin],function (req, res) {
     controlAdmin.get(req,res);
   });
   
-router.post("/home/accept/:email",[isAdmin], function (req, res) {
+router.post("/accept/:email",[isAdmin], function (req, res) {
     controlAdmin.post(req,res);
 });
 
-router.post("/home/delete/:email",[isAdmin], function (req, res) {
+router.post("/delete/:email",[isAdmin], function (req, res) {
     controlAdmin.create(req,res);
 });
 
@@ -54,8 +90,12 @@ router.get("/company_description/:email",async (req,res)=>{
 
     const check = await Companyregister.findOne({email:email});
 
-    res.send("comapnys_discription");
+    res.send(check);
 
 });
+
+router.get("/changepassword",[isAdmin],async (req,res)=>{
+    res.send("Shekhar Gupta you have to implement this.")
+})
 
 module.exports = router;

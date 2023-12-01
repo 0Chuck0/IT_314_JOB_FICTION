@@ -232,6 +232,21 @@ async function companyloggedinonly(req, res, next) {
    
 }
 
+async function Adminpermission(req,res,next){
+
+    const check = await Companyregister.findOne({email:req.body.email});
+
+    if(check.permission === true){
+
+        next();
+
+    }else{
+
+    return res.status(400).send('<script>alert("wait some time after verification complete you got a mail after you are able to login."); window.location = "/companylogin";</script>');
+
+    }
+}
+
 module.exports = {registerauth ,
     loggedinonly ,
     Emailauth ,
@@ -241,5 +256,6 @@ module.exports = {registerauth ,
     companyalredyregisterauth,
     companyregisterauth , 
     companyverifyauth,
-    companyloggedinonly
+    companyloggedinonly,
+    Adminpermission,
     };

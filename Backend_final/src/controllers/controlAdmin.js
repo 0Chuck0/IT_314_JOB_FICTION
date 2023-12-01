@@ -7,12 +7,13 @@ module.exports = {
 
     get:async (req,res)=>{
 
-        const verified = await Companyregister.find({verified:true});
-        const Unverified = await Companyregister.find({verified:false});
+        const verified = await Companyregister.find({permission:true});
+        const Unverified = await Companyregister.find({permission:false});
         const num1= verified.length;
         const num2 = Unverified.length;
         const total = num1 + num2;
-        res.render("admin_dashboard.hbs",{verified:verified,Unverified:Unverified,num1:num1,num2:num2,total:total});
+        const name = req.body.name;
+        res.render("admin_dashboard.hbs",{name,verified:verified,Unverified:Unverified,num1:num1,num2:num2,total:total});
 
     },
     post: async(req,res)=>{
@@ -20,9 +21,9 @@ module.exports = {
 
             const email = req.body.params;
 
-            await Adminschema.updateOne({email:email}, { $set: {verified: true } });
+            await Adminschema.updateOne({email:email}, { $set: {permission: true } });
 
-            sendEmail(email,"Registration is verified Succesfully","<h1>template of mail containing login button</h1>");
+            sendEmail(email,"Registration is verified Succesfully now you are able to login","<h1>template of mail containing login button</h1>");
 
             res.status(400).send('<script>alert("status Updated succesfully"); window.location = "/Admin/home";</script>');
 

@@ -8,7 +8,6 @@ const CompanySchema=new mongoose.Schema({
     number: {
         type: Number,
         required:true,
-        unique:true
     },
     companyname: {
         type:String,
@@ -43,6 +42,10 @@ const CompanySchema=new mongoose.Schema({
     verified:{
         type:Boolean,
         required:true,
+    },
+    permission:{
+        type:Boolean,
+        require:true,
     },
     profile:{
         type:String,

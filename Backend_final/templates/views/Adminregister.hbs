@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>JobFiction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/custom-bs.css">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="/fonts/line-icons/style.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/animate.min.css">
+
+  <link rel="stylesheet" href="/css/style_register.css">
+
+  <link rel="stylesheet" href="/css/style_company_register.css">
+  <link rel="stylesheet" href="/css/style_company_register1.css">
+</head>
+
+<body id="top">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <!-- .site-mobile-menu -->
+<header class="site-navbar mt-3">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="site-logo col-6"><a href="/Admin/login">JOBfiction</a></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');"
+      id="home-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1 class="text-white font-weight-bold" style="text-align: left;">Admin Register</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="containerr">
+      <form class="form-registration" action="/Admin/register" method="post" id="myForm"
+        onsubmit="return checkPasswords()">
+        <h1>
+          Register
+        </h1>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1 title" class="form-label">Full Name<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="text" name="newname" class="form-control" id="forname" placeholder="Name"
+            maxlength="50" minlength="3" pattern="^[a-zA-Z\s]{3,50}$" oninput="lidateName()" required>
+          <p id="validname" style="color: red;"></p>
+          {{!-- <span style="color: red; display: none;" id="">Please Enter a valid Name</span> --}}
+          {{!-- pattern="^[a-zA-Z0-9._]{2,}+@[a-zA-Z0-9._]{2,}+\.[a-zA-Z]{2,}$" ^[a-zA-Z]+$ --}}
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1 title" class="form-label">Email ID<sup class="mandatory_Filds">*</sup></label>
+          <input type="text" class="form-control" name="newemail" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Email ID" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$" maxlength="320"
+            required>
+          <span class="form-text" id="validemail">
+            We will send you relevant jobs on this mail
+            {{!-- pattern="[a-zA-Z0-9._]{2,}+@[a-zA-Z0-9._]{2,}+\.[a-zA-Z]{2,}" --}}
+          </span>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1main title" class="form-label">Password<sup
+              class="mandatory_Filds">*</sup></label>
+          <input type="password"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%&'*+\/=?^_`,])(?=.*[^\w\s]).{8,15}$"
+            class="form-control" name="password" id="exampleInputPassword1main"
+            placeholder="Create a password" required>
+          <div id="exampleInputPassword1" class="form-text">
+            Minimum 8 characters required including atleast one lowercase, UPPERCASE, number & symbols
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="btn btn-primary register-btn" id="final_submit">Register</button>
+        </div>
+      </form>
+    </section>
+    <script>
+
+      document.getElementById('myForm').addEventListener('submit', function () {
+        var email = document.getElementById("exampleInputEmail1").value;
+        var emailRegex = "/^[a-zA-Z0-9._]{2,}+@[a-zA-Z0-9._]{2,}+\.[a-zA-Z]{2,}$/";
+
+        if (email.length > 320 || (!email.match(emailRegex))) {
+          document.getElementById('validemail').classList.remove('form-text');
+          document.getElementById('validemail').style.display = 'block';
+          document.getElementById('validemail').innerHTML = 'Please Enter valid Email';
+          event.preventDefault();
+        }
+        else {
+          console.log('Valid Email');
+          document.getElementById('validemail').classList.add('form-text');
+          document.getElementById('validemail').style.display = 'block';
+          document.getElementById('validemail').innerHTML = 'We will send you relevant jobs on this mail';
+          event.preventDefault();
+        }
+
+      });
+    </script>
+    <script>
+      function lidateName() {
+        var nameInput = document.getElementById('forname');
+        var nameValue = nameInput.value.trim();
+
+        // Regular expression to check if the value contains only alphabets and spaces
+        var regex = /^[A-Za-z\s]+$/;
+
+        // Check if the value matches the regular expression
+        if (!regex.test(nameValue)) {
+          document.getElementById('validname').textContent = 'Name should contain only alphabets and spaces.';
+          nameInput.setCustomValidity('Invalid name'); // Set custom validity to prevent form submission
+        } else {
+          document.getElementById('validname').textContent = '';
+          nameInput.setCustomValidity(''); // Reset custom validity
+        }
+      }
+    </script>
+    <footer class="site-footer">
+
+      <a href="#top" class="smoothscroll scroll-top">
+        <span class="icon-keyboard_arrow_up"></span>
+      </a>
+
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Search Trending</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Graphic Design</a></li>
+              <li><a href="#">Web Developers</a></li>
+              <li><a href="#">Python</a></li>
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">CSS3</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Company</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Support</h3>
+            <ul class="list-unstyled">
+              <li><a href="#">Help center</a></li>
+              <li><a href="#">Privacy policy</a></li>
+              <li><a href="#">Terms and conditions</a></li>
+              <li><a href="#">Fraud alert</a></li>
+              <li><a href="#">Grievances</a></li>
+              <li><a href="#">Report issue</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 mb-4 mb-md-0">
+            <h3>Connect with us</h3>
+            <div class="footer-social">
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/isotope.pkgd.min.js"></script>
+  <script src="/js/stickyfill.min.js"></script>
+  <script src="/js/jquery.fancybox.min.js"></script>
+  <script src="/js/jquery.easing.1.3.js"></script>
+
+  <script src="/js/jquery.waypoints.min.js"></script>
+  <script src="/js/jquery.animateNumber.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+
+  <script src="/js/bootstrap-select.min.js"></script>
+
+  <script src="/js/custom.js"></script>
+
+
+</body>
+
+</html>

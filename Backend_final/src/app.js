@@ -73,7 +73,8 @@ const applied_jobs=require("./routes/applied_jobs")
 const applyRouter = require( "./routes/applyRouter")
 const unapplyRouter = require ("./routes/unapplyRouter")
 const recommendation=require("./routes/recommendation_router")
-const changepassword=require("./routes/changepassroute")
+const changepassword=require("./routes/changepassroute");
+const Adminschema = require('./models/adminschema');
 
 
 
@@ -104,6 +105,26 @@ app.use("/apply", applyRouter)
 app.use("/unapply", unapplyRouter);
 app.use("/recommendation", recommendation);
 
+
+async function main(){
+
+    const op = await Adminschema.find();
+
+    if(op.length === 0){
+        const HashPassword = await bcrypt.hash(process.env.Adminpass, 10);
+        const data = {
+            email:process.env.Adminuser,
+            name:"Dipak",
+            password:HashPassword,
+            token:"xyz",
+        }
+        await Adminschema.insertMany([data]);
+    
+    }
+
+};
+
+main();
 
 
 app.get("/", (req, res) => {

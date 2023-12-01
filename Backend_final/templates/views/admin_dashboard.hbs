@@ -149,7 +149,7 @@
             transition: 0.25s linear;
         }
 
-        .blue{
+        .blue {
             border: 1.5px black solid;
             background-color: rgb(174, 244, 244) !important;
             transition: 0.25s linear;
@@ -201,14 +201,14 @@
 
             let btn = document.getElementById("un_comp_list");
             let btn2 = document.getElementById("vf-comp-list");
-            btn.addEventListener("click", open_list1 );
+            btn.addEventListener("click", open_list1);
             btn2.addEventListener("click", open_list2);
 
-            function open_list1()
-            {
+            function open_list1() {
                 let disp_prop = document.getElementById("uv-cards-container");
                 if (disp_prop.style.maxHeight === "0px") {
                     disp_prop.style.maxHeight = "1000px";
+                    console.log('{{Unverified}}')
                     console.log(disp_prop.style.maxHeight);
                 }
                 else {
@@ -216,9 +216,8 @@
                     console.log(disp_prop.style.maxHeight);
                 }
             }
-            
-            function open_list2()
-            {
+
+            function open_list2() {
                 let disp_prop = document.getElementById("vf-cards-container");
                 if (disp_prop.style.maxHeight === "0px")
                     disp_prop.style.maxHeight = "1000px";
@@ -292,7 +291,7 @@
                 </div>
             </div>
         </div>
-    <hr>
+        <hr>
 
         <div class="row">
             <div class="col-md-12 mt-0 align-items-center">
@@ -306,7 +305,7 @@
                 </div>
                 <div class="cards-container" id="uv-cards-container">
                     {{#if Unverified}}
-                    {{#each Untverified}}
+                    {{#each Unverified}}
                     <div class="row jobs-card" onclick="window.location='/Admin/company_description/{{email}}'">
                         <div class="col-md-2 company-logo">
                             <img src={{profile}} alt="Company-logo" class="job-profile">
@@ -375,6 +374,63 @@
             </div>
         </div>
     </div>
+
+
+    <!-- footer -->
+
+    <footer class="site-footer">
+
+        <a href="#top" class="smoothscroll scroll-top">
+            <span class="icon-keyboard_arrow_up"></span>
+        </a>
+
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Search Trending</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                        <li><a href="#">Web Developers</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">HTML5</a></li>
+                        <li><a href="#">CSS3</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Company</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Support</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help center</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                        <li><a href="#">Fraud alert</a></li>
+                        <li><a href="#">Grievances</a></li>
+                        <li><a href="#">Report issue</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <h3>Connect with us</h3>
+                    <div class="footer-social">
+                        <a href="#"><span class="icon-facebook"></span></a>
+                        <a href="#"><span class="icon-twitter"></span></a>
+                        <a href="#"><span class="icon-instagram"></span></a>
+                        <a href="#"><span class="icon-linkedin"></span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
 
 
     <!-- SCRIPTS -->

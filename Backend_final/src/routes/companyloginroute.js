@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const controlcompanylogin = require("../controllers/controlcompanylogin");
-const {companyregisterauth , companyverifyauth} = require("../middlewares/auth");
+const {companyregisterauth , companyverifyauth, Adminpermission} = require("../middlewares/auth");
 
 
 router.get("/",function (req, res) {
@@ -9,7 +9,7 @@ router.get("/",function (req, res) {
 });
 
 
-router.post("/",[companyregisterauth, companyverifyauth], function (req, res) {
+router.post("/",[companyregisterauth, companyverifyauth,Adminpermission], function (req, res) {
     controlcompanylogin.post(req, res);
 });
 

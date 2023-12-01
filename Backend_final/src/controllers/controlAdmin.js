@@ -9,7 +9,10 @@ module.exports = {
 
         const verified = await Companyregister.find({verified:true});
         const notverified = await Companyregister.find({verified:false});
-        res.render("admin_dashboard.hbs",{verified:verified,notverified:notverified});
+        const num1= verified.length;
+        const num2 = notverified.length;
+        const total = num1 + num2;
+        res.render("admin_dashboard.hbs",{verified:verified,notverified:notverified,num1:num1,num2:num2,total:total});
 
     },
     post: async(req,res)=>{

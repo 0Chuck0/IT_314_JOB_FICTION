@@ -40,7 +40,7 @@ body {
 #dateofrole{
     margin-top: 10px;
     /* color:#FF3F3F ; */
-    color:#000 ;
+    color:#343440 ;
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 0;
@@ -384,11 +384,12 @@ strong{
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 45px;
+    color: #343440;
 }
 
 h2 {
     text-align: left;
-    color: #000 !important;
+    color: #000 ;
     margin-bottom: 25px;
     /* font-weight: bold; */
     font-size: 27px;

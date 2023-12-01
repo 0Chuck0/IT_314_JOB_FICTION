@@ -19,24 +19,27 @@
     <link rel="stylesheet" href="/css/style_jobs.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="stylesheet" href="/css/side-nav.css">
+    {{!--
+    <link rel="stylesheet" href="/css/side-nav.css"> --}}
 
     <script src="https://kit.fontawesome.com/7ff784d1a8.js" crossorigin="anonymous"></script>
 
     <style>
         /* Add your custom styles here */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
+            color: black;
         }
 
-        .site-logo-new a {
-            text-decoration: none;
-            color: #f8f9fa;
-            font-family: nunito;
-        }
+
 
         /* .container {
             padding: 20px;
@@ -44,6 +47,7 @@
 
         .card {
             margin-bottom: 20px;
+            border: 0.5px solid rgba(160, 138, 138, 0.521);
         }
 
         #verified-companies,
@@ -95,6 +99,14 @@
             border-radius: 8px;
             box-shadow: 0 0 5px gray;
             transition: max-height 0.2s ease-out;
+            padding: 0 !important;
+            border: 0 !important;
+            color: black !important;
+        }
+
+        #card-title {
+            font-weight: bolder;
+            font-size: 25px;
         }
 
         .labels {
@@ -125,6 +137,36 @@
         .container-main {
             width: 85%;
             margin: auto;
+        }
+
+        .user-profile,
+        .company-logo {
+            display: block !important;
+        }
+
+        .white {
+            background-color: white;
+            transition: 0.25s linear;
+        }
+
+        .blue{
+            border: 1.5px black solid;
+            background-color: rgb(174, 244, 244) !important;
+            transition: 0.25s linear;
+        }
+
+        #vf-comp-list,
+        #un_comp_list {
+            background-color: white;
+            transition: 0.25s linear;
+        }
+
+        #vf-comp-list:hover,
+        #un_comp_list:hover {
+
+            background-color: rgb(174, 244, 244);
+            border: 1.5px black solid;
+            transition: 0.25s linear;
         }
 
         @media (width < 768px) {
@@ -178,6 +220,9 @@
                 else
                     disp_prop.style.maxHeight = "0px";
             })
+
+
+
         });
     </script>
 </head>
@@ -200,8 +245,8 @@
     {{>sidenav_admin}}
 
 
-    <section class="section-hero overlay inner-page bg-image"
-        style="background-image: url('images/hero_1.jpg');" id="home-section">
+    <section class="section-hero overlay inner-page bg-image" style="background-image: url('/images/hero_1.jpg');"
+        id="home-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -218,7 +263,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Verified Companies</h5>
+                        <h5 id="card-title" class="card-title">Verified Companies</h5>
                         <span type="number" id="verified-companies">45</span>
 
                     </div>
@@ -228,7 +273,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Unverified Companies</h5>
+                        <h5 id="card-title" class="card-title">Unverified Companies</h5>
                         <span id="unverified-companies">45</span>
                     </div>
                 </div>
@@ -237,7 +282,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Total Companies</h5>
+                        <h5 id="card-title" class="card-title">Total Companies</h5>
                         <span id="total-companies"></span>
                     </div>
                 </div>
@@ -247,7 +292,7 @@
 
         <div class="row">
             <div class="col-md-12 mt-0">
-                <div id="un_comp_list" class="card">
+                <div id="un_comp_list" class="card white">
                     <div class="card-body" style="cursor: pointer;">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title mb-0 ">Unverified Companies</h5>
@@ -287,8 +332,8 @@
 
         <div class="row">
             <div class="col-md-12 mt-0">
-                <div class="card">
-                    <div id="vf-comp-list" class="card-body" style="cursor: pointer;">
+                <div id="vf-comp-list" class="card white">
+                    <div class="card-body" style="cursor: pointer;">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="card-title mb-0">Verified Companies</h5>
                             <!-- Add your content for unverified companies -->

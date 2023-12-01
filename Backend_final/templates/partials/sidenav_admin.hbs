@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="col-md-12 image-title">
             <div class="row">
-                <img class="user-profile-bar" src="/images/user-profile1.png" alt="User Profile">
+                <img class="user-profile-bar" src="/images/loggedin-user.png" alt="User Profile">
             </div>
             <div class="row mt-1">
                 <h3 style="margin: auto;">Admin</h3>
@@ -11,15 +11,19 @@
         </div>
         <div class="row mt-5">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#top"><i class="fa fa-home" style="font-size: 1.5rem;"></i>Home</a>
-            <a href="#vf-comp-list"  onclick="closeNav()"><i class="fas fa-keyboard" style="font-size: 1.5rem;"></i>Verified Jobs</a>
-            <a href="#un_comp_list"  onclick="closeNav()"><i class="fa fa-bookmark" style="font-size: 1.5rem"></i>Unverified Jobs</a>
+            <a href="/admin/home"><i class="fa fa-home" style="font-size: 1.5rem;"></i>Home</a>
+            <a href="#un_comp_list" onclick="focusEle2()"><i class="fa fa-circle-xmark"
+                    style="font-size: 1.5rem"></i>Unverified Jobs</a>
+            <a href="#vf-comp-list" onclick="focusEle1()"><i class="fas fa-check-circle"
+                    style="font-size: 1.5rem;"></i>Verified Jobs</a>
+
             <a href="/logout"><i class="fas fa-sign-out-alt" style="font-size: 1.5rem"></i>Log Out</a>
         </div>
     </div>
     <style>
         body {
-            transition: background-color .5s;
+            transition: .5s;
+
         }
 
         .side-nav {
@@ -37,7 +41,11 @@
             z-index: 9999;
         }
 
-        .side-nav i{
+        #side-nav-bar {
+            max-width: 100%;
+        }
+
+        .side-nav i {
             margin-right: 0.5em;
         }
 
@@ -123,6 +131,24 @@
             document.body.style.backgroundColor = "white";
             document.getElementById("nav-bar-btn").style.width = "3.5rem";
         }
+
+        function focusEle1() {
+            closeNav();
+            document.getElementById("vf-comp-list").className = "card blue";
+            setTimeout(changeBG, 300);
+        }
+        function focusEle2() {
+            closeNav();
+            document.getElementById("un_comp_list").className = "card blue";
+
+            setTimeout(changeBG, 300);
+        }
+        function changeBG() {
+            document.getElementById("un_comp_list").className = "card white";
+            document.getElementById("vf-comp-list").className = "card white";
+
+        }
+
 
     </script>
 

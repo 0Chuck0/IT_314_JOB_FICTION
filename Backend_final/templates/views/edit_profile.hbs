@@ -484,22 +484,42 @@
                         <div class="widgetCont">
                             <span class="empty candidategender spandiff">
                                 <div>
-                                    <input type="radio" id="Intern" name="r_employment" value="intern" />
+                                    {{#if r_employmentI }}
+                                     <input type="radio" id="Intern" name="r_employment" value="intern"  checked/>
+                                    {{else}}
+                                        <input type="radio" id="Intern" name="r_employment" value="intern" />
+                                    {{/if}}
+                                    
                                     <label for="Intern">Intern</label>
                                 </div>
 
                                 <div>
-                                    <input type="radio" id="Part_time" name="r_employment" value="part_time" />
+                                      {{#if r_employmentP }}
+                                      <input type="radio" id="Part_time" name="r_employment" value="part time" checked />
+                                    {{else}}
+                                         <input type="radio" id="Part_time" name="r_employment" value="part time" />
+                                    {{/if}}
+                                   
                                     <label for="Part_time">Part Time</label>
                                 </div>
 
                                 <div>
-                                    <input type="radio" id="Full_time" name="r_employment" value="full_time" />
+                                      {{#if r_employmentF }}
+                                    <input type="radio" id="Full_time" name="r_employment" value="full time" checked/>
+                                    {{else}}
+                                         <input type="radio" id="Full_time" name="r_employment" value="full time" />
+                                    {{/if}}
+                                   
                                     <label for="Full_time">Full Time</label>
                                 </div>
 
                                 <div>
+                                      {{#if r_employmentA }}
                                     <input type="radio" id="Part_time" name="r_employment" value="" checked />
+                                    {{else}}
+                                     <input type="radio" id="Part_time" name="r_employment" value=""  />
+                                    {{/if}}
+                                    
                                     <label for="Part_time">Any</label>
                                 </div>
                             </span>

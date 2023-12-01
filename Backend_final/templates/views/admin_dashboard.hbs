@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        #verified-companies,
+        #unverified-companies,
+        #total-companies {
+            font-size: 32px;
+            font-weight: bold;
+            color: rgb(55, 55, 232);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let uv_comp = document.getElementById("unverified-companies").innerHTML;
+            let v_comp = document.getElementById("verified-companies").innerHTML;
+            let total_comp = Number(uv_comp)+Number(v_comp);
+            document.getElementById("total-companies").innerHTML = total_comp;
+        });
+    </script>
+</head>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Verified Companies</h5>
+                        <!-- Add your content for verified companies -->
+                        <span type="number" id="verified-companies">45</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Unverified Companies</h5>
+                        <!-- Add your content for unverified companies -->
+                        <span id="unverified-companies">45</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Companies</h5>
+                        <!-- Add your content for total companies -->
+                        <span id="total-companies">45</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Unverified Companies</h5>
+                        <!-- Add your content for unverified companies -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

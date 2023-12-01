@@ -2,6 +2,7 @@ const express = require("express");
 const Adminschema = require("../models/adminschema");
 const { isAdmin } = require("../middlewares/Adminauth");
 const controlAdmin = require("../controllers/controlAdmin");
+const Companyregister = require("../models/companyregisterschema");
 const router = express.Router();
 
 router.get("/login",async (req, res) =>{
@@ -47,6 +48,14 @@ router.post("/home/delete/:email",[isAdmin], function (req, res) {
     controlAdmin.create(req,res);
 });
 
+router.get("/company_description/:email",async (req,res)=>{
 
+    const email = req.body.params;
+
+    const check = await Companyregister.findOne({email:email});
+
+    res.send("comapnys_discription");
+
+});
 
 module.exports = router;

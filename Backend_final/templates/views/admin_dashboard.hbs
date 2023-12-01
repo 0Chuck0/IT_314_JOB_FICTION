@@ -264,7 +264,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 id="card-title" class="card-title">Verified Companies</h5>
-                        <span type="number" id="verified-companies">45</span>
+                        <span type="number" id="verified-companies">{{num1}}</span>
 
                     </div>
                 </div>
@@ -274,7 +274,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 id="card-title" class="card-title">Unverified Companies</h5>
-                        <span id="unverified-companies">45</span>
+                        <span id="unverified-companies">{{num2}}</span>
                     </div>
                 </div>
             </div>
@@ -301,20 +301,20 @@
                     </div>
                 </div>
                 <div class="cards-container" id="uv-cards-container">
-                    {{#if verified}}
-                    {{#each verified}}
-                    <div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
+                    {{#if Unverified}}
+                    {{#each Untverified}}
+                    <div class="row jobs-card" onclick="window.location='/Admin/company_description/{{email}}'">
                         <div class="col-md-2 company-logo">
                             <img src={{profile}} alt="Company-logo" class="job-profile">
                         </div>
                         <div class="col-md-3">
-                            <h4>{{company}}</h4>
+                            <h4>{{companyname}}</h4>
                         </div>
                         <div class="col-md-4">
-                            <h4>{{industry_type}}</h4>
+                            <h4>{{industrytype}}</h4>
                         </div>
                         <div class="col-md-3 ">
-                            <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
+                            <p><i class="fa-solid fa-location-dot"></i>{{companylocation}}</p>
                         </div>
                     </div>
                     {{/each}}
@@ -342,20 +342,20 @@
                     </div>
                 </div>
                 <div class="cards-container" id="vf-cards-container">
-                    {{#if notverified}}
-                    {{#each notverified}}
-                    <div class="row jobs-card" onclick="window.location='/job_description/{{id}}'">
+                    {{#if verified}}
+                    {{#each verified}}
+                    <div class="row jobs-card" onclick="window.location='/Admin/company_description/{{email}}'">
                         <div class="col-md-2 company-logo">
                             <img src={{profile}} alt="Company-logo" class="job-profile">
                         </div>
                         <div class="col-md-3">
-                            <h4>{{company}}</h4>
+                            <h4>{{companyname}}</h4>
                         </div>
                         <div class="col-md-4">
-                            <h4>{{industry_type}}</h4>
+                            <h4>{{industrytype}}</h4>
                         </div>
                         <div class="col-md-3 ">
-                            <p><i class="fa-solid fa-location-dot"></i>{{location}}</p>
+                            <p><i class="fa-solid fa-location-dot"></i>{{companylocation}}</p>
                         </div>
                     </div>
                     {{/each}}

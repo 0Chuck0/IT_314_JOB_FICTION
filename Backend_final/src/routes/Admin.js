@@ -84,13 +84,13 @@ router.post("/delete/:email",[isAdmin], function (req, res) {
     controlAdmin.create(req,res);
 });
 
-router.get("/company_description/:email",async (req,res)=>{
+router.get("/company_description",async (req,res)=>{
 
     const email = req.body.params;
 
     const check = await Companyregister.findOne({email:email});
 
-    res.send(check);
+    res.render("company_description.hbs",check);
 
 });
 

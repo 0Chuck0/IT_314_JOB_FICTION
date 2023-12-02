@@ -20,6 +20,8 @@ module.exports = {
     post: async(req,res)=>{
         try{
 
+            // console.log(req.body)
+
             const email = req.params.email;
             
             const check = await Companyregister.updateOne({email:email}, { $set: {permission: true } });

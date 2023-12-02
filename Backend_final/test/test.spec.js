@@ -758,6 +758,42 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let chai = require("chai");
 // let chaiHttp = require("chai-http");
 // chai.should();
@@ -1664,7 +1700,44 @@
 
 
 
-// //<------------------------------------Testing Edit Profile ------------------------------------------------->///
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // //<------------------------------------Testing Edit Profile ------------------------------------------------->///
 
 // let chai = require("chai");
 // let chaiHttp = require("chai-http");
@@ -2536,756 +2609,1362 @@
 // });
 
 
-//<------------------------------------Testing Post Job ------------------------------------------------->///
-
-let chai = require("chai");
-let chaiHttp = require("chai-http");
-chai.should();
-chai.use(chaiHttp);
-describe("Testing route company/newpost", () => {
-  const host = `http://localhost:3000`;
-  const path = `/newpost`;
 
 
-  it("Experience cannot be negative", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: -1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
 
-  it("Experience cannot be negative", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: -5,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
 
-  it("Experience cannot be negative", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: -57,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
 
-  it("Experience cannot exceed 25.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: 26,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
 
-  it("Experience cannot exceed 25.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: 45,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //<------------------------------------Testing Post Job ------------------------------------------------->///
+
+// let chai = require("chai");
+// let chaiHttp = require("chai-http");
+// chai.should();
+// chai.use(chaiHttp);
+// describe("Testing route company/newpost", () => {
+//   const host = `http://localhost:3000`;
+//   const path = `/newpost`;
+
+
+//   it("Experience cannot be negative", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: -1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
+
+//   it("Experience cannot be negative", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: -5,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
+
+//   it("Experience cannot be negative", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: -57,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
+
+//   it("Experience cannot exceed 25.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 26,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
+
+//   it("Experience cannot exceed 25.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 45,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
   
-  it("All valid field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Electric Engineering',
-        Responsibilities: 'Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Gandhinagar',
-        Perks: 'Food',
-        last_date: '2023-12-31'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Electric Engineering',
+//         Responsibilities: 'Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Gandhinagar',
+//         Perks: 'Food',
+//         last_date: '2023-12-31'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Job title is Invalid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering123',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2024-01-01'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Job title is Invalid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering123',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2024-01-01'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Job title is Invalid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer123Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'medical',
-        last_date: '2023-12-30'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Job title is Invalid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer123Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'medical',
+//         last_date: '2023-12-30'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Job title is Invalid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: '1234',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-05'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Job title is Invalid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: '1234',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-05'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Job title should contain atleast 3 character.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'HR',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-10'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Job title should contain atleast 3 character.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'HR',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-10'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Project name should not contain more than 50 character.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'ComputerEngineeringkdjskdjfksdhjhjhjdhfjhjfygoiyhjkhfjhkjdfhjhjghjfdhdjfhdjhkjhjdhgkjhdkj',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-15'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Project name should not contain more than 50 character.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'ComputerEngineeringkdjskdjfksdhjhjhjdhfjhjfygoiyhjkhfjhkjdfhjhjghjfdhdjfhdjhkjhjdhgkjhdkj',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-15'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Hotel manager',
-        Responsibilities: 'trainer',
-        exp: 1,
-        salary: 20000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2023-12-31'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Hotel manager',
+//         Responsibilities: 'trainer',
+//         exp: 1,
+//         salary: 20000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2023-12-31'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Hospital Manager',
-        Responsibilities: 'doctor',
-        exp: 1,
-        salary: 75000,
-        location: 'Mumbai',
-        Perks: 'Residance',
-        last_date: '2024-01-14'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Hospital Manager',
+//         Responsibilities: 'doctor',
+//         exp: 1,
+//         salary: 75000,
+//         location: 'Mumbai',
+//         Perks: 'Residance',
+//         last_date: '2024-01-14'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Fontend Devloper',
-        exp: 1,
-        salary: 50000,
-        location: 'Rajkot',
-        Perks: 'Food',
-        last_date: '2024-02-14'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Fontend Devloper',
+//         exp: 1,
+//         salary: 50000,
+//         location: 'Rajkot',
+//         Perks: 'Food',
+//         last_date: '2024-02-14'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 75000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2023-12-14'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 75000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2023-12-14'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Software Development Engineer',
-        exp: 1,
-        salary: 85000,
-        location: 'Bangalore',
-        Perks: 'medicale',
-        last_date: '2023-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Software Development Engineer',
+//         exp: 1,
+//         salary: 85000,
+//         location: 'Bangalore',
+//         Perks: 'medicale',
+//         last_date: '2023-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("salary cannot be negative.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: -5000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-06-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("salary cannot be negative.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: -5000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-06-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("salary cannot be less than 5000.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 1,
-        salary: 75,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-06-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("salary cannot be less than 5000.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 1,
+//         salary: 75,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-06-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("salary cannot be more than 500000.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 750000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-07-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("salary cannot be more than 500000.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 750000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-07-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
   
-  it("salary cannot be more than 500000.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 1000000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-08-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("salary cannot be more than 500000.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 1000000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-08-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-03-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-03-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Frontend Devloper',
-        exp: 2,
-        salary: 50000,
-        location: 'Bangalor',
-        Perks: 'Food',
-        last_date: '2024-06-29'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Frontend Devloper',
+//         exp: 2,
+//         salary: 50000,
+//         location: 'Bangalor',
+//         Perks: 'Food',
+//         last_date: '2024-06-29'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Location is not valid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities:'In the vast expanse of the cosmos, where galaxies twirl in cosmic dances and stars flicker like distant lanterns, there exists a profound beauty that captivates the imagination. Nebulas stretch their ethereal arms across the cosmic tapestry, creating celestial paintings that defy the limits of human comprehension. Black holes, mysterious and enigmatic, devour light and time, bending the very fabric of space itself Planets, each a unique world with its own story, orbit their parent stars in a delicate ballet. Moons, faithful companions, cast their silvery glow upon alien landscapes. Meteoroids zip through the cosmic void, leaving trails of stardust in their wake. Supernovae unleash titanic explosions, scattering elements forged in the hearts of stars across the cosmic landscape.Amidst this cosmic symphony, life emerges on a pale blue dot called Earth. From the microscopic dance of cells to the majestic migrations of whales, life weaves its intricate patterns. Human minds ponder the mysteries of existence, reaching for the stars with a thirst for knowledge that transcends the boundaries of our terrestrial home As we gaze into the night sky, let us marvel at the wonders that unfold in the grand theater of the universe. For in the cosmic poetry written across the heavens, we find a reflection of our own curiosity and a reminder of the boundless possibilities that await those who dare to explore the infinite reaches of space and time',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-11-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Location is not valid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities:'In the vast expanse of the cosmos, where galaxies twirl in cosmic dances and stars flicker like distant lanterns, there exists a profound beauty that captivates the imagination. Nebulas stretch their ethereal arms across the cosmic tapestry, creating celestial paintings that defy the limits of human comprehension. Black holes, mysterious and enigmatic, devour light and time, bending the very fabric of space itself Planets, each a unique world with its own story, orbit their parent stars in a delicate ballet. Moons, faithful companions, cast their silvery glow upon alien landscapes. Meteoroids zip through the cosmic void, leaving trails of stardust in their wake. Supernovae unleash titanic explosions, scattering elements forged in the hearts of stars across the cosmic landscape.Amidst this cosmic symphony, life emerges on a pale blue dot called Earth. From the microscopic dance of cells to the majestic migrations of whales, life weaves its intricate patterns. Human minds ponder the mysteries of existence, reaching for the stars with a thirst for knowledge that transcends the boundaries of our terrestrial home As we gaze into the night sky, let us marvel at the wonders that unfold in the grand theater of the universe. For in the cosmic poetry written across the heavens, we find a reflection of our own curiosity and a reminder of the boundless possibilities that await those who dare to explore the infinite reaches of space and time',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-11-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Responsibilities not valid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'This is a sample string with more than 100 letters. It serves the purpose of demonstrating a text that exceeds the specified length. Feel free to use it for your testing or any other purposes you may have.',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-09-29'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Responsibilities not valid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'This is a sample string with more than 100 letters. It serves the purpose of demonstrating a text that exceeds the specified length. Feel free to use it for your testing or any other purposes you may have.',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-09-29'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
   
-  it("perk is not valid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: 'In the vast expanse of the cosmos, where galaxies twirl in cosmic dances and stars flicker like distant lanterns, there exists a profound beauty that captivates the imagination. Nebulas stretch their ethereal arms across the cosmic tapestry, creating celestial paintings that defy the limits of human comprehension. Black holes, mysterious and enigmatic, devour light and time, bending the very fabric of space itself Planets, each a unique world with its own story, orbit their parent stars in a delicate ballet. Moons, faithful companions, cast their silvery glow upon alien landscapes. Meteoroids zip through the cosmic void, leaving trails of stardust in their wake. Supernovae unleash titanic explosions, scattering elements forged in the hearts of stars across the cosmic landscape.Amidst this cosmic symphony, life emerges on a pale blue dot called Earth. From the microscopic dance of cells to the majestic migrations of whales, life weaves its intricate patterns. Human minds ponder the mysteries of existence, reaching for the stars with a thirst for knowledge that transcends the boundaries of our terrestrial home As we gaze into the night sky, let us marvel at the wonders that unfold in the grand theater of the universe. For in the cosmic poetry written across the heavens, we find a reflection of our own curiosity and a reminder of the boundless possibilities that await those who dare to explore the infinite reaches of space and time',
-        last_date: '2024-06-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("perk is not valid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: 'In the vast expanse of the cosmos, where galaxies twirl in cosmic dances and stars flicker like distant lanterns, there exists a profound beauty that captivates the imagination. Nebulas stretch their ethereal arms across the cosmic tapestry, creating celestial paintings that defy the limits of human comprehension. Black holes, mysterious and enigmatic, devour light and time, bending the very fabric of space itself Planets, each a unique world with its own story, orbit their parent stars in a delicate ballet. Moons, faithful companions, cast their silvery glow upon alien landscapes. Meteoroids zip through the cosmic void, leaving trails of stardust in their wake. Supernovae unleash titanic explosions, scattering elements forged in the hearts of stars across the cosmic landscape.Amidst this cosmic symphony, life emerges on a pale blue dot called Earth. From the microscopic dance of cells to the majestic migrations of whales, life weaves its intricate patterns. Human minds ponder the mysteries of existence, reaching for the stars with a thirst for knowledge that transcends the boundaries of our terrestrial home As we gaze into the night sky, let us marvel at the wonders that unfold in the grand theater of the universe. For in the cosmic poetry written across the heavens, we find a reflection of our own curiosity and a reminder of the boundless possibilities that await those who dare to explore the infinite reaches of space and time',
+//         last_date: '2024-06-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'Promte Engineer',
-        exp: 2,
-        salary: 10000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-04-23'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'Promte Engineer',
+//         exp: 2,
+//         salary: 10000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-04-23'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Frontend Devloper',
-        exp: 5,
-        salary: 95000,
-        location: 'Pune',
-        Perks: 'Residence',
-        last_date: '2024-08-27'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Frontend Devloper',
+//         exp: 5,
+//         salary: 95000,
+//         location: 'Pune',
+//         Perks: 'Residence',
+//         last_date: '2024-08-27'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty job_title.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: '',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-07-21'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty job_title.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: '',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-07-21'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty Responsibilities.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: '',
-        exp: 4,
-        salary: 100000,
-        location: 'chennai',
-        Perks: 'Food',
-        last_date: '2024-07-21'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty Responsibilities.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: '',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'chennai',
+//         Perks: 'Food',
+//         last_date: '2024-07-21'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty exp.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: '',
-        salary: 100000,
-        location: 'mumbai',
-        Perks: 'Food',
-        last_date: '2024-07-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty exp.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: '',
+//         salary: 100000,
+//         location: 'mumbai',
+//         Perks: 'Food',
+//         last_date: '2024-07-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
   
-  it("Empty salary.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: '',
-        location: 'Delhi',
-        Perks: 'Food',
-        last_date: '2024-07-15'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty salary.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: '',
+//         location: 'Delhi',
+//         Perks: 'Food',
+//         last_date: '2024-07-15'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty location.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: '',
-        Perks: 'Food',
-        last_date: '2024-12-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty location.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: '',
+//         Perks: 'Food',
+//         last_date: '2024-12-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty perk.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: '',
-        last_date: '2024-03-21'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty perk.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: '',
+//         last_date: '2024-03-21'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("Empty last_date.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: '',
-        last_date: '',
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("Empty last_date.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: '',
+//         last_date: '',
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("last_date not valid.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'Backend Devloper',
-        exp: 4,
-        salary: 100000,
-        location: 'Delhi',
-        Perks: '',
-        last_date: '2023-03-21'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("last_date not valid.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'Backend Devloper',
+//         exp: 4,
+//         salary: 100000,
+//         location: 'Delhi',
+//         Perks: '',
+//         last_date: '2023-03-21'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Software Engineering',
-        Responsibilities: 'senior manager',
-        exp: 5,
-        salary: 1000000,
-        location: 'Delhi',
-        Perks: 'Residence',
-        last_date: '2024-07-25'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Software Engineering',
+//         Responsibilities: 'senior manager',
+//         exp: 5,
+//         salary: 1000000,
+//         location: 'Delhi',
+//         Perks: 'Residence',
+//         last_date: '2024-07-25'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-  it("All valid Field.", (done) => {
-    chai
-      .request(host)
-      .post(path)
-      .send({
-        job_title: 'Computer Engineering',
-        Responsibilities: 'HR manager',
-        exp: 7,
-        salary: 200000,
-        location: 'Gandhinagar',
-        Perks: 'Food',
-        last_date: '2024-04-07'
-      })
-      .end(function (err, res, body) {
-        console.log(res)
-        res.status.should.equal(400);
-        done();
-      });
-  });
+//   it("All valid Field.", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         job_title: 'Computer Engineering',
+//         Responsibilities: 'HR manager',
+//         exp: 7,
+//         salary: 200000,
+//         location: 'Gandhinagar',
+//         Perks: 'Food',
+//         last_date: '2024-04-07'
+//       })
+//       .end(function (err, res, body) {
+//         console.log(res)
+//         res.status.should.equal(400);
+//         done();
+//       });
+//   });
 
-});
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //User Login
+// let chai = require("chai");
+// let chaiHttp = require("chai-http");
+// chai.should();
+// chai.use(chaiHttp);
+// describe("Testing route company/login", () => {
+//   const host = `http://localhost:3000`;
+//   const path = `/login`;
+
+//   it("All Valid Information", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(200);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email Upper latter", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'Bhargav.Vidja@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email two times @", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email (Missing @)", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidjagmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email ", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Not in database", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'vidja.bhargav@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Password length needs to beetween 8 to 15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'a',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Password length needs to beetween 8 to 15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'Apple@@1212233323232',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one upper later in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one lower later in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPLE@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one number in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPle@@#@df',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one special character in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPle232',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("password length should between 8-15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'Apple@12121212121212121',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("password cant be empty", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: '',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Email cant be empty", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: '', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+// });
+
+
+
+
+
+
+// //Company Login
+// let chai = require("chai");
+// let chaiHttp = require("chai-http");
+// chai.should();
+// chai.use(chaiHttp);
+// describe("Testing route company/companylogin", () => {
+//   const host = `http://localhost:3000`;
+//   const path = `/companylogin`;
+
+//   it("All Valid Information", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: '202101201@daiict.ac.in', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(200);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email Upper latter", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'Bhargav.Vidja@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email two times @", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email (Missing @)", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidjagmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Invalid Email ", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Not in database", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'vidja.bhargav@gmail.com', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Password length needs to beetween 8 to 15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'a',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Password length needs to beetween 8 to 15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'Apple@@1212233323232',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one upper later in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one lower later in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPLE@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one number in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPle@@#@df',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Need one special character in password", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'APPle232',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("password length should between 8-15", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: 'Apple@12121212121212121',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("password cant be empty", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: 'bhargav.vidja@gmail.com', 
+//         password: '',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+
+//   it("Email cant be empty", (done) => {
+//     chai
+//       .request(host)
+//       .post(path)
+//       .send({
+//         email: '', 
+//         password: 'Apple@1122',
+//       })
+//       .end((err, res) => {
+//         res.should.have.status(400);
+//         res.body.should.be.an("object");
+//         done();
+//       });
+//   });
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

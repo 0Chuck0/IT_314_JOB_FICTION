@@ -2,6 +2,7 @@ const { verify } = require("jsonwebtoken");
 const Adminschema = require("../models/adminschema");
 const { sendEmail } = require("../services/mailer");
 const Companyregister = require("../models/companyregisterschema");
+const { CompanyLoginSuccessfull } = require("../services/mailtemplates");
 
 module.exports = {
 
@@ -19,13 +20,15 @@ module.exports = {
     post: async(req,res)=>{
         try{
 
-            const email = req.body.params;
+            const email = req.params.email;
+            
+            const check = await Companyregister.updateOne({email:email}, { $set: {permission: true } });
 
-            await Adminschema.updateOne({email:email}, { $set: {permission: true } });
+            const url = `${process.env.Base_Url}/companylogin`;
 
-            sendEmail(email,"Registration is verified Succesfully now you are able to login","<h1>template of mail containing login button</h1>");
+            sendEmail(email,"Registration is verified Succesfully now you are able to login",CompanyLoginSuccessfull(check.employee_name,url));
 
-            res.status(400).send('<script>alert("status Updated succesfully"); window.location = "/Admin/home";</script>');
+            res.status(200.).send('<script>alert("status Updated succesfully"); window.location = "/Admin/home";</script>');
 
         }
         catch (error)
@@ -36,11 +39,11 @@ module.exports = {
     create:async (req,res)=>{
         try{
 
-            const email = req.body.params;
+            const email = req.params.email;
 
-            await Adminschema.deleteOne({email:email});
+            await Companyregister.deleteOne({email:email});
 
-            res.status(400).send('<script>alert("company deleted succes fully"); window.location = "/Admin/home";</script>');
+            res.status(200).send('<script>alert("company deleted succes fully"); window.location = "/Admin/home";</script>');
 
         }
         catch (error)

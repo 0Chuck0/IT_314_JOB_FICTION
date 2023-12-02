@@ -132,7 +132,7 @@ module.exports = {
             const {resume_link,experience,project,college,class12,class10} = req.body;
 
             const driveLinkRegex = /^https:\/\/drive\.google\.com\/(file\/d\/|open\?id=)([a-zA-Z0-9_-]+)\/?$/;
-            const projectNamePattern = /^[a-zA-Z]([0-9A-Za-z@#$&_,.-])*$/;
+            const projectNamePattern = /^[a-zA-Z][a-zA-Z0-9@#$&_,.\s-]*$/;
             const collegeNamePattern = /^[a-zA-Z\s]+$/;
 
             if (!resume_link) {
@@ -165,17 +165,22 @@ module.exports = {
             if (class10 < 0 || class10 > 100) {
                 return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
             }
-           
-            // if (!projectNamePattern.test(project)) {
-            //     return res.status(400).json({
-            //         error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'
-            //     });
-            // }
+            if (!driveLinkRegex.test(resume_link)) {
+                return res.status(400).json({
+                   error: 'Invalid drive link.'
+                });
+            }
+            if (!projectNamePattern.test(project)) {
+                 return res.status(400).json({
+                    error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'
+                 });
+            }
             if (!collegeNamePattern.test(college)) {
                 return res.status(400).json({
                     error: 'Invalid college name. Please ensure it includes only characters from A-Z or a-z.'
                 });
             }
+
                 jwt.verify(req.cookies.jwt,process.env.SECRET_KEY,async(err,decoded)=>{
                     if(err)
                     {

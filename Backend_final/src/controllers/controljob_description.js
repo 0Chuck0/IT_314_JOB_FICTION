@@ -7,6 +7,7 @@ const Savedpost = require('../models/savePostSchema');
 const Register = require('../models/registers');
 const jobs = require('../models/jobs');
 const apply = require("../models/appliedjob");
+const company=require("../models/companyregisterschema")
 module.exports = {
 
   get: async (req, res) => {
@@ -23,7 +24,10 @@ module.exports = {
           const data = await Register.findOne({ email: req.body.email });
           const jobData = await jobs.findOne({ id: req.params.id });
           var job_status = await apply.findOne({ job_id: req.params.id, email: check.email });
-
+          const company_email=jobData.company_email
+         
+          const company_data=await company.findOne({email:company_email})
+          //console.log(company_data)
           if (await Savedpost.findOne({ job_id: req.params.id, email: data.email }).count() == 1) {
             if(job_status){
             res.render("job_description.hbs", {
@@ -46,7 +50,8 @@ module.exports = {
               job_status: job_status,
               name:data.name,
               profile:data.profile,
-              logged:true
+              logged:true,
+              company_description:company_data.company_description,
             })
           }else{
             res.render("job_description.hbs", {
@@ -68,7 +73,9 @@ module.exports = {
               role: jobData.role,
               name:data.name,
               profile:data.profile,
-              logged:true
+              logged:true,
+              company_description:company_data.company_description,
+
 
           });
         }
@@ -95,7 +102,9 @@ module.exports = {
               job_status: job_status,
               name:data.name,
               profile:data.profile,
-              logged:true
+              logged:true,
+              company_description:company_data.company_description,
+
             })
           }else{
             res.render("job_description.hbs", {
@@ -117,7 +126,9 @@ module.exports = {
               role: jobData.role,
               name:data.name,
               profile:data.profile,
-              logged:true
+              logged:true,
+              company_description:company_data.company_description,
+
           });
           }
         }
@@ -144,6 +155,8 @@ module.exports = {
         reqskills: jobData.skills,
         industry_type: jobData.industry_type,
         role: jobData.role,
+        company_description:company_data.company_description,
+
       })
     }
   }

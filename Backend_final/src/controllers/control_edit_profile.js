@@ -131,7 +131,7 @@ module.exports = {
   
             const {resume_link,experience,project,college,class12,class10} = req.body;
 
-            const driveLinkRegex = /^https:\/\/drive\.google\.com\/(file\/d\/|open\?id=)([a-zA-Z0-9_-]+)\/?$/;
+            const driveLinkRegex = /^https?:\/\/drive\.google\.com\/(?:file\/d\/|open\?id=)([a-zA-Z0-9_-]+)(?:\/.*)?$/;
             const projectNamePattern = /^[a-zA-Z][a-zA-Z0-9@#$&_,.\s-]*$/;
             const collegeNamePattern = /^[a-zA-Z\s]+$/;
 
@@ -166,10 +166,11 @@ module.exports = {
                 return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
             }
             if (!driveLinkRegex.test(resume_link)) {
-                return res.status(400).json({
-                   error: 'Invalid drive link.'
-                });
-            }
+                return  res.status(400).send('<script>alert("invalid drive link "); window.location = "/edit_profile";</script>');
+
+
+                };
+            
             if (!projectNamePattern.test(project)) {
                  return res.status(400).json({
                     error: 'Invalid project name. Please ensure it starts with a letter, and includes only characters A-Z, a-z, 0-9, and special characters like _, ,, ., -'

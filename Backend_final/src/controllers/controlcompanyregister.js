@@ -156,7 +156,9 @@ module.exports = {
 
             const Admins = await Adminschema.find();
 
-            const url = `${process.env.Base_Url}/Admin//company_description/:${email}`
+            const check = await Companyregister.findOne({_id:id});
+
+            const url = `${process.env.Base_Url}/Admin//company_description/${check.email}`
 
             for(let i in Admins){
 

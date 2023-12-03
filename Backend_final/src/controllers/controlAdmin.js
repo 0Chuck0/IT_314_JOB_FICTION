@@ -24,11 +24,15 @@ module.exports = {
 
             const email = req.params.email;
             
-            const check = await Companyregister.updateOne({email:email}, { $set: {permission: true } });
+            await Companyregister.updateOne({email:email}, { $set: {permission: true } });
+
+            const check = await Companyregister.findOne({email:email});
+
+            const firstname = check.employee_name;
 
             const url = `${process.env.Base_Url}/companylogin`;
 
-            sendEmail(email,"Registration is verified Succesfully now you are able to login",CompanyLoginSuccessfull(check.employee_name,url));
+            sendEmail(email,"Registration is verified Succesfully now you are able to login",CompanyLoginSuccessfull(firstname,url));
 
             res.status(200.).send('<script>alert("status Updated succesfully"); window.location = "/Admin/home";</script>');
 
@@ -45,7 +49,7 @@ module.exports = {
 
             await Companyregister.deleteOne({email:email});
 
-            res.status(200).send('<script>alert("company deleted succes fully"); window.location = "/Admin/home";</script>');
+            res.status(200).send('<script>alert("company deleted successfully"); window.location = "/Admin/home";</script>');
 
         }
         catch (error)

@@ -7,6 +7,10 @@ const controlAdmin = require("../controllers/controlAdmin");
 const Companyregister = require("../models/companyregisterschema");
 const router = express.Router();
 
+router.get("/",async(req,res)=>{
+    res.redirect("/Admin/login");
+})
+
 router.get("/register",[isAdmin],async (req, res) =>{
     res.render("Adminregister.hbs");
   });

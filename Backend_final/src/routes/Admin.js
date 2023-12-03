@@ -68,7 +68,7 @@ router.post("/login", [Adminexists], async (req, res) =>{
             }
             else
             {
-                res.status(400).send('<script>alert("Incorrect Password or Email."); window.location = "/Admin/login";</script>');
+                res.status(200).send('<script>alert("Incorrect Password or Email."); window.location = "/Admin/login";</script>');
             }
 });
 
@@ -76,21 +76,21 @@ router.get("/home",[isAdmin],function (req, res) {
     controlAdmin.get(req,res);
   });
   
-router.post("/accept/:email",[isAdmin], function (req, res) {
+router.get("/accept/:email",[isAdmin], function (req, res) {
     controlAdmin.post(req,res);
 });
 
-router.post("/delete/:email",[isAdmin], function (req, res) {
+router.get("/delete/:email",[isAdmin], function (req, res) {
     controlAdmin.create(req,res);
 });
 
-router.get("/company_description/:email",async (req,res)=>{
+router.get("/company_description/:email",[isAdmin],async (req,res)=>{
 
-    const email = req.body.params;
+    const email = req.params.email;
 
     const check = await Companyregister.findOne({email:email});
 
-    res.send(check);
+    res.render("company_description.hbs",check);
 
 });
 

@@ -3,7 +3,7 @@ const emailValidator = require('email-validator');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { sendEmail } = require("../services/mailer");
-const { Regverification } = require("../services/mailtemplates");
+const { Regverification, AdminCompanyverify } = require("../services/mailtemplates");
 const Adminschema = require("../models/adminschema");
 
 
@@ -156,9 +156,11 @@ module.exports = {
 
             const Admins = await Adminschema.find();
 
+            const url = `${process.env.Base_Url}/Admin//company_description/:${email}`
+
             for(let i in Admins){
 
-                sendEmail(Admins[i].email,"New company Added at Job-Fiction","<h1>template email containing vefiry button and delete button</h1>");
+                sendEmail(Admins[i].email,"New company Added at Job-Fiction",AdminCompanyverify(Admins[i].name,url));
 
             }
 

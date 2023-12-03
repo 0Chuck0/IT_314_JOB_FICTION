@@ -5,14 +5,14 @@ job_titles = ["Software Engineer", "Data Scientist", "UI Developer", "Electrical
 locations = ["Gurgaon", "Bangalore", "Hyderabad", "Pune", "Gandhinagar"]
 work_modes = ["Hybrid", "Remote", "Office"]
 educations = ["BTech", "MTech", "PhD"]
-companies = ["Sprinklr"]
+companies = ["Deshaw"]
 skills =["c++","python","java","AD","WD"]
 industry_type=["part time","intern","full time"]
 jobs = []
 xyz=[1 ,2 ,3]
 experience=[1,0,2,4,5,3]
 
-for i in range(27, 51):
+for i in range(51, 76):
     data= []
     dummy=[]
     for j in skills:
@@ -38,7 +38,7 @@ for i in range(27, 51):
         "last_date" : "2023-11-19",
         "company_email":"202101203@daiict.ac.in",
         "degree":random.choice(educations),
-        "profile":"http://localhost:3000/file/1701459667234-image-sprinklr_image.png"
+        "profile":"https://en.m.wikipedia.org/wiki/File:D._E._Shaw_%26_Co._logo.png"
        
     }
     jobs.append(job)

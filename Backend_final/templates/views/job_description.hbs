@@ -107,9 +107,7 @@
                         </ul>
                         <hr>
                         <span>
-                            <p style="color: #343440; font-size: 20px; font-weight:bold">About Company </p> Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Possimus
-                            cum numquam error sunt ducimus eum veniam odit optio officiis illo.z
+                            <p style="color: #343440; font-size: 20px; font-weight:bold">About Company </p> {{company_description}}
                         </span>
                         <hr>
                         <!-- <hr id="myh"> -->
@@ -122,8 +120,7 @@
                         <div class="candidates-listing-btn mt-4 text-right">
                             <div class="btn btn-sm above">
                                 <i class="{{how}} fa-bookmark fa-xl" id="saveIcon"
-                                    onclick="toggleSaveState({{jobid}})"></i><span id="myspan"> {{savestatus}}
-                                    save</span>
+                                    onclick="toggleSaveState({{jobid}})"></i><span id="myspan"> {{savestatus}}</span>
 
                             </div>
                             {{#if job_status}}

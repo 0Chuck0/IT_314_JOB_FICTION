@@ -165,11 +165,11 @@ module.exports = {
             if (class10 < 0 || class10 > 100) {
                 return res.status(400).json({ error: 'class10 grade must be between 0 and 100 percentage.' });
             }
-            if (!driveLinkRegex.test(resume_link)) {
-                return  res.status(400).send('<script>alert("invalid drive link "); window.location = "/edit_profile";</script>');
+            // if (!driveLinkRegex.test(resume_link)) {
+            //     return  res.status(400).send('<script>alert("invalid drive link "); window.location = "/edit_profile";</script>');
 
 
-                };
+            //     };
             
             if (!projectNamePattern.test(project)) {
                  return res.status(400).json({
@@ -181,11 +181,12 @@ module.exports = {
                     error: 'Invalid college name. Please ensure it includes only characters from A-Z or a-z.'
                 });
             }
+            //console.log(req.body)
 
                 jwt.verify(req.cookies.jwt,process.env.SECRET_KEY,async(err,decoded)=>{
                     if(err)
                     {
-                    return res.status(400).send('<script>alert("Cookies decoding Error."); window.location = "/login";</script>');
+                        throw new Error(err);
                     }
                     else
                     {
@@ -193,7 +194,11 @@ module.exports = {
                          //console.log(check);
                         const useremail=check.email;
                         const userId = decoded._id;
-
+                        
+                        var imgUrl ='';
+                        if (req.file === undefined)  imgUrl = check.profile;
+                        else                         imgUrl = `${process.env.Base_Url}/file/${req.file.filename}`;
+                        
                         const updateData = {
                             language_skills: req.body.language_skills,
                             technical_skills: req.body.technical_skills,
@@ -204,8 +209,8 @@ module.exports = {
                             class10: req.body.class10,
                             college: req.body.college,
                             highest_edu: req.body.highest_edu,
-                            field: req.body.field
-
+                            field: req.body.field,
+                            profile:imgUrl
                           };
                         //console.log(updateData);
                           await Register.findOneAndUpdate({ _id: userId }, updateData);

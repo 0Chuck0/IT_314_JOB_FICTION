@@ -74,8 +74,8 @@ module.exports = {
             if (!last_date || !(/^\d{1,4}-\d{1,2}-\d{1,2}$/).test(last_date)) {
                 return res.status(400).json({ error: 'Invalid date format. Use YYYY-MM-DD' });
             }
-            if (!(parseInt(year, 10) >= 0 && parseInt(year, 10) <= 2023)) {
-                return res.status(400).json({ error: 'Invalid year. Should be between 0 and 2023' });
+            if (!(parseInt(year, 10) >= 0 && parseInt(year, 10) <= 2025)) {
+                return res.status(400).json({ error: 'Invalid year. Should be between 0 and 2025' });
             }
             if (!(parseInt(month, 10) >= 1 && parseInt(month, 10) <= 12)) {
                 return res.status(400).json({ error: 'Invalid month. Should be between 1 and 12' });

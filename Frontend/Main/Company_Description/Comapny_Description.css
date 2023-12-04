@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,300,400,700");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'icomoon' nunito !important;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+.border-div {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    border: 1px solid #E7EAED;
+    padding: 20px 20px 10px 20px;
+    /* Adds padding inside the div */
+    border-radius: 0.25rem;
+}
+
+.az{
+    display: flex;
+    gap: 30px;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width:652px){
+    .az{
+        display: block;
+    }
+}
+
+.border-text {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.border-div span{
+    font-size: 16px;
+    color: gray;
+}
+
+.containerr {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-registration {
+    max-width: 60rem;
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 6px;
+    padding: 30px 60px;
+    margin: 5rem;
+    border: 1px solid gray;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 600;
+    color: #232836;
+}
+
+#bottomh6 {
+    margin-top: 60px;
+}
+
+hr {
+    /* margin-bottom: 20px; */
+    margin-top: 10px;
+    width: 95%;
+    background-color: #6C757D;
+}
+
+.sethr {
+    justify-content: center;
+    display: flex;
+}
+
+h3 {
+    /* font-size: 22px; */
+    padding-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: #6C757D;
+}
+
+.checks {
+    margin-top: -0.5rem;
+    margin-left: 0.5rem;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.register-btn {
+    width: 100%;
+    background-color: #4070f4;
+    margin-top: 1.5rem;
+
+}
+
+.radioWrap {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.Work-Status {
+    width: 100%;
+}
+
+.radioWrap {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.work-exp {
+    /* width: 22rem; */
+    padding: 1rem;
+    display: flex;
+    background: #fff;
+    border-radius: 0.5rem;
+    border: color #495057;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-exp:checked+label {
+    border: 3px solid #4070f4;
+}
+
+.image1 {
+    margin-right: 30px;
+}
+
+#StatusRadio2,
+#StatusRadio1 {
+    display: none;
+}
+
+.data {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: -0.5rem;
+    /* justify-content: center; */
+}
+
+.data img {
+    width: 3rem;
+}
+
+.textWrap {
+    text-align: left;
+}
+
+.textWrap p {
+    color: grey;
+    font: 300;
+}
+
+.form-check {
+    padding: 0.5rem;
+}
+
+.form-check img {
+    width: 2.5rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.Gender {
+    margin-top: 1rem;
+}
+
+.Work-Status {
+    margin-top: 0.7rem;
+}
+
+.Resume {
+    margin-top: 1rem;
+}
+
+.form-text {
+    font-size: 16px;
+    color: grey;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.mandatory_Filds {
+    color: red;
+}
+
+
+
+.register-btn {
+    width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+    .radioWrap {
+        display: block;
+    }
+
+    .work-exp {
+        width: 18rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .checks {
+        display: block;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-registration {
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .form-registration {
+        margin: 0.5rem;
+    }
+
+    input {
+        overflow-wrap: break-word;
+        text-overflow: clip;
+    }
+}

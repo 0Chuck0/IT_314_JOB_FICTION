@@ -138,6 +138,9 @@ module.exports = {
     }
     else {
       const jobData = await jobs.findOne({ id: req.params.id });
+      const company_email=jobData.company_email
+         
+      const company_data=await company.findOne({email:company_email})
       res.render("job_description.hbs", {
         jobid: req.params.id,
         how: "fa-regular",

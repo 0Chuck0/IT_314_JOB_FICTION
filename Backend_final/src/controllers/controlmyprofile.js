@@ -10,7 +10,7 @@ module.exports = {
         
         const data = await Register.findOne({email:req.body.email})
         const recommendation_data=await recommendation.findOne({email:req.body.email})
-        console.log(recommendation_data)
+        //console.log(recommendation_data)
         res.render("myprofile.hbs",{
             name : data.name,
             email : data.email,

@@ -1700,874 +1700,874 @@
 
 // // //<------------------------------------Testing Edit Profile ------------------------------------------------->///
 
-// let chai = require("chai");
-// let chaiHttp = require("chai-http");
-// chai.should();
-// chai.use(chaiHttp);
-// describe("Testing route company/edit_profile", () => {
-//   const host = `http://localhost:3000`;
-//   const path = `/edit_profile`;
+let chai = require("chai");
+let chaiHttp = require("chai-http");
+chai.should();
+chai.use(chaiHttp);
+describe("Testing route company/edit_profile", () => {
+  const host = `http://localhost:3000`;
+  const path = `/edit_profile`;
 
 
-//   it("Experience cannot be negative", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '-1',
-//         project: 'Job fiction',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '93.3',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Experience cannot be negative", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '-1',
+        project: 'Job fiction',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '93.3',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Experience cannot be negative", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '-5',
-//         project: 'Job fiction',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Experience cannot be negative", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '-5',
+        project: 'Job fiction',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Experience cannot be negative", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '-100',
-//         project: 'Job fiction',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Experience cannot be negative", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '-100',
+        project: 'Job fiction',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Experience cannot exceed 25.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '26',
-//         project: 'Job fiction',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Experience cannot exceed 25.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '26',
+        project: 'Job fiction',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Experience cannot exceed 25.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '30',
-//         project: 'Job fiction',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Experience cannot exceed 25.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '30',
+        project: 'Job fiction',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
  
 
-//   it("Project name is Invalid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: '$dfv',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Project name is Invalid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: '$dfv',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Project name is Invalid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: '12457',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Project name is Invalid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: '12457',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Project name is Invalid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '1',
-//         project: '#123',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Project name is Invalid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '1',
+        project: '#123',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Project name should contain atleast 3 character.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'ab',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Project name should contain atleast 3 character.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'ab',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Project name should not contain more than 50 character.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'aswqlkdkjldjfkdfhjhjdkhjdshfkjhjhnbbhfuihuihfsdjhfhjkdhjhskjdhehiohewruiure',
-//         college: 'DAIICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Project name should not contain more than 50 character.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'aswqlkdkjldjfkdfhjhjdkhjdshfkjhjhnbbhfuihuihfsdjhfhjkdhjhskjdhehiohewruiure',
+        college: 'DAIICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
   
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'Nirma',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'Nirma',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'Haward',
-//         class12: '85.12',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'Haward',
+        class12: '85.12',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: '@#DA$IICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: '@#DA$IICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
  
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DA@IICT',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DA@IICT',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: '123',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: '123',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DA-IICT',
-//         class12: '94.5',
-//         class10: '94.6',
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DA-IICT',
+        class12: '94.5',
+        class10: '94.6',
 
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT@123',
-//         class12: '94.5',
-//         class10: '94.6',
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT@123',
+        class12: '94.5',
+        class10: '94.6',
 
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
  
-//   it("Collage name is not valid.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DA_IICT',
-//         class12: '94.5',
-//         class10: '94.6',
+  it("Collage name is not valid.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DA_IICT',
+        class12: '94.5',
+        class10: '94.6',
 
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'Marwadi University',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'Marwadi University',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid field", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'IIT Gandhinagar',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid field", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'IIT Gandhinagar',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'IIIT Delhi',
-//         class12: '94.5',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'IIIT Delhi',
+        class12: '94.5',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class12 percentage cannot be negative.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '-1.00',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class12 percentage cannot be negative.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '-1.00',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class12 percentage cannot be negative.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '-56.23',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class12 percentage cannot be negative.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '-56.23',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class12 percentage cannot be more than 100.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '101.00',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class12 percentage cannot be more than 100.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '101.00',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
   
-//   it("Class12 percentage cannot be more than 100.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '180.00',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class12 percentage cannot be more than 100.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '180.00',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '0.00',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '0.00',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '54.75',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '54.75',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class10 percentage cannot be negative.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '54.75',
-//         class10: '-1.00',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class10 percentage cannot be negative.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '54.75',
+        class10: '-1.00',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class10 percentage cannot be negative.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '101.00',
-//         class10: '-94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class10 percentage cannot be negative.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '101.00',
+        class10: '-94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Class10 percentage cannot be more than 100.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '54.75',
-//         class10: '101.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
-//   it("Class10 percentage cannot be more than 100.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '54.75',
-//         class10: '8000.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Class10 percentage cannot be more than 100.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '54.75',
+        class10: '101.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
+  it("Class10 percentage cannot be more than 100.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '54.75',
+        class10: '8000.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '46.58',
-//         class10: '39.78',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '46.58',
+        class10: '39.78',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("invalid drive link.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://web.whatsapp.com',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '85.58',
-//         class10: '69.78',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("invalid drive link.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://web.whatsapp.com',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '85.58',
+        class10: '69.78',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("invalid drive link.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://www.youtube.com',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '46.58',
-//         class10: '39.78',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("invalid drive link.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://www.youtube.com',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '46.58',
+        class10: '39.78',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
   
-//   it("Empty Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: '',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: '',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Empty Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Empty project name.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: '',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty project name.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: '',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
   
-//   it("Empty collage name.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: '',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty collage name.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: '',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Empty class12 grade.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty class12 grade.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("Empty class10 grade.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Job Fiction',
-//         college: 'DAIICT',
-//         class12: '75.84',
-//         class10: '',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("Empty class10 grade.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Job Fiction',
+        college: 'DAIICT',
+        class12: '75.84',
+        class10: '',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Hospital Management',
-//         college: 'DAIICT',
-//         class12: '49.84',
-//         class10: '73.69',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Hospital Management',
+        college: 'DAIICT',
+        class12: '49.84',
+        class10: '73.69',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '2',
-//         project: 'Start Up for startup.',
-//         college: 'LD collage',
-//         class12: '56.84',
-//         class10: '48.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '2',
+        project: 'Start Up for startup.',
+        college: 'LD collage',
+        class12: '56.84',
+        class10: '48.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-//   it("All valid Field.", (done) => {
-//     chai
-//       .request(host)
-//       .post(path)
-//       .send({
-//         resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
-//         experience: '5',
-//         project: 'Library Management',
-//         college: 'Nirma university',
-//         class12: '75.84',
-//         class10: '94.6',
-//       })
-//       .end(function (err, res, body) {
-//         console.log(res)
-//         res.status.should.equal(400);
-//         done();
-//       });
-//   });
+  it("All valid Field.", (done) => {
+    chai
+      .request(host)
+      .post(path)
+      .send({
+        resume_link: 'https://drive.google.com/file/d/1HzTz9H4JBvUKYG0XTvSeI-yimxYtIkKI/view?usp=sharing',
+        experience: '5',
+        project: 'Library Management',
+        college: 'Nirma university',
+        class12: '75.84',
+        class10: '94.6',
+      })
+      .end(function (err, res, body) {
+        console.log(res)
+        res.status.should.equal(400);
+        done();
+      });
+  });
 
-// });
+});
 
 
 

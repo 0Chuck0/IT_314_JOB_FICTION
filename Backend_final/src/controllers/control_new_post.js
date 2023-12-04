@@ -17,13 +17,13 @@ module.exports = {
             
             const {job_title,Responsibilities,exp,salary,location,Perks,last_date} = req.body;
 
-            const jobTitlePattern = /^[a-zA-Z]+$/;
+            // const jobTitlePattern = /^[a-zA-Z]+$/;
             const responsibilitiesPattern = /^.{0,100}$/;
             const locationPattern = /^.{0,500}$/;
             const perksPattern = /^.{0,500}$/;
             const [year, month, day] = last_date.split('-');
             var currentDate = new Date();
-      
+
             if (!job_title) {
                 return res.status(400).json({ error: 'job_title is required' });
             }
@@ -51,11 +51,11 @@ module.exports = {
             if (salary < 5000 || exp > 500000) {
                 return res.status(400).json({ error: 'salary must be between 5000 and 500000 Rupees.' });
             }
-            if (!jobTitlePattern.test(job_title)) {
-                return res.status(400).json({
-                    error: 'Invalid job title. Please ensure it includes only characters (a-z, A-Z).'
-                });
-            }
+            // if (!jobTitlePattern.test(job_title)) {
+            //     return res.status(400).json({
+            //         error: 'Invalid job title. Please ensure it includes only characters (a-z, A-Z).'
+            //     });
+            // }
             if (!responsibilitiesPattern.test(Responsibilities)) {
                 return res.status(400).json({
                     error: 'Invalid responsibilities. Please ensure it contains 0 to 100 letters.'

@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express()
 const Savedpost = require('../models/savePostSchema');
-const Register = require('../models/registers');
+const Register = require('../models/jobseekers');
 
 module.exports = {
 

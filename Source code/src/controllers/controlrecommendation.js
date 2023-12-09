@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express()
-const Register = require("../models/registers")
+const Register = require("../models/jobseekers")
 const recommendation = require("../models/recommendation")
 const jobs=require("../models/jobs")
 
@@ -27,6 +27,7 @@ module.exports = {
         {
             const obj={job_title:{ "$in": r_data.r_job_title }};
             query.push(obj);
+            query1.push(obj);
         }
 
         if(u_data.technical_skills!=undefined)
@@ -62,7 +63,7 @@ module.exports = {
         //const listdata = await recommendation.distinct("job_id", {"email": data.email});
        // console.log(listdata);
        const finalQuery = {
-        $and: [
+        $or: [
           { $and: query },
           { $and: query1 }
         ]

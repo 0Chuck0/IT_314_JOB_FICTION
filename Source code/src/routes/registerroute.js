@@ -3,7 +3,7 @@ const {alredyregisterauth} = require("../middlewares/auth");
 const router = express.Router();
 const controlregister= require("../controllers/controlregister");
 const upload  = require("../middlewares/upload");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 
 router.get("/",function (req, res) {
   controlregister.get(req, res);

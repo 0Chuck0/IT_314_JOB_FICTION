@@ -4,7 +4,7 @@ const { loggedinonly } = require("../middlewares/auth");
 const jwt = require("jsonwebtoken");
 const apply = require("../models/appliedjob.js");
 const jobs = require('../models/jobs');
-const Register = require("../models/registers.js");
+const Register = require("../models/jobseekers.js");
 router.post("/", [loggedinonly], async (req, res) => {
     
     const body = req.body;

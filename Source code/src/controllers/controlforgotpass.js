@@ -1,6 +1,6 @@
 
 const {sendEmail} = require("../services/mailer");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const { resetPassword } = require("../services/mailtemplates");
 
 module.exports = {

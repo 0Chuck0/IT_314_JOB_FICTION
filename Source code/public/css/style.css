@@ -38,6 +38,20 @@
   .site-navbar .container-fluid {
     padding-left: 7rem;
     padding-right: 7rem; }
+
+    @media screen and (max-width: 450px) {
+      .job-more{
+          width: 325px;
+          margin: 0.5rem;
+      }
+    }
+  
+    @media screen and (max-width: 400px) {
+      .job-more{
+          width: 285px;
+          margin: 0.5rem;
+      }
+    }
     @media (max-width: 1199.98px) {
       .site-navbar .container-fluid {
         padding-left: 15px;

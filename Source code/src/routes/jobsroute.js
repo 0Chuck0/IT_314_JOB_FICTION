@@ -5,7 +5,7 @@ const jobs  = require("../models/jobs");
 const app=express();
 app.use(express.json())
 const path = require("path");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const jwt = require("jsonwebtoken");
 
 router.get("/",function(req,res){

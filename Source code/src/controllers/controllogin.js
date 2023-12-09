@@ -1,4 +1,4 @@
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const emailValidator = require('email-validator');
 const bcrypt = require("bcryptjs");
 const express = require("express");

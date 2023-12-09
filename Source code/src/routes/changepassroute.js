@@ -7,7 +7,7 @@ const app = express()
 // const controlcompanyforgotpass = require("../controllers/controlcompanyforgotpass");
 // const companychangepassword = require("../controllers/companychangepassword");
 const  change_current_password = require("../controllers/change_current_password");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const jwt = require("jsonwebtoken");
 const cookieParser=require("cookie-parser");
 app.use(cookieParser());

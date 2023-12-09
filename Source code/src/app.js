@@ -20,7 +20,7 @@ conectMongodb(process.env.DATABASE_URL).then(() => {
 
 
 
-const Register = require("./models/registers")
+const Register = require("./models/jobseekers")
 const { Emailauth, loggedinonly, companyloggedinonly } = require("./middlewares/auth");
 const Jobpost = require("./models/postschema")
 // const Job = require('./models/postschema');

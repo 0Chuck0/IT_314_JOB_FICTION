@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express()
-const Register = require("../models/registers")
+const Register = require("../models/jobseekers")
 const applied_jobs = require("../models/appliedjob")
 const jobs=require("../models/jobs")
 

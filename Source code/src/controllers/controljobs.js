@@ -1,7 +1,7 @@
 const path = require("path");
 const jobs = require("../models/jobs");
 const jwt = require("jsonwebtoken");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 module.exports = {
 
     get:async (req,res)=>{

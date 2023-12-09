@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express()
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const Jobpost = require("../models/postschema")
 const Savedpost = require('../models/savePostSchema');
 

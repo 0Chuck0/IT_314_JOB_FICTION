@@ -1,5 +1,5 @@
 const jobs = require("../models/jobs");
-const Register = require("../models/registers");
+const Register = require("../models/jobseekers");
 const jwt = require("jsonwebtoken");
 module.exports = {
 

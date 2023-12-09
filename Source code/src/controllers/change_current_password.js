@@ -1,5 +1,5 @@
     const bcrypt  = require("bcryptjs");
-    const Register = require("../models/registers");
+    const Register = require("../models/jobseekers");
     const Companyregister = require("../models/companyregisterschema");
     const jwt = require("jsonwebtoken");
 

@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 const Savedpost = require('../models/savePostSchema');
-const Register = require('../models/registers');
+const Register = require('../models/jobseekers');
 const jobs = require('../models/jobs');
 const apply = require("../models/appliedjob");
 const company=require("../models/companyregisterschema")
